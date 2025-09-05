@@ -27,7 +27,7 @@ class WebsiteFinder:
     def __init__(self, config: Config):
         self.config = config
         self.db_manager = DatabaseManager(config.DATABASE_PATH)
-        self.shodan_scanner = ShodanScanner(config.SHODAN_API_KEY)
+        self.shodan_scanner = ShodanScanner(config.SHODAN_API_KEY, self.db_manager)
         self.vt_scanner = VirusTotalScanner(config.VIRUSTOTAL_API_KEY)
         self.validator = WebsiteValidator(config)
     
@@ -52,11 +52,15 @@ class WebsiteFinder:
         logger.info(f"找到 {len(shodan_result.domains)} 個域名")
         
         # 步驟 2: VirusTotal 查詢子域名
-        logger.info("\n步驟 2: VirusTotal 查詢子域名")
+        logger.info("步驟 2: VirusTotal 查詢子域名")
         all_subdomains = set()
         
-        for domain in shodan_result.domains:
-            subdomains = self._get_subdomains_with_delay(domain)
+        # 使用處理過的 VT 查詢目標（已比對 institution.domain）
+        vt_targets = shodan_result.vt_query_targets if shodan_result.vt_query_targets else shodan_result.domains
+        logger.info(f"使用 {len(vt_targets)} 個 VT 查詢目標")
+        
+        for target in vt_targets:
+            subdomains = self._get_subdomains_with_delay(target)
             all_subdomains.update(subdomains)
         
         if not all_subdomains:
@@ -67,13 +71,15 @@ class WebsiteFinder:
         logger.info(f"總計找到 {len(unique_subdomains)} 個獨特的子域名")
         
         # 步驟 3: 驗證網站連線性
-        logger.info("\n步驟 3: 驗證網站連線性")
+        logger.info("步驟 3: 驗證網站連線性")
         working_websites = self.validator.validate_websites(unique_subdomains)
         
         # 步驟 4: 儲存到資料庫
-        logger.info("\n步驟 4: 儲存到資料庫")
-        saved_count = self.db_manager.save_websites_batch(working_websites, certificate_name=cert_pattern)
-        logger.info(f"成功儲存 {saved_count} 筆記錄")
+        logger.info("步驟 4: 儲存到資料庫")
+        # 使用 VirusTotal 查詢目標作為 root domain
+        root_domain = vt_targets[0] if vt_targets else cert_pattern
+        saved_count = self.db_manager.save_websites_batch(working_websites, root_domain_name=root_domain)
+        logger.info(f"成功儲存 {saved_count} 筆記錄，root_domain: {root_domain}")
         
         # 顯示統計
         self._display_statistics(working_websites)
@@ -87,7 +93,7 @@ class WebsiteFinder:
     
     def _display_statistics(self, websites: List[Website]) -> None:
         """顯示統計資訊"""
-        logger.info("\n" + "="*60)
+        logger.info("="*60)
         logger.info("搜尋結果統計")
         logger.info("="*60)
         
@@ -100,7 +106,7 @@ class WebsiteFinder:
         
         # 資料庫統計
         total_count, unique_ips = self.db_manager.get_statistics()
-        logger.info(f"\n資料庫統計:")
+        logger.info(f"資料庫統計:")
         logger.info(f"  總域名數: {total_count}")
         logger.info(f"  獨特 IP 數: {unique_ips}")
 

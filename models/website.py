@@ -39,3 +39,4 @@ class ShodanResult:
     domains: List[str] = field(default_factory=list)
     ips: List[str] = field(default_factory=list)
     total_results: int = 0
+    vt_query_targets: List[str] = field(default_factory=list)  # 用於 VirusTotal 查詢的目標網域

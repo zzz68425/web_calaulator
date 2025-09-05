@@ -35,6 +35,9 @@ class Config:
     # 搜尋設定
     DEFAULT_COUNTRY: str = 'TW'
     DEFAULT_PORT: str = '443'
+
+    # 資料匯入
+    CITY_DOMAIN_CSV_PATH: str = os.getenv('CITY_DOMAIN_CSV_PATH', 'domain_of_city.csv')
     
     @classmethod
     def from_env(cls) -> 'Config':

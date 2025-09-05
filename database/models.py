@@ -21,16 +21,16 @@ class IP(Base):
     def __repr__(self) -> str:
         return f"<IP sn={self.sn} {self.address} ({self.type})>"
 
-class Certificate(Base):
-    __tablename__ = "certificate"
+class RootDomain(Base):
+    __tablename__ = "root_domain"
 
     sn: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String, unique=True, nullable=False)
 
-    fqdns: Mapped[list["Fqdn"]] = relationship("Fqdn", back_populates="certificate")
+    fqdns: Mapped[list["Fqdn"]] = relationship("Fqdn", back_populates="root_domain")
 
     def __repr__(self) -> str:
-        return f"<Cert sn={self.sn} {self.name}>"
+        return f"<RootDomain sn={self.sn} {self.name}>"
 
 class Fqdn(Base):
     __tablename__ = "fqdn"
@@ -43,11 +43,26 @@ class Fqdn(Base):
     sn: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
     name: Mapped[str] = mapped_column(String, nullable=False, unique=True)
     ip_sn: Mapped[int] = mapped_column(ForeignKey("ip.sn", ondelete="RESTRICT"), nullable=False)
-    certificate_sn: Mapped[int | None] = mapped_column(ForeignKey("certificate.sn", ondelete="SET NULL"))
+    root_sn: Mapped[int | None] = mapped_column(ForeignKey("root_domain.sn", ondelete="SET NULL"))
     when_crawled: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=func.current_timestamp())
 
     ip: Mapped["IP"] = relationship("IP", back_populates="fqdns")
-    certificate: Mapped["Certificate"] = relationship("Certificate", back_populates="fqdns")
+    root_domain: Mapped["RootDomain"] = relationship("RootDomain", back_populates="fqdns")  
 
     def __repr__(self) -> str:
-        return f"<Fqdn sn={self.sn} {self.name} -> ip_sn={self.ip_sn} cert_sn={self.certificate_sn}>"
+        return f"<Fqdn sn={self.sn} {self.name} -> ip_sn={self.ip_sn} root_sn={self.root_sn}>"
+
+
+class Institution(Base):
+    __tablename__ = "institution"
+    __table_args__ = (
+        UniqueConstraint("domain", name="uq_institution_domain"),
+        Index("idx_institution_domain", "domain"),
+    )
+
+    sn: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    name: Mapped[str] = mapped_column(String, nullable=False)
+    domain: Mapped[str] = mapped_column(String, nullable=False, unique=True)
+
+    def __repr__(self) -> str:
+        return f"<Institution sn={self.sn} name={self.name} domain={self.domain}>"
