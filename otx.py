@@ -1,9 +1,11 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
 
 # --- 設定區 ---
 # 請替換成你自己的 OTX API Key
-API_KEY = "13bcdb1daee03f75eab0e7f70e500e29ae295deb8a99257206d3a897d7ee202f"
+API_KEY = os.getenv("OTX_API_KEY", "")
 # 你的目標主機名稱
 hostname = "sexam.tncvs.tn.edu.tw"
 # ---

@@ -72,13 +72,14 @@ class OtxValidator:
 
             # 核心邏輯：檢查 url_list 是否存在且有內容
             if data.get("url_list"):
-                logger.debug(f"OTX 找到 {fqdn} 的關聯 URL。")
+                logger.debug(f"OTX 找到 {fqdn} 的關聯 URL，準備進行 DNS 解析。")
                 
-                # 從 API 回應中直接取得 IP 位址
-                try:
-                    ip_address = data["url_list"][0]["result"]["urlworker"]["ip"]
-                except (KeyError, IndexError, TypeError):
-                    logger.warning(f"OTX 驗證成功，但無法從 API 回應中找到 {fqdn} 的 IP 位址，將略過此筆資料。")
+                # OTX 驗證成功，現在使用 socket 進行即時 DNS 解析
+                ip_address = self._resolve_domain(fqdn)
+
+                # 如果 DNS 解析失敗，才略過此筆資料
+                if not ip_address:
+                    logger.warning(f"OTX 驗證成功，但無法透過 socket 解析 {fqdn} 的 IP，將略過此筆資料。")
                     return None
 
                 # 建立 Website 物件
