@@ -5,7 +5,7 @@ import json
 # 請替換成你自己的 OTX API Key
 API_KEY = "13bcdb1daee03f75eab0e7f70e500e29ae295deb8a99257206d3a897d7ee202f"
 # 你的目標主機名稱
-hostname = "www.tncvs.tn.edu.tw"
+hostname = "sexam.tncvs.tn.edu.tw"
 # ---
 
 def get_and_process_urls(target_hostname):

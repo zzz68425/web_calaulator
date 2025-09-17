@@ -14,7 +14,7 @@ from config import Config
 from database.repository import DatabaseManagerORM as DatabaseManager
 from scanners.shodan_scanner import ShodanScanner
 from scanners.virustotal_scanner import VirusTotalScanner
-from validators.website_validator import WebsiteValidator
+from validators.otx_validator import OtxValidator
 from models.website import Website
 from utils.network import rate_limit
 from utils.logger import get_logger
@@ -29,7 +29,7 @@ class WebsiteFinder:
         self.db_manager = DatabaseManager(config.DATABASE_PATH)
         self.shodan_scanner = ShodanScanner(config.SHODAN_API_KEY, self.db_manager)
         self.vt_scanner = VirusTotalScanner(config.VIRUSTOTAL_API_KEY)
-        self.validator = WebsiteValidator(config)
+        self.validator = OtxValidator(config)
     
     def run(self, cert_pattern: str) -> List[Website]:
         """執行完整的搜尋流程"""

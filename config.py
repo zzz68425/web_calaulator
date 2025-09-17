@@ -14,7 +14,8 @@ class Config:
     # API Keys
     SHODAN_API_KEY: str = os.getenv('SHODAN_API_KEY', '')
     VIRUSTOTAL_API_KEY: str = os.getenv('VIRUSTOTAL_API_KEY', '')
-    
+    OTX_API_KEY: str = os.getenv('OTX_API_KEY', '')
+
     # 資料庫設定
     DATABASE_PATH: str = 'website.db'
     
