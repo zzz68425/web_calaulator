@@ -57,6 +57,7 @@ class WebsiteValidator:
                 pool_maxsize=self.config.HTTP_POOL_SIZE,
                 max_retries=retries
             )
+            # 用於將 adapter 綁定在 HTTP 與 HTTPS
             sess.mount("http://", adapter)
             sess.mount("https://", adapter)
         except Exception:
