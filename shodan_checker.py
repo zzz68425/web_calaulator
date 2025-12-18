@@ -57,7 +57,7 @@ def parse_results(raw_results: Dict[str, Any]) -> ShodanResult:
     domains: Set[str] = set()
 
     print("=== Shodan Raw JSON ===")
-    # 這裡只列出前 5 個 matches，避免輸出過長
+    # 這裡只列出前 100 個 matches，避免輸出過長
     raw_copy = raw_results.copy()
     raw_copy['matches'] = raw_copy['matches'][:100]
     print(json.dumps(raw_copy, indent=2, ensure_ascii=False))

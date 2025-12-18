@@ -25,7 +25,7 @@ class DatabaseManager:
             # ip 表
             conn.execute("""
                 CREATE TABLE IF NOT EXISTS ip (
-                    sn      INTEGER NOT NULL PRIMARY KEY,
+                    id      INTEGER NOT NULL PRIMARY KEY,
                     address TEXT    NOT NULL UNIQUE,
                     type    TEXT    NOT NULL
                 );
@@ -34,35 +34,35 @@ class DatabaseManager:
             # certificate 表
             conn.execute("""
                 CREATE TABLE IF NOT EXISTS certificate (
-                    sn   INTEGER NOT NULL PRIMARY KEY,
+                    id   INTEGER NOT NULL PRIMARY KEY,
                     name TEXT    NOT NULL UNIQUE
                 );
             """)
 
-            # fqdn 表（指向 ip.sn 與可選的 certificate.sn）
+            # host 表（指向 ip.id 與可選的 certificate.id）
             conn.execute("""
-                CREATE TABLE IF NOT EXISTS fqdn (
-                    sn             INTEGER NOT NULL PRIMARY KEY,
+                CREATE TABLE IF NOT EXISTS host (
+                    id             INTEGER NOT NULL PRIMARY KEY,
                     name           TEXT    NOT NULL UNIQUE,
-                    ip_sn          INTEGER NOT NULL REFERENCES ip(sn),
-                    certificate_sn INTEGER REFERENCES certificate(sn),
+                    ip_id          INTEGER NOT NULL REFERENCES ip(id),
+                    certificate_id INTEGER REFERENCES certificate(id),
                     when_crawled   DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
                 );
             """)
 
             # 索引
-            conn.execute("CREATE INDEX IF NOT EXISTS idx_fqdn_name ON fqdn(name);")
-            conn.execute("CREATE INDEX IF NOT EXISTS idx_fqdn_ip_sn ON fqdn(ip_sn);")
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_host_name ON host(name);")
+            conn.execute("CREATE INDEX IF NOT EXISTS idx_host_ip_id ON host(ip_id);")
             conn.commit()
             logger.info(f"資料庫初始化完成（三表）：{self.db_path}")
 
     # ---------------------- 基礎 get-or-create ----------------------
 
     def _get_or_create_ip(self, conn: sqlite3.Connection, address: str) -> int:
-        """回傳 ip.sn；不存在則建立。type 由位址判斷 IPv4/IPv6。"""
+        """回傳 ip.id；不存在則建立。type 由位址判斷 IPv4/IPv6。"""
         ip_type = "IPv6" if ":" in address else "IPv4"
         cur = conn.cursor()
-        cur.execute("SELECT sn FROM ip WHERE address = ?", (address,))
+        cur.execute("SELECT id FROM ip WHERE address = ?", (address,))
         row = cur.fetchone()
         if row:
             return row[0]
@@ -71,11 +71,11 @@ class DatabaseManager:
         return cur.lastrowid
 
     def _get_or_create_certificate(self, conn: sqlite3.Connection, cert_name: Optional[str]) -> Optional[int]:
-        """回傳 certificate.sn；若 cert_name 為 None/空字串，回傳 None。"""
+        """回傳 certificate.id；若 cert_name 為 None/空字串，回傳 None。"""
         if not cert_name:
             return None
         cur = conn.cursor()
-        cur.execute("SELECT sn FROM certificate WHERE name = ?", (cert_name,))
+        cur.execute("SELECT id FROM certificate WHERE name = ?", (cert_name,))
         row = cur.fetchone()
         if row:
             return row[0]
@@ -87,26 +87,26 @@ class DatabaseManager:
 
     def save_website(self, website: Website, certificate_name: Optional[str] = None) -> bool:
         """
-        儲存單一網站到 fqdn / ip / certificate。
+        儲存單一網站到 host / ip / certificate。
         注意：不寫入 HTTP title / 狀態碼（已從 schema 移除）。
         """
         try:
             with sqlite3.connect(self.db_path) as conn:
                 conn.execute("PRAGMA foreign_keys = ON;")
-                ip_sn = self._get_or_create_ip(conn, website.ip)
-                cert_sn = self._get_or_create_certificate(conn, certificate_name)
+                ip_id = self._get_or_create_ip(conn, website.ip)
+                cert_id = self._get_or_create_certificate(conn, certificate_name)
 
-                # INSERT OR REPLACE 以 fqdn.name 為唯一鍵更新對應 ip_sn / cert_sn / when_crawled
+                # INSERT OR REPLACE 以 host.name 為唯一鍵更新對應 ip_id / cert_id / when_crawled
                 conn.execute(
                     """
-                    INSERT INTO fqdn (name, ip_sn, certificate_sn, when_crawled)
+                    INSERT INTO host (name, ip_id, certificate_id, when_crawled)
                     VALUES (?, ?, ?, ?)
                     ON CONFLICT(name) DO UPDATE SET
-                        ip_sn = excluded.ip_sn,
-                        certificate_sn = COALESCE(excluded.certificate_sn, fqdn.certificate_sn),
+                        ip_id = excluded.ip_id,
+                        certificate_id = COALESCE(excluded.certificate_id, host.certificate_id),
                         when_crawled = excluded.when_crawled
                     """,
-                    (website.fqdn, ip_sn, cert_sn, website.when_crawled),
+                    (website.fqdn, ip_id, cert_id, website.when_crawled),
                 )
                 conn.commit()
                 logger.info(f"已儲存：{website.fqdn} -> IP[{website.ip}] cert={certificate_name or '-'}")
@@ -125,17 +125,17 @@ class DatabaseManager:
 
     def get_website_by_fqdn(self, fqdn: str) -> Optional[Website]:
         """
-        以 fqdn.name 查詢，回傳 Website（只帶 fqdn 與 ip 位址）。
+        以 host.name 查詢，回傳 Website（只帶 fqdn 與 ip 位址）。
         其餘欄位（url/title/status/redirect）不再入庫，這裡設為 None。
         """
         with sqlite3.connect(self.db_path) as conn:
             cur = conn.cursor()
             cur.execute(
                 """
-                SELECT f.name, i.address, f.when_crawled
-                FROM fqdn f
-                JOIN ip i ON i.sn = f.ip_sn
-                WHERE f.name = ?
+                SELECT h.leftmost_label, i.address, h.when_crawled
+                FROM domain h
+                JOIN ip i ON i.id = h.ip_id
+                WHERE h.leftmost_label = ?
                 """,
                 (fqdn,),
             )
@@ -154,21 +154,21 @@ class DatabaseManager:
         return None
 
     def get_statistics(self) -> Tuple[int, int]:
-        """回傳（fqdn 總數, 不重複 IP 數）"""
+        """回傳（host 總數, 不重複 IP 數）"""
         with sqlite3.connect(self.db_path) as conn:
             cur = conn.cursor()
-            cur.execute("SELECT COUNT(*) FROM fqdn;")
+            cur.execute("SELECT COUNT(*) FROM domain;")
             total = cur.fetchone()[0]
-            cur.execute("SELECT COUNT(DISTINCT ip_sn) FROM fqdn;")
+            cur.execute("SELECT COUNT(DISTINCT ip_id) FROM domain;")
             uniq_ip = cur.fetchone()[0]
             return total, uniq_ip
 
     def check_schema(self) -> List[Tuple]:
-        """檢查三表 schema（回傳 fqdn/ip/certificate 的 table_info 合併）。"""
+        """檢查三表 schema（回傳 domain/ip/certificate 的 table_info 合併）。"""
         rows: List[Tuple] = []
         with sqlite3.connect(self.db_path) as conn:
             cur = conn.cursor()
-            for t in ("ip", "certificate", "fqdn"):
+            for t in ("ip", "certificate", "domain"):
                 cur.execute(f"PRAGMA table_info({t});")
                 rows.extend(cur.fetchall())
         return rows

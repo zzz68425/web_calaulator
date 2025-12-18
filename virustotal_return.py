@@ -6,7 +6,7 @@ class VirusTotalV3:
     """VirusTotal API v3 客戶端（僅保留子域名查詢）"""
 
     def __init__(self, api_key):
-        self.api_key = api_key
+        self.api_key = Config.VIRUSTOTAL_API_KEY
         self.base_url = "https://www.virustotal.com/api/v3"
         self.headers = {"x-apikey": api_key}
 
@@ -78,9 +78,19 @@ class VirusTotalV3:
                         break
                         
                 elif response.status_code == 429:
-                    print("   ⏰ 速率限制，等待 60 秒...")
-                    time.sleep(60)
-                    continue
+                    print("api key token 達到上限...")
+                    # 切換 api key
+                    for key in Config.VIRUSTOTAL_API_KEYS:
+                        if key != self.api_key:
+                            print(f"切換 API Key")
+                            self.api_key = key
+                            self.headers["x-apikey"] = key
+                            break
+                    # 如果全部的key都用過了，就結束
+                    else:
+                        print("   ❌ 所有 API Key 都已達到上限")
+                        break
+
                 elif response.status_code == 404:
                     print(f"   ❌ 域名未找到或沒有子域名")
                     break

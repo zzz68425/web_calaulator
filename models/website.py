@@ -7,15 +7,21 @@ from typing import Optional, List
 
 @dataclass
 class Website:
-    """網站資訊模型"""
+    """網站資訊模型（支援雙協定 IPv4/IPv6）"""
     fqdn: str
-    ip: str
     url: Optional[str] = None
     protocol: Optional[str] = None
     status_code: Optional[int] = None
     redirect_to: Optional[str] = None
     title: Optional[str] = None
     when_crawled: datetime = field(default_factory=datetime.now)
+    
+    @property
+    def ip(self) -> str:
+        """動態回傳代表性 IP（優先 IPv4，其次 IPv6，最後佔位）"""
+        ipv4 = getattr(self, 'ipv4', None)
+        ipv6 = getattr(self, 'ipv6', None)
+        return ipv4 or ipv6 or "0.0.0.0"
     
     def __str__(self) -> str:
         return f"{self.url or self.fqdn} ({self.ip})"
@@ -24,7 +30,9 @@ class Website:
         """轉換為字典格式"""
         return {
             'fqdn': self.fqdn,
-            'ip': self.ip,
+            'ip': self.ip,  # 自動從 ipv4/ipv6 取得
+            'ipv4': getattr(self, 'ipv4', None),
+            'ipv6': getattr(self, 'ipv6', None),
             'url': self.url,
             'protocol': self.protocol,
             'status_code': self.status_code,

@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 # 請替換成你自己的 OTX API Key
 API_KEY = os.getenv("OTX_API_KEY", "")
 # 你的目標主機名稱
-hostname = "sexam.tncvs.tn.edu.tw"
+hostname = ["ee.ncku.edu.tw"]
 # ---
 
 def get_and_process_urls(target_hostname):
@@ -17,7 +17,7 @@ def get_and_process_urls(target_hostname):
     print(f"[*] 正在透過 API 查詢 Hostname: {target_hostname}...")
     
     # 組合 API 請求網址
-    api_url = f"https://otx.alienvault.com/api/v1/indicators/hostname/{target_hostname}/url_list"
+    api_url = f"https://otx.alienvault.com/api/v1/indicators/hostname/{target_hostname}/http_scans"
     headers = {"X-OTX-API-KEY": API_KEY}
 
     try:
@@ -75,4 +75,5 @@ def get_and_process_urls(target_hostname):
 
 # --- 執行主程式 ---
 if __name__ == "__main__":
-    get_and_process_urls(hostname)
+    for host in hostname:
+        get_and_process_urls(host)

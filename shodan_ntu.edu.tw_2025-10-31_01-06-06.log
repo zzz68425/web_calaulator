@@ -1,0 +1,8162 @@
+
+正在查詢 ntu.edu.tw 的子網域...
+
+
+=== Shodan 原始 JSON ===
+{
+  "domain": "ntu.edu.tw",
+  "tags": [],
+  "subdomains": [
+    "0910123654.m7",
+    "0929630280.m7",
+    "101-1.m7",
+    "104.avcenter",
+    "104.hort",
+    "105-a2.avcenter",
+    "105-a4.avcenter",
+    "105-b4.avcenter",
+    "105-c2.avcenter",
+    "105-c3.avcenter",
+    "105-c4.avcenter",
+    "105-d1.avcenter",
+    "105-d2.avcenter",
+    "105-d6.avcenter",
+    "105-e1.avcenter",
+    "105-e4.avcenter",
+    "105-f2.avcenter",
+    "105-f3.avcenter",
+    "105-teacher.avcenter",
+    "106-1.avcenter",
+    "106-1.m7",
+    "106-2.avcenter",
+    "106-3.m7",
+    "108-2.dday.dschool",
+    "109-1.dday.dschool",
+    "109-2.dday.dschool",
+    "110-1.dday.dschool",
+    "116-1.m7",
+    "118-3.m7",
+    "195.lis",
+    "197.lis",
+    "1f-laser.aeh",
+    "201.avcenter",
+    "2010-edmedia.blog",
+    "2010-irish-drama-and-films.blog",
+    "2011-ihrl.blog",
+    "2012freshmanenglish.blog",
+    "2013sound.blog",
+    "2014awp-ntu-ot.blog",
+    "2015recordedmusic.blog",
+    "2015twmhistory.blog",
+    "2020hfa.blog",
+    "204-3.m7",
+    "204.avcenter",
+    "204.scc",
+    "207-2.m7",
+    "207-4.m7",
+    "209-4.m7",
+    "210-2.avcenter",
+    "212-1.avcenter",
+    "213-1.avcenter",
+    "213-4.m7",
+    "217-3.m7",
+    "217-4.m7",
+    "217ta.csie",
+    "217vmhost.csie",
+    "218-4.m7",
+    "219-3.m7",
+    "221-3.m7",
+    "230-1.m7",
+    "301-4.avcenter",
+    "302-5.avcenter",
+    "303user07.linguistics",
+    "304-1.avcenter",
+    "304-3.avcenter",
+    "304-4.avcenter",
+    "306-2.avcenter",
+    "308-2.m7",
+    "309-2.avcenter",
+    "309-2.m7",
+    "310-2.avcenter",
+    "312-2.avcenter",
+    "315-1.avcenter",
+    "316-4.m7",
+    "321-4.m7",
+    "322-2.m7",
+    "329-3.m7",
+    "338b.ee",
+    "3d.csie",
+    "402-2.m7",
+    "402-4.m7",
+    "402nas.csie",
+    "406-1.m7",
+    "407-2.phys",
+    "414-2.m7",
+    "415-1.m7",
+    "421-3.m7",
+    "430-2.m7",
+    "521-1.me",
+    "70th.ee",
+    "7788.m7",
+    "921fund.digital",
+    "98graduation.blog",
+    "99hphsu.blog",
+    "a-big-net.cph",
+    "a-pjae.blog",
+    "a13.m5",
+    "a149.m5",
+    "a150.m5",
+    "a16.m5",
+    "a18.m5",
+    "a2.m5",
+    "a218.m5",
+    "a233.m5",
+    "a238.m5",
+    "a24.m5",
+    "a249.m5",
+    "a250.m5",
+    "a29.m5",
+    "a31.m5",
+    "a32.m5",
+    "a33.m5",
+    "a36.m5",
+    "a43.m5",
+    "a44.m5",
+    "a46.m5",
+    "a48.m5",
+    "aaa.m6",
+    "aak.m8",
+    "aalan.m1",
+    "aaoffice",
+    "aaoffice-new.cloud",
+    "aaron.ee",
+    "abear.g4",
+    "abend.m7",
+    "abmri.mc",
+    "aborg.lib",
+    "abra-taiwan.blog",
+    "ac",
+    "aca",
+    "academic-judge.csie",
+    "acb.csie",
+    "acc.mc",
+    "acc.tl",
+    "acc101.acc",
+    "acc111.acc",
+    "acc117.acc",
+    "acc35.acc",
+    "acc36.acc",
+    "acc41.acc",
+    "acc42.acc",
+    "acc43.acc",
+    "acc52.acc",
+    "acc53.acc",
+    "acc55.acc",
+    "acc68.acc",
+    "acc81.acc",
+    "acc96.acc",
+    "acc99.acc",
+    "acceptance.ga",
+    "access.ee",
+    "accsrv2.ntuacc",
+    "acenter.blog",
+    "aching.m6",
+    "ackt.m6",
+    "acl.ee",
+    "aclab.as",
+    "acm.csie",
+    "acpang1.csie",
+    "acs.cc",
+    "act.lib",
+    "actairv.cloud",
+    "actairv.oc",
+    "action.darc",
+    "active.gl",
+    "activity.osa",
+    "ad-hoc.csie",
+    "ad6234.advisory.studa",
+    "ad6236.advisory.studa",
+    "ada01.csie",
+    "adam.im",
+    "adam.m5",
+    "adfs",
+    "adfs.oeth",
+    "adhoc.ee",
+    "admin4.cr.liberal",
+    "admin5.cr.liberal",
+    "admission.ee",
+    "admissions",
+    "adol",
+    "adolph.m8",
+    "adrenal.mc",
+    "advisory",
+    "advisory.osa",
+    "advisory2.osa",
+    "aecmr.oc",
+    "aegis.m4",
+    "aeh",
+    "aeolus.me",
+    "aerosol2.mc",
+    "aerosol4.mc",
+    "aerosol6.mc",
+    "aerosol7.mc",
+    "aerosol8.mc",
+    "affair7.mc",
+    "afm1.ntu-ccms",
+    "afronova.m2",
+    "agbi.agron",
+    "agecjnl.agec",
+    "agecntu.agec",
+    "agent.csie",
+    "agnest.g1",
+    "agou.m6",
+    "agron",
+    "agserv-1.agron",
+    "agserv-2.agron",
+    "ah.mc",
+    "ahau.m1",
+    "ai",
+    "ai-crop.toolmen.bime",
+    "ai.robo",
+    "ai4bi.im",
+    "aicdm",
+    "aitomato.toolmen.bime",
+    "aitomatodoctor.yun.toolmenlab.bime",
+    "ajc.csie",
+    "akay.m6",
+    "akpcer.m8",
+    "akuz.m6",
+    "alan7.m6",
+    "alatin.g4",
+    "albedo.as",
+    "albertbug.m6",
+    "albireo.csie",
+    "alchemy.ch",
+    "alder-birds.blog",
+    "aleph.fll",
+    "alex-chang.hort",
+    "alextg.m4",
+    "alfred.m8",
+    "alfued.m1",
+    "algo.csie",
+    "algolab.csie",
+    "alice.f2",
+    "alien.f1",
+    "allnew4k.lib",
+    "aloe.hort",
+    "alpha226.oc",
+    "alubif.f2",
+    "alumni.acc",
+    "alumni.me",
+    "amare76.m7",
+    "ame306-3.bime",
+    "ame310-3.bime",
+    "amour.csie",
+    "ampere.im",
+    "amtg10.ee",
+    "amtg3.ee",
+    "amtg4.ee",
+    "amy.ee",
+    "amyivlab.csie",
+    "ana617.mc",
+    "anabhel.lecospa",
+    "analog16.ee",
+    "andersone.hort",
+    "andrew9013.m3",
+    "android.ee",
+    "ane1.mc",
+    "anes01.mc",
+    "anes02.mc",
+    "angel.ee",
+    "angela.mc",
+    "angelsam.m3",
+    "angle.m6",
+    "anions.m3",
+    "anita.ee",
+    "ann.cc",
+    "ann.ch",
+    "anniversary.acc",
+    "anthro",
+    "anvil.m5",
+    "ap183.cc",
+    "apc.aca",
+    "apec-flows",
+    "apec.m5",
+    "api.course",
+    "api.lib",
+    "api.linguistics",
+    "api.odb",
+    "api2.lib",
+    "apigate.lib",
+    "apjae",
+    "aple.m3",
+    "apnea.iagents.csie",
+    "apocalypse.m3",
+    "app.bebi",
+    "app.oc",
+    "app.sand.lu.im",
+    "app01.odb",
+    "app05.odb",
+    "appassionato.math",
+    "applygmba.management",
+    "aprdc",
+    "apricot.csie",
+    "aprumh2024.wcdr",
+    "aptsa.cloud",
+    "arbor.ee",
+    "arc-gmst-ins.eng",
+    "archer.ee",
+    "archi1.ee",
+    "archi5.ee",
+    "archi6.ee",
+    "archi7.ee",
+    "archiang.m6",
+    "archimedes.csie",
+    "archive.bse",
+    "archmage.ee",
+    "ares.csie",
+    "argasleep.m4",
+    "argonlab.gl",
+    "arienoe.f2",
+    "aries.csie",
+    "artemis.csie",
+    "artemis.me",
+    "artfest",
+    "arts",
+    "asa.m5",
+    "ascii.mc",
+    "ashan.gl",
+    "asiannetwork4jpstudies.blog",
+    "asimo.m8",
+    "asj.as",
+    "ask.hss",
+    "asoc52.cc",
+    "aspire.gl",
+    "asrlab.me",
+    "assis2.music",
+    "astep.ee",
+    "asteroid.csie",
+    "atalab15.csie",
+    "atalab2.csie",
+    "atb.bse",
+    "atchem.as",
+    "atgs",
+    "athena.ee",
+    "athens.m5",
+    "atl.m1",
+    "atlantic.m5",
+    "atlas.m6",
+    "atmos4.as",
+    "atmosfire.as",
+    "atoo.m6",
+    "atva.im",
+    "auden.m6",
+    "austin.csie",
+    "austintodo.csie",
+    "auth.csie",
+    "autobind.mc",
+    "autodiscover.iam",
+    "autodiscover.iiipo.ee",
+    "autodiscover.iiipo.eecs",
+    "autodiscover.mail.iam",
+    "av.m5",
+    "aven.gl",
+    "awardquery.ga",
+    "awhe.m6",
+    "ayling.cc",
+    "aza.med",
+    "b02102105.blog",
+    "b02705020.blog",
+    "b18.m5",
+    "b198.m5",
+    "b215.m5",
+    "b224.iam",
+    "b233.m5",
+    "b2359028.m1",
+    "b26.m5",
+    "b3.anthro",
+    "b4.anthro",
+    "b4.m5",
+    "b405.bime",
+    "b42.m5",
+    "b46.m5",
+    "b48.m5",
+    "b75.me",
+    "b9.anthro",
+    "b93504068.m7",
+    "b93901134.m7",
+    "b94612035.blog",
+    "b96109027.blog",
+    "b97203005.blog",
+    "b99109031.blog",
+    "ba32.ba",
+    "ba43.ba",
+    "ba48.ba",
+    "ba61.ba",
+    "ba68.ba",
+    "ba69.ba",
+    "ba77.ba",
+    "babyntw.g4",
+    "bach.ee",
+    "backup.hort",
+    "backupnas.ee",
+    "baka.m7",
+    "bakemilk.m3",
+    "bamboo.ee",
+    "bamboogirl.f2",
+    "bananaoook.m3",
+    "bapc16.ba",
+    "bapc18.ba",
+    "bapc6.ba",
+    "barca.m3",
+    "barcelona.math",
+    "bargio.m8",
+    "barium.m5",
+    "barley.csie",
+    "basketman.m6",
+    "bblab.bime",
+    "bblabcloud.bime",
+    "bbs.agec",
+    "bci.bime",
+    "bdap.cc",
+    "bdsrc",
+    "beachboy.m5",
+    "bear.ee",
+    "bear.g4",
+    "beehive.phys",
+    "beethoven.ee",
+    "belle2grid3.cc",
+    "belllabs.m3",
+    "bem.bime",
+    "berenices.f2",
+    "bernoulli.iam",
+    "bfn",
+    "bicd",
+    "big.me",
+    "big.psy",
+    "billfish5.oc",
+    "billyntu.m8",
+    "bio-div.hort",
+    "bio.odb",
+    "bioagri",
+    "bioinfo.bime",
+    "bioinfo.bme",
+    "bioinfo.mc",
+    "biomaterials4.che",
+    "biomech.bme",
+    "biomedlabpc5.che",
+    "biometry02.agron",
+    "biominer.bime",
+    "bioportal.csbb",
+    "bioprocess10.che",
+    "bioprocess11.che",
+    "biorola.me",
+    "biosignal.ee",
+    "birdy.m8",
+    "bjh05.me",
+    "bjtseng194.cc",
+    "bk239149.m1",
+    "bk241150.m1",
+    "bk241193.m1",
+    "bk241205.m1",
+    "bl404amtg04.ee",
+    "blanc.ee",
+    "blog.dlc",
+    "blog.press",
+    "blplab.linguistics",
+    "bluedevils.me",
+    "bluerex.g4",
+    "bluesun.m8",
+    "bluetin.gl",
+    "bmdlab.bime",
+    "bmdlab2.bime",
+    "bme",
+    "bmeserv.iam",
+    "boaz.m4",
+    "bobo.cc",
+    "bonjour.ee",
+    "bonnie.f2",
+    "book401.mc",
+    "booker.m5",
+    "booking-campus-museum",
+    "booking.aca",
+    "booking.dschool",
+    "booking.perc",
+    "bossach.m1",
+    "bot.csie",
+    "boxon.m1",
+    "bp",
+    "bp01.bp",
+    "bp100.bp",
+    "bp102.bp",
+    "bp240.bp",
+    "bp88.bp",
+    "bp95.bp",
+    "bpkk10.bp",
+    "brahms.ee",
+    "brian8.m3",
+    "bride.f2",
+    "broadband.ee",
+    "bsd.cc",
+    "bsd1.csie",
+    "bse",
+    "bst",
+    "bst002.bst",
+    "bst034.bst",
+    "bst035.bst",
+    "bst044.bst",
+    "bst065.bst",
+    "bst112.bst",
+    "bst116.bst",
+    "bst120.bst",
+    "bst127.bst",
+    "bst145.bst",
+    "bst160.bst",
+    "bst179.bst",
+    "bst201.bst",
+    "bst202.bst",
+    "bst208.bst",
+    "bst209.bst",
+    "bst210.bst",
+    "bst211.bst",
+    "bst214.bst",
+    "bst221.bst",
+    "bst228.bst",
+    "bst254.bst",
+    "buddha.csie",
+    "buddhism.lib",
+    "buddy.m3",
+    "bug.ee",
+    "bugmaker31.m5",
+    "bula.m1",
+    "byjiang.m7",
+    "c108.fll",
+    "c111.fll",
+    "c112.fll",
+    "c114.fll",
+    "c124.fll",
+    "c126.fll",
+    "c15.fll",
+    "c206.as",
+    "c44.fll",
+    "c4lab.bime",
+    "c57.fll",
+    "c64.fll",
+    "c7.fll",
+    "c85.fll",
+    "c87.fll",
+    "c88.fll",
+    "c95.fll",
+    "cab.im",
+    "cacti.csie",
+    "cad.csie",
+    "cad1.csie",
+    "cad11.ee",
+    "cad18.ee",
+    "cad2.csie",
+    "cad3.csie",
+    "cad31.ee",
+    "cad402.csie",
+    "cad47.ee",
+    "cadlab11.me",
+    "cadlab15.me",
+    "cafe.fo",
+    "callpilot",
+    "callus.m3",
+    "caltm2.phys",
+    "camphorcat.csie",
+    "canary.f8",
+    "cancer.csie",
+    "capricornus.ee",
+    "captain.m5",
+    "carbon14.gl",
+    "cardo.management",
+    "cards.as",
+    "career",
+    "careerh.iagents.csie",
+    "carl.as",
+    "carrel.lib",
+    "cas1.me",
+    "case",
+    "cash7.bu",
+    "cashier2.bu",
+    "cashier5.bu",
+    "castle.ee",
+    "catbus.m8",
+    "catd.cph",
+    "cath.mc",
+    "cathy.mc",
+    "cats.gcc",
+    "cbe",
+    "cbme",
+    "cbt",
+    "cbt.lttc",
+    "cc.cl",
+    "cc.ee",
+    "cc.vh",
+    "ccbs",
+    "ccc",
+    "ccch.mc",
+    "ccchen3.mc",
+    "cccthomas.me",
+    "ccf.ee",
+    "cch.hort",
+    "ccma07.me",
+    "ccma08.me",
+    "ccma09.me",
+    "ccma10.me",
+    "ccma11.me",
+    "ccma18.me",
+    "ccma20.me",
+    "ccma21.me",
+    "ccms",
+    "ccnet",
+    "ccntp",
+    "ccs",
+    "ccsd",
+    "ccsun35.cc",
+    "ccsun44.cc",
+    "ccsun46.cc",
+    "ccsun48.cc",
+    "ccsun49.cc",
+    "ccsun60.cc",
+    "cctng.cc",
+    "ccwu.m5",
+    "cdi",
+    "cdl8.as",
+    "cdm.lib",
+    "ce10040.ce",
+    "ce10050.ce",
+    "ce10061.ce",
+    "ce10063.ce",
+    "ce10074.ce",
+    "ce10080.ce",
+    "ce10084.ce",
+    "ce10116.ce",
+    "ce10118.ce",
+    "ce10121.ce",
+    "ce10128.ce",
+    "ce10129.ce",
+    "ce10130.ce",
+    "ce10133.ce",
+    "ce10135.ce",
+    "ce10136.ce",
+    "ce10137.ce",
+    "ce10139.ce",
+    "ce10150.ce",
+    "ce10153.ce",
+    "ce10154.ce",
+    "ce10162.ce",
+    "ce10165.ce",
+    "ce10166.ce",
+    "ce10167.ce",
+    "ce10172.ce",
+    "ce10177.ce",
+    "ce10178.ce",
+    "ce10179.ce",
+    "ce10190.ce",
+    "ce10204.ce",
+    "ce10206.ce",
+    "ce10216.ce",
+    "ce10220.ce",
+    "ce10235.ce",
+    "ce10237.ce",
+    "ce10242.ce",
+    "ce11001.ce",
+    "ce11035.ce",
+    "ce11036.ce",
+    "ce11047.ce",
+    "ce11049.ce",
+    "ce11059.ce",
+    "ce11067.ce",
+    "ce11076.ce",
+    "ce11078.ce",
+    "ce11097.ce",
+    "ce11099.ce",
+    "ce11135.ce",
+    "ce11149.ce",
+    "ce11189.ce",
+    "ce11193.ce",
+    "ce11206.ce",
+    "ce11218.ce",
+    "ce11228.ce",
+    "ce11230.ce",
+    "ce11246.ce",
+    "ce11249.ce",
+    "ce12001.ce",
+    "ce12005.ce",
+    "ce12026.ce",
+    "ce12033.ce",
+    "ce12038.ce",
+    "ce12045.ce",
+    "ce12053.ce",
+    "ce12054.ce",
+    "ce12059.ce",
+    "ce12062.ce",
+    "ce12063.ce",
+    "ce12064.ce",
+    "ce12066.ce",
+    "ce12067.ce",
+    "ce12073.ce",
+    "ce12074.ce",
+    "ce12075.ce",
+    "ce12076.ce",
+    "ce12086.ce",
+    "ce12088.ce",
+    "ce12089.ce",
+    "ce12095.ce",
+    "ce12098.ce",
+    "ce12103.ce",
+    "ce12106.ce",
+    "ce12108.ce",
+    "ce12112.ce",
+    "ce12114.ce",
+    "ce12117.ce",
+    "ce12228.ce",
+    "ce12244.ce",
+    "ce12245.ce",
+    "ce12246.ce",
+    "ce12247.ce",
+    "ce12251.ce",
+    "ce13006.ce",
+    "ce13009.ce",
+    "ce13032.ce",
+    "ce13038.ce",
+    "ce13043.ce",
+    "ce13046.ce",
+    "ce13070.ce",
+    "ce13078.ce",
+    "ce13088.ce",
+    "ce13096.ce",
+    "ce13107.ce",
+    "ce13121.ce",
+    "ce13132.ce",
+    "ce13140.ce",
+    "ce13149.ce",
+    "ce13199.ce",
+    "ce13203.ce",
+    "ce13205.ce",
+    "ce13207.ce",
+    "ce13216.ce",
+    "ce13233.ce",
+    "ce13238.ce",
+    "ce13240.ce",
+    "ce13246.ce",
+    "ce13248.ce",
+    "ce13251.ce",
+    "cecece.m1",
+    "ced33.dpd",
+    "ceer",
+    "ceiba",
+    "celestine.f5",
+    "celica.m7",
+    "cellexpress.cgm",
+    "cellular.csie",
+    "centaur.pcs.csie",
+    "centrex.cc",
+    "cep",
+    "cert",
+    "cf.tl",
+    "cf2.tl",
+    "cfd.mc",
+    "cfd06.me",
+    "cfe-fish.blog",
+    "cfrc",
+    "cge.blog",
+    "cggy.m1",
+    "cglabpc11.che",
+    "cglabpc12.che",
+    "cglabpc14.che",
+    "chaii.m5",
+    "chairmen.mc",
+    "chang01.fst",
+    "chat.pailab.csie",
+    "chc1.mc",
+    "chc3.mc",
+    "chc4.mc",
+    "chchch.m6",
+    "chcl.m2",
+    "che",
+    "cheetah.me",
+    "chem2019.ch",
+    "chemnews.ch",
+    "chemview.odb",
+    "chen.me",
+    "chench.mc",
+    "chends.mc",
+    "chengdu.m6",
+    "chenshuwan.f5",
+    "chenys.m6",
+    "chenyucheng.cc",
+    "cher2appa.f2",
+    "chest1.mc",
+    "chestnut.m6",
+    "chia-yun.blog",
+    "chia.hort",
+    "chiang03.fst",
+    "chiarung.blog",
+    "chickensto.m3",
+    "child.f2",
+    "chilin.lib",
+    "chilin.m1",
+    "chimera.f3",
+    "chin3.mc",
+    "ching.hort",
+    "chinlin.m8",
+    "chiochio.f8",
+    "chiou.mc",
+    "chironfish.m3",
+    "chnb.cc",
+    "chone.m5",
+    "chopin.ee",
+    "chou.mc",
+    "chou01.fst",
+    "chou05.fst",
+    "chou19.fst",
+    "chpky.m6",
+    "chps.cph",
+    "chras.m3",
+    "chuan.ee",
+    "chung-hp.hort",
+    "chung-jen-lu.me",
+    "chungli2.mc",
+    "church.im",
+    "ci14.lib",
+    "ci20.lib",
+    "ci59.lib",
+    "ci6.lib",
+    "ci61.lib",
+    "ci70.lib",
+    "ci77.lib",
+    "ciac.ord",
+    "ciaeae",
+    "ciaeae.bioagri",
+    "ciel",
+    "cindy.f2",
+    "cisco2.me",
+    "cisco3.me",
+    "cisco4.me",
+    "cisco5.me",
+    "cisco8.me",
+    "citd",
+    "civilboy.m1",
+    "ckck.m5",
+    "ckf.ee",
+    "cl1.learner.csie",
+    "cl2.learner.csie",
+    "cl7.learner.csie",
+    "clair.f2",
+    "clarity2.fltc",
+    "claser.hy",
+    "claude.m6",
+    "cld-taiwan.blog",
+    "cld.cloud",
+    "cld.lang",
+    "cld.liberal",
+    "cloud",
+    "cloud-college.ttrc.aca",
+    "cloud.csie",
+    "cloudpe-mcu.csie",
+    "cloudpe-sip.csie",
+    "cloudpe.csie",
+    "cloudream.m3",
+    "cls.lib",
+    "clubgallery",
+    "cluster.gl",
+    "cm",
+    "cmccs",
+    "cmcls216.mc",
+    "cmcls217.mc",
+    "cmcls218.mc",
+    "cmdd.csie",
+    "cmdm.csie",
+    "cmiacuc",
+    "cml0.csie",
+    "cml1.csie",
+    "cml1.ee",
+    "cml18.csie",
+    "cml2.csie",
+    "cml26.csie",
+    "cml4.csie",
+    "cml5.csie",
+    "cml8.ee",
+    "cmlab.csie",
+    "cmlab105.csie",
+    "cmlab110.csie",
+    "cmlab117.csie",
+    "cmlab122.csie",
+    "cmlab188.csie",
+    "cmldchp3.csie",
+    "cmldchp4.csie",
+    "cmldchp5.csie",
+    "cmlkvm.csie",
+    "cmlmm.csie",
+    "cmlnas7.csie",
+    "cmlprinter.csie",
+    "cmlsiggraph.csie",
+    "cms.cc",
+    "cms.lis",
+    "cnvintegrate.cgm",
+    "cobra.ee",
+    "cocco.gl",
+    "coda.oc",
+    "code.comm",
+    "coding.ee",
+    "coding2.ee",
+    "collections.arthistory",
+    "com.mc",
+    "comexchange",
+    "comm",
+    "common.lu.im",
+    "computer.che",
+    "connect.ctld",
+    "contest.cc",
+    "contigviews.bioagri",
+    "contigviews.csbb",
+    "coocoo.m8",
+    "cook03.as",
+    "cook11.as",
+    "cook14.as",
+    "cook15.as",
+    "cook16.as",
+    "cool",
+    "cool.math",
+    "copernicus.phys",
+    "coph",
+    "copy.ifs",
+    "core.harbor.toolmenlab.bime",
+    "corolla.ee",
+    "coshower.m7",
+    "cospa.phys",
+    "coss.blog",
+    "council.csie",
+    "course",
+    "course.lib",
+    "course.tl",
+    "course6rpp.aca",
+    "course8pz3.aca",
+    "coursemap.aca",
+    "covart.csie",
+    "cp.ce",
+    "cpanel.garc",
+    "cpanel.iiipo.ee",
+    "cpanel.iiipo.eecs",
+    "cpanel.ying.forex",
+    "cpcalendars.garc",
+    "cpcalendars.iiipo.ee",
+    "cpcalendars.iiipo.eecs",
+    "cpcalendars.ying.forex",
+    "cpcontacts.garc",
+    "cpcontacts.iiipo.ee",
+    "cpcontacts.iiipo.eecs",
+    "cpcontacts.ying.forex",
+    "cph",
+    "cps.csie",
+    "cqse",
+    "crc.mc",
+    "crelabpc14.che",
+    "cris7dev.lib",
+    "cris7test.lib",
+    "cropac176.lib",
+    "crs.cph",
+    "cruise.oc",
+    "crusader.m3",
+    "cs100.lib",
+    "csa1.mc",
+    "csa2.mc",
+    "csb01.csbb",
+    "csbb01.csbb",
+    "csbb02.csbb",
+    "csbb11.csbb",
+    "csbb25.csbb",
+    "csbbfs3.csbb",
+    "cscmax.m1",
+    "csg1.mc",
+    "csie",
+    "csiovdb.mc",
+    "csman.csie",
+    "cspis.digital",
+    "cswomen.csie",
+    "ctb.digital",
+    "ctd.oc",
+    "cte-edweb-2013.blog",
+    "ctest.math",
+    "ctf.nslab.csie",
+    "ctl.mc",
+    "cts.m3",
+    "cts.math",
+    "cty.g4",
+    "cue.m6",
+    "cumulus.as",
+    "cur205.aca",
+    "curri.aca",
+    "cut-02.me",
+    "cut-03.me",
+    "cut-08.me",
+    "cut-09.me",
+    "cuteass.m3",
+    "cv1.csie",
+    "cv2.csie",
+    "cveinfo.cc",
+    "cvictor.m1",
+    "cvictor.m8",
+    "cvlab.ee"
+  ],
+  "data": [
+    {
+      "subdomain": "0910123654.m7",
+      "type": "A",
+      "value": "140.112.250.15",
+      "last_seen": "2025-10-29T14:08:33.296000"
+    },
+    {
+      "subdomain": "0929630280.m7",
+      "type": "A",
+      "value": "140.112.250.17",
+      "last_seen": "2025-10-29T14:08:33.905000"
+    },
+    {
+      "subdomain": "101-1.m7",
+      "type": "A",
+      "value": "140.112.249.16",
+      "last_seen": "2025-10-29T14:08:33.033000"
+    },
+    {
+      "subdomain": "104.avcenter",
+      "type": "A",
+      "value": "140.112.185.64",
+      "last_seen": "2025-10-29T14:08:33.160000"
+    },
+    {
+      "subdomain": "104.hort",
+      "type": "A",
+      "value": "140.112.89.96",
+      "last_seen": "2025-10-29T14:08:33.285000"
+    },
+    {
+      "subdomain": "105-a2.avcenter",
+      "type": "A",
+      "value": "140.112.185.73",
+      "last_seen": "2025-10-29T14:08:33.219000"
+    },
+    {
+      "subdomain": "105-a4.avcenter",
+      "type": "A",
+      "value": "140.112.185.75",
+      "last_seen": "2025-10-29T14:08:33.677000"
+    },
+    {
+      "subdomain": "105-b4.avcenter",
+      "type": "A",
+      "value": "140.112.185.83",
+      "last_seen": "2025-10-29T14:08:33.393000"
+    },
+    {
+      "subdomain": "105-c2.avcenter",
+      "type": "A",
+      "value": "140.112.185.89",
+      "last_seen": "2025-10-29T14:08:33.113000"
+    },
+    {
+      "subdomain": "105-c3.avcenter",
+      "type": "A",
+      "value": "140.112.185.90",
+      "last_seen": "2025-10-29T14:08:33.874000"
+    },
+    {
+      "subdomain": "105-c4.avcenter",
+      "type": "A",
+      "value": "140.112.185.91",
+      "last_seen": "2025-10-29T14:08:34.201000"
+    },
+    {
+      "subdomain": "105-d1.avcenter",
+      "type": "A",
+      "value": "140.112.185.96",
+      "last_seen": "2025-10-29T14:08:33.790000"
+    },
+    {
+      "subdomain": "105-d2.avcenter",
+      "type": "A",
+      "value": "140.112.185.97",
+      "last_seen": "2025-10-29T14:08:33.871000"
+    },
+    {
+      "subdomain": "105-d6.avcenter",
+      "type": "A",
+      "value": "140.112.185.101",
+      "last_seen": "2025-10-29T14:08:34.976000"
+    },
+    {
+      "subdomain": "105-e1.avcenter",
+      "type": "A",
+      "value": "140.112.185.104",
+      "last_seen": "2025-10-29T14:08:33.877000"
+    },
+    {
+      "subdomain": "105-e4.avcenter",
+      "type": "A",
+      "value": "140.112.185.107",
+      "last_seen": "2025-10-29T14:08:33.232000"
+    },
+    {
+      "subdomain": "105-f2.avcenter",
+      "type": "A",
+      "value": "140.112.185.113",
+      "last_seen": "2025-10-29T14:08:33.197000"
+    },
+    {
+      "subdomain": "105-f3.avcenter",
+      "type": "A",
+      "value": "140.112.185.114",
+      "last_seen": "2025-10-29T14:08:35.171000"
+    },
+    {
+      "subdomain": "105-teacher.avcenter",
+      "type": "A",
+      "value": "140.112.185.71",
+      "last_seen": "2025-10-29T14:08:33.448000"
+    },
+    {
+      "subdomain": "106-1.avcenter",
+      "type": "A",
+      "value": "140.112.185.65",
+      "last_seen": "2025-10-29T14:08:33.945000"
+    },
+    {
+      "subdomain": "106-1.m7",
+      "type": "A",
+      "value": "140.112.249.35",
+      "last_seen": "2025-10-29T14:08:33.346000"
+    },
+    {
+      "subdomain": "106-2.avcenter",
+      "type": "A",
+      "value": "140.112.185.66",
+      "last_seen": "2025-10-29T14:08:33.961000"
+    },
+    {
+      "subdomain": "106-3.m7",
+      "type": "A",
+      "value": "140.112.249.38",
+      "last_seen": "2025-10-29T14:08:33.124000"
+    },
+    {
+      "subdomain": "108-2.dday.dschool",
+      "type": "A",
+      "value": "140.112.179.91",
+      "last_seen": "2025-10-29T14:08:32.965000"
+    },
+    {
+      "subdomain": "109-1.dday.dschool",
+      "type": "A",
+      "value": "140.112.179.91",
+      "last_seen": "2025-10-29T14:08:33.288000"
+    },
+    {
+      "subdomain": "109-2.dday.dschool",
+      "type": "A",
+      "value": "199.34.228.67",
+      "last_seen": "2025-10-29T14:08:33.242000"
+    },
+    {
+      "subdomain": "110-1.dday.dschool",
+      "type": "A",
+      "value": "199.34.228.71",
+      "last_seen": "2025-10-29T14:08:33.102000"
+    },
+    {
+      "subdomain": "116-1.m7",
+      "type": "A",
+      "value": "140.112.250.53",
+      "last_seen": "2025-10-29T14:08:33.736000"
+    },
+    {
+      "subdomain": "118-3.m7",
+      "type": "A",
+      "value": "140.112.250.62",
+      "last_seen": "2025-10-29T14:08:33.565000"
+    },
+    {
+      "subdomain": "195.lis",
+      "type": "A",
+      "value": "140.112.180.195",
+      "last_seen": "2025-10-29T14:08:33.954000"
+    },
+    {
+      "subdomain": "197.lis",
+      "type": "A",
+      "value": "140.112.180.197",
+      "last_seen": "2025-10-29T14:08:33.784000"
+    },
+    {
+      "subdomain": "1f-laser.aeh",
+      "type": "A",
+      "value": "140.112.143.206",
+      "last_seen": "2025-10-29T14:08:33.063000"
+    },
+    {
+      "subdomain": "201.avcenter",
+      "type": "A",
+      "value": "140.112.185.40",
+      "last_seen": "2025-10-29T14:08:34.478000"
+    },
+    {
+      "subdomain": "2010-edmedia.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:32.967000"
+    },
+    {
+      "subdomain": "2010-irish-drama-and-films.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.253000"
+    },
+    {
+      "subdomain": "2011-ihrl.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.535000"
+    },
+    {
+      "subdomain": "2012freshmanenglish.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.238000"
+    },
+    {
+      "subdomain": "2013sound.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.265000"
+    },
+    {
+      "subdomain": "2014awp-ntu-ot.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:34.698000"
+    },
+    {
+      "subdomain": "2015recordedmusic.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.102000"
+    },
+    {
+      "subdomain": "2015twmhistory.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.069000"
+    },
+    {
+      "subdomain": "2020hfa.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.171000"
+    },
+    {
+      "subdomain": "204-3.m7",
+      "type": "A",
+      "value": "140.112.249.51",
+      "last_seen": "2025-10-29T14:08:33.431000"
+    },
+    {
+      "subdomain": "204.avcenter",
+      "type": "A",
+      "value": "140.112.185.43",
+      "last_seen": "2025-10-29T14:08:33.826000"
+    },
+    {
+      "subdomain": "204.scc",
+      "type": "A",
+      "value": "140.112.61.55",
+      "last_seen": "2025-10-29T14:08:33.429000"
+    },
+    {
+      "subdomain": "207-2.m7",
+      "type": "A",
+      "value": "140.112.249.65",
+      "last_seen": "2025-10-29T14:08:33.429000"
+    },
+    {
+      "subdomain": "207-4.m7",
+      "type": "A",
+      "value": "140.112.249.63",
+      "last_seen": "2025-10-29T14:08:33.117000"
+    },
+    {
+      "subdomain": "209-4.m7",
+      "type": "A",
+      "value": "140.112.249.74",
+      "last_seen": "2025-10-29T14:08:33.290000"
+    },
+    {
+      "subdomain": "210-2.avcenter",
+      "type": "A",
+      "value": "140.112.185.52",
+      "last_seen": "2025-10-29T14:08:33.294000"
+    },
+    {
+      "subdomain": "212-1.avcenter",
+      "type": "A",
+      "value": "140.112.185.55",
+      "last_seen": "2025-10-29T14:08:34.261000"
+    },
+    {
+      "subdomain": "213-1.avcenter",
+      "type": "A",
+      "value": "140.112.185.57",
+      "last_seen": "2025-10-29T14:08:33.051000"
+    },
+    {
+      "subdomain": "213-4.m7",
+      "type": "A",
+      "value": "140.112.249.89",
+      "last_seen": "2025-10-29T14:08:33.335000"
+    },
+    {
+      "subdomain": "217-3.m7",
+      "type": "A",
+      "value": "140.112.250.87",
+      "last_seen": "2025-10-29T14:08:33.170000"
+    },
+    {
+      "subdomain": "217-4.m7",
+      "type": "A",
+      "value": "140.112.250.89",
+      "last_seen": "2025-10-29T14:08:33.510000"
+    },
+    {
+      "subdomain": "217ta.csie",
+      "type": "A",
+      "value": "140.112.30.29",
+      "last_seen": "2025-10-29T14:08:33.367000"
+    },
+    {
+      "subdomain": "217vmhost.csie",
+      "type": "A",
+      "value": "140.112.30.31",
+      "last_seen": "2025-10-29T14:08:33.335000"
+    },
+    {
+      "subdomain": "218-4.m7",
+      "type": "A",
+      "value": "140.112.250.94",
+      "last_seen": "2025-10-29T14:08:33.437000"
+    },
+    {
+      "subdomain": "219-3.m7",
+      "type": "A",
+      "value": "140.112.250.95",
+      "last_seen": "2025-10-29T14:08:34.337000"
+    },
+    {
+      "subdomain": "221-3.m7",
+      "type": "A",
+      "value": "140.112.249.105",
+      "last_seen": "2025-10-29T14:08:33.294000"
+    },
+    {
+      "subdomain": "230-1.m7",
+      "type": "A",
+      "value": "140.112.250.140",
+      "last_seen": "2025-10-29T14:08:33.347000"
+    },
+    {
+      "subdomain": "301-4.avcenter",
+      "type": "A",
+      "value": "140.112.185.118",
+      "last_seen": "2025-10-29T14:08:33.289000"
+    },
+    {
+      "subdomain": "302-5.avcenter",
+      "type": "A",
+      "value": "140.112.185.8",
+      "last_seen": "2025-10-29T14:08:33.099000"
+    },
+    {
+      "subdomain": "303user07.linguistics",
+      "type": "A",
+      "value": "140.112.147.149",
+      "last_seen": "2025-10-29T14:08:33.290000"
+    },
+    {
+      "subdomain": "304-1.avcenter",
+      "type": "A",
+      "value": "140.112.185.10",
+      "last_seen": "2025-10-29T14:08:33.174000"
+    },
+    {
+      "subdomain": "304-3.avcenter",
+      "type": "A",
+      "value": "140.112.185.12",
+      "last_seen": "2025-10-29T14:08:34.856000"
+    },
+    {
+      "subdomain": "304-4.avcenter",
+      "type": "A",
+      "value": "140.112.185.13",
+      "last_seen": "2025-10-29T14:08:33.202000"
+    },
+    {
+      "subdomain": "306-2.avcenter",
+      "type": "A",
+      "value": "140.112.185.17",
+      "last_seen": "2025-10-29T14:08:35.144000"
+    },
+    {
+      "subdomain": "308-2.m7",
+      "type": "A",
+      "value": "140.112.249.124",
+      "last_seen": "2025-10-29T14:08:33.300000"
+    },
+    {
+      "subdomain": "309-2.avcenter",
+      "type": "A",
+      "value": "140.112.185.25",
+      "last_seen": "2025-10-29T14:08:33.101000"
+    },
+    {
+      "subdomain": "309-2.m7",
+      "type": "A",
+      "value": "140.112.250.130",
+      "last_seen": "2025-10-29T14:08:33.295000"
+    },
+    {
+      "subdomain": "310-2.avcenter",
+      "type": "A",
+      "value": "140.112.185.27",
+      "last_seen": "2025-10-29T14:08:33.377000"
+    },
+    {
+      "subdomain": "312-2.avcenter",
+      "type": "A",
+      "value": "140.112.185.31",
+      "last_seen": "2025-10-29T14:08:33.258000"
+    },
+    {
+      "subdomain": "315-1.avcenter",
+      "type": "A",
+      "value": "140.112.185.36",
+      "last_seen": "2025-10-29T14:08:33.094000"
+    },
+    {
+      "subdomain": "316-4.m7",
+      "type": "A",
+      "value": "140.112.250.148",
+      "last_seen": "2025-10-29T14:08:35.110000"
+    },
+    {
+      "subdomain": "321-4.m7",
+      "type": "A",
+      "value": "140.112.250.168",
+      "last_seen": "2025-10-29T14:08:34.558000"
+    },
+    {
+      "subdomain": "322-2.m7",
+      "type": "A",
+      "value": "140.112.250.173",
+      "last_seen": "2025-10-29T14:08:33.124000"
+    },
+    {
+      "subdomain": "329-3.m7",
+      "type": "A",
+      "value": "140.112.250.199",
+      "last_seen": "2025-10-29T14:08:33.161000"
+    },
+    {
+      "subdomain": "338b.ee",
+      "type": "A",
+      "value": "140.112.17.123",
+      "last_seen": "2025-10-29T14:08:33.259000"
+    },
+    {
+      "subdomain": "3d.csie",
+      "type": "A",
+      "value": "140.112.29.117",
+      "last_seen": "2025-10-29T14:08:33.068000"
+    },
+    {
+      "subdomain": "402-2.m7",
+      "type": "A",
+      "value": "140.112.249.156",
+      "last_seen": "2025-10-29T14:08:33.021000"
+    },
+    {
+      "subdomain": "402-4.m7",
+      "type": "A",
+      "value": "140.112.249.157",
+      "last_seen": "2025-10-29T14:08:33.299000"
+    },
+    {
+      "subdomain": "402nas.csie",
+      "type": "A",
+      "value": "140.112.90.105",
+      "last_seen": "2025-10-29T14:08:33.403000"
+    },
+    {
+      "subdomain": "406-1.m7",
+      "type": "A",
+      "value": "140.112.249.171",
+      "last_seen": "2025-10-29T14:08:33.336000"
+    },
+    {
+      "subdomain": "407-2.phys",
+      "type": "A",
+      "value": "140.112.102.183",
+      "last_seen": "2025-10-29T14:08:33.972000"
+    },
+    {
+      "subdomain": "414-2.m7",
+      "type": "A",
+      "value": "140.112.249.204",
+      "last_seen": "2025-10-29T14:08:32.977000"
+    },
+    {
+      "subdomain": "415-1.m7",
+      "type": "A",
+      "value": "140.112.249.207",
+      "last_seen": "2025-10-29T14:08:34.217000"
+    },
+    {
+      "subdomain": "421-3.m7",
+      "type": "A",
+      "value": "140.112.249.233",
+      "last_seen": "2025-10-29T14:08:34.487000"
+    },
+    {
+      "subdomain": "430-2.m7",
+      "type": "A",
+      "value": "140.112.250.231",
+      "last_seen": "2025-10-29T14:08:33.358000"
+    },
+    {
+      "subdomain": "521-1.me",
+      "type": "A",
+      "value": "140.112.46.145",
+      "last_seen": "2025-10-29T14:08:32.910000"
+    },
+    {
+      "subdomain": "70th.ee",
+      "type": "A",
+      "value": "140.112.18.156",
+      "last_seen": "2025-10-29T14:08:32.924000"
+    },
+    {
+      "subdomain": "7788.m7",
+      "type": "A",
+      "value": "140.112.249.69",
+      "last_seen": "2025-10-29T14:08:33.327000"
+    },
+    {
+      "subdomain": "921fund.digital",
+      "type": "A",
+      "value": "140.112.145.70",
+      "last_seen": "2025-10-29T14:08:33.042000"
+    },
+    {
+      "subdomain": "98graduation.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.127000"
+    },
+    {
+      "subdomain": "99hphsu.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.055000"
+    },
+    {
+      "subdomain": "a-big-net.cph",
+      "type": "A",
+      "value": "140.112.117.151",
+      "last_seen": "2025-10-29T14:08:33.295000"
+    },
+    {
+      "subdomain": "a-pjae.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.037000"
+    },
+    {
+      "subdomain": "a13.m5",
+      "type": "A",
+      "value": "140.112.245.13",
+      "last_seen": "2025-10-29T14:08:33.303000"
+    },
+    {
+      "subdomain": "a149.m5",
+      "type": "A",
+      "value": "140.112.245.149",
+      "last_seen": "2025-10-29T14:08:33.188000"
+    },
+    {
+      "subdomain": "a150.m5",
+      "type": "A",
+      "value": "140.112.245.150",
+      "last_seen": "2025-10-29T14:08:33.025000"
+    },
+    {
+      "subdomain": "a16.m5",
+      "type": "A",
+      "value": "140.112.245.16",
+      "last_seen": "2025-10-29T14:08:33.899000"
+    },
+    {
+      "subdomain": "a18.m5",
+      "type": "A",
+      "value": "140.112.245.18",
+      "last_seen": "2025-10-29T14:08:33.081000"
+    },
+    {
+      "subdomain": "a2.m5",
+      "type": "A",
+      "value": "140.112.245.2",
+      "last_seen": "2025-10-29T14:08:33.438000"
+    },
+    {
+      "subdomain": "a218.m5",
+      "type": "A",
+      "value": "140.112.245.218",
+      "last_seen": "2025-10-29T14:08:33.599000"
+    },
+    {
+      "subdomain": "a233.m5",
+      "type": "A",
+      "value": "140.112.245.233",
+      "last_seen": "2025-10-29T14:08:34.767000"
+    },
+    {
+      "subdomain": "a238.m5",
+      "type": "A",
+      "value": "140.112.245.238",
+      "last_seen": "2025-10-29T14:08:33.486000"
+    },
+    {
+      "subdomain": "a24.m5",
+      "type": "A",
+      "value": "140.112.245.24",
+      "last_seen": "2025-10-29T14:08:35.867000"
+    },
+    {
+      "subdomain": "a249.m5",
+      "type": "A",
+      "value": "140.112.245.249",
+      "last_seen": "2025-10-29T14:08:33.095000"
+    },
+    {
+      "subdomain": "a250.m5",
+      "type": "A",
+      "value": "140.112.245.250",
+      "last_seen": "2025-10-29T14:08:33.338000"
+    },
+    {
+      "subdomain": "a29.m5",
+      "type": "A",
+      "value": "140.112.245.29",
+      "last_seen": "2025-10-29T14:08:32.966000"
+    },
+    {
+      "subdomain": "a31.m5",
+      "type": "A",
+      "value": "140.112.245.31",
+      "last_seen": "2025-10-29T14:08:33.961000"
+    },
+    {
+      "subdomain": "a32.m5",
+      "type": "A",
+      "value": "140.112.245.32",
+      "last_seen": "2025-10-29T14:08:33.485000"
+    },
+    {
+      "subdomain": "a33.m5",
+      "type": "A",
+      "value": "140.112.245.33",
+      "last_seen": "2025-10-29T14:08:33.449000"
+    },
+    {
+      "subdomain": "a36.m5",
+      "type": "A",
+      "value": "140.112.245.36",
+      "last_seen": "2025-10-29T14:08:33.301000"
+    },
+    {
+      "subdomain": "a43.m5",
+      "type": "A",
+      "value": "140.112.245.43",
+      "last_seen": "2025-10-29T14:08:33.204000"
+    },
+    {
+      "subdomain": "a44.m5",
+      "type": "A",
+      "value": "140.112.245.44",
+      "last_seen": "2025-10-29T14:08:33.397000"
+    },
+    {
+      "subdomain": "a46.m5",
+      "type": "A",
+      "value": "140.112.245.46",
+      "last_seen": "2025-10-29T14:08:33.657000"
+    },
+    {
+      "subdomain": "a48.m5",
+      "type": "A",
+      "value": "140.112.245.48",
+      "last_seen": "2025-10-29T14:08:32.968000"
+    },
+    {
+      "subdomain": "aaa.m6",
+      "type": "A",
+      "value": "140.112.247.197",
+      "last_seen": "2025-10-29T14:08:33.398000"
+    },
+    {
+      "subdomain": "aak.m8",
+      "type": "A",
+      "value": "140.112.251.35",
+      "last_seen": "2025-10-29T14:08:33.190000"
+    },
+    {
+      "subdomain": "aalan.m1",
+      "type": "A",
+      "value": "140.112.241.13",
+      "last_seen": "2025-10-29T14:08:33.963000"
+    },
+    {
+      "subdomain": "aaoffice",
+      "type": "A",
+      "value": "140.112.161.120",
+      "last_seen": "2025-10-29T14:08:35.451000"
+    },
+    {
+      "subdomain": "aaoffice-new.cloud",
+      "type": "A",
+      "value": "140.112.161.120",
+      "last_seen": "2025-10-29T14:08:33.242000"
+    },
+    {
+      "subdomain": "aaron.ee",
+      "type": "A",
+      "value": "140.112.20.33",
+      "last_seen": "2025-10-29T14:08:33.043000"
+    },
+    {
+      "subdomain": "abear.g4",
+      "type": "A",
+      "value": "140.112.232.47",
+      "last_seen": "2025-10-29T14:08:33.840000"
+    },
+    {
+      "subdomain": "abend.m7",
+      "type": "A",
+      "value": "140.112.249.39",
+      "last_seen": "2025-10-29T14:08:33.296000"
+    },
+    {
+      "subdomain": "abmri.mc",
+      "type": "A",
+      "value": "140.112.36.153",
+      "last_seen": "2025-10-29T14:08:33.550000"
+    },
+    {
+      "subdomain": "aborg.lib",
+      "type": "A",
+      "value": "140.112.113.32",
+      "last_seen": "2025-10-29T14:08:33.263000"
+    },
+    {
+      "subdomain": "abra-taiwan.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.691000"
+    },
+    {
+      "subdomain": "ac",
+      "type": "A",
+      "value": "140.112.2.140",
+      "last_seen": "2025-10-29T14:08:35.190000"
+    },
+    {
+      "subdomain": "aca",
+      "type": "A",
+      "value": "140.112.161.176",
+      "last_seen": "2025-10-30T01:06:44.533000"
+    },
+    {
+      "subdomain": "academic-judge.csie",
+      "type": "A",
+      "value": "140.112.90.104",
+      "last_seen": "2025-10-29T14:08:33.476000"
+    },
+    {
+      "subdomain": "acb.csie",
+      "type": "A",
+      "value": "140.112.28.205",
+      "last_seen": "2025-10-29T14:08:33.510000"
+    },
+    {
+      "subdomain": "acc.mc",
+      "type": "A",
+      "value": "140.112.131.179",
+      "last_seen": "2025-10-29T14:08:33.345000"
+    },
+    {
+      "subdomain": "acc.tl",
+      "type": "A",
+      "value": "140.112.208.3",
+      "last_seen": "2025-10-29T14:08:33.310000"
+    },
+    {
+      "subdomain": "acc101.acc",
+      "type": "A",
+      "value": "140.112.112.101",
+      "last_seen": "2025-10-29T14:08:33.291000"
+    },
+    {
+      "subdomain": "acc111.acc",
+      "type": "A",
+      "value": "140.112.112.111",
+      "last_seen": "2025-10-29T14:08:33.793000"
+    },
+    {
+      "subdomain": "acc117.acc",
+      "type": "A",
+      "value": "140.112.112.117",
+      "last_seen": "2025-10-29T14:08:34.781000"
+    },
+    {
+      "subdomain": "acc35.acc",
+      "type": "A",
+      "value": "140.112.112.35",
+      "last_seen": "2025-10-29T14:08:34.340000"
+    },
+    {
+      "subdomain": "acc36.acc",
+      "type": "A",
+      "value": "140.112.112.36",
+      "last_seen": "2025-10-29T14:08:33.205000"
+    },
+    {
+      "subdomain": "acc41.acc",
+      "type": "A",
+      "value": "140.112.112.41",
+      "last_seen": "2025-10-29T14:08:33.233000"
+    },
+    {
+      "subdomain": "acc42.acc",
+      "type": "A",
+      "value": "140.112.112.42",
+      "last_seen": "2025-10-29T14:08:33.326000"
+    },
+    {
+      "subdomain": "acc43.acc",
+      "type": "A",
+      "value": "140.112.112.43",
+      "last_seen": "2025-10-29T14:08:33.456000"
+    },
+    {
+      "subdomain": "acc52.acc",
+      "type": "A",
+      "value": "140.112.112.52",
+      "last_seen": "2025-10-29T14:08:33.242000"
+    },
+    {
+      "subdomain": "acc53.acc",
+      "type": "A",
+      "value": "140.112.112.53",
+      "last_seen": "2025-10-29T14:08:32.905000"
+    },
+    {
+      "subdomain": "acc55.acc",
+      "type": "A",
+      "value": "140.112.112.55",
+      "last_seen": "2025-10-29T14:08:33.132000"
+    },
+    {
+      "subdomain": "acc68.acc",
+      "type": "A",
+      "value": "140.112.112.68",
+      "last_seen": "2025-10-29T14:08:33.545000"
+    },
+    {
+      "subdomain": "acc81.acc",
+      "type": "A",
+      "value": "140.112.112.81",
+      "last_seen": "2025-10-29T14:08:33.358000"
+    },
+    {
+      "subdomain": "acc96.acc",
+      "type": "A",
+      "value": "140.112.112.96",
+      "last_seen": "2025-10-29T14:08:33.745000"
+    },
+    {
+      "subdomain": "acc99.acc",
+      "type": "A",
+      "value": "140.112.112.99",
+      "last_seen": "2025-10-29T14:08:33.384000"
+    },
+    {
+      "subdomain": "acceptance.ga",
+      "type": "A",
+      "value": "140.112.160.230",
+      "last_seen": "2025-10-29T14:08:33.230000"
+    },
+    {
+      "subdomain": "access.ee",
+      "type": "A",
+      "value": "140.112.20.132",
+      "last_seen": "2025-10-29T14:08:33.338000"
+    },
+    {
+      "subdomain": "accsrv2.ntuacc",
+      "type": "A",
+      "value": "140.112.163.106",
+      "last_seen": "2025-10-29T14:08:33.062000"
+    },
+    {
+      "subdomain": "acenter.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.560000"
+    },
+    {
+      "subdomain": "aching.m6",
+      "type": "A",
+      "value": "140.112.247.183",
+      "last_seen": "2025-10-29T14:08:34.064000"
+    },
+    {
+      "subdomain": "ackt.m6",
+      "type": "A",
+      "value": "140.112.248.36",
+      "last_seen": "2025-10-29T14:08:33.487000"
+    },
+    {
+      "subdomain": "acl.ee",
+      "type": "A",
+      "value": "140.112.20.12",
+      "last_seen": "2025-10-29T14:08:33.191000"
+    },
+    {
+      "subdomain": "aclab.as",
+      "type": "A",
+      "value": "140.112.66.44",
+      "last_seen": "2025-10-29T14:08:34.908000"
+    },
+    {
+      "subdomain": "acm.csie",
+      "type": "A",
+      "value": "140.112.28.59",
+      "last_seen": "2025-10-29T14:08:33.095000"
+    },
+    {
+      "subdomain": "acpang1.csie",
+      "type": "A",
+      "value": "140.112.28.14",
+      "last_seen": "2025-10-29T14:08:33.206000"
+    },
+    {
+      "subdomain": "acs.cc",
+      "type": "A",
+      "value": "140.112.36.86",
+      "last_seen": "2025-10-29T14:08:34.048000"
+    },
+    {
+      "subdomain": "act.lib",
+      "type": "A",
+      "value": "140.112.113.20",
+      "last_seen": "2025-10-29T14:08:33.556000"
+    },
+    {
+      "subdomain": "actairv.cloud",
+      "type": "A",
+      "value": "140.112.105.54",
+      "last_seen": "2025-10-29T14:08:32.974000"
+    },
+    {
+      "subdomain": "actairv.oc",
+      "type": "A",
+      "value": "140.112.105.54",
+      "last_seen": "2025-10-29T14:08:34.184000"
+    },
+    {
+      "subdomain": "action.darc",
+      "type": "A",
+      "value": "140.112.114.19",
+      "last_seen": "2025-10-29T14:08:36.760000"
+    },
+    {
+      "subdomain": "active.gl",
+      "type": "A",
+      "value": "140.112.36.124",
+      "last_seen": "2025-10-29T14:08:33.080000"
+    },
+    {
+      "subdomain": "activity.osa",
+      "type": "A",
+      "value": "140.112.36.113",
+      "last_seen": "2025-10-29T14:08:32.873000"
+    },
+    {
+      "subdomain": "ad-hoc.csie",
+      "type": "A",
+      "value": "140.112.28.221",
+      "last_seen": "2025-10-29T14:08:33.233000"
+    },
+    {
+      "subdomain": "ad6234.advisory.studa",
+      "type": "A",
+      "value": "140.112.162.34",
+      "last_seen": "2025-10-29T14:08:34.166000"
+    },
+    {
+      "subdomain": "ad6236.advisory.studa",
+      "type": "A",
+      "value": "140.112.162.36",
+      "last_seen": "2025-10-29T14:08:33.080000"
+    },
+    {
+      "subdomain": "ada01.csie",
+      "type": "A",
+      "value": "140.112.31.225",
+      "last_seen": "2025-10-29T14:08:33.533000"
+    },
+    {
+      "subdomain": "adam.im",
+      "type": "A",
+      "value": "140.112.107.1",
+      "last_seen": "2025-10-29T14:08:33.402000"
+    },
+    {
+      "subdomain": "adam.m5",
+      "type": "A",
+      "value": "140.112.246.83",
+      "last_seen": "2025-10-29T14:08:33.498000"
+    },
+    {
+      "subdomain": "adfs",
+      "type": "A",
+      "value": "140.112.9.213",
+      "last_seen": "2025-10-29T14:08:32.935000"
+    },
+    {
+      "subdomain": "adfs.oeth",
+      "type": "A",
+      "value": "140.112.105.192",
+      "last_seen": "2025-10-29T14:08:33.548000"
+    },
+    {
+      "subdomain": "adhoc.ee",
+      "type": "A",
+      "value": "140.112.42.109",
+      "last_seen": "2025-10-29T14:08:33.393000"
+    },
+    {
+      "subdomain": "admin4.cr.liberal",
+      "type": "A",
+      "value": "140.112.145.188",
+      "last_seen": "2025-10-29T14:08:33.694000"
+    },
+    {
+      "subdomain": "admin5.cr.liberal",
+      "type": "A",
+      "value": "140.112.145.189",
+      "last_seen": "2025-10-29T14:08:33.917000"
+    },
+    {
+      "subdomain": "admission.ee",
+      "type": "A",
+      "value": "140.112.18.247",
+      "last_seen": "2025-10-29T14:08:32.972000"
+    },
+    {
+      "subdomain": "admissions",
+      "type": "A",
+      "value": "45.76.99.190",
+      "last_seen": "2025-10-29T14:08:33.018000"
+    },
+    {
+      "subdomain": "adol",
+      "type": "A",
+      "value": "140.112.9.19",
+      "last_seen": "2025-10-29T14:08:33.241000"
+    },
+    {
+      "subdomain": "adolph.m8",
+      "type": "A",
+      "value": "140.112.253.240",
+      "last_seen": "2025-10-29T14:08:33.242000"
+    },
+    {
+      "subdomain": "adrenal.mc",
+      "type": "A",
+      "value": "140.112.127.182",
+      "last_seen": "2025-10-29T14:08:33.007000"
+    },
+    {
+      "subdomain": "advisory",
+      "type": "A",
+      "value": "140.112.105.148",
+      "last_seen": "2025-10-29T14:08:33.246000"
+    },
+    {
+      "subdomain": "advisory.osa",
+      "type": "A",
+      "value": "140.112.36.129",
+      "last_seen": "2025-10-29T14:08:33.417000"
+    },
+    {
+      "subdomain": "advisory2.osa",
+      "type": "A",
+      "value": "140.112.36.178",
+      "last_seen": "2025-10-29T14:08:33.550000"
+    },
+    {
+      "subdomain": "aecmr.oc",
+      "type": "A",
+      "value": "140.112.68.92",
+      "last_seen": "2025-10-29T14:08:33.223000"
+    },
+    {
+      "subdomain": "aegis.m4",
+      "type": "A",
+      "value": "140.112.214.124",
+      "last_seen": "2025-10-29T14:08:33.162000"
+    },
+    {
+      "subdomain": "aeh",
+      "type": "A",
+      "value": "140.112.143.201",
+      "last_seen": "2025-10-29T14:08:33.036000"
+    },
+    {
+      "subdomain": "aeolus.me",
+      "type": "A",
+      "value": "140.112.15.61",
+      "last_seen": "2025-10-29T14:08:33.917000"
+    },
+    {
+      "subdomain": "aerosol2.mc",
+      "type": "A",
+      "value": "140.112.137.22",
+      "last_seen": "2025-10-29T14:08:33.454000"
+    },
+    {
+      "subdomain": "aerosol4.mc",
+      "type": "A",
+      "value": "140.112.137.24",
+      "last_seen": "2025-10-29T14:08:33.096000"
+    },
+    {
+      "subdomain": "aerosol6.mc",
+      "type": "A",
+      "value": "140.112.137.26",
+      "last_seen": "2025-10-29T14:08:32.905000"
+    },
+    {
+      "subdomain": "aerosol7.mc",
+      "type": "A",
+      "value": "140.112.137.27",
+      "last_seen": "2025-10-29T14:08:34.573000"
+    },
+    {
+      "subdomain": "aerosol8.mc",
+      "type": "A",
+      "value": "140.112.137.28",
+      "last_seen": "2025-10-29T14:08:33.085000"
+    },
+    {
+      "subdomain": "affair7.mc",
+      "type": "A",
+      "value": "140.112.131.161",
+      "last_seen": "2025-10-29T14:08:34.893000"
+    },
+    {
+      "subdomain": "afm1.ntu-ccms",
+      "type": "A",
+      "value": "140.112.103.22",
+      "last_seen": "2025-10-29T14:08:33.064000"
+    },
+    {
+      "subdomain": "afronova.m2",
+      "type": "A",
+      "value": "140.112.212.21",
+      "last_seen": "2025-10-29T14:08:33.262000"
+    },
+    {
+      "subdomain": "agbi.agron",
+      "type": "A",
+      "value": "140.112.74.31",
+      "last_seen": "2025-10-29T14:08:33.430000"
+    },
+    {
+      "subdomain": "agecjnl.agec",
+      "type": "A",
+      "value": "140.112.183.78",
+      "last_seen": "2025-10-29T14:08:32.925000"
+    },
+    {
+      "subdomain": "agecntu.agec",
+      "type": "A",
+      "value": "140.112.86.100",
+      "last_seen": "2025-10-29T14:08:33.217000"
+    },
+    {
+      "subdomain": "agent.csie",
+      "type": "A",
+      "value": "140.112.91.122",
+      "last_seen": "2025-10-29T14:08:36.560000"
+    },
+    {
+      "subdomain": "agnest.g1",
+      "type": "A",
+      "value": "140.112.234.80",
+      "last_seen": "2025-10-29T14:08:33.515000"
+    },
+    {
+      "subdomain": "agou.m6",
+      "type": "A",
+      "value": "140.112.247.79",
+      "last_seen": "2025-10-29T14:08:33.360000"
+    },
+    {
+      "subdomain": "agron",
+      "type": "A",
+      "value": "140.112.2.140",
+      "last_seen": "2025-10-29T14:08:33"
+    },
+    {
+      "subdomain": "agserv-1.agron",
+      "type": "A",
+      "value": "140.112.74.4",
+      "last_seen": "2025-10-29T14:08:36.612000"
+    },
+    {
+      "subdomain": "agserv-2.agron",
+      "type": "A",
+      "value": "140.112.74.2",
+      "last_seen": "2025-10-29T14:08:35.188000"
+    },
+    {
+      "subdomain": "ah.mc",
+      "type": "A",
+      "value": "140.112.115.34",
+      "last_seen": "2025-10-29T14:08:33.036000"
+    },
+    {
+      "subdomain": "ahau.m1",
+      "type": "A",
+      "value": "140.112.240.10",
+      "last_seen": "2025-10-29T14:08:33.350000"
+    },
+    {
+      "subdomain": "ai",
+      "type": "A",
+      "value": "140.112.104.41",
+      "last_seen": "2025-10-29T14:08:33.339000"
+    },
+    {
+      "subdomain": "ai-crop.toolmen.bime",
+      "type": "A",
+      "value": "140.112.183.104",
+      "last_seen": "2025-10-29T14:08:34.271000"
+    },
+    {
+      "subdomain": "ai.robo",
+      "type": "A",
+      "value": "140.112.90.177",
+      "last_seen": "2025-10-29T14:08:32.972000"
+    },
+    {
+      "subdomain": "ai4bi.im",
+      "type": "A",
+      "value": "140.112.106.87",
+      "last_seen": "2025-10-29T14:08:33.042000"
+    },
+    {
+      "subdomain": "aicdm",
+      "type": "A",
+      "value": "140.112.95.4",
+      "last_seen": "2025-10-29T14:08:32.888000"
+    },
+    {
+      "subdomain": "aitomato.toolmen.bime",
+      "type": "A",
+      "value": "140.112.183.104",
+      "last_seen": "2025-10-29T14:08:33.174000"
+    },
+    {
+      "subdomain": "aitomatodoctor.yun.toolmenlab.bime",
+      "type": "A",
+      "value": "140.112.183.104",
+      "last_seen": "2025-10-29T14:08:33.082000"
+    },
+    {
+      "subdomain": "ajc.csie",
+      "type": "A",
+      "value": "140.112.91.193",
+      "last_seen": "2025-10-29T14:08:33.296000"
+    },
+    {
+      "subdomain": "akay.m6",
+      "type": "A",
+      "value": "140.112.247.70",
+      "last_seen": "2025-10-29T14:08:33.365000"
+    },
+    {
+      "subdomain": "akpcer.m8",
+      "type": "A",
+      "value": "140.112.253.128",
+      "last_seen": "2025-10-29T14:08:33.132000"
+    },
+    {
+      "subdomain": "akuz.m6",
+      "type": "A",
+      "value": "140.112.248.69",
+      "last_seen": "2025-10-29T14:08:33.963000"
+    },
+    {
+      "subdomain": "alan7.m6",
+      "type": "A",
+      "value": "140.112.248.107",
+      "last_seen": "2025-10-29T14:08:34.541000"
+    },
+    {
+      "subdomain": "alatin.g4",
+      "type": "A",
+      "value": "140.112.231.219",
+      "last_seen": "2025-10-29T14:08:33.195000"
+    },
+    {
+      "subdomain": "albedo.as",
+      "type": "A",
+      "value": "140.112.67.64",
+      "last_seen": "2025-10-29T14:08:33.307000"
+    },
+    {
+      "subdomain": "albertbug.m6",
+      "type": "A",
+      "value": "140.112.248.24",
+      "last_seen": "2025-10-29T14:08:34.546000"
+    },
+    {
+      "subdomain": "albireo.csie",
+      "type": "A",
+      "value": "140.112.31.170",
+      "last_seen": "2025-10-29T14:08:33.191000"
+    },
+    {
+      "subdomain": "alchemy.ch",
+      "type": "A",
+      "value": "140.112.55.134",
+      "last_seen": "2025-10-29T14:08:33.007000"
+    },
+    {
+      "subdomain": "alder-birds.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:32.916000"
+    },
+    {
+      "subdomain": "aleph.fll",
+      "type": "A",
+      "value": "140.112.141.195",
+      "last_seen": "2025-10-29T14:08:33.900000"
+    },
+    {
+      "subdomain": "alex-chang.hort",
+      "type": "A",
+      "value": "140.112.88.235",
+      "last_seen": "2025-10-29T14:08:33.901000"
+    },
+    {
+      "subdomain": "alextg.m4",
+      "type": "A",
+      "value": "140.112.214.57",
+      "last_seen": "2025-10-29T14:08:33.583000"
+    },
+    {
+      "subdomain": "alfred.m8",
+      "type": "A",
+      "value": "140.112.251.166",
+      "last_seen": "2025-10-29T14:08:33.626000"
+    },
+    {
+      "subdomain": "alfued.m1",
+      "type": "A",
+      "value": "140.112.241.1",
+      "last_seen": "2025-10-29T14:08:33.309000"
+    },
+    {
+      "subdomain": "algo.csie",
+      "type": "A",
+      "value": "140.112.28.206",
+      "last_seen": "2025-10-29T14:08:33.264000"
+    },
+    {
+      "subdomain": "algolab.csie",
+      "type": "A",
+      "value": "140.112.28.231",
+      "last_seen": "2025-10-29T14:08:34.316000"
+    },
+    {
+      "subdomain": "alice.f2",
+      "type": "A",
+      "value": "140.112.222.238",
+      "last_seen": "2025-10-29T14:08:33.066000"
+    },
+    {
+      "subdomain": "alice.f2",
+      "type": "A",
+      "value": "140.112.228.42",
+      "last_seen": "2025-10-29T14:08:33.065000"
+    },
+    {
+      "subdomain": "alien.f1",
+      "type": "A",
+      "value": "140.112.221.131",
+      "last_seen": "2025-10-29T14:08:33.391000"
+    },
+    {
+      "subdomain": "allnew4k.lib",
+      "type": "A",
+      "value": "140.112.115.21",
+      "last_seen": "2025-10-29T14:08:33.081000"
+    },
+    {
+      "subdomain": "aloe.hort",
+      "type": "A",
+      "value": "140.112.88.100",
+      "last_seen": "2025-10-29T14:08:33.551000"
+    },
+    {
+      "subdomain": "alpha226.oc",
+      "type": "A",
+      "value": "140.112.68.198",
+      "last_seen": "2025-10-29T14:08:35.281000"
+    },
+    {
+      "subdomain": "alubif.f2",
+      "type": "A",
+      "value": "140.112.228.147",
+      "last_seen": "2025-10-29T14:08:35.177000"
+    },
+    {
+      "subdomain": "alumni.acc",
+      "type": "A",
+      "value": "140.112.112.26",
+      "last_seen": "2025-10-29T14:08:33.204000"
+    },
+    {
+      "subdomain": "alumni.me",
+      "type": "A",
+      "value": "140.112.14.12",
+      "last_seen": "2025-10-29T14:08:33.446000"
+    },
+    {
+      "subdomain": "amare76.m7",
+      "type": "A",
+      "value": "140.112.250.75",
+      "last_seen": "2025-10-29T14:08:33.548000"
+    },
+    {
+      "subdomain": "ame306-3.bime",
+      "type": "A",
+      "value": "140.112.94.94",
+      "last_seen": "2025-10-29T14:08:32.977000"
+    },
+    {
+      "subdomain": "ame310-3.bime",
+      "type": "A",
+      "value": "140.112.94.95",
+      "last_seen": "2025-10-29T14:08:32.980000"
+    },
+    {
+      "subdomain": "amour.csie",
+      "type": "A",
+      "value": "140.112.31.89",
+      "last_seen": "2025-10-29T14:08:33.242000"
+    },
+    {
+      "subdomain": "ampere.im",
+      "type": "A",
+      "value": "140.112.106.9",
+      "last_seen": "2025-10-05T07:56:36.828000"
+    },
+    {
+      "subdomain": "amtg10.ee",
+      "type": "A",
+      "value": "140.112.48.119",
+      "last_seen": "2025-10-29T14:08:34.099000"
+    },
+    {
+      "subdomain": "amtg3.ee",
+      "type": "A",
+      "value": "140.112.48.112",
+      "last_seen": "2025-10-29T14:08:33.125000"
+    },
+    {
+      "subdomain": "amtg4.ee",
+      "type": "A",
+      "value": "140.112.48.113",
+      "last_seen": "2025-10-29T14:08:33.401000"
+    },
+    {
+      "subdomain": "amy.ee",
+      "type": "A",
+      "value": "140.112.18.20",
+      "last_seen": "2025-10-29T14:08:32.957000"
+    },
+    {
+      "subdomain": "amyivlab.csie",
+      "type": "A",
+      "value": "140.112.29.89",
+      "last_seen": "2025-10-29T14:08:33.068000"
+    },
+    {
+      "subdomain": "ana617.mc",
+      "type": "A",
+      "value": "140.112.122.189",
+      "last_seen": "2025-10-29T14:08:34.118000"
+    },
+    {
+      "subdomain": "anabhel.lecospa",
+      "type": "A",
+      "value": "140.112.95.186",
+      "last_seen": "2025-10-29T14:08:33.042000"
+    },
+    {
+      "subdomain": "analog16.ee",
+      "type": "A",
+      "value": "140.112.17.103",
+      "last_seen": "2025-10-29T14:08:33.133000"
+    },
+    {
+      "subdomain": "andersone.hort",
+      "type": "A",
+      "value": "140.112.89.125",
+      "last_seen": "2025-10-29T14:08:33.248000"
+    },
+    {
+      "subdomain": "andrew9013.m3",
+      "type": "A",
+      "value": "140.112.243.64",
+      "last_seen": "2025-10-29T14:08:34.612000"
+    },
+    {
+      "subdomain": "android.ee",
+      "type": "A",
+      "value": "140.112.33.250",
+      "last_seen": "2025-10-29T14:08:33.500000"
+    },
+    {
+      "subdomain": "ane1.mc",
+      "type": "A",
+      "value": "140.112.127.23",
+      "last_seen": "2025-10-29T14:08:32.967000"
+    },
+    {
+      "subdomain": "anes01.mc",
+      "type": "A",
+      "value": "140.112.126.103",
+      "last_seen": "2025-10-29T14:08:35.009000"
+    },
+    {
+      "subdomain": "anes02.mc",
+      "type": "A",
+      "value": "140.112.126.104",
+      "last_seen": "2025-10-29T14:08:33.890000"
+    },
+    {
+      "subdomain": "angel.ee",
+      "type": "A",
+      "value": "140.112.17.235",
+      "last_seen": "2025-10-29T14:08:34.106000"
+    },
+    {
+      "subdomain": "angela.mc",
+      "type": "A",
+      "value": "140.112.131.136",
+      "last_seen": "2025-10-29T14:08:33.190000"
+    },
+    {
+      "subdomain": "angelsam.m3",
+      "type": "A",
+      "value": "140.112.244.112",
+      "last_seen": "2025-10-29T14:08:33.378000"
+    },
+    {
+      "subdomain": "angle.m6",
+      "type": "A",
+      "value": "140.112.247.162",
+      "last_seen": "2025-10-29T14:08:34.640000"
+    },
+    {
+      "subdomain": "anions.m3",
+      "type": "A",
+      "value": "140.112.244.219",
+      "last_seen": "2025-10-29T14:08:33.137000"
+    },
+    {
+      "subdomain": "anita.ee",
+      "type": "A",
+      "value": "140.112.18.8",
+      "last_seen": "2025-10-29T14:08:33.494000"
+    },
+    {
+      "subdomain": "ann.cc",
+      "type": "A",
+      "value": "140.112.8.97",
+      "last_seen": "2025-10-29T14:08:32.905000"
+    },
+    {
+      "subdomain": "ann.ch",
+      "type": "A",
+      "value": "140.112.55.251",
+      "last_seen": "2025-10-29T14:08:33.293000"
+    },
+    {
+      "subdomain": "anniversary.acc",
+      "type": "A",
+      "value": "140.112.112.27",
+      "last_seen": "2025-10-29T14:08:33.347000"
+    },
+    {
+      "subdomain": "anthro",
+      "type": "A",
+      "value": "140.112.36.59",
+      "last_seen": "2025-10-29T14:08:33.082000"
+    },
+    {
+      "subdomain": "anvil.m5",
+      "type": "A",
+      "value": "140.112.245.130",
+      "last_seen": "2025-10-29T14:08:33.167000"
+    },
+    {
+      "subdomain": "ap183.cc",
+      "type": "A",
+      "value": "140.112.8.73",
+      "last_seen": "2025-10-29T14:08:33.068000"
+    },
+    {
+      "subdomain": "apc.aca",
+      "type": "A",
+      "value": "140.112.161.156",
+      "last_seen": "2025-10-29T14:08:33.740000"
+    },
+    {
+      "subdomain": "apec-flows",
+      "type": "A",
+      "value": "140.112.36.72",
+      "last_seen": "2025-10-29T14:08:33.234000"
+    },
+    {
+      "subdomain": "apec.m5",
+      "type": "A",
+      "value": "140.112.245.175",
+      "last_seen": "2025-10-29T14:08:33.606000"
+    },
+    {
+      "subdomain": "api.course",
+      "type": "A",
+      "value": "140.112.161.137",
+      "last_seen": "2025-10-29T14:08:33.036000"
+    },
+    {
+      "subdomain": "api.lib",
+      "type": "A",
+      "value": "140.112.114.60",
+      "last_seen": "2025-10-29T14:08:32.958000"
+    },
+    {
+      "subdomain": "api.linguistics",
+      "type": "A",
+      "value": "140.112.80.81",
+      "last_seen": "2025-10-29T14:08:33.111000"
+    },
+    {
+      "subdomain": "api.odb",
+      "type": "A",
+      "value": "140.112.65.37",
+      "last_seen": "2025-10-29T14:08:33.127000"
+    },
+    {
+      "subdomain": "api2.lib",
+      "type": "A",
+      "value": "140.112.114.63",
+      "last_seen": "2025-10-29T14:08:33.310000"
+    },
+    {
+      "subdomain": "apigate.lib",
+      "type": "A",
+      "value": "140.112.115.33",
+      "last_seen": "2025-10-29T14:08:33.242000"
+    },
+    {
+      "subdomain": "apjae",
+      "type": "A",
+      "value": "103.227.176.27",
+      "last_seen": "2025-10-29T14:08:34.091000"
+    },
+    {
+      "subdomain": "aple.m3",
+      "type": "A",
+      "value": "140.112.244.202",
+      "last_seen": "2025-10-29T14:08:33.569000"
+    },
+    {
+      "subdomain": "apnea.iagents.csie",
+      "type": "A",
+      "value": "140.112.30.223",
+      "last_seen": "2025-10-29T14:08:33.275000"
+    },
+    {
+      "subdomain": "apocalypse.m3",
+      "type": "A",
+      "value": "140.112.243.31",
+      "last_seen": "2025-10-29T14:08:33.227000"
+    },
+    {
+      "subdomain": "app.bebi",
+      "type": "A",
+      "value": "140.112.48.217",
+      "last_seen": "2025-10-29T14:08:33.061000"
+    },
+    {
+      "subdomain": "app.oc",
+      "type": "A",
+      "value": "140.112.68.211",
+      "last_seen": "2025-10-29T14:08:33.763000"
+    },
+    {
+      "subdomain": "app.sand.lu.im",
+      "type": "A",
+      "value": "140.112.106.148",
+      "last_seen": "2025-10-29T14:08:33.062000"
+    },
+    {
+      "subdomain": "app01.odb",
+      "type": "A",
+      "value": "140.112.65.31",
+      "last_seen": "2025-10-29T14:08:34.266000"
+    },
+    {
+      "subdomain": "app05.odb",
+      "type": "A",
+      "value": "140.112.65.35",
+      "last_seen": "2025-10-29T14:08:33.042000"
+    },
+    {
+      "subdomain": "appassionato.math",
+      "type": "A",
+      "value": "140.112.51.221",
+      "last_seen": "2025-10-29T14:08:34.333000"
+    },
+    {
+      "subdomain": "applygmba.management",
+      "type": "A",
+      "value": "140.112.36.234",
+      "last_seen": "2025-10-29T14:08:33.021000"
+    },
+    {
+      "subdomain": "aprdc",
+      "type": "A",
+      "value": "140.112.166.10",
+      "last_seen": "2025-10-29T14:08:33.306000"
+    },
+    {
+      "subdomain": "apricot.csie",
+      "type": "A",
+      "value": "140.112.91.128",
+      "last_seen": "2025-10-29T14:08:33.830000"
+    },
+    {
+      "subdomain": "aprumh2024.wcdr",
+      "type": "A",
+      "value": "114.34.35.247",
+      "last_seen": "2025-10-29T14:08:33.456000"
+    },
+    {
+      "subdomain": "aptsa.cloud",
+      "type": "A",
+      "value": "140.112.105.71",
+      "last_seen": "2025-10-29T14:08:33.294000"
+    },
+    {
+      "subdomain": "arbor.ee",
+      "type": "A",
+      "value": "140.112.170.163",
+      "last_seen": "2025-10-29T14:08:33.405000"
+    },
+    {
+      "subdomain": "arc-gmst-ins.eng",
+      "type": "A",
+      "value": "97.74.185.233",
+      "last_seen": "2025-10-29T14:08:33.267000"
+    },
+    {
+      "subdomain": "archer.ee",
+      "type": "A",
+      "value": "140.112.42.47",
+      "last_seen": "2025-10-29T14:08:34.245000"
+    },
+    {
+      "subdomain": "archi1.ee",
+      "type": "A",
+      "value": "140.112.187.115",
+      "last_seen": "2025-10-29T14:08:34.163000"
+    },
+    {
+      "subdomain": "archi5.ee",
+      "type": "A",
+      "value": "140.112.17.211",
+      "last_seen": "2025-10-29T14:08:33.587000"
+    },
+    {
+      "subdomain": "archi6.ee",
+      "type": "A",
+      "value": "140.112.17.212",
+      "last_seen": "2025-10-29T14:08:33.411000"
+    },
+    {
+      "subdomain": "archi7.ee",
+      "type": "A",
+      "value": "140.112.17.213",
+      "last_seen": "2025-10-29T14:08:33.362000"
+    },
+    {
+      "subdomain": "archiang.m6",
+      "type": "A",
+      "value": "140.112.248.161",
+      "last_seen": "2025-10-29T14:08:34.430000"
+    },
+    {
+      "subdomain": "archimedes.csie",
+      "type": "A",
+      "value": "140.112.30.229",
+      "last_seen": "2025-10-29T14:08:33.538000"
+    },
+    {
+      "subdomain": "archive.bse",
+      "type": "A",
+      "value": "60.249.109.44",
+      "last_seen": "2025-10-29T14:08:32.885000"
+    },
+    {
+      "subdomain": "archmage.ee",
+      "type": "A",
+      "value": "140.112.42.131",
+      "last_seen": "2025-10-29T14:08:32.975000"
+    },
+    {
+      "subdomain": "ares.csie",
+      "type": "A",
+      "value": "140.112.90.185",
+      "last_seen": "2025-10-29T14:08:33.401000"
+    },
+    {
+      "subdomain": "argasleep.m4",
+      "type": "A",
+      "value": "140.112.214.65",
+      "last_seen": "2025-10-29T14:08:33.158000"
+    },
+    {
+      "subdomain": "argonlab.gl",
+      "type": "A",
+      "value": "140.112.36.124",
+      "last_seen": "2025-10-29T14:08:33.241000"
+    },
+    {
+      "subdomain": "arienoe.f2",
+      "type": "A",
+      "value": "140.112.228.75",
+      "last_seen": "2025-10-29T14:08:35.197000"
+    },
+    {
+      "subdomain": "aries.csie",
+      "type": "A",
+      "value": "140.112.28.103",
+      "last_seen": "2025-10-29T14:08:32.905000"
+    },
+    {
+      "subdomain": "artemis.csie",
+      "type": "A",
+      "value": "140.112.90.186",
+      "last_seen": "2025-10-29T14:08:33.130000"
+    },
+    {
+      "subdomain": "artemis.me",
+      "type": "A",
+      "value": "140.112.16.43",
+      "last_seen": "2025-10-29T14:08:33.546000"
+    },
+    {
+      "subdomain": "artfest",
+      "type": "A",
+      "value": "140.112.202.132",
+      "last_seen": "2025-10-29T14:08:33.528000"
+    },
+    {
+      "subdomain": "arts",
+      "type": "A",
+      "value": "210.242.73.220",
+      "last_seen": "2025-10-29T14:08:33.969000"
+    },
+    {
+      "subdomain": "asa.m5",
+      "type": "A",
+      "value": "140.112.245.173",
+      "last_seen": "2025-10-29T14:08:33.578000"
+    },
+    {
+      "subdomain": "ascii.mc",
+      "type": "A",
+      "value": "140.112.121.251",
+      "last_seen": "2025-10-29T14:08:33.206000"
+    },
+    {
+      "subdomain": "ashan.gl",
+      "type": "A",
+      "value": "140.112.36.124",
+      "last_seen": "2025-10-29T14:08:33.368000"
+    },
+    {
+      "subdomain": "asiannetwork4jpstudies.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.082000"
+    },
+    {
+      "subdomain": "asimo.m8",
+      "type": "A",
+      "value": "140.112.251.213",
+      "last_seen": "2025-10-29T14:08:33.334000"
+    },
+    {
+      "subdomain": "asj.as",
+      "type": "A",
+      "value": "140.112.66.210",
+      "last_seen": "2025-10-29T14:08:33.142000"
+    },
+    {
+      "subdomain": "ask.hss",
+      "type": "A",
+      "value": "140.112.201.172",
+      "last_seen": "2025-10-29T14:08:33.420000"
+    },
+    {
+      "subdomain": "asoc52.cc",
+      "type": "A",
+      "value": "163.28.16.52",
+      "last_seen": "2025-10-29T14:08:33.081000"
+    },
+    {
+      "subdomain": "aspire.gl",
+      "type": "A",
+      "value": "140.112.56.117",
+      "last_seen": "2025-10-29T14:08:33.149000"
+    },
+    {
+      "subdomain": "asrlab.me",
+      "type": "A",
+      "value": "199.34.228.77",
+      "last_seen": "2025-10-29T14:08:33.492000"
+    },
+    {
+      "subdomain": "assis2.music",
+      "type": "A",
+      "value": "140.112.147.216",
+      "last_seen": "2025-10-29T14:08:34.253000"
+    },
+    {
+      "subdomain": "astep.ee",
+      "type": "A",
+      "value": "140.112.21.49",
+      "last_seen": "2025-10-29T14:08:33.202000"
+    },
+    {
+      "subdomain": "asteroid.csie",
+      "type": "A",
+      "value": "140.112.28.173",
+      "last_seen": "2025-10-29T14:08:33.104000"
+    },
+    {
+      "subdomain": "atalab15.csie",
+      "type": "A",
+      "value": "140.112.28.159",
+      "last_seen": "2025-10-29T14:08:33.920000"
+    },
+    {
+      "subdomain": "atalab2.csie",
+      "type": "A",
+      "value": "140.112.28.146",
+      "last_seen": "2025-10-29T14:08:33.067000"
+    },
+    {
+      "subdomain": "atb.bse",
+      "type": "A",
+      "value": "140.112.76.152",
+      "last_seen": "2025-10-29T14:08:34.196000"
+    },
+    {
+      "subdomain": "atchem.as",
+      "type": "A",
+      "value": "140.112.67.226",
+      "last_seen": "2025-10-29T14:08:33.189000"
+    },
+    {
+      "subdomain": "atgs",
+      "type": "A",
+      "value": "216.239.32.21",
+      "last_seen": "2025-10-29T14:08:33.062000"
+    },
+    {
+      "subdomain": "atgs",
+      "type": "A",
+      "value": "216.239.34.21",
+      "last_seen": "2025-10-29T14:08:33.062000"
+    },
+    {
+      "subdomain": "atgs",
+      "type": "A",
+      "value": "216.239.36.21",
+      "last_seen": "2025-10-29T14:08:33.062000"
+    },
+    {
+      "subdomain": "atgs",
+      "type": "A",
+      "value": "216.239.38.21",
+      "last_seen": "2025-10-29T14:08:33.062000"
+    },
+    {
+      "subdomain": "athena.ee",
+      "type": "A",
+      "value": "140.112.171.140",
+      "last_seen": "2025-10-29T14:08:33.066000"
+    },
+    {
+      "subdomain": "athens.m5",
+      "type": "A",
+      "value": "140.112.246.113",
+      "last_seen": "2025-10-29T14:08:33.560000"
+    },
+    {
+      "subdomain": "atl.m1",
+      "type": "A",
+      "value": "140.112.240.146",
+      "last_seen": "2025-10-29T14:08:33.095000"
+    },
+    {
+      "subdomain": "atlantic.m5",
+      "type": "A",
+      "value": "140.112.246.123",
+      "last_seen": "2025-10-29T14:08:33.013000"
+    },
+    {
+      "subdomain": "atlantic.m5",
+      "type": "A",
+      "value": "140.112.246.139",
+      "last_seen": "2025-10-29T14:08:33.013000"
+    },
+    {
+      "subdomain": "atlas.m6",
+      "type": "A",
+      "value": "140.112.247.87",
+      "last_seen": "2025-10-29T14:08:35.214000"
+    },
+    {
+      "subdomain": "atmos4.as",
+      "type": "A",
+      "value": "140.112.67.104",
+      "last_seen": "2025-10-29T14:08:34.163000"
+    },
+    {
+      "subdomain": "atmosfire.as",
+      "type": "A",
+      "value": "140.112.66.9",
+      "last_seen": "2025-10-29T14:08:33.002000"
+    },
+    {
+      "subdomain": "atoo.m6",
+      "type": "A",
+      "value": "140.112.248.166",
+      "last_seen": "2025-10-29T14:08:33.318000"
+    },
+    {
+      "subdomain": "atva.im",
+      "type": "A",
+      "value": "140.112.106.46",
+      "last_seen": "2025-10-29T14:08:34.926000"
+    },
+    {
+      "subdomain": "auden.m6",
+      "type": "A",
+      "value": "140.112.247.14",
+      "last_seen": "2025-10-29T14:08:33.213000"
+    },
+    {
+      "subdomain": "austin.csie",
+      "type": "A",
+      "value": "140.112.90.169",
+      "last_seen": "2025-10-29T14:08:33.233000"
+    },
+    {
+      "subdomain": "austintodo.csie",
+      "type": "A",
+      "value": "140.112.31.151",
+      "last_seen": "2025-10-29T14:08:33.052000"
+    },
+    {
+      "subdomain": "auth.csie",
+      "type": "A",
+      "value": "140.112.30.124",
+      "last_seen": "2025-10-29T14:08:33.705000"
+    },
+    {
+      "subdomain": "autobind.mc",
+      "type": "A",
+      "value": "140.112.140.113",
+      "last_seen": "2025-10-29T14:08:33.321000"
+    },
+    {
+      "subdomain": "autodiscover.iam",
+      "type": "A",
+      "value": "140.112.38.246",
+      "last_seen": "2025-10-29T14:08:34.955000"
+    },
+    {
+      "subdomain": "autodiscover.iiipo.ee",
+      "type": "A",
+      "value": "66.147.244.230",
+      "last_seen": "2025-10-29T14:08:33.189000"
+    },
+    {
+      "subdomain": "autodiscover.iiipo.eecs",
+      "type": "A",
+      "value": "66.147.244.230",
+      "last_seen": "2025-10-29T14:08:32.914000"
+    },
+    {
+      "subdomain": "autodiscover.mail.iam",
+      "type": "A",
+      "value": "140.112.38.246",
+      "last_seen": "2025-10-29T14:08:32.980000"
+    },
+    {
+      "subdomain": "av.m5",
+      "type": "A",
+      "value": "140.112.245.76",
+      "last_seen": "2025-10-29T14:08:33.454000"
+    },
+    {
+      "subdomain": "aven.gl",
+      "type": "A",
+      "value": "140.112.56.250",
+      "last_seen": "2025-10-29T14:08:33.206000"
+    },
+    {
+      "subdomain": "awardquery.ga",
+      "type": "A",
+      "value": "140.112.160.230",
+      "last_seen": "2025-10-29T14:08:33.984000"
+    },
+    {
+      "subdomain": "awhe.m6",
+      "type": "A",
+      "value": "140.112.248.17",
+      "last_seen": "2025-10-29T14:08:33.392000"
+    },
+    {
+      "subdomain": "ayling.cc",
+      "type": "A",
+      "value": "140.112.3.139",
+      "last_seen": "2025-10-29T14:08:33.266000"
+    },
+    {
+      "subdomain": "aza.med",
+      "type": "A",
+      "value": "140.112.131.223",
+      "last_seen": "2025-10-29T14:08:33.715000"
+    },
+    {
+      "subdomain": "b02102105.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:32.965000"
+    },
+    {
+      "subdomain": "b02705020.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.450000"
+    },
+    {
+      "subdomain": "b18.m5",
+      "type": "A",
+      "value": "140.112.246.18",
+      "last_seen": "2025-10-29T14:08:33.148000"
+    },
+    {
+      "subdomain": "b198.m5",
+      "type": "A",
+      "value": "140.112.246.198",
+      "last_seen": "2025-10-29T14:08:33.982000"
+    },
+    {
+      "subdomain": "b215.m5",
+      "type": "A",
+      "value": "140.112.246.215",
+      "last_seen": "2025-10-29T14:08:33.061000"
+    },
+    {
+      "subdomain": "b224.iam",
+      "type": "A",
+      "value": "140.112.39.224",
+      "last_seen": "2025-10-29T14:08:33.545000"
+    },
+    {
+      "subdomain": "b233.m5",
+      "type": "A",
+      "value": "140.112.246.233",
+      "last_seen": "2025-10-29T14:08:33.343000"
+    },
+    {
+      "subdomain": "b2359028.m1",
+      "type": "A",
+      "value": "140.112.241.241",
+      "last_seen": "2025-10-29T14:08:33.211000"
+    },
+    {
+      "subdomain": "b26.m5",
+      "type": "A",
+      "value": "140.112.246.26",
+      "last_seen": "2025-10-29T14:08:33.219000"
+    },
+    {
+      "subdomain": "b3.anthro",
+      "type": "A",
+      "value": "140.112.144.1",
+      "last_seen": "2025-10-29T14:08:33.013000"
+    },
+    {
+      "subdomain": "b4.anthro",
+      "type": "A",
+      "value": "140.112.144.8",
+      "last_seen": "2025-10-29T14:08:33.384000"
+    },
+    {
+      "subdomain": "b4.m5",
+      "type": "A",
+      "value": "140.112.246.4",
+      "last_seen": "2025-10-29T14:08:33.556000"
+    },
+    {
+      "subdomain": "b405.bime",
+      "type": "A",
+      "value": "140.112.94.109",
+      "last_seen": "2025-10-29T14:08:33.951000"
+    },
+    {
+      "subdomain": "b42.m5",
+      "type": "A",
+      "value": "140.112.246.42",
+      "last_seen": "2025-10-29T14:08:34.500000"
+    },
+    {
+      "subdomain": "b46.m5",
+      "type": "A",
+      "value": "140.112.246.46",
+      "last_seen": "2025-10-29T14:08:33.438000"
+    },
+    {
+      "subdomain": "b48.m5",
+      "type": "A",
+      "value": "140.112.246.48",
+      "last_seen": "2025-10-29T14:08:33.543000"
+    },
+    {
+      "subdomain": "b75.me",
+      "type": "A",
+      "value": "140.112.14.154",
+      "last_seen": "2025-10-29T14:08:33.194000"
+    },
+    {
+      "subdomain": "b9.anthro",
+      "type": "A",
+      "value": "140.112.144.5",
+      "last_seen": "2025-10-29T14:08:33.548000"
+    },
+    {
+      "subdomain": "b93504068.m7",
+      "type": "A",
+      "value": "140.112.250.19",
+      "last_seen": "2025-10-29T14:08:33.713000"
+    },
+    {
+      "subdomain": "b93901134.m7",
+      "type": "A",
+      "value": "140.112.250.237",
+      "last_seen": "2025-10-29T14:08:33.743000"
+    },
+    {
+      "subdomain": "b94612035.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.065000"
+    },
+    {
+      "subdomain": "b96109027.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.042000"
+    },
+    {
+      "subdomain": "b97203005.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.067000"
+    },
+    {
+      "subdomain": "b99109031.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.065000"
+    },
+    {
+      "subdomain": "ba32.ba",
+      "type": "A",
+      "value": "140.112.110.32",
+      "last_seen": "2025-10-29T14:08:33.537000"
+    },
+    {
+      "subdomain": "ba43.ba",
+      "type": "A",
+      "value": "140.112.110.43",
+      "last_seen": "2025-10-29T14:08:34.618000"
+    },
+    {
+      "subdomain": "ba48.ba",
+      "type": "A",
+      "value": "140.112.110.48",
+      "last_seen": "2025-10-29T14:08:33.042000"
+    },
+    {
+      "subdomain": "ba61.ba",
+      "type": "A",
+      "value": "140.112.110.61",
+      "last_seen": "2025-10-29T14:08:33.251000"
+    },
+    {
+      "subdomain": "ba68.ba",
+      "type": "A",
+      "value": "140.112.110.68",
+      "last_seen": "2025-10-29T14:08:33.269000"
+    },
+    {
+      "subdomain": "ba69.ba",
+      "type": "A",
+      "value": "140.112.110.69",
+      "last_seen": "2025-10-29T14:08:33.207000"
+    },
+    {
+      "subdomain": "ba77.ba",
+      "type": "A",
+      "value": "140.112.110.77",
+      "last_seen": "2025-10-29T14:08:33.391000"
+    },
+    {
+      "subdomain": "babyntw.g4",
+      "type": "A",
+      "value": "140.112.231.97",
+      "last_seen": "2025-10-29T14:08:33.999000"
+    },
+    {
+      "subdomain": "bach.ee",
+      "type": "A",
+      "value": "140.112.41.121",
+      "last_seen": "2025-10-29T14:08:32.902000"
+    },
+    {
+      "subdomain": "backup.hort",
+      "type": "A",
+      "value": "140.112.89.41",
+      "last_seen": "2025-10-29T14:08:33.121000"
+    },
+    {
+      "subdomain": "backupnas.ee",
+      "type": "A",
+      "value": "140.112.18.106",
+      "last_seen": "2025-10-29T14:08:33.377000"
+    },
+    {
+      "subdomain": "baka.m7",
+      "type": "A",
+      "value": "140.112.249.99",
+      "last_seen": "2025-10-29T14:08:33.190000"
+    },
+    {
+      "subdomain": "bakemilk.m3",
+      "type": "A",
+      "value": "140.112.244.185",
+      "last_seen": "2025-10-29T14:08:33.491000"
+    },
+    {
+      "subdomain": "bamboo.ee",
+      "type": "A",
+      "value": "140.112.20.35",
+      "last_seen": "2025-10-29T14:08:34.008000"
+    },
+    {
+      "subdomain": "bamboogirl.f2",
+      "type": "A",
+      "value": "140.112.228.26",
+      "last_seen": "2025-10-29T14:08:33.477000"
+    },
+    {
+      "subdomain": "bananaoook.m3",
+      "type": "A",
+      "value": "140.112.243.158",
+      "last_seen": "2025-10-29T14:08:33.174000"
+    },
+    {
+      "subdomain": "bapc16.ba",
+      "type": "A",
+      "value": "140.112.110.226",
+      "last_seen": "2025-10-29T14:08:33.400000"
+    },
+    {
+      "subdomain": "bapc18.ba",
+      "type": "A",
+      "value": "140.112.110.228",
+      "last_seen": "2025-10-29T14:08:33.552000"
+    },
+    {
+      "subdomain": "bapc6.ba",
+      "type": "A",
+      "value": "140.112.110.216",
+      "last_seen": "2025-10-29T14:08:33.022000"
+    },
+    {
+      "subdomain": "barca.m3",
+      "type": "A",
+      "value": "140.112.243.3",
+      "last_seen": "2025-10-29T14:08:33.292000"
+    },
+    {
+      "subdomain": "barcelona.math",
+      "type": "A",
+      "value": "140.112.51.207",
+      "last_seen": "2025-10-29T14:08:33.678000"
+    },
+    {
+      "subdomain": "bargio.m8",
+      "type": "A",
+      "value": "140.112.251.29",
+      "last_seen": "2025-10-29T14:08:33.054000"
+    },
+    {
+      "subdomain": "barium.m5",
+      "type": "A",
+      "value": "140.112.245.58",
+      "last_seen": "2025-10-29T14:08:33.151000"
+    },
+    {
+      "subdomain": "barley.csie",
+      "type": "A",
+      "value": "140.112.91.133",
+      "last_seen": "2025-10-29T14:08:33.022000"
+    },
+    {
+      "subdomain": "basketman.m6",
+      "type": "A",
+      "value": "140.112.248.205",
+      "last_seen": "2025-10-29T14:08:33.920000"
+    },
+    {
+      "subdomain": "bblab.bime",
+      "type": "A",
+      "value": "140.112.183.225",
+      "last_seen": "2025-10-29T14:08:32.997000"
+    },
+    {
+      "subdomain": "bblabcloud.bime",
+      "type": "A",
+      "value": "140.112.94.123",
+      "last_seen": "2025-10-29T14:08:33.096000"
+    },
+    {
+      "subdomain": "bbs.agec",
+      "type": "A",
+      "value": "140.112.86.201",
+      "last_seen": "2025-10-29T14:08:33.275000"
+    },
+    {
+      "subdomain": "bci.bime",
+      "type": "A",
+      "value": "140.112.94.52",
+      "last_seen": "2025-10-29T14:08:32.997000"
+    },
+    {
+      "subdomain": "bdap.cc",
+      "type": "A",
+      "value": "163.28.16.201",
+      "last_seen": "2025-10-29T14:08:33.095000"
+    },
+    {
+      "subdomain": "bdsrc",
+      "type": "A",
+      "value": "85.187.128.59",
+      "last_seen": "2025-10-29T14:08:33.900000"
+    },
+    {
+      "subdomain": "beachboy.m5",
+      "type": "A",
+      "value": "140.112.245.193",
+      "last_seen": "2025-10-29T14:08:33.260000"
+    },
+    {
+      "subdomain": "bear.ee",
+      "type": "A",
+      "value": "140.112.21.104",
+      "last_seen": "2025-10-29T14:08:33.985000"
+    },
+    {
+      "subdomain": "bear.g4",
+      "type": "A",
+      "value": "140.112.231.134",
+      "last_seen": "2025-10-29T14:08:33.081000"
+    },
+    {
+      "subdomain": "beehive.phys",
+      "type": "A",
+      "value": "140.112.102.103",
+      "last_seen": "2025-10-29T14:08:33.036000"
+    },
+    {
+      "subdomain": "beethoven.ee",
+      "type": "A",
+      "value": "140.112.41.124",
+      "last_seen": "2025-10-29T14:08:33.399000"
+    },
+    {
+      "subdomain": "belle2grid3.cc",
+      "type": "A",
+      "value": "140.112.2.87",
+      "last_seen": "2025-10-29T14:08:33.339000"
+    },
+    {
+      "subdomain": "belllabs.m3",
+      "type": "A",
+      "value": "140.112.243.4",
+      "last_seen": "2025-10-29T14:08:33.492000"
+    },
+    {
+      "subdomain": "bem.bime",
+      "type": "A",
+      "value": "140.112.94.126",
+      "last_seen": "2025-10-29T14:08:34.628000"
+    },
+    {
+      "subdomain": "berenices.f2",
+      "type": "A",
+      "value": "140.112.228.178",
+      "last_seen": "2025-10-29T14:08:33.056000"
+    },
+    {
+      "subdomain": "bernoulli.iam",
+      "type": "A",
+      "value": "140.112.38.19",
+      "last_seen": "2025-10-29T14:08:34.949000"
+    },
+    {
+      "subdomain": "bfn",
+      "type": "A",
+      "value": "103.17.8.55",
+      "last_seen": "2025-10-29T14:08:33.133000"
+    },
+    {
+      "subdomain": "bicd",
+      "type": "A",
+      "value": "140.112.36.140",
+      "last_seen": "2025-10-29T14:08:33.577000"
+    },
+    {
+      "subdomain": "big.me",
+      "type": "A",
+      "value": "140.112.14.167",
+      "last_seen": "2025-10-29T14:08:33.103000"
+    },
+    {
+      "subdomain": "big.psy",
+      "type": "A",
+      "value": "140.112.62.239",
+      "last_seen": "2025-10-29T14:08:33.160000"
+    },
+    {
+      "subdomain": "billfish5.oc",
+      "type": "A",
+      "value": "140.112.68.218",
+      "last_seen": "2025-10-29T14:08:33.343000"
+    },
+    {
+      "subdomain": "billyntu.m8",
+      "type": "A",
+      "value": "140.112.253.226",
+      "last_seen": "2025-10-29T14:08:33.334000"
+    },
+    {
+      "subdomain": "bio-div.hort",
+      "type": "A",
+      "value": "140.112.89.45",
+      "last_seen": "2025-10-29T14:08:33.553000"
+    },
+    {
+      "subdomain": "bio.odb",
+      "type": "A",
+      "value": "140.112.65.40",
+      "last_seen": "2025-10-29T14:08:33.504000"
+    },
+    {
+      "subdomain": "bioagri",
+      "type": "A",
+      "value": "140.112.183.50",
+      "last_seen": "2025-10-29T14:08:33.679000"
+    },
+    {
+      "subdomain": "bioinfo.bime",
+      "type": "A",
+      "value": "140.112.183.224",
+      "last_seen": "2025-10-29T14:08:33.130000"
+    },
+    {
+      "subdomain": "bioinfo.bme",
+      "type": "A",
+      "value": "140.112.137.79",
+      "last_seen": "2025-10-29T14:08:33.124000"
+    },
+    {
+      "subdomain": "bioinfo.mc",
+      "type": "A",
+      "value": "140.109.214.35",
+      "last_seen": "2025-10-29T14:08:33.053000"
+    },
+    {
+      "subdomain": "biomaterials4.che",
+      "type": "A",
+      "value": "140.112.23.4",
+      "last_seen": "2025-10-29T14:08:34.369000"
+    },
+    {
+      "subdomain": "biomech.bme",
+      "type": "A",
+      "value": "140.112.148.43",
+      "last_seen": "2025-10-29T14:08:33.166000"
+    },
+    {
+      "subdomain": "biomedlabpc5.che",
+      "type": "A",
+      "value": "140.112.23.54",
+      "last_seen": "2025-10-29T14:08:33.021000"
+    },
+    {
+      "subdomain": "biometry02.agron",
+      "type": "A",
+      "value": "140.112.75.2",
+      "last_seen": "2025-10-29T14:08:33.360000"
+    },
+    {
+      "subdomain": "biominer.bime",
+      "type": "A",
+      "value": "140.112.94.76",
+      "last_seen": "2025-10-29T14:08:33.101000"
+    },
+    {
+      "subdomain": "bioportal.csbb",
+      "type": "A",
+      "value": "140.112.165.65",
+      "last_seen": "2025-10-29T14:08:33.815000"
+    },
+    {
+      "subdomain": "bioprocess10.che",
+      "type": "A",
+      "value": "140.112.23.219",
+      "last_seen": "2025-10-29T14:08:35.212000"
+    },
+    {
+      "subdomain": "bioprocess11.che",
+      "type": "A",
+      "value": "140.112.23.220",
+      "last_seen": "2025-10-29T14:08:33.086000"
+    },
+    {
+      "subdomain": "biorola.me",
+      "type": "A",
+      "value": "140.112.16.103",
+      "last_seen": "2025-10-29T14:08:33.759000"
+    },
+    {
+      "subdomain": "biosignal.ee",
+      "type": "A",
+      "value": "140.112.17.245",
+      "last_seen": "2025-10-29T14:08:33.095000"
+    },
+    {
+      "subdomain": "birdy.m8",
+      "type": "A",
+      "value": "140.112.251.163",
+      "last_seen": "2025-10-29T14:08:33.294000"
+    },
+    {
+      "subdomain": "bjh05.me",
+      "type": "A",
+      "value": "140.112.16.39",
+      "last_seen": "2025-10-29T14:08:33.488000"
+    },
+    {
+      "subdomain": "bjtseng194.cc",
+      "type": "A",
+      "value": "140.112.5.194",
+      "last_seen": "2025-10-29T14:08:33.101000"
+    },
+    {
+      "subdomain": "bk239149.m1",
+      "type": "A",
+      "value": "140.112.241.77",
+      "last_seen": "2025-10-29T14:08:33.636000"
+    },
+    {
+      "subdomain": "bk241150.m1",
+      "type": "A",
+      "value": "140.112.240.157",
+      "last_seen": "2025-10-29T14:08:36.456000"
+    },
+    {
+      "subdomain": "bk241193.m1",
+      "type": "A",
+      "value": "140.112.241.195",
+      "last_seen": "2025-10-29T14:08:33.410000"
+    },
+    {
+      "subdomain": "bk241205.m1",
+      "type": "A",
+      "value": "140.112.240.192",
+      "last_seen": "2025-10-29T14:08:33.012000"
+    },
+    {
+      "subdomain": "bl404amtg04.ee",
+      "type": "A",
+      "value": "140.112.48.44",
+      "last_seen": "2025-10-29T14:08:34.306000"
+    },
+    {
+      "subdomain": "blanc.ee",
+      "type": "A",
+      "value": "140.112.41.131",
+      "last_seen": "2025-10-29T14:08:33.214000"
+    },
+    {
+      "subdomain": "blog.dlc",
+      "type": "A",
+      "value": "140.112.145.141",
+      "last_seen": "2025-10-29T14:08:33.575000"
+    },
+    {
+      "subdomain": "blog.press",
+      "type": "A",
+      "value": "140.112.36.64",
+      "last_seen": "2025-10-29T14:08:33.065000"
+    },
+    {
+      "subdomain": "blplab.linguistics",
+      "type": "A",
+      "value": "140.112.147.110",
+      "last_seen": "2025-10-29T14:08:33.035000"
+    },
+    {
+      "subdomain": "bluedevils.me",
+      "type": "A",
+      "value": "140.112.46.97",
+      "last_seen": "2025-10-29T14:08:33.063000"
+    },
+    {
+      "subdomain": "bluerex.g4",
+      "type": "A",
+      "value": "140.112.232.100",
+      "last_seen": "2025-10-29T14:08:34.305000"
+    },
+    {
+      "subdomain": "bluesun.m8",
+      "type": "A",
+      "value": "140.112.252.196",
+      "last_seen": "2025-10-29T14:08:34.911000"
+    },
+    {
+      "subdomain": "bluetin.gl",
+      "type": "A",
+      "value": "140.112.57.105",
+      "last_seen": "2025-10-29T14:08:33.599000"
+    },
+    {
+      "subdomain": "bmdlab.bime",
+      "type": "A",
+      "value": "140.112.94.75",
+      "last_seen": "2025-10-29T14:08:33.012000"
+    },
+    {
+      "subdomain": "bmdlab2.bime",
+      "type": "A",
+      "value": "140.112.94.89",
+      "last_seen": "2025-10-29T14:08:33.166000"
+    },
+    {
+      "subdomain": "bme",
+      "type": "A",
+      "value": "140.112.2.140",
+      "last_seen": "2025-10-29T14:08:33.818000"
+    },
+    {
+      "subdomain": "bmeserv.iam",
+      "type": "A",
+      "value": "140.112.38.167",
+      "last_seen": "2025-10-29T14:08:33.476000"
+    },
+    {
+      "subdomain": "boaz.m4",
+      "type": "A",
+      "value": "140.112.214.61",
+      "last_seen": "2025-10-29T14:08:33.477000"
+    },
+    {
+      "subdomain": "bobo.cc",
+      "type": "A",
+      "value": "140.112.3.114",
+      "last_seen": "2025-10-29T14:08:34.646000"
+    },
+    {
+      "subdomain": "bonjour.ee",
+      "type": "A",
+      "value": "140.112.42.88",
+      "last_seen": "2025-10-29T14:08:33.326000"
+    },
+    {
+      "subdomain": "bonnie.f2",
+      "type": "A",
+      "value": "140.112.222.205",
+      "last_seen": "2025-10-29T14:08:33.285000"
+    },
+    {
+      "subdomain": "book401.mc",
+      "type": "A",
+      "value": "120.96.247.112",
+      "last_seen": "2025-10-29T14:08:32.979000"
+    },
+    {
+      "subdomain": "booker.m5",
+      "type": "A",
+      "value": "140.112.246.158",
+      "last_seen": "2025-10-29T14:08:33.151000"
+    },
+    {
+      "subdomain": "booking-campus-museum",
+      "type": "A",
+      "value": "140.112.105.111",
+      "last_seen": "2025-10-29T14:08:32.974000"
+    },
+    {
+      "subdomain": "booking.aca",
+      "type": "A",
+      "value": "140.112.161.204",
+      "last_seen": "2025-10-29T14:08:32.916000"
+    },
+    {
+      "subdomain": "booking.dschool",
+      "type": "A",
+      "value": "140.112.179.91",
+      "last_seen": "2025-10-29T14:08:33.338000"
+    },
+    {
+      "subdomain": "booking.perc",
+      "type": "A",
+      "value": "158.247.238.62",
+      "last_seen": "2025-10-29T14:08:33.291000"
+    },
+    {
+      "subdomain": "bossach.m1",
+      "type": "A",
+      "value": "140.112.240.55",
+      "last_seen": "2025-10-29T14:08:32.996000"
+    },
+    {
+      "subdomain": "bot.csie",
+      "type": "A",
+      "value": "140.112.30.29",
+      "last_seen": "2025-10-29T14:08:33.692000"
+    },
+    {
+      "subdomain": "boxon.m1",
+      "type": "A",
+      "value": "140.112.241.222",
+      "last_seen": "2025-10-29T14:08:33.522000"
+    },
+    {
+      "subdomain": "bp",
+      "type": "A",
+      "value": "140.112.2.140",
+      "last_seen": "2025-10-29T14:08:33.202000"
+    },
+    {
+      "subdomain": "bp01.bp",
+      "type": "A",
+      "value": "140.112.40.1",
+      "last_seen": "2025-10-29T14:08:33.245000"
+    },
+    {
+      "subdomain": "bp100.bp",
+      "type": "A",
+      "value": "140.112.40.100",
+      "last_seen": "2025-10-29T14:08:33.291000"
+    },
+    {
+      "subdomain": "bp102.bp",
+      "type": "A",
+      "value": "140.112.40.102",
+      "last_seen": "2025-10-29T14:08:33.300000"
+    },
+    {
+      "subdomain": "bp240.bp",
+      "type": "A",
+      "value": "140.112.40.240",
+      "last_seen": "2025-10-29T14:08:32.989000"
+    },
+    {
+      "subdomain": "bp88.bp",
+      "type": "A",
+      "value": "140.112.40.88",
+      "last_seen": "2025-10-29T14:08:33.103000"
+    },
+    {
+      "subdomain": "bp95.bp",
+      "type": "A",
+      "value": "140.112.40.95",
+      "last_seen": "2025-10-29T14:08:35.204000"
+    },
+    {
+      "subdomain": "bpkk10.bp",
+      "type": "A",
+      "value": "140.112.47.10",
+      "last_seen": "2025-10-29T14:08:33.573000"
+    },
+    {
+      "subdomain": "brahms.ee",
+      "type": "A",
+      "value": "140.112.41.129",
+      "last_seen": "2025-10-29T14:08:34.660000"
+    },
+    {
+      "subdomain": "brian8.m3",
+      "type": "A",
+      "value": "140.112.243.147",
+      "last_seen": "2025-10-29T14:08:33.830000"
+    },
+    {
+      "subdomain": "bride.f2",
+      "type": "A",
+      "value": "140.112.222.229",
+      "last_seen": "2025-10-29T14:08:33.035000"
+    },
+    {
+      "subdomain": "broadband.ee",
+      "type": "A",
+      "value": "140.112.42.106",
+      "last_seen": "2025-10-29T14:08:33.553000"
+    },
+    {
+      "subdomain": "bsd.cc",
+      "type": "A",
+      "value": "140.112.8.141",
+      "last_seen": "2025-10-29T14:08:33.870000"
+    },
+    {
+      "subdomain": "bsd1.csie",
+      "type": "A",
+      "value": "140.112.30.49",
+      "last_seen": "2025-10-29T14:08:34.311000"
+    },
+    {
+      "subdomain": "bse",
+      "type": "A",
+      "value": "54.199.154.112",
+      "last_seen": "2025-10-29T14:08:33.400000"
+    },
+    {
+      "subdomain": "bst",
+      "type": "A",
+      "value": "140.112.2.140",
+      "last_seen": "2025-10-29T14:08:33.614000"
+    },
+    {
+      "subdomain": "bst002.bst",
+      "type": "A",
+      "value": "140.112.79.2",
+      "last_seen": "2025-10-29T14:08:33.274000"
+    },
+    {
+      "subdomain": "bst034.bst",
+      "type": "A",
+      "value": "140.112.79.34",
+      "last_seen": "2025-10-29T14:08:33.715000"
+    },
+    {
+      "subdomain": "bst035.bst",
+      "type": "A",
+      "value": "140.112.79.35",
+      "last_seen": "2025-10-29T14:08:33.205000"
+    },
+    {
+      "subdomain": "bst044.bst",
+      "type": "A",
+      "value": "140.112.79.44",
+      "last_seen": "2025-10-29T14:08:33.168000"
+    },
+    {
+      "subdomain": "bst065.bst",
+      "type": "A",
+      "value": "140.112.79.65",
+      "last_seen": "2025-10-29T14:08:33.704000"
+    },
+    {
+      "subdomain": "bst112.bst",
+      "type": "A",
+      "value": "140.112.79.112",
+      "last_seen": "2025-10-29T14:08:33.422000"
+    },
+    {
+      "subdomain": "bst116.bst",
+      "type": "A",
+      "value": "140.112.79.116",
+      "last_seen": "2025-10-29T14:08:33.944000"
+    },
+    {
+      "subdomain": "bst120.bst",
+      "type": "A",
+      "value": "140.112.79.120",
+      "last_seen": "2025-10-29T14:08:33.463000"
+    },
+    {
+      "subdomain": "bst127.bst",
+      "type": "A",
+      "value": "140.112.79.127",
+      "last_seen": "2025-10-29T14:08:33.116000"
+    },
+    {
+      "subdomain": "bst145.bst",
+      "type": "A",
+      "value": "140.112.79.145",
+      "last_seen": "2025-10-29T14:08:33.440000"
+    },
+    {
+      "subdomain": "bst160.bst",
+      "type": "A",
+      "value": "140.112.79.160",
+      "last_seen": "2025-10-29T14:08:33.365000"
+    },
+    {
+      "subdomain": "bst179.bst",
+      "type": "A",
+      "value": "140.112.79.179",
+      "last_seen": "2025-10-29T14:08:33.331000"
+    },
+    {
+      "subdomain": "bst201.bst",
+      "type": "A",
+      "value": "140.112.79.201",
+      "last_seen": "2025-10-29T14:08:33.302000"
+    },
+    {
+      "subdomain": "bst202.bst",
+      "type": "A",
+      "value": "140.112.79.202",
+      "last_seen": "2025-10-29T14:08:33.330000"
+    },
+    {
+      "subdomain": "bst208.bst",
+      "type": "A",
+      "value": "140.112.79.208",
+      "last_seen": "2025-10-29T14:08:33.334000"
+    },
+    {
+      "subdomain": "bst209.bst",
+      "type": "A",
+      "value": "140.112.79.209",
+      "last_seen": "2025-10-29T14:08:33.368000"
+    },
+    {
+      "subdomain": "bst210.bst",
+      "type": "A",
+      "value": "140.112.79.210",
+      "last_seen": "2025-10-29T14:08:34.358000"
+    },
+    {
+      "subdomain": "bst211.bst",
+      "type": "A",
+      "value": "140.112.79.211",
+      "last_seen": "2025-10-29T14:08:33.007000"
+    },
+    {
+      "subdomain": "bst214.bst",
+      "type": "A",
+      "value": "140.112.79.214",
+      "last_seen": "2025-10-29T14:08:34.762000"
+    },
+    {
+      "subdomain": "bst221.bst",
+      "type": "A",
+      "value": "140.112.79.221",
+      "last_seen": "2025-10-29T14:08:33.746000"
+    },
+    {
+      "subdomain": "bst228.bst",
+      "type": "A",
+      "value": "140.112.79.228",
+      "last_seen": "2025-10-29T14:08:33.458000"
+    },
+    {
+      "subdomain": "bst254.bst",
+      "type": "A",
+      "value": "140.112.79.254",
+      "last_seen": "2025-10-29T14:08:33.075000"
+    },
+    {
+      "subdomain": "buddha.csie",
+      "type": "A",
+      "value": "140.112.28.185",
+      "last_seen": "2025-10-29T14:08:33.096000"
+    },
+    {
+      "subdomain": "buddhism.lib",
+      "type": "A",
+      "value": "140.112.113.19",
+      "last_seen": "2025-10-29T14:08:33.766000"
+    },
+    {
+      "subdomain": "buddy.m3",
+      "type": "A",
+      "value": "140.112.243.186",
+      "last_seen": "2025-10-29T14:08:33.127000"
+    },
+    {
+      "subdomain": "bug.ee",
+      "type": "A",
+      "value": "140.112.42.234",
+      "last_seen": "2025-10-29T14:08:33.945000"
+    },
+    {
+      "subdomain": "bugmaker31.m5",
+      "type": "A",
+      "value": "140.112.246.132",
+      "last_seen": "2025-10-29T14:08:33.109000"
+    },
+    {
+      "subdomain": "bula.m1",
+      "type": "A",
+      "value": "140.112.241.129",
+      "last_seen": "2025-10-29T14:08:33.332000"
+    },
+    {
+      "subdomain": "byjiang.m7",
+      "type": "A",
+      "value": "140.112.250.212",
+      "last_seen": "2025-10-29T14:08:33.096000"
+    },
+    {
+      "subdomain": "c108.fll",
+      "type": "A",
+      "value": "140.112.141.235",
+      "last_seen": "2025-10-29T14:08:36.224000"
+    },
+    {
+      "subdomain": "c111.fll",
+      "type": "A",
+      "value": "140.112.141.238",
+      "last_seen": "2025-10-29T14:08:35.199000"
+    },
+    {
+      "subdomain": "c112.fll",
+      "type": "A",
+      "value": "140.112.141.239",
+      "last_seen": "2025-10-29T14:08:33.030000"
+    },
+    {
+      "subdomain": "c114.fll",
+      "type": "A",
+      "value": "140.112.141.241",
+      "last_seen": "2025-10-29T14:08:32.941000"
+    },
+    {
+      "subdomain": "c124.fll",
+      "type": "A",
+      "value": "140.112.141.251",
+      "last_seen": "2025-10-29T14:08:33.036000"
+    },
+    {
+      "subdomain": "c126.fll",
+      "type": "A",
+      "value": "140.112.141.253",
+      "last_seen": "2025-10-29T14:08:33.095000"
+    },
+    {
+      "subdomain": "c15.fll",
+      "type": "A",
+      "value": "140.112.141.142",
+      "last_seen": "2025-10-29T14:08:33.083000"
+    },
+    {
+      "subdomain": "c206.as",
+      "type": "A",
+      "value": "140.112.66.28",
+      "last_seen": "2025-10-29T14:08:33.021000"
+    },
+    {
+      "subdomain": "c44.fll",
+      "type": "A",
+      "value": "140.112.141.171",
+      "last_seen": "2025-10-29T14:08:33.125000"
+    },
+    {
+      "subdomain": "c4lab.bime",
+      "type": "A",
+      "value": "140.112.183.224",
+      "last_seen": "2025-10-29T14:08:33.005000"
+    },
+    {
+      "subdomain": "c57.fll",
+      "type": "A",
+      "value": "140.112.141.184",
+      "last_seen": "2025-10-29T14:08:33.265000"
+    },
+    {
+      "subdomain": "c64.fll",
+      "type": "A",
+      "value": "140.112.141.191",
+      "last_seen": "2025-10-29T14:08:33.431000"
+    },
+    {
+      "subdomain": "c7.fll",
+      "type": "A",
+      "value": "140.112.141.134",
+      "last_seen": "2025-10-29T14:08:35.010000"
+    },
+    {
+      "subdomain": "c85.fll",
+      "type": "A",
+      "value": "140.112.141.212",
+      "last_seen": "2025-10-29T14:08:33.497000"
+    },
+    {
+      "subdomain": "c87.fll",
+      "type": "A",
+      "value": "140.112.141.214",
+      "last_seen": "2025-10-29T14:08:33.228000"
+    },
+    {
+      "subdomain": "c88.fll",
+      "type": "A",
+      "value": "140.112.141.215",
+      "last_seen": "2025-10-29T14:08:33.870000"
+    },
+    {
+      "subdomain": "c95.fll",
+      "type": "A",
+      "value": "140.112.141.222",
+      "last_seen": "2025-10-29T14:08:33.267000"
+    },
+    {
+      "subdomain": "cab.im",
+      "type": "A",
+      "value": "140.112.106.21",
+      "last_seen": "2025-10-05T07:56:36.314000"
+    },
+    {
+      "subdomain": "cacti.csie",
+      "type": "A",
+      "value": "140.112.30.146",
+      "last_seen": "2025-10-29T14:08:33.547000"
+    },
+    {
+      "subdomain": "cad.csie",
+      "type": "A",
+      "value": "140.112.31.52",
+      "last_seen": "2025-10-29T14:08:33.095000"
+    },
+    {
+      "subdomain": "cad1.csie",
+      "type": "A",
+      "value": "140.112.31.28",
+      "last_seen": "2025-10-29T14:08:33.342000"
+    },
+    {
+      "subdomain": "cad11.ee",
+      "type": "A",
+      "value": "140.112.20.93",
+      "last_seen": "2025-10-29T14:08:33.949000"
+    },
+    {
+      "subdomain": "cad18.ee",
+      "type": "A",
+      "value": "140.112.20.61",
+      "last_seen": "2025-10-29T14:08:34.272000"
+    },
+    {
+      "subdomain": "cad2.csie",
+      "type": "A",
+      "value": "140.112.31.29",
+      "last_seen": "2025-10-29T14:08:32.969000"
+    },
+    {
+      "subdomain": "cad3.csie",
+      "type": "A",
+      "value": "140.112.31.30",
+      "last_seen": "2025-10-29T14:08:33.191000"
+    },
+    {
+      "subdomain": "cad31.ee",
+      "type": "A",
+      "value": "140.112.20.74",
+      "last_seen": "2025-10-29T14:08:33.038000"
+    },
+    {
+      "subdomain": "cad402.csie",
+      "type": "A",
+      "value": "140.112.90.110",
+      "last_seen": "2025-10-29T14:08:33.821000"
+    },
+    {
+      "subdomain": "cad47.ee",
+      "type": "A",
+      "value": "140.112.20.90",
+      "last_seen": "2025-10-29T14:08:33.342000"
+    },
+    {
+      "subdomain": "cadlab11.me",
+      "type": "A",
+      "value": "140.112.16.13",
+      "last_seen": "2025-10-29T14:08:33.345000"
+    },
+    {
+      "subdomain": "cadlab15.me",
+      "type": "A",
+      "value": "140.112.43.243",
+      "last_seen": "2025-10-29T14:08:33.399000"
+    },
+    {
+      "subdomain": "cafe.fo",
+      "type": "A",
+      "value": "140.112.82.250",
+      "last_seen": "2025-10-29T14:08:33.015000"
+    },
+    {
+      "subdomain": "callpilot",
+      "type": "A",
+      "value": "140.112.4.8",
+      "last_seen": "2025-10-29T14:08:33.663000"
+    },
+    {
+      "subdomain": "callus.m3",
+      "type": "A",
+      "value": "140.112.243.145",
+      "last_seen": "2025-10-29T14:08:33.052000"
+    },
+    {
+      "subdomain": "caltm2.phys",
+      "type": "A",
+      "value": "140.112.102.132",
+      "last_seen": "2025-10-29T14:08:33.018000"
+    },
+    {
+      "subdomain": "camphorcat.csie",
+      "type": "A",
+      "value": "140.112.31.165",
+      "last_seen": "2025-10-29T14:08:32.942000"
+    },
+    {
+      "subdomain": "canary.f8",
+      "type": "A",
+      "value": "140.112.192.188",
+      "last_seen": "2025-10-29T14:08:33.106000"
+    },
+    {
+      "subdomain": "cancer.csie",
+      "type": "A",
+      "value": "140.112.28.106",
+      "last_seen": "2025-10-29T14:08:33.548000"
+    },
+    {
+      "subdomain": "capricornus.ee",
+      "type": "A",
+      "value": "140.112.17.14",
+      "last_seen": "2025-10-29T14:08:33.419000"
+    },
+    {
+      "subdomain": "captain.m5",
+      "type": "A",
+      "value": "140.112.245.237",
+      "last_seen": "2025-10-29T14:08:33.160000"
+    },
+    {
+      "subdomain": "carbon14.gl",
+      "type": "A",
+      "value": "140.112.36.124",
+      "last_seen": "2025-10-29T14:08:33.434000"
+    },
+    {
+      "subdomain": "cardo.management",
+      "type": "A",
+      "value": "140.112.36.103",
+      "last_seen": "2025-10-29T14:08:34.092000"
+    },
+    {
+      "subdomain": "cards.as",
+      "type": "A",
+      "value": "140.112.66.61",
+      "last_seen": "2025-10-29T14:08:33.039000"
+    },
+    {
+      "subdomain": "career",
+      "type": "A",
+      "value": "140.112.36.41",
+      "last_seen": "2025-10-29T14:08:33.389000"
+    },
+    {
+      "subdomain": "careerh.iagents.csie",
+      "type": "A",
+      "value": "140.112.30.223",
+      "last_seen": "2025-10-29T14:08:33.293000"
+    },
+    {
+      "subdomain": "carl.as",
+      "type": "A",
+      "value": "140.112.67.159",
+      "last_seen": "2025-10-29T14:08:33.204000"
+    },
+    {
+      "subdomain": "carrel.lib",
+      "type": "A",
+      "value": "140.112.114.97",
+      "last_seen": "2025-10-29T14:08:33.061000"
+    },
+    {
+      "subdomain": "cas1.me",
+      "type": "A",
+      "value": "140.112.43.161",
+      "last_seen": "2025-10-29T14:08:33.438000"
+    },
+    {
+      "subdomain": "case",
+      "type": "A",
+      "value": "140.112.36.62",
+      "last_seen": "2025-10-29T14:08:34.088000"
+    },
+    {
+      "subdomain": "cash7.bu",
+      "type": "A",
+      "value": "140.112.160.137",
+      "last_seen": "2025-10-29T14:08:34.514000"
+    },
+    {
+      "subdomain": "cashier2.bu",
+      "type": "A",
+      "value": "140.112.160.128",
+      "last_seen": "2025-10-29T14:08:33.619000"
+    },
+    {
+      "subdomain": "cashier5.bu",
+      "type": "A",
+      "value": "140.112.160.134",
+      "last_seen": "2025-10-29T14:08:33.740000"
+    },
+    {
+      "subdomain": "castle.ee",
+      "type": "A",
+      "value": "140.112.42.38",
+      "last_seen": "2025-10-29T14:08:33.003000"
+    },
+    {
+      "subdomain": "catbus.m8",
+      "type": "A",
+      "value": "140.112.252.63",
+      "last_seen": "2025-10-29T14:08:33.175000"
+    },
+    {
+      "subdomain": "catd.cph",
+      "type": "A",
+      "value": "140.112.117.27",
+      "last_seen": "2025-10-29T14:08:35.014000"
+    },
+    {
+      "subdomain": "cath.mc",
+      "type": "A",
+      "value": "140.112.129.16",
+      "last_seen": "2025-10-29T14:08:34.467000"
+    },
+    {
+      "subdomain": "cathy.mc",
+      "type": "A",
+      "value": "140.112.122.39",
+      "last_seen": "2025-10-29T14:08:33.067000"
+    },
+    {
+      "subdomain": "cats.gcc",
+      "type": "A",
+      "value": "140.112.65.190",
+      "last_seen": "2025-10-29T14:08:34.810000"
+    },
+    {
+      "subdomain": "cbe",
+      "type": "A",
+      "value": "18.177.166.245",
+      "last_seen": "2025-10-29T14:08:33.268000"
+    },
+    {
+      "subdomain": "cbme",
+      "type": "A",
+      "value": "211.72.207.210",
+      "last_seen": "2025-10-29T14:08:33.202000"
+    },
+    {
+      "subdomain": "cbt",
+      "type": "A",
+      "value": "103.1.220.17",
+      "last_seen": "2025-10-29T14:08:35.953000"
+    },
+    {
+      "subdomain": "cbt.lttc",
+      "type": "A",
+      "value": "23.97.75.188",
+      "last_seen": "2025-10-29T14:08:33.495000"
+    },
+    {
+      "subdomain": "cc.cl",
+      "type": "A",
+      "value": "140.112.141.2",
+      "last_seen": "2025-10-29T14:08:33.964000"
+    },
+    {
+      "subdomain": "cc.ee",
+      "type": "A",
+      "value": "140.112.18.7",
+      "last_seen": "2025-10-29T14:08:32.907000"
+    },
+    {
+      "subdomain": "cc.vh",
+      "type": "A",
+      "value": "140.112.189.246",
+      "last_seen": "2025-10-29T14:08:33.274000"
+    },
+    {
+      "subdomain": "ccbs",
+      "type": "A",
+      "value": "140.112.113.19",
+      "last_seen": "2025-10-29T14:08:33.344000"
+    },
+    {
+      "subdomain": "ccc",
+      "type": "A",
+      "value": "140.112.105.105",
+      "last_seen": "2025-10-29T14:08:34.323000"
+    },
+    {
+      "subdomain": "ccch.mc",
+      "type": "A",
+      "value": "140.112.130.108",
+      "last_seen": "2025-10-29T14:08:32.952000"
+    },
+    {
+      "subdomain": "ccchen3.mc",
+      "type": "A",
+      "value": "140.112.130.52",
+      "last_seen": "2025-10-29T14:08:33.598000"
+    },
+    {
+      "subdomain": "cccthomas.me",
+      "type": "A",
+      "value": "140.112.43.58",
+      "last_seen": "2025-10-29T14:08:33.221000"
+    },
+    {
+      "subdomain": "ccf.ee",
+      "type": "A",
+      "value": "140.112.18.6",
+      "last_seen": "2025-10-29T14:08:34.427000"
+    },
+    {
+      "subdomain": "cch.hort",
+      "type": "A",
+      "value": "140.112.89.101",
+      "last_seen": "2025-10-29T14:08:33.620000"
+    },
+    {
+      "subdomain": "ccma07.me",
+      "type": "A",
+      "value": "140.112.46.7",
+      "last_seen": "2025-10-29T14:08:34.032000"
+    },
+    {
+      "subdomain": "ccma08.me",
+      "type": "A",
+      "value": "140.112.46.8",
+      "last_seen": "2025-10-29T14:08:33.542000"
+    },
+    {
+      "subdomain": "ccma09.me",
+      "type": "A",
+      "value": "140.112.46.9",
+      "last_seen": "2025-10-29T14:08:35.269000"
+    },
+    {
+      "subdomain": "ccma10.me",
+      "type": "A",
+      "value": "140.112.46.10",
+      "last_seen": "2025-10-29T14:08:33.545000"
+    },
+    {
+      "subdomain": "ccma11.me",
+      "type": "A",
+      "value": "140.112.46.11",
+      "last_seen": "2025-10-29T14:08:33.838000"
+    },
+    {
+      "subdomain": "ccma18.me",
+      "type": "A",
+      "value": "140.112.46.18",
+      "last_seen": "2025-10-29T14:08:33.068000"
+    },
+    {
+      "subdomain": "ccma20.me",
+      "type": "A",
+      "value": "140.112.46.89",
+      "last_seen": "2025-10-29T14:08:32.982000"
+    },
+    {
+      "subdomain": "ccma21.me",
+      "type": "A",
+      "value": "140.112.46.87",
+      "last_seen": "2025-10-29T14:08:33.214000"
+    },
+    {
+      "subdomain": "ccms",
+      "type": "A",
+      "value": "140.112.2.141",
+      "last_seen": "2025-10-29T14:08:33.113000"
+    },
+    {
+      "subdomain": "ccnet",
+      "type": "A",
+      "value": "140.112.105.16",
+      "last_seen": "2025-10-29T14:08:36.456000"
+    },
+    {
+      "subdomain": "ccntp",
+      "type": "A",
+      "value": "140.112.254.21",
+      "last_seen": "2025-10-29T14:08:34.641000"
+    },
+    {
+      "subdomain": "ccs",
+      "type": "A",
+      "value": "139.162.82.70",
+      "last_seen": "2025-10-29T14:08:33.091000"
+    },
+    {
+      "subdomain": "ccsd",
+      "type": "A",
+      "value": "199.34.228.56",
+      "last_seen": "2025-10-29T14:08:33.778000"
+    },
+    {
+      "subdomain": "ccsun35.cc",
+      "type": "A",
+      "value": "140.112.8.35",
+      "last_seen": "2025-10-29T14:08:33.126000"
+    },
+    {
+      "subdomain": "ccsun44.cc",
+      "type": "A",
+      "value": "140.112.8.44",
+      "last_seen": "2025-10-29T14:08:34.915000"
+    },
+    {
+      "subdomain": "ccsun46.cc",
+      "type": "A",
+      "value": "140.112.8.46",
+      "last_seen": "2025-10-29T14:08:33.041000"
+    },
+    {
+      "subdomain": "ccsun48.cc",
+      "type": "A",
+      "value": "140.112.8.48",
+      "last_seen": "2025-10-29T14:08:33.498000"
+    },
+    {
+      "subdomain": "ccsun49.cc",
+      "type": "A",
+      "value": "140.112.8.49",
+      "last_seen": "2025-10-29T14:08:33.582000"
+    },
+    {
+      "subdomain": "ccsun60.cc",
+      "type": "A",
+      "value": "140.112.8.60",
+      "last_seen": "2025-10-29T14:08:32.995000"
+    },
+    {
+      "subdomain": "cctng.cc",
+      "type": "A",
+      "value": "140.112.7.245",
+      "last_seen": "2025-10-29T14:08:33.546000"
+    },
+    {
+      "subdomain": "ccwu.m5",
+      "type": "A",
+      "value": "140.112.245.164",
+      "last_seen": "2025-10-29T14:08:33.245000"
+    },
+    {
+      "subdomain": "cdi",
+      "type": "A",
+      "value": "140.112.29.134",
+      "last_seen": "2025-10-29T14:08:34.611000"
+    },
+    {
+      "subdomain": "cdl8.as",
+      "type": "A",
+      "value": "140.112.67.98",
+      "last_seen": "2025-10-29T14:08:33.102000"
+    },
+    {
+      "subdomain": "cdm.lib",
+      "type": "A",
+      "value": "140.112.115.11",
+      "last_seen": "2025-10-29T14:08:33.281000"
+    },
+    {
+      "subdomain": "ce10040.ce",
+      "type": "A",
+      "value": "140.112.10.40",
+      "last_seen": "2025-10-29T14:08:34.114000"
+    },
+    {
+      "subdomain": "ce10050.ce",
+      "type": "A",
+      "value": "140.112.10.50",
+      "last_seen": "2025-10-29T14:08:33.696000"
+    },
+    {
+      "subdomain": "ce10061.ce",
+      "type": "A",
+      "value": "140.112.10.61",
+      "last_seen": "2025-10-29T14:08:33.396000"
+    },
+    {
+      "subdomain": "ce10063.ce",
+      "type": "A",
+      "value": "140.112.10.63",
+      "last_seen": "2025-10-29T14:08:33.419000"
+    },
+    {
+      "subdomain": "ce10074.ce",
+      "type": "A",
+      "value": "140.112.10.74",
+      "last_seen": "2025-10-29T14:08:32.975000"
+    },
+    {
+      "subdomain": "ce10080.ce",
+      "type": "A",
+      "value": "140.112.10.80",
+      "last_seen": "2025-10-29T14:08:33.293000"
+    },
+    {
+      "subdomain": "ce10084.ce",
+      "type": "A",
+      "value": "140.112.10.84",
+      "last_seen": "2025-10-29T14:08:33.498000"
+    },
+    {
+      "subdomain": "ce10116.ce",
+      "type": "A",
+      "value": "140.112.10.116",
+      "last_seen": "2025-10-29T14:08:34.326000"
+    },
+    {
+      "subdomain": "ce10118.ce",
+      "type": "A",
+      "value": "140.112.10.118",
+      "last_seen": "2025-10-29T14:08:33.068000"
+    },
+    {
+      "subdomain": "ce10121.ce",
+      "type": "A",
+      "value": "140.112.10.121",
+      "last_seen": "2025-10-29T14:08:33.135000"
+    },
+    {
+      "subdomain": "ce10128.ce",
+      "type": "A",
+      "value": "140.112.10.128",
+      "last_seen": "2025-10-29T14:08:33.317000"
+    },
+    {
+      "subdomain": "ce10129.ce",
+      "type": "A",
+      "value": "140.112.10.129",
+      "last_seen": "2025-10-29T14:08:34.367000"
+    },
+    {
+      "subdomain": "ce10130.ce",
+      "type": "A",
+      "value": "140.112.10.130",
+      "last_seen": "2025-10-29T14:08:33.503000"
+    },
+    {
+      "subdomain": "ce10133.ce",
+      "type": "A",
+      "value": "140.112.10.133",
+      "last_seen": "2025-10-29T14:08:33.011000"
+    },
+    {
+      "subdomain": "ce10135.ce",
+      "type": "A",
+      "value": "140.112.10.135",
+      "last_seen": "2025-10-29T14:08:33.161000"
+    },
+    {
+      "subdomain": "ce10136.ce",
+      "type": "A",
+      "value": "140.112.10.136",
+      "last_seen": "2025-10-29T14:08:33.038000"
+    },
+    {
+      "subdomain": "ce10137.ce",
+      "type": "A",
+      "value": "140.112.10.137",
+      "last_seen": "2025-10-29T14:08:33.198000"
+    },
+    {
+      "subdomain": "ce10139.ce",
+      "type": "A",
+      "value": "140.112.10.139",
+      "last_seen": "2025-10-29T14:08:33.285000"
+    },
+    {
+      "subdomain": "ce10150.ce",
+      "type": "A",
+      "value": "140.112.10.150",
+      "last_seen": "2025-10-29T14:08:33.038000"
+    },
+    {
+      "subdomain": "ce10153.ce",
+      "type": "A",
+      "value": "140.112.10.153",
+      "last_seen": "2025-10-29T14:08:33.436000"
+    },
+    {
+      "subdomain": "ce10154.ce",
+      "type": "A",
+      "value": "140.112.10.154",
+      "last_seen": "2025-10-29T14:08:33.218000"
+    },
+    {
+      "subdomain": "ce10162.ce",
+      "type": "A",
+      "value": "140.112.10.162",
+      "last_seen": "2025-10-29T14:08:33.406000"
+    },
+    {
+      "subdomain": "ce10165.ce",
+      "type": "A",
+      "value": "140.112.10.165",
+      "last_seen": "2025-10-29T14:08:34.523000"
+    },
+    {
+      "subdomain": "ce10166.ce",
+      "type": "A",
+      "value": "140.112.10.166",
+      "last_seen": "2025-10-29T14:08:33.431000"
+    },
+    {
+      "subdomain": "ce10167.ce",
+      "type": "A",
+      "value": "140.112.10.167",
+      "last_seen": "2025-10-29T14:08:32.909000"
+    },
+    {
+      "subdomain": "ce10172.ce",
+      "type": "A",
+      "value": "140.112.10.172",
+      "last_seen": "2025-10-29T14:08:33.021000"
+    },
+    {
+      "subdomain": "ce10177.ce",
+      "type": "A",
+      "value": "140.112.10.177",
+      "last_seen": "2025-10-29T14:08:33.282000"
+    },
+    {
+      "subdomain": "ce10178.ce",
+      "type": "A",
+      "value": "140.112.10.178",
+      "last_seen": "2025-10-29T14:08:33.468000"
+    },
+    {
+      "subdomain": "ce10179.ce",
+      "type": "A",
+      "value": "140.112.10.179",
+      "last_seen": "2025-10-29T14:08:34.461000"
+    },
+    {
+      "subdomain": "ce10190.ce",
+      "type": "A",
+      "value": "140.112.10.190",
+      "last_seen": "2025-10-29T14:08:33.063000"
+    },
+    {
+      "subdomain": "ce10204.ce",
+      "type": "A",
+      "value": "140.112.10.204",
+      "last_seen": "2025-10-29T14:08:33.020000"
+    },
+    {
+      "subdomain": "ce10206.ce",
+      "type": "A",
+      "value": "140.112.10.206",
+      "last_seen": "2025-10-29T14:08:33.979000"
+    },
+    {
+      "subdomain": "ce10216.ce",
+      "type": "A",
+      "value": "140.112.10.216",
+      "last_seen": "2025-10-29T14:08:33.547000"
+    },
+    {
+      "subdomain": "ce10220.ce",
+      "type": "A",
+      "value": "140.112.10.220",
+      "last_seen": "2025-10-29T14:08:33.279000"
+    },
+    {
+      "subdomain": "ce10235.ce",
+      "type": "A",
+      "value": "140.112.10.235",
+      "last_seen": "2025-10-29T14:08:33.130000"
+    },
+    {
+      "subdomain": "ce10237.ce",
+      "type": "A",
+      "value": "140.112.10.237",
+      "last_seen": "2025-10-29T14:08:33.132000"
+    },
+    {
+      "subdomain": "ce10242.ce",
+      "type": "A",
+      "value": "140.112.10.242",
+      "last_seen": "2025-10-29T14:08:33.069000"
+    },
+    {
+      "subdomain": "ce11001.ce",
+      "type": "A",
+      "value": "140.112.11.1",
+      "last_seen": "2025-10-29T14:08:34.023000"
+    },
+    {
+      "subdomain": "ce11035.ce",
+      "type": "A",
+      "value": "140.112.11.35",
+      "last_seen": "2025-10-29T14:08:33.550000"
+    },
+    {
+      "subdomain": "ce11036.ce",
+      "type": "A",
+      "value": "140.112.11.36",
+      "last_seen": "2025-10-29T14:08:33.108000"
+    },
+    {
+      "subdomain": "ce11047.ce",
+      "type": "A",
+      "value": "140.112.11.47",
+      "last_seen": "2025-10-29T14:08:33.690000"
+    },
+    {
+      "subdomain": "ce11049.ce",
+      "type": "A",
+      "value": "140.112.11.49",
+      "last_seen": "2025-10-29T14:08:34.120000"
+    },
+    {
+      "subdomain": "ce11059.ce",
+      "type": "A",
+      "value": "140.112.11.59",
+      "last_seen": "2025-10-29T14:08:33.670000"
+    },
+    {
+      "subdomain": "ce11067.ce",
+      "type": "A",
+      "value": "140.112.11.67",
+      "last_seen": "2025-10-29T14:08:33.702000"
+    },
+    {
+      "subdomain": "ce11076.ce",
+      "type": "A",
+      "value": "140.112.11.76",
+      "last_seen": "2025-10-29T14:08:33.351000"
+    },
+    {
+      "subdomain": "ce11078.ce",
+      "type": "A",
+      "value": "140.112.11.78",
+      "last_seen": "2025-10-29T14:08:33.039000"
+    },
+    {
+      "subdomain": "ce11097.ce",
+      "type": "A",
+      "value": "140.112.11.97",
+      "last_seen": "2025-10-29T14:08:33.173000"
+    },
+    {
+      "subdomain": "ce11099.ce",
+      "type": "A",
+      "value": "140.112.11.99",
+      "last_seen": "2025-10-29T14:08:35.543000"
+    },
+    {
+      "subdomain": "ce11135.ce",
+      "type": "A",
+      "value": "140.112.11.135",
+      "last_seen": "2025-10-29T14:08:33.045000"
+    },
+    {
+      "subdomain": "ce11149.ce",
+      "type": "A",
+      "value": "140.112.11.149",
+      "last_seen": "2025-10-29T14:08:34.026000"
+    },
+    {
+      "subdomain": "ce11189.ce",
+      "type": "A",
+      "value": "140.112.11.189",
+      "last_seen": "2025-10-29T14:08:33.402000"
+    },
+    {
+      "subdomain": "ce11193.ce",
+      "type": "A",
+      "value": "140.112.11.193",
+      "last_seen": "2025-10-29T14:08:36.064000"
+    },
+    {
+      "subdomain": "ce11206.ce",
+      "type": "A",
+      "value": "140.112.11.206",
+      "last_seen": "2025-10-29T14:08:33.772000"
+    },
+    {
+      "subdomain": "ce11218.ce",
+      "type": "A",
+      "value": "140.112.11.218",
+      "last_seen": "2025-10-29T14:08:34.081000"
+    },
+    {
+      "subdomain": "ce11228.ce",
+      "type": "A",
+      "value": "140.112.11.228",
+      "last_seen": "2025-10-29T14:08:33.007000"
+    },
+    {
+      "subdomain": "ce11230.ce",
+      "type": "A",
+      "value": "140.112.11.230",
+      "last_seen": "2025-10-29T14:08:33.204000"
+    },
+    {
+      "subdomain": "ce11246.ce",
+      "type": "A",
+      "value": "140.112.11.246",
+      "last_seen": "2025-10-29T14:08:33.094000"
+    },
+    {
+      "subdomain": "ce11249.ce",
+      "type": "A",
+      "value": "140.112.11.249",
+      "last_seen": "2025-10-29T14:08:33.197000"
+    },
+    {
+      "subdomain": "ce12001.ce",
+      "type": "A",
+      "value": "140.112.12.1",
+      "last_seen": "2025-10-29T14:08:33.208000"
+    },
+    {
+      "subdomain": "ce12005.ce",
+      "type": "A",
+      "value": "140.112.12.5",
+      "last_seen": "2025-10-29T14:08:33.016000"
+    },
+    {
+      "subdomain": "ce12026.ce",
+      "type": "A",
+      "value": "140.112.12.26",
+      "last_seen": "2025-10-29T14:08:33.103000"
+    },
+    {
+      "subdomain": "ce12033.ce",
+      "type": "A",
+      "value": "140.112.12.33",
+      "last_seen": "2025-10-29T14:08:33.293000"
+    },
+    {
+      "subdomain": "ce12038.ce",
+      "type": "A",
+      "value": "140.112.12.38",
+      "last_seen": "2025-10-29T14:08:35.425000"
+    },
+    {
+      "subdomain": "ce12045.ce",
+      "type": "A",
+      "value": "140.112.12.45",
+      "last_seen": "2025-10-29T14:08:33.562000"
+    },
+    {
+      "subdomain": "ce12053.ce",
+      "type": "A",
+      "value": "140.112.12.53",
+      "last_seen": "2025-10-29T14:08:33.853000"
+    },
+    {
+      "subdomain": "ce12054.ce",
+      "type": "A",
+      "value": "140.112.12.54",
+      "last_seen": "2025-10-29T14:08:34.036000"
+    },
+    {
+      "subdomain": "ce12059.ce",
+      "type": "A",
+      "value": "140.112.12.59",
+      "last_seen": "2025-10-29T14:08:33.214000"
+    },
+    {
+      "subdomain": "ce12062.ce",
+      "type": "A",
+      "value": "140.112.12.62",
+      "last_seen": "2025-10-29T14:08:34.056000"
+    },
+    {
+      "subdomain": "ce12063.ce",
+      "type": "A",
+      "value": "140.112.12.63",
+      "last_seen": "2025-10-29T14:08:33.401000"
+    },
+    {
+      "subdomain": "ce12064.ce",
+      "type": "A",
+      "value": "140.112.12.64",
+      "last_seen": "2025-10-29T14:08:34.140000"
+    },
+    {
+      "subdomain": "ce12066.ce",
+      "type": "A",
+      "value": "140.112.12.66",
+      "last_seen": "2025-10-29T14:08:33.193000"
+    },
+    {
+      "subdomain": "ce12067.ce",
+      "type": "A",
+      "value": "140.112.12.67",
+      "last_seen": "2025-10-29T14:08:33.126000"
+    },
+    {
+      "subdomain": "ce12073.ce",
+      "type": "A",
+      "value": "140.112.12.73",
+      "last_seen": "2025-10-29T14:08:33.303000"
+    },
+    {
+      "subdomain": "ce12074.ce",
+      "type": "A",
+      "value": "140.112.12.74",
+      "last_seen": "2025-10-29T14:08:33.073000"
+    },
+    {
+      "subdomain": "ce12075.ce",
+      "type": "A",
+      "value": "140.112.12.75",
+      "last_seen": "2025-10-29T14:08:33.544000"
+    },
+    {
+      "subdomain": "ce12076.ce",
+      "type": "A",
+      "value": "140.112.12.76",
+      "last_seen": "2025-10-29T14:08:33.517000"
+    },
+    {
+      "subdomain": "ce12086.ce",
+      "type": "A",
+      "value": "140.112.12.86",
+      "last_seen": "2025-10-29T14:08:34.550000"
+    },
+    {
+      "subdomain": "ce12088.ce",
+      "type": "A",
+      "value": "140.112.12.88",
+      "last_seen": "2025-10-29T14:08:33.358000"
+    },
+    {
+      "subdomain": "ce12089.ce",
+      "type": "A",
+      "value": "140.112.12.89",
+      "last_seen": "2025-10-29T14:08:33.204000"
+    },
+    {
+      "subdomain": "ce12095.ce",
+      "type": "A",
+      "value": "140.112.12.95",
+      "last_seen": "2025-10-29T14:08:33.468000"
+    },
+    {
+      "subdomain": "ce12098.ce",
+      "type": "A",
+      "value": "140.112.12.98",
+      "last_seen": "2025-10-29T14:08:33.130000"
+    },
+    {
+      "subdomain": "ce12103.ce",
+      "type": "A",
+      "value": "140.112.12.103",
+      "last_seen": "2025-10-29T14:08:33.358000"
+    },
+    {
+      "subdomain": "ce12106.ce",
+      "type": "A",
+      "value": "140.112.12.106",
+      "last_seen": "2025-10-29T14:08:33.549000"
+    },
+    {
+      "subdomain": "ce12108.ce",
+      "type": "A",
+      "value": "140.112.12.108",
+      "last_seen": "2025-10-29T14:08:33.713000"
+    },
+    {
+      "subdomain": "ce12112.ce",
+      "type": "A",
+      "value": "140.112.12.112",
+      "last_seen": "2025-10-29T14:08:33.384000"
+    },
+    {
+      "subdomain": "ce12114.ce",
+      "type": "A",
+      "value": "140.112.12.114",
+      "last_seen": "2025-10-29T14:08:33.397000"
+    },
+    {
+      "subdomain": "ce12117.ce",
+      "type": "A",
+      "value": "140.112.12.117",
+      "last_seen": "2025-10-29T14:08:34.059000"
+    },
+    {
+      "subdomain": "ce12228.ce",
+      "type": "A",
+      "value": "140.112.12.228",
+      "last_seen": "2025-10-29T14:08:33.203000"
+    },
+    {
+      "subdomain": "ce12244.ce",
+      "type": "A",
+      "value": "140.112.12.244",
+      "last_seen": "2025-10-29T14:08:33.360000"
+    },
+    {
+      "subdomain": "ce12245.ce",
+      "type": "A",
+      "value": "140.112.12.245",
+      "last_seen": "2025-10-29T14:08:33.042000"
+    },
+    {
+      "subdomain": "ce12246.ce",
+      "type": "A",
+      "value": "140.112.12.246",
+      "last_seen": "2025-10-29T14:08:33.551000"
+    },
+    {
+      "subdomain": "ce12247.ce",
+      "type": "A",
+      "value": "140.112.12.247",
+      "last_seen": "2025-10-29T14:08:33.085000"
+    },
+    {
+      "subdomain": "ce12251.ce",
+      "type": "A",
+      "value": "140.112.12.251",
+      "last_seen": "2025-10-29T14:08:33.241000"
+    },
+    {
+      "subdomain": "ce13006.ce",
+      "type": "A",
+      "value": "140.112.13.6",
+      "last_seen": "2025-10-29T14:08:33.168000"
+    },
+    {
+      "subdomain": "ce13009.ce",
+      "type": "A",
+      "value": "140.112.13.9",
+      "last_seen": "2025-10-29T14:08:33.063000"
+    },
+    {
+      "subdomain": "ce13032.ce",
+      "type": "A",
+      "value": "140.112.13.32",
+      "last_seen": "2025-10-29T14:08:33.359000"
+    },
+    {
+      "subdomain": "ce13038.ce",
+      "type": "A",
+      "value": "140.112.13.38",
+      "last_seen": "2025-10-29T14:08:34.145000"
+    },
+    {
+      "subdomain": "ce13043.ce",
+      "type": "A",
+      "value": "140.112.13.43",
+      "last_seen": "2025-10-29T14:08:33.094000"
+    },
+    {
+      "subdomain": "ce13046.ce",
+      "type": "A",
+      "value": "140.112.13.46",
+      "last_seen": "2025-10-29T14:08:33.066000"
+    },
+    {
+      "subdomain": "ce13070.ce",
+      "type": "A",
+      "value": "140.112.13.70",
+      "last_seen": "2025-10-29T14:08:35.005000"
+    },
+    {
+      "subdomain": "ce13078.ce",
+      "type": "A",
+      "value": "140.112.13.78",
+      "last_seen": "2025-10-29T14:08:33.265000"
+    },
+    {
+      "subdomain": "ce13088.ce",
+      "type": "A",
+      "value": "140.112.13.88",
+      "last_seen": "2025-10-29T14:08:33.132000"
+    },
+    {
+      "subdomain": "ce13096.ce",
+      "type": "A",
+      "value": "140.112.13.96",
+      "last_seen": "2025-10-29T14:08:34.625000"
+    },
+    {
+      "subdomain": "ce13107.ce",
+      "type": "A",
+      "value": "140.112.13.107",
+      "last_seen": "2025-10-29T14:08:34.582000"
+    },
+    {
+      "subdomain": "ce13121.ce",
+      "type": "A",
+      "value": "140.112.13.121",
+      "last_seen": "2025-10-29T14:08:33.263000"
+    },
+    {
+      "subdomain": "ce13132.ce",
+      "type": "A",
+      "value": "140.112.13.132",
+      "last_seen": "2025-10-29T14:08:34.264000"
+    },
+    {
+      "subdomain": "ce13140.ce",
+      "type": "A",
+      "value": "140.112.13.140",
+      "last_seen": "2025-10-29T14:08:33.321000"
+    },
+    {
+      "subdomain": "ce13149.ce",
+      "type": "A",
+      "value": "140.112.13.149",
+      "last_seen": "2025-10-29T14:08:33.578000"
+    },
+    {
+      "subdomain": "ce13199.ce",
+      "type": "A",
+      "value": "140.112.13.199",
+      "last_seen": "2025-10-29T14:08:33.215000"
+    },
+    {
+      "subdomain": "ce13203.ce",
+      "type": "A",
+      "value": "140.112.13.203",
+      "last_seen": "2025-10-29T14:08:33.101000"
+    },
+    {
+      "subdomain": "ce13205.ce",
+      "type": "A",
+      "value": "140.112.13.205",
+      "last_seen": "2025-10-29T14:08:34.060000"
+    },
+    {
+      "subdomain": "ce13207.ce",
+      "type": "A",
+      "value": "140.112.13.207",
+      "last_seen": "2025-10-29T14:08:33.227000"
+    },
+    {
+      "subdomain": "ce13216.ce",
+      "type": "A",
+      "value": "140.112.13.216",
+      "last_seen": "2025-10-29T14:08:33.033000"
+    },
+    {
+      "subdomain": "ce13233.ce",
+      "type": "A",
+      "value": "140.112.13.233",
+      "last_seen": "2025-10-29T14:08:33.247000"
+    },
+    {
+      "subdomain": "ce13238.ce",
+      "type": "A",
+      "value": "140.112.13.238",
+      "last_seen": "2025-10-29T14:08:33.205000"
+    },
+    {
+      "subdomain": "ce13240.ce",
+      "type": "A",
+      "value": "140.112.13.240",
+      "last_seen": "2025-10-29T14:08:33.418000"
+    },
+    {
+      "subdomain": "ce13246.ce",
+      "type": "A",
+      "value": "140.112.13.246",
+      "last_seen": "2025-10-29T14:08:33.189000"
+    },
+    {
+      "subdomain": "ce13248.ce",
+      "type": "A",
+      "value": "140.112.13.248",
+      "last_seen": "2025-10-29T14:08:33.567000"
+    },
+    {
+      "subdomain": "ce13251.ce",
+      "type": "A",
+      "value": "140.112.13.251",
+      "last_seen": "2025-10-29T14:08:33.036000"
+    },
+    {
+      "subdomain": "cecece.m1",
+      "type": "A",
+      "value": "140.112.241.120",
+      "last_seen": "2025-10-29T14:08:33.167000"
+    },
+    {
+      "subdomain": "ced33.dpd",
+      "type": "A",
+      "value": "140.112.163.219",
+      "last_seen": "2025-10-29T14:08:34.617000"
+    },
+    {
+      "subdomain": "ceer",
+      "type": "A",
+      "value": "52.9.64.94",
+      "last_seen": "2025-10-29T14:08:32.920000"
+    },
+    {
+      "subdomain": "ceiba",
+      "type": "A",
+      "value": "140.112.161.178",
+      "last_seen": "2025-10-29T14:08:32.966000"
+    },
+    {
+      "subdomain": "celestine.f5",
+      "type": "A",
+      "value": "140.112.225.175",
+      "last_seen": "2025-10-29T14:08:33.540000"
+    },
+    {
+      "subdomain": "celica.m7",
+      "type": "A",
+      "value": "140.112.250.192",
+      "last_seen": "2025-10-29T14:08:33.284000"
+    },
+    {
+      "subdomain": "cellexpress.cgm",
+      "type": "A",
+      "value": "140.112.136.16",
+      "last_seen": "2025-10-29T14:08:33.263000"
+    },
+    {
+      "subdomain": "cellular.csie",
+      "type": "A",
+      "value": "140.112.28.210",
+      "last_seen": "2025-10-29T14:08:33.206000"
+    },
+    {
+      "subdomain": "centaur.pcs.csie",
+      "type": "A",
+      "value": "140.112.29.210",
+      "last_seen": "2025-10-29T14:08:34.136000"
+    },
+    {
+      "subdomain": "centrex.cc",
+      "type": "A",
+      "value": "140.112.4.245",
+      "last_seen": "2025-10-29T14:08:33.223000"
+    },
+    {
+      "subdomain": "cep",
+      "type": "A",
+      "value": "153.92.10.175",
+      "last_seen": "2025-10-29T14:08:34.120000"
+    },
+    {
+      "subdomain": "cert",
+      "type": "A",
+      "value": "140.112.36.65",
+      "last_seen": "2025-10-29T14:08:32.920000"
+    },
+    {
+      "subdomain": "cf.tl",
+      "type": "A",
+      "value": "140.112.208.158",
+      "last_seen": "2025-10-29T14:08:33.260000"
+    },
+    {
+      "subdomain": "cf2.tl",
+      "type": "A",
+      "value": "140.112.208.158",
+      "last_seen": "2025-10-29T14:08:33.343000"
+    },
+    {
+      "subdomain": "cfd.mc",
+      "type": "A",
+      "value": "140.112.121.229",
+      "last_seen": "2025-10-29T14:08:33.369000"
+    },
+    {
+      "subdomain": "cfd06.me",
+      "type": "A",
+      "value": "140.112.43.230",
+      "last_seen": "2025-10-29T14:08:33.251000"
+    },
+    {
+      "subdomain": "cfe-fish.blog",
+      "type": "A",
+      "value": "203.69.43.132",
+      "last_seen": "2025-10-29T14:08:33.359000"
+    },
+    {
+      "subdomain": "cfrc",
+      "type": "A",
+      "value": "140.112.36.168",
+      "last_seen": "2025-10-29T14:08:35.612000"
+    },
+    {
+      "subdomain": "cge.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.201000"
+    },
+    {
+      "subdomain": "cggy.m1",
+      "type": "A",
+      "value": "140.112.241.225",
+      "last_seen": "2025-10-29T14:08:33.444000"
+    },
+    {
+      "subdomain": "cglabpc11.che",
+      "type": "A",
+      "value": "140.112.23.126",
+      "last_seen": "2025-10-29T14:08:33.263000"
+    },
+    {
+      "subdomain": "cglabpc12.che",
+      "type": "A",
+      "value": "140.112.23.127",
+      "last_seen": "2025-10-29T14:08:33.502000"
+    },
+    {
+      "subdomain": "cglabpc14.che",
+      "type": "A",
+      "value": "140.112.23.129",
+      "last_seen": "2025-10-29T14:08:33.365000"
+    },
+    {
+      "subdomain": "chaii.m5",
+      "type": "A",
+      "value": "140.112.245.197",
+      "last_seen": "2025-10-29T14:08:33.659000"
+    },
+    {
+      "subdomain": "chairmen.mc",
+      "type": "A",
+      "value": "140.112.130.109",
+      "last_seen": "2025-10-29T14:08:33.083000"
+    },
+    {
+      "subdomain": "chang01.fst",
+      "type": "A",
+      "value": "140.112.98.201",
+      "last_seen": "2025-10-29T14:08:33.266000"
+    },
+    {
+      "subdomain": "chat.pailab.csie",
+      "type": "A",
+      "value": "140.112.28.64",
+      "last_seen": "2025-10-29T14:08:33.706000"
+    },
+    {
+      "subdomain": "chc1.mc",
+      "type": "A",
+      "value": "140.112.133.175",
+      "last_seen": "2025-10-29T14:08:32.961000"
+    },
+    {
+      "subdomain": "chc3.mc",
+      "type": "A",
+      "value": "140.112.133.87",
+      "last_seen": "2025-10-29T14:08:33.242000"
+    },
+    {
+      "subdomain": "chc4.mc",
+      "type": "A",
+      "value": "140.112.133.88",
+      "last_seen": "2025-10-29T14:08:34.653000"
+    },
+    {
+      "subdomain": "chchch.m6",
+      "type": "A",
+      "value": "140.112.248.177",
+      "last_seen": "2025-10-29T14:08:33.549000"
+    },
+    {
+      "subdomain": "chcl.m2",
+      "type": "A",
+      "value": "140.112.212.60",
+      "last_seen": "2025-10-29T14:08:33.068000"
+    },
+    {
+      "subdomain": "che",
+      "type": "A",
+      "value": "140.112.23.234",
+      "last_seen": "2025-10-29T14:08:32.910000"
+    },
+    {
+      "subdomain": "cheetah.me",
+      "type": "A",
+      "value": "140.112.46.93",
+      "last_seen": "2025-10-29T14:08:33.354000"
+    },
+    {
+      "subdomain": "chem2019.ch",
+      "type": "A",
+      "value": "140.112.55.232",
+      "last_seen": "2025-10-29T14:08:33.366000"
+    },
+    {
+      "subdomain": "chemnews.ch",
+      "type": "A",
+      "value": "103.1.221.204",
+      "last_seen": "2025-10-29T14:08:34.838000"
+    },
+    {
+      "subdomain": "chemview.odb",
+      "type": "A",
+      "value": "140.112.65.25",
+      "last_seen": "2025-10-29T14:08:33.245000"
+    },
+    {
+      "subdomain": "chen.me",
+      "type": "A",
+      "value": "140.112.46.199",
+      "last_seen": "2025-10-29T14:08:33.725000"
+    },
+    {
+      "subdomain": "chench.mc",
+      "type": "A",
+      "value": "140.112.133.175",
+      "last_seen": "2025-10-29T14:08:32.976000"
+    },
+    {
+      "subdomain": "chends.mc",
+      "type": "A",
+      "value": "120.96.247.115",
+      "last_seen": "2025-10-29T14:08:33.003000"
+    },
+    {
+      "subdomain": "chengdu.m6",
+      "type": "A",
+      "value": "140.112.248.88",
+      "last_seen": "2025-10-29T14:08:33.247000"
+    },
+    {
+      "subdomain": "chenshuwan.f5",
+      "type": "A",
+      "value": "140.112.225.76",
+      "last_seen": "2025-10-29T14:08:34.113000"
+    },
+    {
+      "subdomain": "chenys.m6",
+      "type": "A",
+      "value": "140.112.247.235",
+      "last_seen": "2025-10-29T14:08:33.292000"
+    },
+    {
+      "subdomain": "chenyucheng.cc",
+      "type": "A",
+      "value": "140.112.3.6",
+      "last_seen": "2025-10-29T14:08:33.102000"
+    },
+    {
+      "subdomain": "cher2appa.f2",
+      "type": "A",
+      "value": "140.112.222.71",
+      "last_seen": "2025-10-29T14:08:33.413000"
+    },
+    {
+      "subdomain": "chest1.mc",
+      "type": "A",
+      "value": "140.112.127.190",
+      "last_seen": "2025-10-29T14:08:33.366000"
+    },
+    {
+      "subdomain": "chestnut.m6",
+      "type": "A",
+      "value": "140.112.247.54",
+      "last_seen": "2025-10-29T14:08:33.811000"
+    },
+    {
+      "subdomain": "chia-yun.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:32.965000"
+    },
+    {
+      "subdomain": "chia.hort",
+      "type": "A",
+      "value": "140.112.89.103",
+      "last_seen": "2025-10-29T14:08:34.040000"
+    },
+    {
+      "subdomain": "chiang03.fst",
+      "type": "A",
+      "value": "140.112.98.153",
+      "last_seen": "2025-10-29T14:08:33.387000"
+    },
+    {
+      "subdomain": "chiarung.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.131000"
+    },
+    {
+      "subdomain": "chickensto.m3",
+      "type": "A",
+      "value": "140.112.244.221",
+      "last_seen": "2025-10-29T14:08:33.159000"
+    },
+    {
+      "subdomain": "child.f2",
+      "type": "A",
+      "value": "140.112.228.134",
+      "last_seen": "2025-10-29T14:08:33.439000"
+    },
+    {
+      "subdomain": "chilin.lib",
+      "type": "A",
+      "value": "140.112.114.85",
+      "last_seen": "2025-10-29T14:08:33.292000"
+    },
+    {
+      "subdomain": "chilin.m1",
+      "type": "A",
+      "value": "140.112.241.125",
+      "last_seen": "2025-10-29T14:08:33.203000"
+    },
+    {
+      "subdomain": "chimera.f3",
+      "type": "A",
+      "value": "140.112.216.68",
+      "last_seen": "2025-10-29T14:08:33.132000"
+    },
+    {
+      "subdomain": "chin3.mc",
+      "type": "A",
+      "value": "140.112.134.4",
+      "last_seen": "2025-10-29T14:08:33.504000"
+    },
+    {
+      "subdomain": "ching.hort",
+      "type": "A",
+      "value": "140.112.89.119",
+      "last_seen": "2025-10-29T14:08:33.227000"
+    },
+    {
+      "subdomain": "chinlin.m8",
+      "type": "A",
+      "value": "140.112.252.167",
+      "last_seen": "2025-10-29T14:08:33.262000"
+    },
+    {
+      "subdomain": "chiochio.f8",
+      "type": "A",
+      "value": "140.112.192.164",
+      "last_seen": "2025-10-29T14:08:33.694000"
+    },
+    {
+      "subdomain": "chiou.mc",
+      "type": "A",
+      "value": "140.112.130.111",
+      "last_seen": "2025-10-29T14:08:33.987000"
+    },
+    {
+      "subdomain": "chironfish.m3",
+      "type": "A",
+      "value": "140.112.243.66",
+      "last_seen": "2025-10-29T14:08:33.385000"
+    },
+    {
+      "subdomain": "chnb.cc",
+      "type": "A",
+      "value": "140.112.3.157",
+      "last_seen": "2025-10-29T14:08:33.022000"
+    },
+    {
+      "subdomain": "chone.m5",
+      "type": "A",
+      "value": "140.112.245.155",
+      "last_seen": "2025-10-29T14:08:34.946000"
+    },
+    {
+      "subdomain": "chopin.ee",
+      "type": "A",
+      "value": "140.112.41.126",
+      "last_seen": "2025-10-29T14:08:32.979000"
+    },
+    {
+      "subdomain": "chou.mc",
+      "type": "A",
+      "value": "140.112.132.29",
+      "last_seen": "2025-10-29T14:08:33.334000"
+    },
+    {
+      "subdomain": "chou01.fst",
+      "type": "A",
+      "value": "140.112.98.51",
+      "last_seen": "2025-10-29T14:08:33.951000"
+    },
+    {
+      "subdomain": "chou05.fst",
+      "type": "A",
+      "value": "140.112.98.55",
+      "last_seen": "2025-10-29T14:08:33.472000"
+    },
+    {
+      "subdomain": "chou19.fst",
+      "type": "A",
+      "value": "140.112.98.69",
+      "last_seen": "2025-10-29T14:08:33.494000"
+    },
+    {
+      "subdomain": "chpky.m6",
+      "type": "A",
+      "value": "140.112.248.60",
+      "last_seen": "2025-10-29T14:08:33.265000"
+    },
+    {
+      "subdomain": "chps.cph",
+      "type": "A",
+      "value": "140.112.118.128",
+      "last_seen": "2025-10-29T14:08:33.566000"
+    },
+    {
+      "subdomain": "chras.m3",
+      "type": "A",
+      "value": "140.112.243.180",
+      "last_seen": "2025-10-29T14:08:33.520000"
+    },
+    {
+      "subdomain": "chuan.ee",
+      "type": "A",
+      "value": "140.112.21.120",
+      "last_seen": "2025-10-29T14:08:33.177000"
+    },
+    {
+      "subdomain": "chung-hp.hort",
+      "type": "A",
+      "value": "140.112.89.133",
+      "last_seen": "2025-10-29T14:08:34.552000"
+    },
+    {
+      "subdomain": "chung-jen-lu.me",
+      "type": "A",
+      "value": "140.112.14.227",
+      "last_seen": "2025-10-29T14:08:33.360000"
+    },
+    {
+      "subdomain": "chungli2.mc",
+      "type": "A",
+      "value": "140.112.132.11",
+      "last_seen": "2025-10-29T14:08:33.560000"
+    },
+    {
+      "subdomain": "church.im",
+      "type": "A",
+      "value": "140.112.106.7",
+      "last_seen": "2025-10-05T07:56:36.381000"
+    },
+    {
+      "subdomain": "ci14.lib",
+      "type": "A",
+      "value": "140.112.113.14",
+      "last_seen": "2025-10-29T14:08:33.551000"
+    },
+    {
+      "subdomain": "ci20.lib",
+      "type": "A",
+      "value": "140.112.113.20",
+      "last_seen": "2025-10-29T14:08:32.902000"
+    },
+    {
+      "subdomain": "ci59.lib",
+      "type": "A",
+      "value": "140.112.113.59",
+      "last_seen": "2025-10-29T14:08:33.377000"
+    },
+    {
+      "subdomain": "ci6.lib",
+      "type": "A",
+      "value": "140.112.113.6",
+      "last_seen": "2025-10-29T14:08:33.069000"
+    },
+    {
+      "subdomain": "ci61.lib",
+      "type": "A",
+      "value": "140.112.114.61",
+      "last_seen": "2025-10-29T14:08:33.245000"
+    },
+    {
+      "subdomain": "ci70.lib",
+      "type": "A",
+      "value": "140.112.114.70",
+      "last_seen": "2025-10-29T14:08:33.679000"
+    },
+    {
+      "subdomain": "ci77.lib",
+      "type": "A",
+      "value": "140.112.114.77",
+      "last_seen": "2025-10-29T14:08:33.021000"
+    },
+    {
+      "subdomain": "ciac.ord",
+      "type": "A",
+      "value": "140.112.165.189",
+      "last_seen": "2025-10-29T14:08:33.190000"
+    },
+    {
+      "subdomain": "ciaeae",
+      "type": "A",
+      "value": "43.254.18.7",
+      "last_seen": "2025-10-29T14:08:33.400000"
+    },
+    {
+      "subdomain": "ciaeae.bioagri",
+      "type": "A",
+      "value": "140.112.183.159",
+      "last_seen": "2025-10-29T14:08:33.402000"
+    },
+    {
+      "subdomain": "ciel",
+      "type": "A",
+      "value": "202.182.97.106",
+      "last_seen": "2025-10-29T14:08:33.144000"
+    },
+    {
+      "subdomain": "cindy.f2",
+      "type": "A",
+      "value": "140.112.222.209",
+      "last_seen": "2025-10-29T14:08:33.891000"
+    },
+    {
+      "subdomain": "cisco2.me",
+      "type": "A",
+      "value": "140.112.14.2",
+      "last_seen": "2025-10-29T14:08:35.050000"
+    },
+    {
+      "subdomain": "cisco3.me",
+      "type": "A",
+      "value": "140.112.14.3",
+      "last_seen": "2025-10-29T14:08:33.093000"
+    },
+    {
+      "subdomain": "cisco4.me",
+      "type": "A",
+      "value": "140.112.14.4",
+      "last_seen": "2025-10-29T14:08:33.778000"
+    },
+    {
+      "subdomain": "cisco5.me",
+      "type": "A",
+      "value": "140.112.14.5",
+      "last_seen": "2025-10-29T14:08:33.997000"
+    },
+    {
+      "subdomain": "cisco8.me",
+      "type": "A",
+      "value": "140.112.14.8",
+      "last_seen": "2025-10-29T14:08:33.217000"
+    },
+    {
+      "subdomain": "citd",
+      "type": "A",
+      "value": "103.17.9.208",
+      "last_seen": "2025-10-29T14:08:32.905000"
+    },
+    {
+      "subdomain": "civilboy.m1",
+      "type": "A",
+      "value": "140.112.241.175",
+      "last_seen": "2025-10-29T14:08:33.596000"
+    },
+    {
+      "subdomain": "ckck.m5",
+      "type": "A",
+      "value": "140.112.245.125",
+      "last_seen": "2025-10-29T14:08:33.245000"
+    },
+    {
+      "subdomain": "ckf.ee",
+      "type": "A",
+      "value": "140.112.19.125",
+      "last_seen": "2025-10-29T14:08:33.261000"
+    },
+    {
+      "subdomain": "cl1.learner.csie",
+      "type": "A",
+      "value": "140.112.90.193",
+      "last_seen": "2025-10-29T14:08:33.976000"
+    },
+    {
+      "subdomain": "cl2.learner.csie",
+      "type": "A",
+      "value": "140.112.90.194",
+      "last_seen": "2025-10-29T14:08:33.564000"
+    },
+    {
+      "subdomain": "cl7.learner.csie",
+      "type": "A",
+      "value": "140.112.90.197",
+      "last_seen": "2025-10-29T14:08:33.961000"
+    },
+    {
+      "subdomain": "clair.f2",
+      "type": "A",
+      "value": "140.112.222.199",
+      "last_seen": "2025-10-29T14:08:33.502000"
+    },
+    {
+      "subdomain": "clarity2.fltc",
+      "type": "A",
+      "value": "140.112.105.125",
+      "last_seen": "2025-10-29T14:08:34.861000"
+    },
+    {
+      "subdomain": "claser.hy",
+      "type": "A",
+      "value": "140.112.190.249",
+      "last_seen": "2025-10-29T14:08:33.261000"
+    },
+    {
+      "subdomain": "claude.m6",
+      "type": "A",
+      "value": "140.112.248.50",
+      "last_seen": "2025-10-29T14:08:33.430000"
+    },
+    {
+      "subdomain": "cld-taiwan.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.064000"
+    },
+    {
+      "subdomain": "cld.cloud",
+      "type": "A",
+      "value": "140.112.36.54",
+      "last_seen": "2025-10-29T14:08:35.004000"
+    },
+    {
+      "subdomain": "cld.lang",
+      "type": "A",
+      "value": "103.138.106.47",
+      "last_seen": "2025-10-29T14:08:33.279000"
+    },
+    {
+      "subdomain": "cld.liberal",
+      "type": "A",
+      "value": "140.112.2.140",
+      "last_seen": "2025-10-29T14:08:33.082000"
+    },
+    {
+      "subdomain": "cloud",
+      "type": "A",
+      "value": "140.112.2.140",
+      "last_seen": "2025-10-29T14:08:33.135000"
+    },
+    {
+      "subdomain": "cloud-college.ttrc.aca",
+      "type": "A",
+      "value": "140.112.161.120",
+      "last_seen": "2025-10-29T14:08:33.257000"
+    },
+    {
+      "subdomain": "cloud.csie",
+      "type": "A",
+      "value": "140.112.91.151",
+      "last_seen": "2025-10-29T14:08:33.021000"
+    },
+    {
+      "subdomain": "cloudpe-mcu.csie",
+      "type": "A",
+      "value": "140.112.31.204",
+      "last_seen": "2025-10-29T14:08:33.441000"
+    },
+    {
+      "subdomain": "cloudpe-sip.csie",
+      "type": "A",
+      "value": "140.112.31.205",
+      "last_seen": "2025-10-29T14:08:33.186000"
+    },
+    {
+      "subdomain": "cloudpe.csie",
+      "type": "A",
+      "value": "140.112.31.204",
+      "last_seen": "2025-10-29T14:08:34.705000"
+    },
+    {
+      "subdomain": "cloudream.m3",
+      "type": "A",
+      "value": "140.112.244.5",
+      "last_seen": "2025-10-29T14:08:33.440000"
+    },
+    {
+      "subdomain": "cls.lib",
+      "type": "A",
+      "value": "140.112.114.94",
+      "last_seen": "2025-10-29T14:08:33.254000"
+    },
+    {
+      "subdomain": "clubgallery",
+      "type": "A",
+      "value": "140.112.36.134",
+      "last_seen": "2025-10-29T14:08:34.780000"
+    },
+    {
+      "subdomain": "cluster.gl",
+      "type": "A",
+      "value": "140.112.57.181",
+      "last_seen": "2025-10-29T14:08:33.081000"
+    },
+    {
+      "subdomain": "cm",
+      "type": "A",
+      "value": "140.112.105.5",
+      "last_seen": "2025-10-29T14:08:33.424000"
+    },
+    {
+      "subdomain": "cm",
+      "type": "A",
+      "value": "140.112.127.98",
+      "last_seen": "2025-10-13T20:55:11.174000"
+    },
+    {
+      "subdomain": "cmccs",
+      "type": "A",
+      "value": "103.17.9.244",
+      "last_seen": "2025-10-29T14:08:33.143000"
+    },
+    {
+      "subdomain": "cmcls216.mc",
+      "type": "A",
+      "value": "140.112.132.216",
+      "last_seen": "2025-10-29T14:08:33.337000"
+    },
+    {
+      "subdomain": "cmcls217.mc",
+      "type": "A",
+      "value": "140.112.132.217",
+      "last_seen": "2025-10-29T14:08:34.683000"
+    },
+    {
+      "subdomain": "cmcls218.mc",
+      "type": "A",
+      "value": "140.112.132.218",
+      "last_seen": "2025-10-29T14:08:32.938000"
+    },
+    {
+      "subdomain": "cmdd.csie",
+      "type": "A",
+      "value": "140.112.28.90",
+      "last_seen": "2025-10-29T14:08:34.402000"
+    },
+    {
+      "subdomain": "cmdm.csie",
+      "type": "A",
+      "value": "140.112.28.90",
+      "last_seen": "2025-10-29T14:08:33.984000"
+    },
+    {
+      "subdomain": "cmiacuc",
+      "type": "A",
+      "value": "140.112.105.84",
+      "last_seen": "2025-10-29T14:08:32.907000"
+    },
+    {
+      "subdomain": "cml0.csie",
+      "type": "A",
+      "value": "140.112.29.130",
+      "last_seen": "2025-10-29T14:08:33.978000"
+    },
+    {
+      "subdomain": "cml1.csie",
+      "type": "A",
+      "value": "140.112.29.134",
+      "last_seen": "2025-10-29T14:08:35.079000"
+    },
+    {
+      "subdomain": "cml1.ee",
+      "type": "A",
+      "value": "140.112.48.140",
+      "last_seen": "2025-10-29T14:08:33.090000"
+    },
+    {
+      "subdomain": "cml18.csie",
+      "type": "A",
+      "value": "140.112.29.148",
+      "last_seen": "2025-10-29T14:08:32.966000"
+    },
+    {
+      "subdomain": "cml2.csie",
+      "type": "A",
+      "value": "140.112.29.132",
+      "last_seen": "2025-10-29T14:08:33.069000"
+    },
+    {
+      "subdomain": "cml26.csie",
+      "type": "A",
+      "value": "140.112.29.185",
+      "last_seen": "2025-10-29T14:08:33.506000"
+    },
+    {
+      "subdomain": "cml4.csie",
+      "type": "A",
+      "value": "140.112.29.134",
+      "last_seen": "2025-10-29T14:08:33.236000"
+    },
+    {
+      "subdomain": "cml5.csie",
+      "type": "A",
+      "value": "140.112.29.135",
+      "last_seen": "2025-10-29T14:08:34.358000"
+    },
+    {
+      "subdomain": "cml8.ee",
+      "type": "A",
+      "value": "140.112.48.147",
+      "last_seen": "2025-10-29T14:08:33.102000"
+    },
+    {
+      "subdomain": "cmlab.csie",
+      "type": "A",
+      "value": "140.112.29.134",
+      "last_seen": "2025-10-29T14:08:33.062000"
+    },
+    {
+      "subdomain": "cmlab105.csie",
+      "type": "A",
+      "value": "140.112.29.105",
+      "last_seen": "2025-10-29T14:08:33.501000"
+    },
+    {
+      "subdomain": "cmlab110.csie",
+      "type": "A",
+      "value": "140.112.29.110",
+      "last_seen": "2025-10-29T14:08:33.260000"
+    },
+    {
+      "subdomain": "cmlab117.csie",
+      "type": "A",
+      "value": "140.112.29.117",
+      "last_seen": "2025-10-29T14:08:33.348000"
+    },
+    {
+      "subdomain": "cmlab122.csie",
+      "type": "A",
+      "value": "140.112.29.122",
+      "last_seen": "2025-10-29T14:08:33.264000"
+    },
+    {
+      "subdomain": "cmlab188.csie",
+      "type": "A",
+      "value": "140.112.29.188",
+      "last_seen": "2025-10-29T14:08:33.022000"
+    },
+    {
+      "subdomain": "cmldchp3.csie",
+      "type": "A",
+      "value": "140.112.29.127",
+      "last_seen": "2025-10-29T14:08:33.063000"
+    },
+    {
+      "subdomain": "cmldchp4.csie",
+      "type": "A",
+      "value": "140.112.29.128",
+      "last_seen": "2025-10-29T14:08:33.096000"
+    },
+    {
+      "subdomain": "cmldchp5.csie",
+      "type": "A",
+      "value": "140.112.29.129",
+      "last_seen": "2025-10-29T14:08:33.381000"
+    },
+    {
+      "subdomain": "cmlkvm.csie",
+      "type": "A",
+      "value": "140.112.29.156",
+      "last_seen": "2025-10-29T14:08:34.839000"
+    },
+    {
+      "subdomain": "cmlmm.csie",
+      "type": "A",
+      "value": "140.112.29.99",
+      "last_seen": "2025-10-29T14:08:34.862000"
+    },
+    {
+      "subdomain": "cmlnas7.csie",
+      "type": "A",
+      "value": "140.112.29.172",
+      "last_seen": "2025-10-29T14:08:33.546000"
+    },
+    {
+      "subdomain": "cmlprinter.csie",
+      "type": "A",
+      "value": "140.112.29.174",
+      "last_seen": "2025-10-29T14:08:33.548000"
+    },
+    {
+      "subdomain": "cmlsiggraph.csie",
+      "type": "A",
+      "value": "140.112.29.158",
+      "last_seen": "2025-10-29T14:08:33.081000"
+    },
+    {
+      "subdomain": "cms.cc",
+      "type": "A",
+      "value": "140.112.36.86",
+      "last_seen": "2025-10-29T14:08:33.293000"
+    },
+    {
+      "subdomain": "cms.lis",
+      "type": "A",
+      "value": "140.112.180.33",
+      "last_seen": "2025-10-29T14:08:32.987000"
+    },
+    {
+      "subdomain": "cnvintegrate.cgm",
+      "type": "A",
+      "value": "140.112.136.46",
+      "last_seen": "2025-10-29T14:08:33.497000"
+    },
+    {
+      "subdomain": "cobra.ee",
+      "type": "A",
+      "value": "140.112.42.65",
+      "last_seen": "2025-10-29T14:08:33.584000"
+    },
+    {
+      "subdomain": "cocco.gl",
+      "type": "A",
+      "value": "140.112.56.109",
+      "last_seen": "2025-10-29T14:08:32.986000"
+    },
+    {
+      "subdomain": "coda.oc",
+      "type": "A",
+      "value": "140.112.69.65",
+      "last_seen": "2025-10-29T14:08:33.669000"
+    },
+    {
+      "subdomain": "code.comm",
+      "type": "A",
+      "value": "140.112.41.19",
+      "last_seen": "2025-10-29T14:08:33.718000"
+    },
+    {
+      "subdomain": "coding.ee",
+      "type": "A",
+      "value": "140.112.41.34",
+      "last_seen": "2025-10-29T14:08:33.524000"
+    },
+    {
+      "subdomain": "coding2.ee",
+      "type": "A",
+      "value": "140.112.41.32",
+      "last_seen": "2025-10-29T14:08:34.533000"
+    },
+    {
+      "subdomain": "collections.arthistory",
+      "type": "A",
+      "value": "13.251.251.148",
+      "last_seen": "2025-10-29T14:08:33.091000"
+    },
+    {
+      "subdomain": "com.mc",
+      "type": "A",
+      "value": "140.112.137.27",
+      "last_seen": "2025-10-29T14:08:32.939000"
+    },
+    {
+      "subdomain": "comexchange",
+      "type": "A",
+      "value": "140.112.36.234",
+      "last_seen": "2025-10-29T14:08:33.549000"
+    },
+    {
+      "subdomain": "comm",
+      "type": "A",
+      "value": "140.112.36.128",
+      "last_seen": "2025-10-29T14:08:33.794000"
+    },
+    {
+      "subdomain": "common.lu.im",
+      "type": "A",
+      "value": "140.112.106.87",
+      "last_seen": "2025-10-29T14:08:33.506000"
+    },
+    {
+      "subdomain": "computer.che",
+      "type": "A",
+      "value": "140.112.22.251",
+      "last_seen": "2025-10-29T14:08:34.010000"
+    },
+    {
+      "subdomain": "connect.ctld",
+      "type": "A",
+      "value": "140.112.36.171",
+      "last_seen": "2025-10-29T14:08:33.013000"
+    },
+    {
+      "subdomain": "contest.cc",
+      "type": "A",
+      "value": "140.112.36.61",
+      "last_seen": "2025-10-29T14:08:33.205000"
+    },
+    {
+      "subdomain": "contigviews.bioagri",
+      "type": "A",
+      "value": "140.112.36.187",
+      "last_seen": "2025-10-29T14:08:35.204000"
+    },
+    {
+      "subdomain": "contigviews.csbb",
+      "type": "A",
+      "value": "140.112.36.187",
+      "last_seen": "2025-10-29T14:08:34.045000"
+    },
+    {
+      "subdomain": "coocoo.m8",
+      "type": "A",
+      "value": "140.112.252.117",
+      "last_seen": "2025-10-29T14:08:33.437000"
+    },
+    {
+      "subdomain": "cook03.as",
+      "type": "A",
+      "value": "140.112.67.183",
+      "last_seen": "2025-10-29T14:08:33.463000"
+    },
+    {
+      "subdomain": "cook11.as",
+      "type": "A",
+      "value": "140.112.67.191",
+      "last_seen": "2025-10-29T14:08:34.291000"
+    },
+    {
+      "subdomain": "cook14.as",
+      "type": "A",
+      "value": "140.112.67.194",
+      "last_seen": "2025-10-29T14:08:33.059000"
+    },
+    {
+      "subdomain": "cook15.as",
+      "type": "A",
+      "value": "140.112.67.195",
+      "last_seen": "2025-10-29T14:08:33.462000"
+    },
+    {
+      "subdomain": "cook16.as",
+      "type": "A",
+      "value": "140.112.67.196",
+      "last_seen": "2025-10-29T14:08:33.108000"
+    },
+    {
+      "subdomain": "cool",
+      "type": "A",
+      "value": "140.112.145.153",
+      "last_seen": "2025-10-29T14:08:33.486000"
+    },
+    {
+      "subdomain": "cool.math",
+      "type": "A",
+      "value": "140.112.51.209",
+      "last_seen": "2025-10-29T14:08:33.065000"
+    },
+    {
+      "subdomain": "copernicus.phys",
+      "type": "A",
+      "value": "140.112.104.99",
+      "last_seen": "2025-10-29T14:08:33.170000"
+    },
+    {
+      "subdomain": "coph",
+      "type": "A",
+      "value": "140.112.36.21",
+      "last_seen": "2025-10-29T14:08:33.095000"
+    },
+    {
+      "subdomain": "copy.ifs",
+      "type": "A",
+      "value": "140.112.70.5",
+      "last_seen": "2025-10-29T14:08:34.369000"
+    },
+    {
+      "subdomain": "core.harbor.toolmenlab.bime",
+      "type": "A",
+      "value": "140.112.183.104",
+      "last_seen": "2025-10-29T14:08:33.538000"
+    },
+    {
+      "subdomain": "corolla.ee",
+      "type": "A",
+      "value": "140.112.21.134",
+      "last_seen": "2025-10-29T14:08:33.847000"
+    },
+    {
+      "subdomain": "coshower.m7",
+      "type": "A",
+      "value": "140.112.249.202",
+      "last_seen": "2025-10-29T14:08:33.439000"
+    },
+    {
+      "subdomain": "cospa.phys",
+      "type": "A",
+      "value": "140.112.101.136",
+      "last_seen": "2025-10-29T14:08:33.294000"
+    },
+    {
+      "subdomain": "coss.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:32.944000"
+    },
+    {
+      "subdomain": "council.csie",
+      "type": "A",
+      "value": "140.112.30.247",
+      "last_seen": "2025-10-29T14:08:33.215000"
+    },
+    {
+      "subdomain": "course",
+      "type": "A",
+      "value": "140.112.161.137",
+      "last_seen": "2025-10-29T14:08:32.966000"
+    },
+    {
+      "subdomain": "course.lib",
+      "type": "A",
+      "value": "140.112.115.125",
+      "last_seen": "2025-10-29T14:08:33.921000"
+    },
+    {
+      "subdomain": "course.tl",
+      "type": "A",
+      "value": "23.98.155.175",
+      "last_seen": "2025-10-29T14:08:33.381000"
+    },
+    {
+      "subdomain": "course6rpp.aca",
+      "type": "A",
+      "value": "140.112.161.137",
+      "last_seen": "2025-10-29T14:08:33.553000"
+    },
+    {
+      "subdomain": "course8pz3.aca",
+      "type": "A",
+      "value": "140.112.161.137",
+      "last_seen": "2025-10-29T14:08:33.063000"
+    },
+    {
+      "subdomain": "coursemap.aca",
+      "type": "A",
+      "value": "140.112.161.148",
+      "last_seen": "2025-10-29T14:08:33.082000"
+    },
+    {
+      "subdomain": "covart.csie",
+      "type": "A",
+      "value": "140.112.90.89",
+      "last_seen": "2025-10-29T14:08:33.628000"
+    },
+    {
+      "subdomain": "cp.ce",
+      "type": "A",
+      "value": "140.112.11.234",
+      "last_seen": "2025-10-29T14:08:33.980000"
+    },
+    {
+      "subdomain": "cpanel.garc",
+      "type": "A",
+      "value": "103.17.8.27",
+      "last_seen": "2025-10-29T14:08:33.196000"
+    },
+    {
+      "subdomain": "cpanel.iiipo.ee",
+      "type": "A",
+      "value": "66.147.244.230",
+      "last_seen": "2025-10-29T14:08:33.633000"
+    },
+    {
+      "subdomain": "cpanel.iiipo.eecs",
+      "type": "A",
+      "value": "66.147.244.230",
+      "last_seen": "2025-10-29T14:08:33.319000"
+    },
+    {
+      "subdomain": "cpanel.ying.forex",
+      "type": "A",
+      "value": "172.104.99.206",
+      "last_seen": "2025-10-29T14:08:33.415000"
+    },
+    {
+      "subdomain": "cpcalendars.garc",
+      "type": "A",
+      "value": "103.17.8.27",
+      "last_seen": "2025-10-29T14:08:33.544000"
+    },
+    {
+      "subdomain": "cpcalendars.iiipo.ee",
+      "type": "A",
+      "value": "66.147.244.230",
+      "last_seen": "2025-10-29T14:08:33.866000"
+    },
+    {
+      "subdomain": "cpcalendars.iiipo.eecs",
+      "type": "A",
+      "value": "66.147.244.230",
+      "last_seen": "2025-10-29T14:08:33.064000"
+    },
+    {
+      "subdomain": "cpcalendars.ying.forex",
+      "type": "A",
+      "value": "172.104.99.206",
+      "last_seen": "2025-10-29T14:08:33.699000"
+    },
+    {
+      "subdomain": "cpcontacts.garc",
+      "type": "A",
+      "value": "103.17.8.27",
+      "last_seen": "2025-10-29T14:08:33.213000"
+    },
+    {
+      "subdomain": "cpcontacts.iiipo.ee",
+      "type": "A",
+      "value": "66.147.244.230",
+      "last_seen": "2025-10-29T14:08:33.127000"
+    },
+    {
+      "subdomain": "cpcontacts.iiipo.eecs",
+      "type": "A",
+      "value": "66.147.244.230",
+      "last_seen": "2025-10-29T14:08:33.111000"
+    },
+    {
+      "subdomain": "cpcontacts.ying.forex",
+      "type": "A",
+      "value": "172.104.99.206",
+      "last_seen": "2025-10-29T14:08:33.705000"
+    },
+    {
+      "subdomain": "cph",
+      "type": "A",
+      "value": "140.112.117.131",
+      "last_seen": "2025-10-29T14:08:33.244000"
+    },
+    {
+      "subdomain": "cps.csie",
+      "type": "A",
+      "value": "140.112.91.41",
+      "last_seen": "2025-10-29T14:08:34.032000"
+    },
+    {
+      "subdomain": "cqse",
+      "type": "A",
+      "value": "140.112.187.187",
+      "last_seen": "2025-10-29T14:08:33.672000"
+    },
+    {
+      "subdomain": "crc.mc",
+      "type": "A",
+      "value": "140.112.134.41",
+      "last_seen": "2025-10-29T14:08:34.625000"
+    },
+    {
+      "subdomain": "crelabpc14.che",
+      "type": "A",
+      "value": "140.112.23.200",
+      "last_seen": "2025-10-29T14:08:33.418000"
+    },
+    {
+      "subdomain": "cris7dev.lib",
+      "type": "A",
+      "value": "140.112.115.30",
+      "last_seen": "2025-10-29T14:08:34.984000"
+    },
+    {
+      "subdomain": "cris7test.lib",
+      "type": "A",
+      "value": "140.112.113.29",
+      "last_seen": "2025-10-29T14:08:33.033000"
+    },
+    {
+      "subdomain": "cropac176.lib",
+      "type": "A",
+      "value": "140.112.114.176",
+      "last_seen": "2025-10-29T14:08:34.968000"
+    },
+    {
+      "subdomain": "crs.cph",
+      "type": "A",
+      "value": "140.112.117.131",
+      "last_seen": "2025-10-29T14:08:33.272000"
+    },
+    {
+      "subdomain": "cruise.oc",
+      "type": "A",
+      "value": "140.112.68.135",
+      "last_seen": "2025-10-29T14:08:33.404000"
+    },
+    {
+      "subdomain": "crusader.m3",
+      "type": "A",
+      "value": "140.112.243.108",
+      "last_seen": "2025-10-29T14:08:33.217000"
+    },
+    {
+      "subdomain": "cs100.lib",
+      "type": "A",
+      "value": "140.112.113.100",
+      "last_seen": "2025-10-29T14:08:33.191000"
+    },
+    {
+      "subdomain": "csa1.mc",
+      "type": "A",
+      "value": "140.112.130.5",
+      "last_seen": "2025-10-29T14:08:33.605000"
+    },
+    {
+      "subdomain": "csa2.mc",
+      "type": "A",
+      "value": "140.112.130.6",
+      "last_seen": "2025-10-29T14:08:32.965000"
+    },
+    {
+      "subdomain": "csb01.csbb",
+      "type": "A",
+      "value": "140.112.165.107",
+      "last_seen": "2025-10-29T14:08:33.277000"
+    },
+    {
+      "subdomain": "csbb01.csbb",
+      "type": "A",
+      "value": "140.112.165.71",
+      "last_seen": "2025-10-29T14:08:33.395000"
+    },
+    {
+      "subdomain": "csbb02.csbb",
+      "type": "A",
+      "value": "140.112.165.72",
+      "last_seen": "2025-10-29T14:08:33.754000"
+    },
+    {
+      "subdomain": "csbb11.csbb",
+      "type": "A",
+      "value": "140.112.165.81",
+      "last_seen": "2025-10-29T14:08:33.190000"
+    },
+    {
+      "subdomain": "csbb25.csbb",
+      "type": "A",
+      "value": "140.112.165.98",
+      "last_seen": "2025-10-29T14:08:33.564000"
+    },
+    {
+      "subdomain": "csbbfs3.csbb",
+      "type": "A",
+      "value": "140.112.165.68",
+      "last_seen": "2025-10-29T14:08:33.158000"
+    },
+    {
+      "subdomain": "cscmax.m1",
+      "type": "A",
+      "value": "140.112.241.247",
+      "last_seen": "2025-10-29T14:08:33.633000"
+    },
+    {
+      "subdomain": "csg1.mc",
+      "type": "A",
+      "value": "140.112.130.14",
+      "last_seen": "2025-10-29T14:08:33.547000"
+    },
+    {
+      "subdomain": "csie",
+      "type": "A",
+      "value": "140.112.30.26",
+      "last_seen": "2025-10-30T01:30:32.785000"
+    },
+    {
+      "subdomain": "csiovdb.mc",
+      "type": "A",
+      "value": "140.112.123.127",
+      "last_seen": "2025-10-29T14:08:32.952000"
+    },
+    {
+      "subdomain": "csman.csie",
+      "type": "A",
+      "value": "140.112.30.13",
+      "last_seen": "2025-10-29T14:08:33.070000"
+    },
+    {
+      "subdomain": "cspis.digital",
+      "type": "A",
+      "value": "140.112.105.20",
+      "last_seen": "2025-10-29T14:08:33.428000"
+    },
+    {
+      "subdomain": "cswomen.csie",
+      "type": "A",
+      "value": "140.112.28.65",
+      "last_seen": "2025-10-29T14:08:34.079000"
+    },
+    {
+      "subdomain": "ctb.digital",
+      "type": "A",
+      "value": "140.112.105.21",
+      "last_seen": "2025-10-29T14:08:36.644000"
+    },
+    {
+      "subdomain": "ctd.oc",
+      "type": "A",
+      "value": "140.112.68.231",
+      "last_seen": "2025-10-29T14:08:34.579000"
+    },
+    {
+      "subdomain": "cte-edweb-2013.blog",
+      "type": "A",
+      "value": "140.112.36.158",
+      "last_seen": "2025-10-29T14:08:33.101000"
+    },
+    {
+      "subdomain": "ctest.math",
+      "type": "A",
+      "value": "140.112.51.90",
+      "last_seen": "2025-10-29T14:08:33.127000"
+    },
+    {
+      "subdomain": "ctf.nslab.csie",
+      "type": "A",
+      "value": "140.112.31.103",
+      "last_seen": "2025-10-29T14:08:33.679000"
+    },
+    {
+      "subdomain": "ctl.mc",
+      "type": "A",
+      "value": "140.112.133.67",
+      "last_seen": "2025-10-29T14:08:33.084000"
+    },
+    {
+      "subdomain": "cts.m3",
+      "type": "A",
+      "value": "140.112.244.95",
+      "last_seen": "2025-10-29T14:08:33.260000"
+    },
+    {
+      "subdomain": "cts.math",
+      "type": "A",
+      "value": "140.112.51.11",
+      "last_seen": "2025-10-29T14:08:33.111000"
+    },
+    {
+      "subdomain": "cty.g4",
+      "type": "A",
+      "value": "140.112.231.18",
+      "last_seen": "2025-10-29T14:08:33.798000"
+    },
+    {
+      "subdomain": "cue.m6",
+      "type": "A",
+      "value": "140.112.247.207",
+      "last_seen": "2025-10-29T14:08:33.251000"
+    },
+    {
+      "subdomain": "cumulus.as",
+      "type": "A",
+      "value": "140.112.67.141",
+      "last_seen": "2025-10-29T14:08:32.951000"
+    },
+    {
+      "subdomain": "cur205.aca",
+      "type": "A",
+      "value": "140.112.161.205",
+      "last_seen": "2025-10-29T14:08:33.067000"
+    },
+    {
+      "subdomain": "curri.aca",
+      "type": "A",
+      "value": "140.112.161.31",
+      "last_seen": "2025-10-29T14:08:33.036000"
+    },
+    {
+      "subdomain": "cut-02.me",
+      "type": "A",
+      "value": "140.112.43.12",
+      "last_seen": "2025-10-29T14:08:33.010000"
+    },
+    {
+      "subdomain": "cut-03.me",
+      "type": "A",
+      "value": "140.112.43.138",
+      "last_seen": "2025-10-29T14:08:34.671000"
+    },
+    {
+      "subdomain": "cut-08.me",
+      "type": "A",
+      "value": "140.112.43.69",
+      "last_seen": "2025-10-29T14:08:33.733000"
+    },
+    {
+      "subdomain": "cut-09.me",
+      "type": "A",
+      "value": "140.112.43.51",
+      "last_seen": "2025-10-29T14:08:34.136000"
+    },
+    {
+      "subdomain": "cuteass.m3",
+      "type": "A",
+      "value": "140.112.243.168",
+      "last_seen": "2025-10-29T14:08:36.451000"
+    },
+    {
+      "subdomain": "cv1.csie",
+      "type": "A",
+      "value": "140.112.31.82",
+      "last_seen": "2025-10-29T14:08:33.021000"
+    },
+    {
+      "subdomain": "cv2.csie",
+      "type": "A",
+      "value": "140.112.31.83",
+      "last_seen": "2025-10-29T14:08:33.410000"
+    },
+    {
+      "subdomain": "cveinfo.cc",
+      "type": "A",
+      "value": "163.28.17.11",
+      "last_seen": "2025-10-29T14:08:33.011000"
+    },
+    {
+      "subdomain": "cvictor.m1",
+      "type": "A",
+      "value": "140.112.241.99",
+      "last_seen": "2025-10-29T14:08:34.540000"
+    },
+    {
+      "subdomain": "cvictor.m8",
+      "type": "A",
+      "value": "140.112.253.194",
+      "last_seen": "2025-10-29T14:08:33.522000"
+    },
+    {
+      "subdomain": "cvlab.ee",
+      "type": "A",
+      "value": "140.112.19.110",
+      "last_seen": "2025-10-29T14:08:35.386000"
+    }
+  ],
+  "more": true
+}
+
+=== 整理後的結果 ===
+--- 完整網域 ---
+0910123654.m7.ntu.edu.tw
+0929630280.m7.ntu.edu.tw
+101-1.m7.ntu.edu.tw
+104.avcenter.ntu.edu.tw
+104.hort.ntu.edu.tw
+105-a2.avcenter.ntu.edu.tw
+105-a4.avcenter.ntu.edu.tw
+105-b4.avcenter.ntu.edu.tw
+105-c2.avcenter.ntu.edu.tw
+105-c3.avcenter.ntu.edu.tw
+105-c4.avcenter.ntu.edu.tw
+105-d1.avcenter.ntu.edu.tw
+105-d2.avcenter.ntu.edu.tw
+105-d6.avcenter.ntu.edu.tw
+105-e1.avcenter.ntu.edu.tw
+105-e4.avcenter.ntu.edu.tw
+105-f2.avcenter.ntu.edu.tw
+105-f3.avcenter.ntu.edu.tw
+105-teacher.avcenter.ntu.edu.tw
+106-1.avcenter.ntu.edu.tw
+106-1.m7.ntu.edu.tw
+106-2.avcenter.ntu.edu.tw
+106-3.m7.ntu.edu.tw
+108-2.dday.dschool.ntu.edu.tw
+109-1.dday.dschool.ntu.edu.tw
+109-2.dday.dschool.ntu.edu.tw
+110-1.dday.dschool.ntu.edu.tw
+116-1.m7.ntu.edu.tw
+118-3.m7.ntu.edu.tw
+195.lis.ntu.edu.tw
+197.lis.ntu.edu.tw
+1f-laser.aeh.ntu.edu.tw
+201.avcenter.ntu.edu.tw
+2010-edmedia.blog.ntu.edu.tw
+2010-irish-drama-and-films.blog.ntu.edu.tw
+2011-ihrl.blog.ntu.edu.tw
+2012freshmanenglish.blog.ntu.edu.tw
+2013sound.blog.ntu.edu.tw
+2014awp-ntu-ot.blog.ntu.edu.tw
+2015recordedmusic.blog.ntu.edu.tw
+2015twmhistory.blog.ntu.edu.tw
+2020hfa.blog.ntu.edu.tw
+204-3.m7.ntu.edu.tw
+204.avcenter.ntu.edu.tw
+204.scc.ntu.edu.tw
+207-2.m7.ntu.edu.tw
+207-4.m7.ntu.edu.tw
+209-4.m7.ntu.edu.tw
+210-2.avcenter.ntu.edu.tw
+212-1.avcenter.ntu.edu.tw
+213-1.avcenter.ntu.edu.tw
+213-4.m7.ntu.edu.tw
+217-3.m7.ntu.edu.tw
+217-4.m7.ntu.edu.tw
+217ta.csie.ntu.edu.tw
+217vmhost.csie.ntu.edu.tw
+218-4.m7.ntu.edu.tw
+219-3.m7.ntu.edu.tw
+221-3.m7.ntu.edu.tw
+230-1.m7.ntu.edu.tw
+301-4.avcenter.ntu.edu.tw
+302-5.avcenter.ntu.edu.tw
+303user07.linguistics.ntu.edu.tw
+304-1.avcenter.ntu.edu.tw
+304-3.avcenter.ntu.edu.tw
+304-4.avcenter.ntu.edu.tw
+306-2.avcenter.ntu.edu.tw
+308-2.m7.ntu.edu.tw
+309-2.avcenter.ntu.edu.tw
+309-2.m7.ntu.edu.tw
+310-2.avcenter.ntu.edu.tw
+312-2.avcenter.ntu.edu.tw
+315-1.avcenter.ntu.edu.tw
+316-4.m7.ntu.edu.tw
+321-4.m7.ntu.edu.tw
+322-2.m7.ntu.edu.tw
+329-3.m7.ntu.edu.tw
+338b.ee.ntu.edu.tw
+3d.csie.ntu.edu.tw
+402-2.m7.ntu.edu.tw
+402-4.m7.ntu.edu.tw
+402nas.csie.ntu.edu.tw
+406-1.m7.ntu.edu.tw
+407-2.phys.ntu.edu.tw
+414-2.m7.ntu.edu.tw
+415-1.m7.ntu.edu.tw
+421-3.m7.ntu.edu.tw
+430-2.m7.ntu.edu.tw
+521-1.me.ntu.edu.tw
+70th.ee.ntu.edu.tw
+7788.m7.ntu.edu.tw
+921fund.digital.ntu.edu.tw
+98graduation.blog.ntu.edu.tw
+99hphsu.blog.ntu.edu.tw
+a-big-net.cph.ntu.edu.tw
+a-pjae.blog.ntu.edu.tw
+a13.m5.ntu.edu.tw
+a149.m5.ntu.edu.tw
+a150.m5.ntu.edu.tw
+a16.m5.ntu.edu.tw
+a18.m5.ntu.edu.tw
+a2.m5.ntu.edu.tw
+a218.m5.ntu.edu.tw
+a233.m5.ntu.edu.tw
+a238.m5.ntu.edu.tw
+a24.m5.ntu.edu.tw
+a249.m5.ntu.edu.tw
+a250.m5.ntu.edu.tw
+a29.m5.ntu.edu.tw
+a31.m5.ntu.edu.tw
+a32.m5.ntu.edu.tw
+a33.m5.ntu.edu.tw
+a36.m5.ntu.edu.tw
+a43.m5.ntu.edu.tw
+a44.m5.ntu.edu.tw
+a46.m5.ntu.edu.tw
+a48.m5.ntu.edu.tw
+aaa.m6.ntu.edu.tw
+aak.m8.ntu.edu.tw
+aalan.m1.ntu.edu.tw
+aaoffice-new.cloud.ntu.edu.tw
+aaoffice.ntu.edu.tw
+aaron.ee.ntu.edu.tw
+abear.g4.ntu.edu.tw
+abend.m7.ntu.edu.tw
+abmri.mc.ntu.edu.tw
+aborg.lib.ntu.edu.tw
+abra-taiwan.blog.ntu.edu.tw
+ac.ntu.edu.tw
+aca.ntu.edu.tw
+academic-judge.csie.ntu.edu.tw
+acb.csie.ntu.edu.tw
+acc.mc.ntu.edu.tw
+acc.tl.ntu.edu.tw
+acc101.acc.ntu.edu.tw
+acc111.acc.ntu.edu.tw
+acc117.acc.ntu.edu.tw
+acc35.acc.ntu.edu.tw
+acc36.acc.ntu.edu.tw
+acc41.acc.ntu.edu.tw
+acc42.acc.ntu.edu.tw
+acc43.acc.ntu.edu.tw
+acc52.acc.ntu.edu.tw
+acc53.acc.ntu.edu.tw
+acc55.acc.ntu.edu.tw
+acc68.acc.ntu.edu.tw
+acc81.acc.ntu.edu.tw
+acc96.acc.ntu.edu.tw
+acc99.acc.ntu.edu.tw
+acceptance.ga.ntu.edu.tw
+access.ee.ntu.edu.tw
+accsrv2.ntuacc.ntu.edu.tw
+acenter.blog.ntu.edu.tw
+aching.m6.ntu.edu.tw
+ackt.m6.ntu.edu.tw
+acl.ee.ntu.edu.tw
+aclab.as.ntu.edu.tw
+acm.csie.ntu.edu.tw
+acpang1.csie.ntu.edu.tw
+acs.cc.ntu.edu.tw
+act.lib.ntu.edu.tw
+actairv.cloud.ntu.edu.tw
+actairv.oc.ntu.edu.tw
+action.darc.ntu.edu.tw
+active.gl.ntu.edu.tw
+activity.osa.ntu.edu.tw
+ad-hoc.csie.ntu.edu.tw
+ad6234.advisory.studa.ntu.edu.tw
+ad6236.advisory.studa.ntu.edu.tw
+ada01.csie.ntu.edu.tw
+adam.im.ntu.edu.tw
+adam.m5.ntu.edu.tw
+adfs.ntu.edu.tw
+adfs.oeth.ntu.edu.tw
+adhoc.ee.ntu.edu.tw
+admin4.cr.liberal.ntu.edu.tw
+admin5.cr.liberal.ntu.edu.tw
+admission.ee.ntu.edu.tw
+admissions.ntu.edu.tw
+adol.ntu.edu.tw
+adolph.m8.ntu.edu.tw
+adrenal.mc.ntu.edu.tw
+advisory.ntu.edu.tw
+advisory.osa.ntu.edu.tw
+advisory2.osa.ntu.edu.tw
+aecmr.oc.ntu.edu.tw
+aegis.m4.ntu.edu.tw
+aeh.ntu.edu.tw
+aeolus.me.ntu.edu.tw
+aerosol2.mc.ntu.edu.tw
+aerosol4.mc.ntu.edu.tw
+aerosol6.mc.ntu.edu.tw
+aerosol7.mc.ntu.edu.tw
+aerosol8.mc.ntu.edu.tw
+affair7.mc.ntu.edu.tw
+afm1.ntu-ccms.ntu.edu.tw
+afronova.m2.ntu.edu.tw
+agbi.agron.ntu.edu.tw
+agecjnl.agec.ntu.edu.tw
+agecntu.agec.ntu.edu.tw
+agent.csie.ntu.edu.tw
+agnest.g1.ntu.edu.tw
+agou.m6.ntu.edu.tw
+agron.ntu.edu.tw
+agserv-1.agron.ntu.edu.tw
+agserv-2.agron.ntu.edu.tw
+ah.mc.ntu.edu.tw
+ahau.m1.ntu.edu.tw
+ai-crop.toolmen.bime.ntu.edu.tw
+ai.ntu.edu.tw
+ai.robo.ntu.edu.tw
+ai4bi.im.ntu.edu.tw
+aicdm.ntu.edu.tw
+aitomato.toolmen.bime.ntu.edu.tw
+aitomatodoctor.yun.toolmenlab.bime.ntu.edu.tw
+ajc.csie.ntu.edu.tw
+akay.m6.ntu.edu.tw
+akpcer.m8.ntu.edu.tw
+akuz.m6.ntu.edu.tw
+alan7.m6.ntu.edu.tw
+alatin.g4.ntu.edu.tw
+albedo.as.ntu.edu.tw
+albertbug.m6.ntu.edu.tw
+albireo.csie.ntu.edu.tw
+alchemy.ch.ntu.edu.tw
+alder-birds.blog.ntu.edu.tw
+aleph.fll.ntu.edu.tw
+alex-chang.hort.ntu.edu.tw
+alextg.m4.ntu.edu.tw
+alfred.m8.ntu.edu.tw
+alfued.m1.ntu.edu.tw
+algo.csie.ntu.edu.tw
+algolab.csie.ntu.edu.tw
+alice.f2.ntu.edu.tw
+alien.f1.ntu.edu.tw
+allnew4k.lib.ntu.edu.tw
+aloe.hort.ntu.edu.tw
+alpha226.oc.ntu.edu.tw
+alubif.f2.ntu.edu.tw
+alumni.acc.ntu.edu.tw
+alumni.me.ntu.edu.tw
+amare76.m7.ntu.edu.tw
+ame306-3.bime.ntu.edu.tw
+ame310-3.bime.ntu.edu.tw
+amour.csie.ntu.edu.tw
+ampere.im.ntu.edu.tw
+amtg10.ee.ntu.edu.tw
+amtg3.ee.ntu.edu.tw
+amtg4.ee.ntu.edu.tw
+amy.ee.ntu.edu.tw
+amyivlab.csie.ntu.edu.tw
+ana617.mc.ntu.edu.tw
+anabhel.lecospa.ntu.edu.tw
+analog16.ee.ntu.edu.tw
+andersone.hort.ntu.edu.tw
+andrew9013.m3.ntu.edu.tw
+android.ee.ntu.edu.tw
+ane1.mc.ntu.edu.tw
+anes01.mc.ntu.edu.tw
+anes02.mc.ntu.edu.tw
+angel.ee.ntu.edu.tw
+angela.mc.ntu.edu.tw
+angelsam.m3.ntu.edu.tw
+angle.m6.ntu.edu.tw
+anions.m3.ntu.edu.tw
+anita.ee.ntu.edu.tw
+ann.cc.ntu.edu.tw
+ann.ch.ntu.edu.tw
+anniversary.acc.ntu.edu.tw
+anthro.ntu.edu.tw
+anvil.m5.ntu.edu.tw
+ap183.cc.ntu.edu.tw
+apc.aca.ntu.edu.tw
+apec-flows.ntu.edu.tw
+apec.m5.ntu.edu.tw
+api.course.ntu.edu.tw
+api.lib.ntu.edu.tw
+api.linguistics.ntu.edu.tw
+api.odb.ntu.edu.tw
+api2.lib.ntu.edu.tw
+apigate.lib.ntu.edu.tw
+apjae.ntu.edu.tw
+aple.m3.ntu.edu.tw
+apnea.iagents.csie.ntu.edu.tw
+apocalypse.m3.ntu.edu.tw
+app.bebi.ntu.edu.tw
+app.oc.ntu.edu.tw
+app.sand.lu.im.ntu.edu.tw
+app01.odb.ntu.edu.tw
+app05.odb.ntu.edu.tw
+appassionato.math.ntu.edu.tw
+applygmba.management.ntu.edu.tw
+aprdc.ntu.edu.tw
+apricot.csie.ntu.edu.tw
+aprumh2024.wcdr.ntu.edu.tw
+aptsa.cloud.ntu.edu.tw
+arbor.ee.ntu.edu.tw
+arc-gmst-ins.eng.ntu.edu.tw
+archer.ee.ntu.edu.tw
+archi1.ee.ntu.edu.tw
+archi5.ee.ntu.edu.tw
+archi6.ee.ntu.edu.tw
+archi7.ee.ntu.edu.tw
+archiang.m6.ntu.edu.tw
+archimedes.csie.ntu.edu.tw
+archive.bse.ntu.edu.tw
+archmage.ee.ntu.edu.tw
+ares.csie.ntu.edu.tw
+argasleep.m4.ntu.edu.tw
+argonlab.gl.ntu.edu.tw
+arienoe.f2.ntu.edu.tw
+aries.csie.ntu.edu.tw
+artemis.csie.ntu.edu.tw
+artemis.me.ntu.edu.tw
+artfest.ntu.edu.tw
+arts.ntu.edu.tw
+asa.m5.ntu.edu.tw
+ascii.mc.ntu.edu.tw
+ashan.gl.ntu.edu.tw
+asiannetwork4jpstudies.blog.ntu.edu.tw
+asimo.m8.ntu.edu.tw
+asj.as.ntu.edu.tw
+ask.hss.ntu.edu.tw
+asoc52.cc.ntu.edu.tw
+aspire.gl.ntu.edu.tw
+asrlab.me.ntu.edu.tw
+assis2.music.ntu.edu.tw
+astep.ee.ntu.edu.tw
+asteroid.csie.ntu.edu.tw
+atalab15.csie.ntu.edu.tw
+atalab2.csie.ntu.edu.tw
+atb.bse.ntu.edu.tw
+atchem.as.ntu.edu.tw
+atgs.ntu.edu.tw
+athena.ee.ntu.edu.tw
+athens.m5.ntu.edu.tw
+atl.m1.ntu.edu.tw
+atlantic.m5.ntu.edu.tw
+atlas.m6.ntu.edu.tw
+atmos4.as.ntu.edu.tw
+atmosfire.as.ntu.edu.tw
+atoo.m6.ntu.edu.tw
+atva.im.ntu.edu.tw
+auden.m6.ntu.edu.tw
+austin.csie.ntu.edu.tw
+austintodo.csie.ntu.edu.tw
+auth.csie.ntu.edu.tw
+autobind.mc.ntu.edu.tw
+autodiscover.iam.ntu.edu.tw
+autodiscover.iiipo.ee.ntu.edu.tw
+autodiscover.iiipo.eecs.ntu.edu.tw
+autodiscover.mail.iam.ntu.edu.tw
+av.m5.ntu.edu.tw
+aven.gl.ntu.edu.tw
+awardquery.ga.ntu.edu.tw
+awhe.m6.ntu.edu.tw
+ayling.cc.ntu.edu.tw
+aza.med.ntu.edu.tw
+b02102105.blog.ntu.edu.tw
+b02705020.blog.ntu.edu.tw
+b18.m5.ntu.edu.tw
+b198.m5.ntu.edu.tw
+b215.m5.ntu.edu.tw
+b224.iam.ntu.edu.tw
+b233.m5.ntu.edu.tw
+b2359028.m1.ntu.edu.tw
+b26.m5.ntu.edu.tw
+b3.anthro.ntu.edu.tw
+b4.anthro.ntu.edu.tw
+b4.m5.ntu.edu.tw
+b405.bime.ntu.edu.tw
+b42.m5.ntu.edu.tw
+b46.m5.ntu.edu.tw
+b48.m5.ntu.edu.tw
+b75.me.ntu.edu.tw
+b9.anthro.ntu.edu.tw
+b93504068.m7.ntu.edu.tw
+b93901134.m7.ntu.edu.tw
+b94612035.blog.ntu.edu.tw
+b96109027.blog.ntu.edu.tw
+b97203005.blog.ntu.edu.tw
+b99109031.blog.ntu.edu.tw
+ba32.ba.ntu.edu.tw
+ba43.ba.ntu.edu.tw
+ba48.ba.ntu.edu.tw
+ba61.ba.ntu.edu.tw
+ba68.ba.ntu.edu.tw
+ba69.ba.ntu.edu.tw
+ba77.ba.ntu.edu.tw
+babyntw.g4.ntu.edu.tw
+bach.ee.ntu.edu.tw
+backup.hort.ntu.edu.tw
+backupnas.ee.ntu.edu.tw
+baka.m7.ntu.edu.tw
+bakemilk.m3.ntu.edu.tw
+bamboo.ee.ntu.edu.tw
+bamboogirl.f2.ntu.edu.tw
+bananaoook.m3.ntu.edu.tw
+bapc16.ba.ntu.edu.tw
+bapc18.ba.ntu.edu.tw
+bapc6.ba.ntu.edu.tw
+barca.m3.ntu.edu.tw
+barcelona.math.ntu.edu.tw
+bargio.m8.ntu.edu.tw
+barium.m5.ntu.edu.tw
+barley.csie.ntu.edu.tw
+basketman.m6.ntu.edu.tw
+bblab.bime.ntu.edu.tw
+bblabcloud.bime.ntu.edu.tw
+bbs.agec.ntu.edu.tw
+bci.bime.ntu.edu.tw
+bdap.cc.ntu.edu.tw
+bdsrc.ntu.edu.tw
+beachboy.m5.ntu.edu.tw
+bear.ee.ntu.edu.tw
+bear.g4.ntu.edu.tw
+beehive.phys.ntu.edu.tw
+beethoven.ee.ntu.edu.tw
+belle2grid3.cc.ntu.edu.tw
+belllabs.m3.ntu.edu.tw
+bem.bime.ntu.edu.tw
+berenices.f2.ntu.edu.tw
+bernoulli.iam.ntu.edu.tw
+bfn.ntu.edu.tw
+bicd.ntu.edu.tw
+big.me.ntu.edu.tw
+big.psy.ntu.edu.tw
+billfish5.oc.ntu.edu.tw
+billyntu.m8.ntu.edu.tw
+bio-div.hort.ntu.edu.tw
+bio.odb.ntu.edu.tw
+bioagri.ntu.edu.tw
+bioinfo.bime.ntu.edu.tw
+bioinfo.bme.ntu.edu.tw
+bioinfo.mc.ntu.edu.tw
+biomaterials4.che.ntu.edu.tw
+biomech.bme.ntu.edu.tw
+biomedlabpc5.che.ntu.edu.tw
+biometry02.agron.ntu.edu.tw
+biominer.bime.ntu.edu.tw
+bioportal.csbb.ntu.edu.tw
+bioprocess10.che.ntu.edu.tw
+bioprocess11.che.ntu.edu.tw
+biorola.me.ntu.edu.tw
+biosignal.ee.ntu.edu.tw
+birdy.m8.ntu.edu.tw
+bjh05.me.ntu.edu.tw
+bjtseng194.cc.ntu.edu.tw
+bk239149.m1.ntu.edu.tw
+bk241150.m1.ntu.edu.tw
+bk241193.m1.ntu.edu.tw
+bk241205.m1.ntu.edu.tw
+bl404amtg04.ee.ntu.edu.tw
+blanc.ee.ntu.edu.tw
+blog.dlc.ntu.edu.tw
+blog.press.ntu.edu.tw
+blplab.linguistics.ntu.edu.tw
+bluedevils.me.ntu.edu.tw
+bluerex.g4.ntu.edu.tw
+bluesun.m8.ntu.edu.tw
+bluetin.gl.ntu.edu.tw
+bmdlab.bime.ntu.edu.tw
+bmdlab2.bime.ntu.edu.tw
+bme.ntu.edu.tw
+bmeserv.iam.ntu.edu.tw
+boaz.m4.ntu.edu.tw
+bobo.cc.ntu.edu.tw
+bonjour.ee.ntu.edu.tw
+bonnie.f2.ntu.edu.tw
+book401.mc.ntu.edu.tw
+booker.m5.ntu.edu.tw
+booking-campus-museum.ntu.edu.tw
+booking.aca.ntu.edu.tw
+booking.dschool.ntu.edu.tw
+booking.perc.ntu.edu.tw
+bossach.m1.ntu.edu.tw
+bot.csie.ntu.edu.tw
+boxon.m1.ntu.edu.tw
+bp.ntu.edu.tw
+bp01.bp.ntu.edu.tw
+bp100.bp.ntu.edu.tw
+bp102.bp.ntu.edu.tw
+bp240.bp.ntu.edu.tw
+bp88.bp.ntu.edu.tw
+bp95.bp.ntu.edu.tw
+bpkk10.bp.ntu.edu.tw
+brahms.ee.ntu.edu.tw
+brian8.m3.ntu.edu.tw
+bride.f2.ntu.edu.tw
+broadband.ee.ntu.edu.tw
+bsd.cc.ntu.edu.tw
+bsd1.csie.ntu.edu.tw
+bse.ntu.edu.tw
+bst.ntu.edu.tw
+bst002.bst.ntu.edu.tw
+bst034.bst.ntu.edu.tw
+bst035.bst.ntu.edu.tw
+bst044.bst.ntu.edu.tw
+bst065.bst.ntu.edu.tw
+bst112.bst.ntu.edu.tw
+bst116.bst.ntu.edu.tw
+bst120.bst.ntu.edu.tw
+bst127.bst.ntu.edu.tw
+bst145.bst.ntu.edu.tw
+bst160.bst.ntu.edu.tw
+bst179.bst.ntu.edu.tw
+bst201.bst.ntu.edu.tw
+bst202.bst.ntu.edu.tw
+bst208.bst.ntu.edu.tw
+bst209.bst.ntu.edu.tw
+bst210.bst.ntu.edu.tw
+bst211.bst.ntu.edu.tw
+bst214.bst.ntu.edu.tw
+bst221.bst.ntu.edu.tw
+bst228.bst.ntu.edu.tw
+bst254.bst.ntu.edu.tw
+buddha.csie.ntu.edu.tw
+buddhism.lib.ntu.edu.tw
+buddy.m3.ntu.edu.tw
+bug.ee.ntu.edu.tw
+bugmaker31.m5.ntu.edu.tw
+bula.m1.ntu.edu.tw
+byjiang.m7.ntu.edu.tw
+c108.fll.ntu.edu.tw
+c111.fll.ntu.edu.tw
+c112.fll.ntu.edu.tw
+c114.fll.ntu.edu.tw
+c124.fll.ntu.edu.tw
+c126.fll.ntu.edu.tw
+c15.fll.ntu.edu.tw
+c206.as.ntu.edu.tw
+c44.fll.ntu.edu.tw
+c4lab.bime.ntu.edu.tw
+c57.fll.ntu.edu.tw
+c64.fll.ntu.edu.tw
+c7.fll.ntu.edu.tw
+c85.fll.ntu.edu.tw
+c87.fll.ntu.edu.tw
+c88.fll.ntu.edu.tw
+c95.fll.ntu.edu.tw
+cab.im.ntu.edu.tw
+cacti.csie.ntu.edu.tw
+cad.csie.ntu.edu.tw
+cad1.csie.ntu.edu.tw
+cad11.ee.ntu.edu.tw
+cad18.ee.ntu.edu.tw
+cad2.csie.ntu.edu.tw
+cad3.csie.ntu.edu.tw
+cad31.ee.ntu.edu.tw
+cad402.csie.ntu.edu.tw
+cad47.ee.ntu.edu.tw
+cadlab11.me.ntu.edu.tw
+cadlab15.me.ntu.edu.tw
+cafe.fo.ntu.edu.tw
+callpilot.ntu.edu.tw
+callus.m3.ntu.edu.tw
+caltm2.phys.ntu.edu.tw
+camphorcat.csie.ntu.edu.tw
+canary.f8.ntu.edu.tw
+cancer.csie.ntu.edu.tw
+capricornus.ee.ntu.edu.tw
+captain.m5.ntu.edu.tw
+carbon14.gl.ntu.edu.tw
+cardo.management.ntu.edu.tw
+cards.as.ntu.edu.tw
+career.ntu.edu.tw
+careerh.iagents.csie.ntu.edu.tw
+carl.as.ntu.edu.tw
+carrel.lib.ntu.edu.tw
+cas1.me.ntu.edu.tw
+case.ntu.edu.tw
+cash7.bu.ntu.edu.tw
+cashier2.bu.ntu.edu.tw
+cashier5.bu.ntu.edu.tw
+castle.ee.ntu.edu.tw
+catbus.m8.ntu.edu.tw
+catd.cph.ntu.edu.tw
+cath.mc.ntu.edu.tw
+cathy.mc.ntu.edu.tw
+cats.gcc.ntu.edu.tw
+cbe.ntu.edu.tw
+cbme.ntu.edu.tw
+cbt.lttc.ntu.edu.tw
+cbt.ntu.edu.tw
+cc.cl.ntu.edu.tw
+cc.ee.ntu.edu.tw
+cc.vh.ntu.edu.tw
+ccbs.ntu.edu.tw
+ccc.ntu.edu.tw
+ccch.mc.ntu.edu.tw
+ccchen3.mc.ntu.edu.tw
+cccthomas.me.ntu.edu.tw
+ccf.ee.ntu.edu.tw
+cch.hort.ntu.edu.tw
+ccma07.me.ntu.edu.tw
+ccma08.me.ntu.edu.tw
+ccma09.me.ntu.edu.tw
+ccma10.me.ntu.edu.tw
+ccma11.me.ntu.edu.tw
+ccma18.me.ntu.edu.tw
+ccma20.me.ntu.edu.tw
+ccma21.me.ntu.edu.tw
+ccms.ntu.edu.tw
+ccnet.ntu.edu.tw
+ccntp.ntu.edu.tw
+ccs.ntu.edu.tw
+ccsd.ntu.edu.tw
+ccsun35.cc.ntu.edu.tw
+ccsun44.cc.ntu.edu.tw
+ccsun46.cc.ntu.edu.tw
+ccsun48.cc.ntu.edu.tw
+ccsun49.cc.ntu.edu.tw
+ccsun60.cc.ntu.edu.tw
+cctng.cc.ntu.edu.tw
+ccwu.m5.ntu.edu.tw
+cdi.ntu.edu.tw
+cdl8.as.ntu.edu.tw
+cdm.lib.ntu.edu.tw
+ce10040.ce.ntu.edu.tw
+ce10050.ce.ntu.edu.tw
+ce10061.ce.ntu.edu.tw
+ce10063.ce.ntu.edu.tw
+ce10074.ce.ntu.edu.tw
+ce10080.ce.ntu.edu.tw
+ce10084.ce.ntu.edu.tw
+ce10116.ce.ntu.edu.tw
+ce10118.ce.ntu.edu.tw
+ce10121.ce.ntu.edu.tw
+ce10128.ce.ntu.edu.tw
+ce10129.ce.ntu.edu.tw
+ce10130.ce.ntu.edu.tw
+ce10133.ce.ntu.edu.tw
+ce10135.ce.ntu.edu.tw
+ce10136.ce.ntu.edu.tw
+ce10137.ce.ntu.edu.tw
+ce10139.ce.ntu.edu.tw
+ce10150.ce.ntu.edu.tw
+ce10153.ce.ntu.edu.tw
+ce10154.ce.ntu.edu.tw
+ce10162.ce.ntu.edu.tw
+ce10165.ce.ntu.edu.tw
+ce10166.ce.ntu.edu.tw
+ce10167.ce.ntu.edu.tw
+ce10172.ce.ntu.edu.tw
+ce10177.ce.ntu.edu.tw
+ce10178.ce.ntu.edu.tw
+ce10179.ce.ntu.edu.tw
+ce10190.ce.ntu.edu.tw
+ce10204.ce.ntu.edu.tw
+ce10206.ce.ntu.edu.tw
+ce10216.ce.ntu.edu.tw
+ce10220.ce.ntu.edu.tw
+ce10235.ce.ntu.edu.tw
+ce10237.ce.ntu.edu.tw
+ce10242.ce.ntu.edu.tw
+ce11001.ce.ntu.edu.tw
+ce11035.ce.ntu.edu.tw
+ce11036.ce.ntu.edu.tw
+ce11047.ce.ntu.edu.tw
+ce11049.ce.ntu.edu.tw
+ce11059.ce.ntu.edu.tw
+ce11067.ce.ntu.edu.tw
+ce11076.ce.ntu.edu.tw
+ce11078.ce.ntu.edu.tw
+ce11097.ce.ntu.edu.tw
+ce11099.ce.ntu.edu.tw
+ce11135.ce.ntu.edu.tw
+ce11149.ce.ntu.edu.tw
+ce11189.ce.ntu.edu.tw
+ce11193.ce.ntu.edu.tw
+ce11206.ce.ntu.edu.tw
+ce11218.ce.ntu.edu.tw
+ce11228.ce.ntu.edu.tw
+ce11230.ce.ntu.edu.tw
+ce11246.ce.ntu.edu.tw
+ce11249.ce.ntu.edu.tw
+ce12001.ce.ntu.edu.tw
+ce12005.ce.ntu.edu.tw
+ce12026.ce.ntu.edu.tw
+ce12033.ce.ntu.edu.tw
+ce12038.ce.ntu.edu.tw
+ce12045.ce.ntu.edu.tw
+ce12053.ce.ntu.edu.tw
+ce12054.ce.ntu.edu.tw
+ce12059.ce.ntu.edu.tw
+ce12062.ce.ntu.edu.tw
+ce12063.ce.ntu.edu.tw
+ce12064.ce.ntu.edu.tw
+ce12066.ce.ntu.edu.tw
+ce12067.ce.ntu.edu.tw
+ce12073.ce.ntu.edu.tw
+ce12074.ce.ntu.edu.tw
+ce12075.ce.ntu.edu.tw
+ce12076.ce.ntu.edu.tw
+ce12086.ce.ntu.edu.tw
+ce12088.ce.ntu.edu.tw
+ce12089.ce.ntu.edu.tw
+ce12095.ce.ntu.edu.tw
+ce12098.ce.ntu.edu.tw
+ce12103.ce.ntu.edu.tw
+ce12106.ce.ntu.edu.tw
+ce12108.ce.ntu.edu.tw
+ce12112.ce.ntu.edu.tw
+ce12114.ce.ntu.edu.tw
+ce12117.ce.ntu.edu.tw
+ce12228.ce.ntu.edu.tw
+ce12244.ce.ntu.edu.tw
+ce12245.ce.ntu.edu.tw
+ce12246.ce.ntu.edu.tw
+ce12247.ce.ntu.edu.tw
+ce12251.ce.ntu.edu.tw
+ce13006.ce.ntu.edu.tw
+ce13009.ce.ntu.edu.tw
+ce13032.ce.ntu.edu.tw
+ce13038.ce.ntu.edu.tw
+ce13043.ce.ntu.edu.tw
+ce13046.ce.ntu.edu.tw
+ce13070.ce.ntu.edu.tw
+ce13078.ce.ntu.edu.tw
+ce13088.ce.ntu.edu.tw
+ce13096.ce.ntu.edu.tw
+ce13107.ce.ntu.edu.tw
+ce13121.ce.ntu.edu.tw
+ce13132.ce.ntu.edu.tw
+ce13140.ce.ntu.edu.tw
+ce13149.ce.ntu.edu.tw
+ce13199.ce.ntu.edu.tw
+ce13203.ce.ntu.edu.tw
+ce13205.ce.ntu.edu.tw
+ce13207.ce.ntu.edu.tw
+ce13216.ce.ntu.edu.tw
+ce13233.ce.ntu.edu.tw
+ce13238.ce.ntu.edu.tw
+ce13240.ce.ntu.edu.tw
+ce13246.ce.ntu.edu.tw
+ce13248.ce.ntu.edu.tw
+ce13251.ce.ntu.edu.tw
+cecece.m1.ntu.edu.tw
+ced33.dpd.ntu.edu.tw
+ceer.ntu.edu.tw
+ceiba.ntu.edu.tw
+celestine.f5.ntu.edu.tw
+celica.m7.ntu.edu.tw
+cellexpress.cgm.ntu.edu.tw
+cellular.csie.ntu.edu.tw
+centaur.pcs.csie.ntu.edu.tw
+centrex.cc.ntu.edu.tw
+cep.ntu.edu.tw
+cert.ntu.edu.tw
+cf.tl.ntu.edu.tw
+cf2.tl.ntu.edu.tw
+cfd.mc.ntu.edu.tw
+cfd06.me.ntu.edu.tw
+cfe-fish.blog.ntu.edu.tw
+cfrc.ntu.edu.tw
+cge.blog.ntu.edu.tw
+cggy.m1.ntu.edu.tw
+cglabpc11.che.ntu.edu.tw
+cglabpc12.che.ntu.edu.tw
+cglabpc14.che.ntu.edu.tw
+chaii.m5.ntu.edu.tw
+chairmen.mc.ntu.edu.tw
+chang01.fst.ntu.edu.tw
+chat.pailab.csie.ntu.edu.tw
+chc1.mc.ntu.edu.tw
+chc3.mc.ntu.edu.tw
+chc4.mc.ntu.edu.tw
+chchch.m6.ntu.edu.tw
+chcl.m2.ntu.edu.tw
+che.ntu.edu.tw
+cheetah.me.ntu.edu.tw
+chem2019.ch.ntu.edu.tw
+chemnews.ch.ntu.edu.tw
+chemview.odb.ntu.edu.tw
+chen.me.ntu.edu.tw
+chench.mc.ntu.edu.tw
+chends.mc.ntu.edu.tw
+chengdu.m6.ntu.edu.tw
+chenshuwan.f5.ntu.edu.tw
+chenys.m6.ntu.edu.tw
+chenyucheng.cc.ntu.edu.tw
+cher2appa.f2.ntu.edu.tw
+chest1.mc.ntu.edu.tw
+chestnut.m6.ntu.edu.tw
+chia-yun.blog.ntu.edu.tw
+chia.hort.ntu.edu.tw
+chiang03.fst.ntu.edu.tw
+chiarung.blog.ntu.edu.tw
+chickensto.m3.ntu.edu.tw
+child.f2.ntu.edu.tw
+chilin.lib.ntu.edu.tw
+chilin.m1.ntu.edu.tw
+chimera.f3.ntu.edu.tw
+chin3.mc.ntu.edu.tw
+ching.hort.ntu.edu.tw
+chinlin.m8.ntu.edu.tw
+chiochio.f8.ntu.edu.tw
+chiou.mc.ntu.edu.tw
+chironfish.m3.ntu.edu.tw
+chnb.cc.ntu.edu.tw
+chone.m5.ntu.edu.tw
+chopin.ee.ntu.edu.tw
+chou.mc.ntu.edu.tw
+chou01.fst.ntu.edu.tw
+chou05.fst.ntu.edu.tw
+chou19.fst.ntu.edu.tw
+chpky.m6.ntu.edu.tw
+chps.cph.ntu.edu.tw
+chras.m3.ntu.edu.tw
+chuan.ee.ntu.edu.tw
+chung-hp.hort.ntu.edu.tw
+chung-jen-lu.me.ntu.edu.tw
+chungli2.mc.ntu.edu.tw
+church.im.ntu.edu.tw
+ci14.lib.ntu.edu.tw
+ci20.lib.ntu.edu.tw
+ci59.lib.ntu.edu.tw
+ci6.lib.ntu.edu.tw
+ci61.lib.ntu.edu.tw
+ci70.lib.ntu.edu.tw
+ci77.lib.ntu.edu.tw
+ciac.ord.ntu.edu.tw
+ciaeae.bioagri.ntu.edu.tw
+ciaeae.ntu.edu.tw
+ciel.ntu.edu.tw
+cindy.f2.ntu.edu.tw
+cisco2.me.ntu.edu.tw
+cisco3.me.ntu.edu.tw
+cisco4.me.ntu.edu.tw
+cisco5.me.ntu.edu.tw
+cisco8.me.ntu.edu.tw
+citd.ntu.edu.tw
+civilboy.m1.ntu.edu.tw
+ckck.m5.ntu.edu.tw
+ckf.ee.ntu.edu.tw
+cl1.learner.csie.ntu.edu.tw
+cl2.learner.csie.ntu.edu.tw
+cl7.learner.csie.ntu.edu.tw
+clair.f2.ntu.edu.tw
+clarity2.fltc.ntu.edu.tw
+claser.hy.ntu.edu.tw
+claude.m6.ntu.edu.tw
+cld-taiwan.blog.ntu.edu.tw
+cld.cloud.ntu.edu.tw
+cld.lang.ntu.edu.tw
+cld.liberal.ntu.edu.tw
+cloud-college.ttrc.aca.ntu.edu.tw
+cloud.csie.ntu.edu.tw
+cloud.ntu.edu.tw
+cloudpe-mcu.csie.ntu.edu.tw
+cloudpe-sip.csie.ntu.edu.tw
+cloudpe.csie.ntu.edu.tw
+cloudream.m3.ntu.edu.tw
+cls.lib.ntu.edu.tw
+clubgallery.ntu.edu.tw
+cluster.gl.ntu.edu.tw
+cm.ntu.edu.tw
+cmccs.ntu.edu.tw
+cmcls216.mc.ntu.edu.tw
+cmcls217.mc.ntu.edu.tw
+cmcls218.mc.ntu.edu.tw
+cmdd.csie.ntu.edu.tw
+cmdm.csie.ntu.edu.tw
+cmiacuc.ntu.edu.tw
+cml0.csie.ntu.edu.tw
+cml1.csie.ntu.edu.tw
+cml1.ee.ntu.edu.tw
+cml18.csie.ntu.edu.tw
+cml2.csie.ntu.edu.tw
+cml26.csie.ntu.edu.tw
+cml4.csie.ntu.edu.tw
+cml5.csie.ntu.edu.tw
+cml8.ee.ntu.edu.tw
+cmlab.csie.ntu.edu.tw
+cmlab105.csie.ntu.edu.tw
+cmlab110.csie.ntu.edu.tw
+cmlab117.csie.ntu.edu.tw
+cmlab122.csie.ntu.edu.tw
+cmlab188.csie.ntu.edu.tw
+cmldchp3.csie.ntu.edu.tw
+cmldchp4.csie.ntu.edu.tw
+cmldchp5.csie.ntu.edu.tw
+cmlkvm.csie.ntu.edu.tw
+cmlmm.csie.ntu.edu.tw
+cmlnas7.csie.ntu.edu.tw
+cmlprinter.csie.ntu.edu.tw
+cmlsiggraph.csie.ntu.edu.tw
+cms.cc.ntu.edu.tw
+cms.lis.ntu.edu.tw
+cnvintegrate.cgm.ntu.edu.tw
+cobra.ee.ntu.edu.tw
+cocco.gl.ntu.edu.tw
+coda.oc.ntu.edu.tw
+code.comm.ntu.edu.tw
+coding.ee.ntu.edu.tw
+coding2.ee.ntu.edu.tw
+collections.arthistory.ntu.edu.tw
+com.mc.ntu.edu.tw
+comexchange.ntu.edu.tw
+comm.ntu.edu.tw
+common.lu.im.ntu.edu.tw
+computer.che.ntu.edu.tw
+connect.ctld.ntu.edu.tw
+contest.cc.ntu.edu.tw
+contigviews.bioagri.ntu.edu.tw
+contigviews.csbb.ntu.edu.tw
+coocoo.m8.ntu.edu.tw
+cook03.as.ntu.edu.tw
+cook11.as.ntu.edu.tw
+cook14.as.ntu.edu.tw
+cook15.as.ntu.edu.tw
+cook16.as.ntu.edu.tw
+cool.math.ntu.edu.tw
+cool.ntu.edu.tw
+copernicus.phys.ntu.edu.tw
+coph.ntu.edu.tw
+copy.ifs.ntu.edu.tw
+core.harbor.toolmenlab.bime.ntu.edu.tw
+corolla.ee.ntu.edu.tw
+coshower.m7.ntu.edu.tw
+cospa.phys.ntu.edu.tw
+coss.blog.ntu.edu.tw
+council.csie.ntu.edu.tw
+course.lib.ntu.edu.tw
+course.ntu.edu.tw
+course.tl.ntu.edu.tw
+course6rpp.aca.ntu.edu.tw
+course8pz3.aca.ntu.edu.tw
+coursemap.aca.ntu.edu.tw
+covart.csie.ntu.edu.tw
+cp.ce.ntu.edu.tw
+cpanel.garc.ntu.edu.tw
+cpanel.iiipo.ee.ntu.edu.tw
+cpanel.iiipo.eecs.ntu.edu.tw
+cpanel.ying.forex.ntu.edu.tw
+cpcalendars.garc.ntu.edu.tw
+cpcalendars.iiipo.ee.ntu.edu.tw
+cpcalendars.iiipo.eecs.ntu.edu.tw
+cpcalendars.ying.forex.ntu.edu.tw
+cpcontacts.garc.ntu.edu.tw
+cpcontacts.iiipo.ee.ntu.edu.tw
+cpcontacts.iiipo.eecs.ntu.edu.tw
+cpcontacts.ying.forex.ntu.edu.tw
+cph.ntu.edu.tw
+cps.csie.ntu.edu.tw
+cqse.ntu.edu.tw
+crc.mc.ntu.edu.tw
+crelabpc14.che.ntu.edu.tw
+cris7dev.lib.ntu.edu.tw
+cris7test.lib.ntu.edu.tw
+cropac176.lib.ntu.edu.tw
+crs.cph.ntu.edu.tw
+cruise.oc.ntu.edu.tw
+crusader.m3.ntu.edu.tw
+cs100.lib.ntu.edu.tw
+csa1.mc.ntu.edu.tw
+csa2.mc.ntu.edu.tw
+csb01.csbb.ntu.edu.tw
+csbb01.csbb.ntu.edu.tw
+csbb02.csbb.ntu.edu.tw
+csbb11.csbb.ntu.edu.tw
+csbb25.csbb.ntu.edu.tw
+csbbfs3.csbb.ntu.edu.tw
+cscmax.m1.ntu.edu.tw
+csg1.mc.ntu.edu.tw
+csie.ntu.edu.tw
+csiovdb.mc.ntu.edu.tw
+csman.csie.ntu.edu.tw
+cspis.digital.ntu.edu.tw
+cswomen.csie.ntu.edu.tw
+ctb.digital.ntu.edu.tw
+ctd.oc.ntu.edu.tw
+cte-edweb-2013.blog.ntu.edu.tw
+ctest.math.ntu.edu.tw
+ctf.nslab.csie.ntu.edu.tw
+ctl.mc.ntu.edu.tw
+cts.m3.ntu.edu.tw
+cts.math.ntu.edu.tw
+cty.g4.ntu.edu.tw
+cue.m6.ntu.edu.tw
+cumulus.as.ntu.edu.tw
+cur205.aca.ntu.edu.tw
+curri.aca.ntu.edu.tw
+cut-02.me.ntu.edu.tw
+cut-03.me.ntu.edu.tw
+cut-08.me.ntu.edu.tw
+cut-09.me.ntu.edu.tw
+cuteass.m3.ntu.edu.tw
+cv1.csie.ntu.edu.tw
+cv2.csie.ntu.edu.tw
+cveinfo.cc.ntu.edu.tw
+cvictor.m1.ntu.edu.tw
+cvictor.m8.ntu.edu.tw
+cvlab.ee.ntu.edu.tw
+ntu.edu.tw
+
+總共找到 995 個網域 (包含根網域)。
+
+--- 次級網域（緊鄰 root 的一段 + root） ---
+aaoffice.ntu.edu.tw
+ac.ntu.edu.tw
+aca.ntu.edu.tw
+acc.ntu.edu.tw
+adfs.ntu.edu.tw
+admissions.ntu.edu.tw
+adol.ntu.edu.tw
+advisory.ntu.edu.tw
+aeh.ntu.edu.tw
+agec.ntu.edu.tw
+agron.ntu.edu.tw
+ai.ntu.edu.tw
+aicdm.ntu.edu.tw
+anthro.ntu.edu.tw
+apec-flows.ntu.edu.tw
+apjae.ntu.edu.tw
+aprdc.ntu.edu.tw
+artfest.ntu.edu.tw
+arthistory.ntu.edu.tw
+arts.ntu.edu.tw
+as.ntu.edu.tw
+atgs.ntu.edu.tw
+avcenter.ntu.edu.tw
+ba.ntu.edu.tw
+bdsrc.ntu.edu.tw
+bebi.ntu.edu.tw
+bfn.ntu.edu.tw
+bicd.ntu.edu.tw
+bime.ntu.edu.tw
+bioagri.ntu.edu.tw
+blog.ntu.edu.tw
+bme.ntu.edu.tw
+booking-campus-museum.ntu.edu.tw
+bp.ntu.edu.tw
+bse.ntu.edu.tw
+bst.ntu.edu.tw
+bu.ntu.edu.tw
+callpilot.ntu.edu.tw
+career.ntu.edu.tw
+case.ntu.edu.tw
+cbe.ntu.edu.tw
+cbme.ntu.edu.tw
+cbt.ntu.edu.tw
+cc.ntu.edu.tw
+ccbs.ntu.edu.tw
+ccc.ntu.edu.tw
+ccms.ntu.edu.tw
+ccnet.ntu.edu.tw
+ccntp.ntu.edu.tw
+ccs.ntu.edu.tw
+ccsd.ntu.edu.tw
+cdi.ntu.edu.tw
+ce.ntu.edu.tw
+ceer.ntu.edu.tw
+ceiba.ntu.edu.tw
+cep.ntu.edu.tw
+cert.ntu.edu.tw
+cfrc.ntu.edu.tw
+cgm.ntu.edu.tw
+ch.ntu.edu.tw
+che.ntu.edu.tw
+ciaeae.ntu.edu.tw
+ciel.ntu.edu.tw
+citd.ntu.edu.tw
+cl.ntu.edu.tw
+cloud.ntu.edu.tw
+clubgallery.ntu.edu.tw
+cm.ntu.edu.tw
+cmccs.ntu.edu.tw
+cmiacuc.ntu.edu.tw
+comexchange.ntu.edu.tw
+comm.ntu.edu.tw
+cool.ntu.edu.tw
+coph.ntu.edu.tw
+course.ntu.edu.tw
+cph.ntu.edu.tw
+cqse.ntu.edu.tw
+csbb.ntu.edu.tw
+csie.ntu.edu.tw
+ctld.ntu.edu.tw
+darc.ntu.edu.tw
+digital.ntu.edu.tw
+dlc.ntu.edu.tw
+dpd.ntu.edu.tw
+dschool.ntu.edu.tw
+ee.ntu.edu.tw
+eecs.ntu.edu.tw
+eng.ntu.edu.tw
+f1.ntu.edu.tw
+f2.ntu.edu.tw
+f3.ntu.edu.tw
+f5.ntu.edu.tw
+f8.ntu.edu.tw
+fll.ntu.edu.tw
+fltc.ntu.edu.tw
+fo.ntu.edu.tw
+forex.ntu.edu.tw
+fst.ntu.edu.tw
+g1.ntu.edu.tw
+g4.ntu.edu.tw
+ga.ntu.edu.tw
+garc.ntu.edu.tw
+gcc.ntu.edu.tw
+gl.ntu.edu.tw
+hort.ntu.edu.tw
+hss.ntu.edu.tw
+hy.ntu.edu.tw
+iam.ntu.edu.tw
+ifs.ntu.edu.tw
+im.ntu.edu.tw
+lang.ntu.edu.tw
+lecospa.ntu.edu.tw
+lib.ntu.edu.tw
+liberal.ntu.edu.tw
+linguistics.ntu.edu.tw
+lis.ntu.edu.tw
+lttc.ntu.edu.tw
+m1.ntu.edu.tw
+m2.ntu.edu.tw
+m3.ntu.edu.tw
+m4.ntu.edu.tw
+m5.ntu.edu.tw
+m6.ntu.edu.tw
+m7.ntu.edu.tw
+m8.ntu.edu.tw
+management.ntu.edu.tw
+math.ntu.edu.tw
+mc.ntu.edu.tw
+me.ntu.edu.tw
+med.ntu.edu.tw
+music.ntu.edu.tw
+ntu-ccms.ntu.edu.tw
+ntuacc.ntu.edu.tw
+oc.ntu.edu.tw
+odb.ntu.edu.tw
+oeth.ntu.edu.tw
+ord.ntu.edu.tw
+osa.ntu.edu.tw
+perc.ntu.edu.tw
+phys.ntu.edu.tw
+press.ntu.edu.tw
+psy.ntu.edu.tw
+robo.ntu.edu.tw
+scc.ntu.edu.tw
+studa.ntu.edu.tw
+tl.ntu.edu.tw
+vh.ntu.edu.tw
+wcdr.ntu.edu.tw
+
+總共找到 148 個獨特的次級網域。
+
+已寫入 log 檔：shodan_ntu.edu.tw_2025-10-31_01-06-06.log
