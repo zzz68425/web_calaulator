@@ -1,0 +1,610 @@
+{
+  "query": "country:\"TW\" ssl.cert.subject.cn:\"ncku.edu.tw\" os:\"Synology DiskStation\"",
+  "total": 3,
+  "matches": [
+    {
+      "ip": 2356433645,
+      "http": {
+        "status": 200,
+        "robots_hash": null,
+        "redirects": [],
+        "title_hash": -601991527,
+        "securitytxt": null,
+        "title": "NAS-BANANA&nbsp;-&nbsp;Synology&nbsp;DiskStation",
+        "sitemap_hash": null,
+        "robots": null,
+        "server": "nginx",
+        "dom_hash": -1073034853,
+        "headers_hash": -580677767,
+        "host": "140.116.82.237",
+        "html": "<!DOCTYPE html>\n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=11\" />\n<meta name=\"msapplication-TileImage\" content=\"resources/images/icon_tile.png?v=4398\" />\n<meta name=\"application-name\" content=\"NAS-BANANA&nbsp;-&nbsp;Synology&nbsp;DiskStation\" />\n<meta name=\"msapplication-TileColor\" content=\"#246BB3\"/>\n<meta name=\"description\" content=\"DiskStation provides a full-featured network attached storage (NAS) solution to help you manage, backup and share data among Windows, Mac and Linux easily.\" />\n<meta name=\"keywords\" content=\"Multitasking,Web Application,Personal Cloud\" />\n\n<link rel=\"apple-touch-icon\" href=\"webman/resources/images/icon_dsm_96.png?v=40438\" />\n<link rel=\"mask-icon\" href=\"webman/safari_pin_icon.svg\" color=\"#0086E5\" />\n<link rel=\"icon\" href=\"webman/favicon.ico?v=40438\" />\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_96.png?v=40438\" sizes=\"96x96\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_64.png?v=40438\" sizes=\"64x64\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_48.png?v=40438\" sizes=\"48x48\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_32.png?v=40438\" sizes=\"32x32\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_16.png?v=40438\" sizes=\"16x16\"/>\n<title>NAS-BANANA&nbsp;-&nbsp;Synology&nbsp;DiskStation</title>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/unsupported-browsers/dist/bundle.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/ext-3.4/resources/css/ext-all.css?v=1642756815\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/syno-vue-components/style/syno-vue-components.css?v=1646304970\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/scrollbar/flexcroll.css?v=1642756815\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/ext-3/ux/ux-all.css?v=1642756815\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"synoSDSjslib/sds.css?v=1645604007\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/desktop/dist/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/taskbar/dist/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/login/css/login.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/resources/css/desktop.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/LogCenter/style.css?v=1647925594\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/HotkeyManager/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DSMNotify/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/StorageManager/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/Utils/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DiskMessageHandler/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DesktopProgress/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/TaskSchedulerWidget/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/OTPWizard/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/HelpBrowser/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/AudioPlayer/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/Widgets/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/Share/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/EnableNewUpdateSetting/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ClipBoardJS/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DisableAdminNotification/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PollingTask/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ResetAdminApp/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PkgManApp/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/WelcomeApp/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/C3/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ExternalDevices/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/TinyMCE/style.css?v=1635321605\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SystemInfoApp/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/FileChooser/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PhotoViewer/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SecurityScan/style.css?v=1640850841\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ActiveInsightUpdateNotify/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ResourceMonitor/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/MyDSCenter/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ConfigBackup/style.css?v=1642394535\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/VideoPlayer2/style.css?v=1633587419\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SupportForm/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SharingManager/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DataDrivenDocuments/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/UpdateMaskApp/style.css?v=1648633174\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/BackgroundTaskMonitor/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/FileChooserV6/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/BandwidthControl/style.css?v=1634102886\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/TaskSchedulerUtils/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/AdminCenter/style.css?v=1648174904\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PersonalSettings/style.css?v=1648199907\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynologyDrive-Drive/style.css?v=1648522206\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/Spreadsheet/style.css?v=1652272571\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/VPNCenter/style.css?v=1656648364\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/OAuthService/style.css?v=1618330423\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/LogCenter/style.css?v=1657880481\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynologyDrive/style.css?v=1648522210\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/WebDAVServer/style.css?v=1767609885\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/ScsiTarget/style.css?v=1647414944\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/StorageAnalyzer/style.css?v=1657260636\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/FileTaskMonitor/style.css?v=1648655545\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/DhcpServer/style.css?v=1639559997\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynologyApplicationService/style.css?v=1675505560\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/CMS/style.css?v=1722997663\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/ActiveInsight/style.css?v=1706865024\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/TextEditor/style.css?v=1619145477\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/CodecPack/style.css?v=1656313157\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/FileBrowser/style.css?v=1648655551\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynoFinder/style.css?v=1670389737\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynologyDrive-ShareSync/style.css?v=1648522206\" />\n\n</head>\n<body role=\"application\">\n<div id=\"sds-wallpaper\"></div>\n<!-- Don't contain any text node to avoid IE insertBefore bug -->\n<div id=\"sds-login-vue\"></div>\n<div id=\"framework-attach\"></div>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.SessionData&version=1&method=getjs&SynoToken=&v=1647950553\"></script>\n<script type=\"text/javascript\" src=\"scripts/babel-polyfill/polyfill.js?v=1642756815\"></script>\n<script type=\"text/javascript\" src=\"scripts/synowebapi.js/synowebapi.min.js?v=1641293675\"></script>\n<script type=\"text/javascript\" src=\"scripts/synocredential.js/synocredential.min.js?v=1640333970\"></script>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.Defs&version=1&method=getjs&v=1727310678\"></script>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.JSUIString&version=1&method=getjs&lang=enu&v=1651471062\"></script>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.UIString&version=1&method=getjs&lang=enu&v=1651471059\"></script>\n<script type=\"text/javascript\" src=\"webman/unsupported-browsers/dist/bundle.js?v=1648633174\"></script>\n<script type=\"text/javascript\" src=\"scripts/ext-3/adapter/ext/ext-base.js?v=1642756815\"></script>\n<script type=\"text/javascript\" src=\"scripts/ext-3/ext-all.js?v=1642756815\"></script>\n<script type=\"text/javascript\" src=\"scripts/ext-3/ux/ux-all.js?v=1642756815\"></script>\n<script type=\"text/javascript\" src=\"scripts/scrollbar/flexcroll.js?v=1642756815\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/noise-c.js?v=1642756815\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/constants.js?v=1642756815\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/index.js?v=1642756815\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/sodium.js?v=1642756815\"></script>\n<script type=\"text/javascript\" src=\"scripts/vue/vue.min.js?v=1633587521\"></script>\n<script type=\"text/javascript\" src=\"scripts/vuex/vuex.min.js?v=1585722123\"></script>\n<script type=\"text/javascript\" src=\"scripts/vue-router/vue-router.min.js?v=1633587521\"></script>\n<script type=\"text/javascript\" src=\"scripts/syno-vue-components/syno-vue-components.min.js?v=1646304970\"></script>\n<script type=\"text/javascript\" src=\"synoSDSjslib/vendor.js?v=1645604007\"></script>\n<script type=\"text/javascript\" src=\"synoSDSjslib/sds.js?v=1645604007\"></script>\n<script type=\"text/javascript\" src=\"webman/sds-common.js?v=1648633174\"></script>\n<script type=\"text/javascript\" src=\"webman/desktop/dist/dsm.desktop.bundle.js?v=1648633174\"></script>\n<script type=\"text/javascript\" src=\"webman/taskbar/dist/dsm.taskbar.bundle.js?v=1648633174\"></script>\n<script type=\"text/javascript\" src=\"webman/desktop.js?v=1648633174\"></script>\n<script type=\"text/javascript\" src=\"webman/login-vue.js?v=1648633174\"></script>\n<script type=\"text/javascript\" src=\"webman/login-init.js?v=1648633174\"></script>\n\n<div class=\"pre-load-x-window-br\"></div>\n</body>\n<noscript>\n<div class='syno-no-script'>\n<div class='title align-center'>This page can't be displayed</div>\n<div class='desc align-center'>Please allow your browser to run JavaScript.</div>\n<div class='icon align-center'></div>\n</div>\n</noscript>\n</html>\n",
+        "server_hash": -1340961475,
+        "location": "/",
+        "components": {
+          "Vue.js": {
+            "categories": [
+              "JavaScript frameworks"
+            ]
+          },
+          "Nginx": {
+            "categories": [
+              "Web servers",
+              "Reverse proxies"
+            ]
+          },
+          "ExtJS": {
+            "categories": [
+              "JavaScript frameworks"
+            ]
+          },
+          "Synology DiskStation": {
+            "categories": [
+              "Network storage"
+            ]
+          }
+        },
+        "securitytxt_hash": null,
+        "favicon": {
+          "data": "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAABAVJREFUaAXt\nGktoE0H0zaZZTVoqtlWsH/CgVi2CtILiwUopVkURRS8iXrSi4EUPovZf0EMVe1EEsRcRQfBD0Yta\ne5BaP4gHtZaCh0rFQmsr2iYh33XeJjPZSXbT3cRgIvtgMzPvt+83b7PJEIiBoihE7pg6CopyBECp\nBAWKGC0nRgIzAGQQCOkOtJTcJIQoaBfBD/cFT3kw6LtNja/Fdc4DIX1Op+uQt7FwTMLI55XxGF0a\naLQZbSfO9skGiERu5HzU9QyUpGNStOb1qHmAo/tVUjdsHtiqb6JSSTOQY91G31J9LLWdZiC/wXbg\nX+fPzoCdgQwjYJdQhgHMWNzOQMYhzFBBgVY+0FamXSbNJzwKDIwG4dwzD3yZDCfRHRKBU5tdsL9S\nhnULC8DpSGLhCLntB59r73vg7jT0DPk5DSc7VsnQc7CY47SylkpoQSGBPatleHd8PqwqE61D458c\nLoaLdW6oKk9tPLdEZ9JY407CtmxNxjEmSw4wIbcToHOb+MaJkd+ynBIyhPWLHLCrYg7XgtGvXiwU\nCqfhRKBoUyNw0cXSeQ64vrsI6ldEjdy0TBBVy4bJND/3QtcrHwRC6msrQ5sem2pc8Hg4WkbNOhnR\nKjKdgW+/wnDiEX2vjkGJS32dZkuoKI07dO1t+sajwioa8Z008ttXyrBhSVwvv5lmYtoBlEEnjGB4\nMsRJJze6QC4QHeREk5MmGvlUtc/UCO5pu0GqcmLC2vHeYEDdvIjrqHWrF6MHqd8fx0OAPF0DPghH\njEvr4VAA9q4RI//gcwD2rZWZOmG0lAFBMmGBhr0YCSZgo0tsp9iZsENhp8KOZQQtdP94AnGqnyb2\nLG3bRvDXHMCo1t/6Ded7vfB+LAQYdT3AToUdywi+T0fg0ksvJ2MzGPlpoIxyCSXEpdKcoBOX+73q\npVWB++E0NRpLCwEfdMinBwp9ScdsNlTPBUxUpwEfk7WUAWyl6QC206tvfFxU27E4MjbB7eELKtBE\nSwmvGb/xfkER0xlgzwF2wylfasWMD0fMAHYmBtqOxXBsVGJq73wQv04weuJo6IC2IyUK4fr1aLxt\n4no2fuRhcJ92IyNgYaE/GxqxCHhLJcQkvbTZnHkaf6gxvJmx/2tIfUob8Zq0m4sbZoBzaCazfRvV\nsArTUATg03iYPgf8cIVu0FDYOLopHhGCTrYgztYJY22My8QopejtGFWzJWHiVgKLpQwIkgmLiNXQ\nJcinu0xrD6R7s2zI2Q5kI6pWdNoZsBKtbPDaGchGVK3o/A8yoP4DbsXnHOKlttMM0L/v8xbIoIRn\nD/LXftJN8O96uX2yN2/OSbBo0/MSgdbSOglPfeDBCZqJPkbL+TF22ANt579vqJnIw+M2fwDj0E01\nU+YhtQAAAABJRU5ErkJggg==\n",
+          "hash": 163207293,
+          "location": "https://140.116.82.237:5001/webman/favicon.ico?v=40438"
+        },
+        "sitemap": null,
+        "html_hash": 1346588035
+      },
+      "port": 5001,
+      "transport": "tcp",
+      "location": {
+        "city": "Tainan",
+        "region_code": "04",
+        "area_code": null,
+        "longitude": 120.21333,
+        "latitude": 22.99083,
+        "country_code": "TW",
+        "country_name": "Taiwan"
+      },
+      "product": "nginx",
+      "hash": 495210625,
+      "timestamp": "2026-02-05T04:43:06.396410",
+      "ssl": {
+        "chain_sha256": [
+          "b20b21ba8d48039166848fdf10e52beef26dfccfadf6e4fab6d207ea6918cd46",
+          "83624fd338c8d9b023c18a67cb7a9c0519da43d11775b4c6cbdad45c3d997c52"
+        ],
+        "jarm": "27d27d27d29d27d00042d42d0000000be49cc25222308abd09720df24eb301",
+        "tlsext": [
+          {
+            "id": 43,
+            "name": "supported_versions"
+          },
+          {
+            "id": 51,
+            "name": "key_share"
+          },
+          {
+            "id": 0,
+            "name": "server_name"
+          }
+        ],
+        "chain": [
+          "-----BEGIN CERTIFICATE-----\nMIIDpTCCAyygAwIBAgISBtIpCV8/bVvOcXkU8yT3HaYxMAoGCCqGSM49BAMDMDIx\nCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJF\nODAeFw0yNjAyMDQwNjIwNDBaFw0yNjA1MDUwNjIwMzlaMCgxJjAkBgNVBAMTHXNj\ncmVhbWJhbmFuYS5jc2llLm5ja3UuZWR1LnR3MFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAEjvfG+oXKjwVl1G5GG08xvQlIbWmgckI6MFvmHyU2a83HbvU4WHCuJX9Z\nn2ATpCUb7x/qYVMgieW5FJtQ4CgVQKOCAiowggImMA4GA1UdDwEB/wQEAwIHgDAd\nBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwDAYDVR0TAQH/BAIwADAdBgNV\nHQ4EFgQUO1fkjGrgG9N9v2OOQ6BvdRMLTJwwHwYDVR0jBBgwFoAUjw0TovYuftFQ\nbDMYOF1ZjiNykcowMgYIKwYBBQUHAQEEJjAkMCIGCCsGAQUFBzAChhZodHRwOi8v\nZTguaS5sZW5jci5vcmcvMCgGA1UdEQQhMB+CHXNjcmVhbWJhbmFuYS5jc2llLm5j\na3UuZWR1LnR3MBMGA1UdIAQMMAowCAYGZ4EMAQIBMC0GA1UdHwQmMCQwIqAgoB6G\nHGh0dHA6Ly9lOC5jLmxlbmNyLm9yZy81MC5jcmwwggEDBgorBgEEAdZ5AgQCBIH0\nBIHxAO8AdgDLOPcViXyEoURfW8Hd+8lu8ppZzUcKaQWFsMsUwxRY5wAAAZwnhPOd\nAAAEAwBHMEUCIHa4OpC/GVRe6QwbYM6ZdIjgAPqpGMYO9W+UQyhxat0yAiEAp0na\nwVjMHwKL47Q7DxKj9MhPz5b+k8MKD0Dte2bFLi8AdQCWl2S/VViXrfdDh2g3CEJ3\n6fA61fak8zZuRqQ/D8qpxgAAAZwnhPPQAAAEAwBGMEQCIFKCwrXez4LQY6VdUGdO\nh1GmwLgseoX9q5YHzDVA57Q7AiAqw/Wxc1Lx7ABAYCTMrrklx+gF3d94BYTehxVj\nK3in4TAKBggqhkjOPQQDAwNnADBkAjBeHpR8Ss8Ai7FVDdpK3Y9AOVuODR40sK+/\nGoAZ7QvdL/f3pHEdBkzI0KSaAj1CLbgCMDjTvGIqlrDPydIP/waX7LLNGWMXsnSQ\n2oSS3Jwv2ix0ZNutXovw7fLD2XGeVV/hQw==\n-----END CERTIFICATE-----\n",
+          "-----BEGIN CERTIFICATE-----\nMIIEVjCCAj6gAwIBAgIQY5WTY8JOcIJxWRi/w9ftVjANBgkqhkiG9w0BAQsFADBP\nMQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy\nY2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa\nFw0yNzAzMTIyMzU5NTlaMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF\nbmNyeXB0MQswCQYDVQQDEwJFODB2MBAGByqGSM49AgEGBSuBBAAiA2IABNFl8l7c\nS7QMApzSsvru6WyrOq44ofTUOTIzxULUzDMMNMchIJBwXOhiLxxxs0LXeb5GDcHb\nR6EToMffgSZjO9SNHfY9gjMy9vQr5/WWOrQTZxh7az6NSNnq3u2ubT6HTKOB+DCB\n9TAOBgNVHQ8BAf8EBAMCAYYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMB\nMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFI8NE6L2Ln7RUGwzGDhdWY4j\ncpHKMB8GA1UdIwQYMBaAFHm0WeZ7tuXkAXOACIjIGlj26ZtuMDIGCCsGAQUFBwEB\nBCYwJDAiBggrBgEFBQcwAoYWaHR0cDovL3gxLmkubGVuY3Iub3JnLzATBgNVHSAE\nDDAKMAgGBmeBDAECATAnBgNVHR8EIDAeMBygGqAYhhZodHRwOi8veDEuYy5sZW5j\nci5vcmcvMA0GCSqGSIb3DQEBCwUAA4ICAQBnE0hGINKsCYWi0Xx1ygxD5qihEjZ0\nRI3tTZz1wuATH3ZwYPIp97kWEayanD1j0cDhIYzy4CkDo2jB8D5t0a6zZWzlr98d\nAQFNh8uKJkIHdLShy+nUyeZxc5bNeMp1Lu0gSzE4McqfmNMvIpeiwWSYO9w82Ob8\notvXcO2JUYi3svHIWRm3+707DUbL51XMcY2iZdlCq4Wa9nbuk3WTU4gr6LY8MzVA\naDQG2+4U3eJ6qUF10bBnR1uuVyDYs9RhrwucRVnfuDj29CMLTsplM5f5wSV5hUpm\nUwp/vV7M4w4aGunt74koX71n4EdagCsL/Yk5+mAQU0+tue0JOfAV/R6t1k+Xk9s2\nHMQFeoxppfzAVC04FdG9M+AC2JWxmFSt6BCuh3CEey3fE52Qrj9YM75rtvIjsm/1\nHl+u//Wqxnu1ZQ4jpa+VpuZiGOlWrqSP9eogdOhCGisnyewWJwRQOqK16wiGyZeR\nxs/Bekw65vwSIaVkBruPiTfMOo0Zh4gVa8/qJgMbJbyrwwG97z/PRgmLKCDl8z3d\ntA0Z7qq7fta0Gl24uyuB05dqI5J1LvAzKuWdIjT1tP8qCoxSE/xpix8hX2dt3h+/\njujUgFPFZ0EVZ0xSyBNRF3MboGZnYXFUxpNjTWPKpagDHJQmqrAcDmWJnMsFY3jS\nu1igv3OefnWjSQ==\n-----END CERTIFICATE-----\n"
+        ],
+        "versions": [],
+        "acceptable_cas": [],
+        "alpn": [],
+        "cert": {
+          "sig_alg": "ecdsa-with-SHA384",
+          "issued": "20260204062040Z",
+          "expires": "20260505062039Z",
+          "pubkey": {
+            "bits": 256,
+            "type": "dsa"
+          },
+          "version": 2,
+          "extensions": [
+            {
+              "critical": true,
+              "data": "\\x03\\x02\\x07\\x80",
+              "name": "keyUsage"
+            },
+            {
+              "data": "0\\x14\\x06\\x08+\\x06\\x01\\x05\\x05\\x07\\x03\\x01\\x06\\x08+\\x06\\x01\\x05\\x05\\x07\\x03\\x02",
+              "name": "extendedKeyUsage"
+            },
+            {
+              "critical": true,
+              "data": "0\\x00",
+              "name": "basicConstraints"
+            },
+            {
+              "data": "\\x04\\x14;W\\xe4\\x8cj\\xe0\\x1b\\xd3}\\xbfc\\x8eC\\xa0ou\\x13\\x0bL\\x9c",
+              "name": "subjectKeyIdentifier"
+            },
+            {
+              "data": "0\\x16\\x80\\x14\\x8f\\r\\x13\\xa2\\xf6.~\\xd1Pl3\\x188]Y\\x8e#r\\x91\\xca",
+              "name": "authorityKeyIdentifier"
+            },
+            {
+              "data": "0$0\"\\x06\\x08+\\x06\\x01\\x05\\x05\\x070\\x02\\x86\\x16http://e8.i.lencr.org/",
+              "name": "authorityInfoAccess"
+            },
+            {
+              "data": "0\\x1f\\x82\\x1dscreambanana.csie.ncku.edu.tw",
+              "name": "subjectAltName"
+            },
+            {
+              "data": "0\\n0\\x08\\x06\\x06g\\x81\\x0c\\x01\\x02\\x01",
+              "name": "certificatePolicies"
+            },
+            {
+              "data": "0$0\"\\xa0 \\xa0\\x1e\\x86\\x1chttp://e8.c.lencr.org/50.crl",
+              "name": "crlDistributionPoints"
+            },
+            {
+              "data": "\\x04\\x81\\xf1\\x00\\xef\\x00v\\x00\\xcb8\\xf7\\x15\\x89|\\x84\\xa1D_[\\xc1\\xdd\\xfb\\xc9n\\xf2\\x9aY\\xcdG\\ni\\x05\\x85\\xb0\\xcb\\x14\\xc3\\x14X\\xe7\\x00\\x00\\x01\\x9c\\'\\x84\\xf3\\x9d\\x00\\x00\\x04\\x03\\x00G0E\\x02 v\\xb8:\\x90\\xbf\\x19T^\\xe9\\x0c\\x1b`\\xce\\x99t\\x88\\xe0\\x00\\xfa\\xa9\\x18\\xc6\\x0e\\xf5o\\x94C(qj\\xdd2\\x02!\\x00\\xa7I\\xda\\xc1X\\xcc\\x1f\\x02\\x8b\\xe3\\xb4;\\x0f\\x12\\xa3\\xf4\\xc8O\\xcf\\x96\\xfe\\x93\\xc3\\n\\x0f@\\xed{f\\xc5./\\x00u\\x00\\x96\\x97d\\xbfUX\\x97\\xad\\xf7C\\x87h7\\x08Bw\\xe9\\xf0:\\xd5\\xf6\\xa4\\xf36nF\\xa4?\\x0f\\xca\\xa9\\xc6\\x00\\x00\\x01\\x9c\\'\\x84\\xf3\\xd0\\x00\\x00\\x04\\x03\\x00F0D\\x02 R\\x82\\xc2\\xb5\\xde\\xcf\\x82\\xd0c\\xa5]PgN\\x87Q\\xa6\\xc0\\xb8,z\\x85\\xfd\\xab\\x96\\x07\\xcc5@\\xe7\\xb4;\\x02 *\\xc3\\xf5\\xb1sR\\xf1\\xec\\x00@`$\\xcc\\xae\\xb9%\\xc7\\xe8\\x05\\xdd\\xdfx\\x05\\x84\\xde\\x87\\x15c+x\\xa7\\xe1",
+              "name": "ct_precert_scts"
+            }
+          ],
+          "fingerprint": {
+            "sha256": "b20b21ba8d48039166848fdf10e52beef26dfccfadf6e4fab6d207ea6918cd46",
+            "sha1": "a998df874bc52cc5c8cfa410491ec49006627277"
+          },
+          "serial": 594187559654311597009817934944128101885489,
+          "issuer": {
+            "C": "US",
+            "CN": "E8",
+            "O": "Let's Encrypt"
+          },
+          "expired": false,
+          "subject": {
+            "CN": "screambanana.csie.ncku.edu.tw"
+          }
+        },
+        "cipher": {
+          "version": "TLSv1.3",
+          "bits": 256,
+          "name": "TLS_AES_256_GCM_SHA384"
+        },
+        "trust": {
+          "revoked": false,
+          "browser": null
+        },
+        "handshake_states": [
+          "before SSL initialization",
+          "SSLv3/TLS write client hello",
+          "SSLv3/TLS read server hello",
+          "TLSv1.3 read encrypted extensions",
+          "SSLv3/TLS read server certificate",
+          "TLSv1.3 read server certificate verify",
+          "SSLv3/TLS read finished",
+          "SSLv3/TLS write change cipher spec",
+          "SSLv3/TLS write finished",
+          "SSL negotiation finished successfully"
+        ],
+        "ja3s": "574866101f64002c6421cc329e4d5458",
+        "ocsp": {}
+      },
+      "hostnames": [
+        "screambanana.csie.ncku.edu.tw"
+      ],
+      "org": "Ministry of Education Computer Center",
+      "data": "HTTP/1.1 200 OK\r\nServer: nginx\r\nDate: Thu, 05 Feb 2026 04:43:06 GMT\r\nContent-Type: text/html; charset=\"UTF-8\"\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nKeep-Alive: timeout=20\r\nCache-control: no-store\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nX-Frame-Options: SAMEORIGIN\r\nP3P: CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\"\r\nContent-Security-Policy: base-uri 'self';  connect-src data: ws: wss: http: https:; default-src 'self' 'unsafe-eval' data: blob: https://*.synology.com https://www.synology.cn/ https://help.synology.cn/; font-src 'self' data: https://*.googleapis.com https://*.gstatic.com; form-action 'self'; frame-ancestors 'self'; frame-src 'self' data: blob: https://*.synology.com https://*.synology.cn http://*.synology.com http://*.synology.cn; img-src 'self' data: blob: https://*.google.com https://*.googleapis.com http://*.googlecode.com https://*.gstatic.com; media-src 'self' data: about: https://*.synology.com https://help.synology.cn;  script-src 'self' 'unsafe-eval' data: blob: https://maps.google.com https://ajax.googleapis.com https://help.synology.com https://help.synology.cn; style-src 'self' 'unsafe-inline' https://*.googleapis.com;\r\n\r\n\nSynology DiskStation Manager (DSM):\n  Version: 7.1-42661\n  Hostname: NAS-BANANA\n",
+      "asn": "AS1659",
+      "cpe23": [
+        "cpe:2.3:a:f5:nginx",
+        "cpe:2.3:a:sencha:ext_js",
+        "cpe:2.3:a:synology:diskstation_manager:7.1-42661"
+      ],
+      "isp": "Taiwan Academic Network (TANet) Information Center",
+      "cpe": [
+        "cpe:/a:f5:nginx",
+        "cpe:/a:sencha:ext_js",
+        "cpe:/a:synology:diskstation_manager:7.1-42661"
+      ],
+      "synology_dsm": {
+        "hostname": "NAS-BANANA"
+      },
+      "domains": [
+        "ncku.edu.tw"
+      ],
+      "ip_str": "140.116.82.237",
+      "os": "Synology DiskStation Manager (DSM) 7.1-42661",
+      "_shodan": {
+        "region": "na",
+        "module": "https-simple-new",
+        "ptr": true,
+        "options": {},
+        "id": "3ff8c9e4-528d-4720-a68e-b2af937900c2",
+        "crawler": "7231b7761ce226a0a35683f11c03d3a73c43b309"
+      }
+    },
+    {
+      "ip": 2356428001,
+      "http": {
+        "status": 200,
+        "robots_hash": null,
+        "redirects": [],
+        "securitytxt": null,
+        "title": "成大醫學系檔案伺服器",
+        "sitemap_hash": null,
+        "robots": null,
+        "server": "nginx",
+        "dom_hash": -961975336,
+        "headers_hash": 641303095,
+        "host": "140.116.60.225",
+        "html": "<!DOCTYPE html>\n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=11\" />\n<meta name=\"msapplication-TileImage\" content=\"resources/images/icon_tile.png?v=4398\" />\n<meta name=\"application-name\" content=\"成大醫學系檔案伺服器\" />\n<meta name=\"msapplication-TileColor\" content=\"#246BB3\"/>\n<meta name=\"description\" content=\"Synology NAS provides a full-featured network attached storage (NAS) solution to help you manage, backup and share data among Windows, Mac and Linux easily.\" />\n<meta name=\"keywords\" content=\"Multitasking,Web Application,Personal Cloud\" />\n<meta name=\"viewport\" content=\"\">\n\n<link rel=\"apple-touch-icon\" href=\"webman/resources/images/icon_dsm_96.png?v=40438\" />\n<link rel=\"mask-icon\" href=\"webman/safari_pin_icon.svg\" color=\"#0086E5\" />\n<link rel=\"icon\" href=\"webman/favicon.ico?v=40438\" />\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_96.png?v=40438\" sizes=\"96x96\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_64.png?v=40438\" sizes=\"64x64\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_48.png?v=40438\" sizes=\"48x48\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_32.png?v=40438\" sizes=\"32x32\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_16.png?v=40438\" sizes=\"16x16\"/>\n<title>成大醫學系檔案伺服器</title>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/unsupported-browsers/dist/bundle.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/ext-3.4/resources/css/ext-all.css?v=1672898121\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/syno-vue-components/style/syno-vue-components.css?v=1710467838\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/scrollbar/flexcroll.css?v=1672898121\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/ext-3/ux/ux-all.css?v=1672898121\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"synoSDSjslib/sds.css?v=1715242943\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/desktop/dist/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/sds/dist/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/taskbar/dist/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/login/dist/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/resources/css/desktop.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/HelpBrowser/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DSMNotify/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SharingManager/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ExternalDevices/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/TaskSchedulerUtils/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PkgManApp/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/AdminCenter/style.css?v=1716892618\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/TaskSchedulerWidget/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DesktopProgress/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ResetAdminApp/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/OTPWizard/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/FileChooser/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/C3/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/EnableNewUpdateSetting/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PersonalSettings/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/Share/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/AudioPlayer/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/LogCenter/style.css?v=1702534287\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SupportForm/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ResourceMonitor/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/BackgroundTaskMonitor/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PhotoViewer/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ClipBoardJS/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/MyDSCenter/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/Widgets/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/TinyMCE/style.css?v=1664290641\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/VideoPlayer2/style.css?v=1672294400\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/BandwidthControl/style.css?v=1634102886\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DiskMessageHandler/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DataDrivenDocuments/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SystemInfoApp/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SecurityScan/style.css?v=1706586264\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ConfigBackup/style.css?v=1708596979\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/UpdateMaskApp/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/Utils/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/HotkeyManager/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PollingTask/style.css?v=1725262674\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/WelcomeApp/style.css?v=1711103609\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/ContainerManager/style.css?v=1694161749\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/CloudSync/style.css?v=1726459903\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/StorageManager/style.css?v=1710317408\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SnapshotReplication/style.css?v=1714726742\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/DNSServer/style.css?v=1679018126\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/CodecPack/style.css?v=1723542340\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SupportService/style.css?v=1754645226\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/OAuthService/style.css?v=1678783966\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/FileTaskMonitor/style.css?v=1720167690\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/WebDAVServer/style.css?v=1767609616\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/DirectoryServerForWindowsDomain/style.css?v=1679278592\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/LogCenter/style.css?v=1724032996\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynologyPhotos/style.css?v=1729763488\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SupportForm/style.css?v=1754645222\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/HybridShare/style.css?v=1720441379\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynologyApplicationService/style.css?v=1712835376\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/ScsiTarget/style.css?v=1692098608\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynoFinder/style.css?v=1722844906\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/FileBrowser/style.css?v=1720167699\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SMBService/style.css?v=1728369688\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/WebStation/style.css?v=1691133416\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/ActiveInsight/style.css?v=1698985813\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/HyperBackup/style.css?v=1729762976\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/StorageAnalyzer/style.css?v=1679021496\" />\n\n</head>\n<body role=\"application\">\n<div id=\"sds-wallpaper\"></div>\n<!-- Don't contain any text node to avoid IE insertBefore bug -->\n<div id=\"sds-login-vue\"></div>\n<div id=\"framework-attach\"></div>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.SessionData&version=1&method=getjs&SynoToken=&v=1723687827\"></script>\n<script type=\"text/javascript\" src=\"scripts/babel-polyfill/polyfill.js?v=1672898121\"></script>\n<script type=\"text/javascript\" src=\"scripts/synowebapi.js/synowebapi.min.js?v=1675322301\"></script>\n<script type=\"text/javascript\" src=\"scripts/synocredential.js/synocredential.min.js?v=1712744176\"></script>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.Defs&version=1&method=getjs&v=1754545684\"></script>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.JSUIString&version=1&method=getjs&lang=enu&v=1730857945\"></script>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.UIString&version=1&method=getjs&lang=enu&v=1730857944\"></script>\n<script type=\"text/javascript\" src=\"webman/unsupported-browsers/dist/bundle.js?v=1711103609\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/noise-c.js?v=1672898121\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/constants.js?v=1672898121\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/index.js?v=1672898121\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/sodium.js?v=1672898121\"></script>\n<script type=\"text/javascript\" src=\"synoSDSjslib/dist/vendor.bundle.js?v=1715242943\"></script>\n<script type=\"text/javascript\" src=\"synoSDSjslib/dist/sds.bundle.js?v=1715242943\"></script>\n<script type=\"text/javascript\" src=\"scripts/vue/vue.min.js?v=1689132810\"></script>\n<script type=\"text/javascript\" src=\"scripts/vuex/vuex.min.js?v=1664290698\"></script>\n<script type=\"text/javascript\" src=\"scripts/vue-router/vue-router.min.js?v=1667901351\"></script>\n<script type=\"text/javascript\" src=\"scripts/syno-vue-components/syno-vue-components.min.js?v=1710467838\"></script>\n<script type=\"text/javascript\" src=\"webman/taskbar/dist/dsm.taskbar.bundle.js?v=1711103609\"></script>\n<script type=\"text/javascript\" src=\"webman/sds/dist/dsm.common.bundle.js?v=1711103609\"></script>\n<script type=\"text/javascript\" src=\"webman/desktop/dist/dsm.desktop.bundle.js?v=1711103609\"></script>\n<script type=\"text/javascript\" src=\"webman/sds/dist/dsm.sds.bundle.js?v=1711103609\"></script>\n<script type=\"text/javascript\" src=\"webman/login/dist/dsm.login.bundle.js?v=1711103609\"></script>\n<script type=\"text/javascript\" src=\"webman/entry/dist/dsm.entry.bundle.js?v=1711103609\"></script>\n\n<div class=\"pre-load-x-window-br\"></div>\n</body>\n<noscript>\n<div class='syno-no-script'>\n<div class='title align-center'>This page can't be displayed</div>\n<div class='desc align-center'>Please allow your browser to run JavaScript.</div>\n<div class='icon align-center'></div>\n</div>\n</noscript>\n</html>\n",
+        "server_hash": -1340961475,
+        "location": "/",
+        "securitytxt_hash": null,
+        "favicon": {
+          "data": "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAABAVJREFUaAXt\nGktoE0H0zaZZTVoqtlWsH/CgVi2CtILiwUopVkURRS8iXrSi4EUPovZf0EMVe1EEsRcRQfBD0Yta\ne5BaP4gHtZaCh0rFQmsr2iYh33XeJjPZSXbT3cRgIvtgMzPvt+83b7PJEIiBoihE7pg6CopyBECp\nBAWKGC0nRgIzAGQQCOkOtJTcJIQoaBfBD/cFT3kw6LtNja/Fdc4DIX1Op+uQt7FwTMLI55XxGF0a\naLQZbSfO9skGiERu5HzU9QyUpGNStOb1qHmAo/tVUjdsHtiqb6JSSTOQY91G31J9LLWdZiC/wXbg\nX+fPzoCdgQwjYJdQhgHMWNzOQMYhzFBBgVY+0FamXSbNJzwKDIwG4dwzD3yZDCfRHRKBU5tdsL9S\nhnULC8DpSGLhCLntB59r73vg7jT0DPk5DSc7VsnQc7CY47SylkpoQSGBPatleHd8PqwqE61D458c\nLoaLdW6oKk9tPLdEZ9JY407CtmxNxjEmSw4wIbcToHOb+MaJkd+ynBIyhPWLHLCrYg7XgtGvXiwU\nCqfhRKBoUyNw0cXSeQ64vrsI6ldEjdy0TBBVy4bJND/3QtcrHwRC6msrQ5sem2pc8Hg4WkbNOhnR\nKjKdgW+/wnDiEX2vjkGJS32dZkuoKI07dO1t+sajwioa8Z008ttXyrBhSVwvv5lmYtoBlEEnjGB4\nMsRJJze6QC4QHeREk5MmGvlUtc/UCO5pu0GqcmLC2vHeYEDdvIjrqHWrF6MHqd8fx0OAPF0DPghH\njEvr4VAA9q4RI//gcwD2rZWZOmG0lAFBMmGBhr0YCSZgo0tsp9iZsENhp8KOZQQtdP94AnGqnyb2\nLG3bRvDXHMCo1t/6Ded7vfB+LAQYdT3AToUdywi+T0fg0ksvJ2MzGPlpoIxyCSXEpdKcoBOX+73q\npVWB++E0NRpLCwEfdMinBwp9ScdsNlTPBUxUpwEfk7WUAWyl6QC206tvfFxU27E4MjbB7eELKtBE\nSwmvGb/xfkER0xlgzwF2wylfasWMD0fMAHYmBtqOxXBsVGJq73wQv04weuJo6IC2IyUK4fr1aLxt\n4no2fuRhcJ92IyNgYaE/GxqxCHhLJcQkvbTZnHkaf6gxvJmx/2tIfUob8Zq0m4sbZoBzaCazfRvV\nsArTUATg03iYPgf8cIVu0FDYOLopHhGCTrYgztYJY22My8QopejtGFWzJWHiVgKLpQwIkgmLiNXQ\nJcinu0xrD6R7s2zI2Q5kI6pWdNoZsBKtbPDaGchGVK3o/A8yoP4DbsXnHOKlttMM0L/v8xbIoIRn\nD/LXftJN8O96uX2yN2/OSbBo0/MSgdbSOglPfeDBCZqJPkbL+TF22ANt579vqJnIw+M2fwDj0E01\nU+YhtQAAAABJRU5ErkJggg==\n",
+          "hash": 163207293,
+          "location": "https://140.116.60.225:5001/webman/favicon.ico?v=40438"
+        },
+        "sitemap": null,
+        "html_hash": -1962690787
+      },
+      "port": 5001,
+      "transport": "tcp",
+      "location": {
+        "city": "Tainan",
+        "region_code": "04",
+        "area_code": null,
+        "longitude": 120.21333,
+        "latitude": 22.99083,
+        "country_code": "TW",
+        "country_name": "Taiwan"
+      },
+      "product": "nginx",
+      "hash": 556061565,
+      "timestamp": "2026-02-04T09:09:57.457210",
+      "ssl": {
+        "chain_sha256": [
+          "64307216e66c58c8a7229ad009396b6b9d54004bd84dbc639d351059cefa3931",
+          "83624fd338c8d9b023c18a67cb7a9c0519da43d11775b4c6cbdad45c3d997c52"
+        ],
+        "jarm": "27d27d27d29d27d00042d42d00000026a95928fa9b620834c2feff40bccb8f",
+        "tlsext": [
+          {
+            "id": 43,
+            "name": "supported_versions"
+          },
+          {
+            "id": 51,
+            "name": "key_share"
+          },
+          {
+            "id": 0,
+            "name": "server_name"
+          }
+        ],
+        "chain": [
+          "-----BEGIN CERTIFICATE-----\nMIIDkzCCAxqgAwIBAgISBU/rbqPQ8SeVWz3upi/3soi+MAoGCCqGSM49BAMDMDIx\nCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJF\nODAeFw0yNTEyMTcwMjU5NTlaFw0yNjAzMTcwMjU5NThaMB4xHDAaBgNVBAMTE3N0\ndS5tZWQubmNrdS5lZHUudHcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASJ8k+W\n3cx9rvFeUEU+VOd9AaURPeyAdlkqXj356NSEmfQ83lRo/IAlXuftWOEqTNNBH4d8\nN+38lPf3lAKQsJAmo4ICIjCCAh4wDgYDVR0PAQH/BAQDAgeAMB0GA1UdJQQWMBQG\nCCsGAQUFBwMBBggrBgEFBQcDAjAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBQVRbKI\nSvw7iULr4graQU2YlnUZ8jAfBgNVHSMEGDAWgBSPDROi9i5+0VBsMxg4XVmOI3KR\nyjAyBggrBgEFBQcBAQQmMCQwIgYIKwYBBQUHMAKGFmh0dHA6Ly9lOC5pLmxlbmNy\nLm9yZy8wHgYDVR0RBBcwFYITc3R1Lm1lZC5uY2t1LmVkdS50dzATBgNVHSAEDDAK\nMAgGBmeBDAECATAtBgNVHR8EJjAkMCKgIKAehhxodHRwOi8vZTguYy5sZW5jci5v\ncmcvNjMuY3JsMIIBBQYKKwYBBAHWeQIEAgSB9gSB8wDxAHcAyzj3FYl8hKFEX1vB\n3fvJbvKaWc1HCmkFhbDLFMMUWOcAAAGbKnWdMgAABAMASDBGAiEA0iO810ISFpm1\nKd0FWOtfnpEqxDZG6/RaiSuHOT/ShRACIQDbb+8stHx/DcmciLW8LQ7VYk0nHKuJ\n90bW9Ny+26IamQB2ANFuqaVoB35mNaA/N6XdvAOlPEESFNSIGPXpMbMjy5UEAAAB\nmyp1nf0AAAQDAEcwRQIhAPNISiMbKwniql35tjmuc7h/Foxk35EFr3hIV7H5udW3\nAiBHFhSx+HF7EcadvDklwE9SDgD1MCXebs2Ky15JyE8qCzAKBggqhkjOPQQDAwNn\nADBkAjAlYj2Rwnf/XxpRHXEHo2liZRlOQfg1GmU4IMcKU2e3hlY7RLCr91gZsbTo\nw9IHmlMCMHoKwKs7jtRkbz9svMsFkWwDNULEun7SDvHe3cfMicmihrCp9gtQiGPx\nf9dHmNXT0g==\n-----END CERTIFICATE-----\n",
+          "-----BEGIN CERTIFICATE-----\nMIIEVjCCAj6gAwIBAgIQY5WTY8JOcIJxWRi/w9ftVjANBgkqhkiG9w0BAQsFADBP\nMQswCQYDVQQGEwJVUzEpMCcGA1UEChMgSW50ZXJuZXQgU2VjdXJpdHkgUmVzZWFy\nY2ggR3JvdXAxFTATBgNVBAMTDElTUkcgUm9vdCBYMTAeFw0yNDAzMTMwMDAwMDBa\nFw0yNzAzMTIyMzU5NTlaMDIxCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBF\nbmNyeXB0MQswCQYDVQQDEwJFODB2MBAGByqGSM49AgEGBSuBBAAiA2IABNFl8l7c\nS7QMApzSsvru6WyrOq44ofTUOTIzxULUzDMMNMchIJBwXOhiLxxxs0LXeb5GDcHb\nR6EToMffgSZjO9SNHfY9gjMy9vQr5/WWOrQTZxh7az6NSNnq3u2ubT6HTKOB+DCB\n9TAOBgNVHQ8BAf8EBAMCAYYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMB\nMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFI8NE6L2Ln7RUGwzGDhdWY4j\ncpHKMB8GA1UdIwQYMBaAFHm0WeZ7tuXkAXOACIjIGlj26ZtuMDIGCCsGAQUFBwEB\nBCYwJDAiBggrBgEFBQcwAoYWaHR0cDovL3gxLmkubGVuY3Iub3JnLzATBgNVHSAE\nDDAKMAgGBmeBDAECATAnBgNVHR8EIDAeMBygGqAYhhZodHRwOi8veDEuYy5sZW5j\nci5vcmcvMA0GCSqGSIb3DQEBCwUAA4ICAQBnE0hGINKsCYWi0Xx1ygxD5qihEjZ0\nRI3tTZz1wuATH3ZwYPIp97kWEayanD1j0cDhIYzy4CkDo2jB8D5t0a6zZWzlr98d\nAQFNh8uKJkIHdLShy+nUyeZxc5bNeMp1Lu0gSzE4McqfmNMvIpeiwWSYO9w82Ob8\notvXcO2JUYi3svHIWRm3+707DUbL51XMcY2iZdlCq4Wa9nbuk3WTU4gr6LY8MzVA\naDQG2+4U3eJ6qUF10bBnR1uuVyDYs9RhrwucRVnfuDj29CMLTsplM5f5wSV5hUpm\nUwp/vV7M4w4aGunt74koX71n4EdagCsL/Yk5+mAQU0+tue0JOfAV/R6t1k+Xk9s2\nHMQFeoxppfzAVC04FdG9M+AC2JWxmFSt6BCuh3CEey3fE52Qrj9YM75rtvIjsm/1\nHl+u//Wqxnu1ZQ4jpa+VpuZiGOlWrqSP9eogdOhCGisnyewWJwRQOqK16wiGyZeR\nxs/Bekw65vwSIaVkBruPiTfMOo0Zh4gVa8/qJgMbJbyrwwG97z/PRgmLKCDl8z3d\ntA0Z7qq7fta0Gl24uyuB05dqI5J1LvAzKuWdIjT1tP8qCoxSE/xpix8hX2dt3h+/\njujUgFPFZ0EVZ0xSyBNRF3MboGZnYXFUxpNjTWPKpagDHJQmqrAcDmWJnMsFY3jS\nu1igv3OefnWjSQ==\n-----END CERTIFICATE-----\n"
+        ],
+        "versions": [],
+        "acceptable_cas": [],
+        "alpn": [],
+        "cert": {
+          "sig_alg": "ecdsa-with-SHA384",
+          "issued": "20251217025959Z",
+          "expires": "20260317025958Z",
+          "pubkey": {
+            "bits": 256,
+            "type": "dsa"
+          },
+          "version": 2,
+          "extensions": [
+            {
+              "critical": true,
+              "data": "\\x03\\x02\\x07\\x80",
+              "name": "keyUsage"
+            },
+            {
+              "data": "0\\x14\\x06\\x08+\\x06\\x01\\x05\\x05\\x07\\x03\\x01\\x06\\x08+\\x06\\x01\\x05\\x05\\x07\\x03\\x02",
+              "name": "extendedKeyUsage"
+            },
+            {
+              "critical": true,
+              "data": "0\\x00",
+              "name": "basicConstraints"
+            },
+            {
+              "data": "\\x04\\x14\\x15E\\xb2\\x88J\\xfc;\\x89B\\xeb\\xe2\\n\\xdaAM\\x98\\x96u\\x19\\xf2",
+              "name": "subjectKeyIdentifier"
+            },
+            {
+              "data": "0\\x16\\x80\\x14\\x8f\\r\\x13\\xa2\\xf6.~\\xd1Pl3\\x188]Y\\x8e#r\\x91\\xca",
+              "name": "authorityKeyIdentifier"
+            },
+            {
+              "data": "0$0\"\\x06\\x08+\\x06\\x01\\x05\\x05\\x070\\x02\\x86\\x16http://e8.i.lencr.org/",
+              "name": "authorityInfoAccess"
+            },
+            {
+              "data": "0\\x15\\x82\\x13stu.med.ncku.edu.tw",
+              "name": "subjectAltName"
+            },
+            {
+              "data": "0\\n0\\x08\\x06\\x06g\\x81\\x0c\\x01\\x02\\x01",
+              "name": "certificatePolicies"
+            },
+            {
+              "data": "0$0\"\\xa0 \\xa0\\x1e\\x86\\x1chttp://e8.c.lencr.org/63.crl",
+              "name": "crlDistributionPoints"
+            },
+            {
+              "data": "\\x04\\x81\\xf3\\x00\\xf1\\x00w\\x00\\xcb8\\xf7\\x15\\x89|\\x84\\xa1D_[\\xc1\\xdd\\xfb\\xc9n\\xf2\\x9aY\\xcdG\\ni\\x05\\x85\\xb0\\xcb\\x14\\xc3\\x14X\\xe7\\x00\\x00\\x01\\x9b*u\\x9d2\\x00\\x00\\x04\\x03\\x00H0F\\x02!\\x00\\xd2#\\xbc\\xd7B\\x12\\x16\\x99\\xb5)\\xdd\\x05X\\xeb_\\x9e\\x91*\\xc46F\\xeb\\xf4Z\\x89+\\x879?\\xd2\\x85\\x10\\x02!\\x00\\xdbo\\xef,\\xb4|\\x7f\\r\\xc9\\x9c\\x88\\xb5\\xbc-\\x0e\\xd5bM\\'\\x1c\\xab\\x89\\xf7F\\xd6\\xf4\\xdc\\xbe\\xdb\\xa2\\x1a\\x99\\x00v\\x00\\xd1n\\xa9\\xa5h\\x07~f5\\xa0?7\\xa5\\xdd\\xbc\\x03\\xa5<A\\x12\\x14\\xd4\\x88\\x18\\xf5\\xe91\\xb3#\\xcb\\x95\\x04\\x00\\x00\\x01\\x9b*u\\x9d\\xfd\\x00\\x00\\x04\\x03\\x00G0E\\x02!\\x00\\xf3HJ#\\x1b+\\t\\xe2\\xaa]\\xf9\\xb69\\xaes\\xb8\\x7f\\x16\\x8cd\\xdf\\x91\\x05\\xafxHW\\xb1\\xf9\\xb9\\xd5\\xb7\\x02 G\\x16\\x14\\xb1\\xf8q{\\x11\\xc6\\x9d\\xbc9%\\xc0OR\\x0e\\x00\\xf50%\\xden\\xcd\\x8a\\xcb^I\\xc8O*\\x0b",
+              "name": "ct_precert_scts"
+            }
+          ],
+          "fingerprint": {
+            "sha256": "64307216e66c58c8a7229ad009396b6b9d54004bd84dbc639d351059cefa3931",
+            "sha1": "b63d6a70c43450da2c4f1a6d39259975a61e18fc"
+          },
+          "serial": 462756679699806122846876517313785107744958,
+          "issuer": {
+            "C": "US",
+            "CN": "E8",
+            "O": "Let's Encrypt"
+          },
+          "expired": false,
+          "subject": {
+            "CN": "stu.med.ncku.edu.tw"
+          }
+        },
+        "cipher": {
+          "version": "TLSv1.3",
+          "bits": 256,
+          "name": "TLS_AES_256_GCM_SHA384"
+        },
+        "trust": {
+          "revoked": false,
+          "browser": null
+        },
+        "handshake_states": [
+          "before SSL initialization",
+          "SSLv3/TLS write client hello",
+          "SSLv3/TLS read server hello",
+          "TLSv1.3 read encrypted extensions",
+          "SSLv3/TLS read server certificate",
+          "TLSv1.3 read server certificate verify",
+          "SSLv3/TLS read finished",
+          "SSLv3/TLS write change cipher spec",
+          "SSLv3/TLS write finished",
+          "SSL negotiation finished successfully"
+        ],
+        "ja3s": "574866101f64002c6421cc329e4d5458",
+        "ocsp": {}
+      },
+      "hostnames": [
+        "stu.med.ncku.edu.tw"
+      ],
+      "org": "Ministry of Education Computer Center",
+      "data": "HTTP/1.1 200 OK\r\nServer: nginx\r\nDate: Wed, 04 Feb 2026 09:09:57 GMT\r\nContent-Type: text/html; charset=\"UTF-8\"\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nKeep-Alive: timeout=20\r\nVary: Accept-Encoding\r\nCache-control: no-store\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nX-Frame-Options: SAMEORIGIN\r\nP3P: CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\"\r\nContent-Security-Policy: base-uri 'self';  connect-src data: ws: wss: http: https:; default-src 'self' 'unsafe-eval' data: blob: https://*.synology.com https://www.synology.cn/ https://help.synology.cn/; font-src 'self' data: https://*.googleapis.com https://*.gstatic.com; form-action 'self'; frame-ancestors 'self'; frame-src 'self' data: blob: https://*.synology.com https://*.synology.cn; img-src 'self' data: blob: https://*.google.com https://*.googleapis.com http://*.googlecode.com https://*.gstatic.com https://global.download.synology.com; media-src 'self' data: about: https://*.synology.com https://help.synology.cn;  script-src 'self' 'unsafe-eval' data: blob: https://maps.google.com https://maps.googleapis.com https://ajax.googleapis.com https://help.synology.com https://help.synology.cn; style-src 'self' 'unsafe-inline' https://*.googleapis.com;\r\n\r\n\nSynology DiskStation Manager (DSM):\n  Version: 7.2.2-72806\n  Hostname: Medserver\n  Custom Login Title: 成大醫學系檔案伺服器\n  Login Welcome Title: 伺服器相關訊息請專注成醫系學會粉專\n  Login Welcome Message: 有問題請參照下方使用說明\n",
+      "asn": "AS1659",
+      "cpe23": [
+        "cpe:2.3:a:f5:nginx",
+        "cpe:2.3:a:synology:diskstation_manager:7.2.2-72806"
+      ],
+      "isp": "Taiwan Academic Network (TANet) Information Center",
+      "cpe": [
+        "cpe:/a:f5:nginx",
+        "cpe:/a:synology:diskstation_manager:7.2.2-72806"
+      ],
+      "synology_dsm": {
+        "login_welcome_msg": "有問題請參照下方使用說明",
+        "hostname": "Medserver",
+        "login_welcome_title": "伺服器相關訊息請專注成醫系學會粉專",
+        "custom_login_title": "成大醫學系檔案伺服器"
+      },
+      "domains": [
+        "ncku.edu.tw"
+      ],
+      "ip_str": "140.116.60.225",
+      "os": "Synology DiskStation Manager (DSM) 7.2.2-72806",
+      "_shodan": {
+        "region": "na",
+        "module": "https-simple-new",
+        "ptr": true,
+        "options": {},
+        "id": "136516e5-3aa2-4eb6-b37d-95aca4c3fd4b",
+        "crawler": "6d5195c331613d103027c23dc52e6d32fd2a74af"
+      }
+    },
+    {
+      "ip": 2356458147,
+      "http": {
+        "status": 200,
+        "robots_hash": null,
+        "redirects": [],
+        "title_hash": -1029940624,
+        "securitytxt": null,
+        "title": "Welcome&nbsp;to&nbsp;AISLab",
+        "sitemap_hash": null,
+        "robots": null,
+        "server": "nginx",
+        "dom_hash": 1220332598,
+        "headers_hash": -580677767,
+        "host": "140.116.178.163",
+        "html": "<!DOCTYPE html>\n<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<meta http-equiv=\"X-UA-Compatible\" content=\"IE=11\" />\n<meta name=\"msapplication-TileImage\" content=\"resources/images/icon_tile.png?v=4398\" />\n<meta name=\"application-name\" content=\"Welcome&nbsp;to&nbsp;AISLab\" />\n<meta name=\"msapplication-TileColor\" content=\"#246BB3\"/>\n<meta name=\"description\" content=\"Synology NAS 提供功能完整的網路儲存 (NAS) 解決方案，可讓您輕鬆管理及備份資料，並在 Windows、Mac 及 Linux 電腦之間分享資料。\" />\n<meta name=\"keywords\" content=\"多工處理,網頁應用程式,個人雲端\" />\n<meta name=\"viewport\" content=\"\">\n\n<link rel=\"apple-touch-icon\" href=\"webman/resources/images/icon_dsm_96.png?v=40438\" />\n<link rel=\"mask-icon\" href=\"webman/safari_pin_icon.svg\" color=\"#0086E5\" />\n<link rel=\"icon\" href=\"webman/favicon.ico?v=40438\" />\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_96.png?v=40438\" sizes=\"96x96\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_64.png?v=40438\" sizes=\"64x64\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_48.png?v=40438\" sizes=\"48x48\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_32.png?v=40438\" sizes=\"32x32\"/>\n<link rel=\"icon\" href=\"webman/resources/images/icon_dsm_16.png?v=40438\" sizes=\"16x16\"/>\n<title>Welcome&nbsp;to&nbsp;AISLab</title>\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/unsupported-browsers/dist/bundle.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/ext-3.4/resources/css/ext-all.css?v=1750385317\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/syno-vue-components/style/syno-vue-components.css?v=1754462511\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/scrollbar/flexcroll.css?v=1750385317\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"scripts/ext-3/ux/ux-all.css?v=1750385317\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"synoSDSjslib/sds.css?v=1756981479\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/desktop/dist/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/sds/dist/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/taskbar/dist/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/login/dist/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/resources/css/desktop.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/OTPWizard/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/HotkeyManager/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/AdminCenter/style.css?v=1756263580\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DiskMessageHandler/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SharingManager/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/TaskSchedulerUtils/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/BackgroundTaskMonitor/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SupportForm/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/UpdateMaskApp/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/MyDSCenter/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/WelcomeApp/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SecurityScan/style.css?v=1752120705\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/FileChooser/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DSMNotify/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/LogCenter/style.css?v=1753785951\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/Widgets/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/AutoUpdateDelayOrCancel/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ResourceMonitor/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/EnableNewUpdateSetting/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/HelpBrowser/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ResetAdminApp/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/SystemInfoApp/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/TaskSchedulerWidget/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/TinyMCE/style.css?v=1664290641\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/AudioPlayer/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DesktopProgress/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ClipBoardJS/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/DataDrivenDocuments/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ExternalDevices/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/C3/style.css?v=1763536448\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/VideoPlayer2/style.css?v=1750750572\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PollingTask/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PkgManApp/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/ConfigBackup/style.css?v=1762857543\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PersonalSettings/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/Share/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/BandwidthControl/style.css?v=1634102886\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/PhotoViewer/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/modules/Utils/style.css?v=1758090778\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/StorageManager/style.css?v=1763377707\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/StorageAnalyzer/style.css?v=1761804320\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/FileBrowser/style.css?v=1755678757\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/DNSServer/style.css?v=1679018126\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SupportForm/style.css?v=1754645222\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/WebDAVServer/style.css?v=1767609616\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/TextEditor/style.css?v=1679371950\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/VPNCenter/style.css?v=1678785882\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/HybridShare/style.css?v=1761904865\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SMBService/style.css?v=1762929711\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/FileTaskMonitor/style.css?v=1755678748\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynologyDrive-Drive/style.css?v=1762857886\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SupportService/style.css?v=1754645226\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/LogCenter/style.css?v=1758709487\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/RadiusServer/style.css?v=1725970373\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/OAuthService/style.css?v=1757646200\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/ProxyServer/style.css?v=1680765391\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/ActiveInsight/style.css?v=1758175412\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/ContainerManager/style.css?v=1758795490\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynoFinder/style.css?v=1752166890\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynologyApplicationService/style.css?v=1747722179\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/PDFViewer/style.css?v=1752745058\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/ScsiTarget/style.css?v=1762938860\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynologyDrive-ShareSync/style.css?v=1762857886\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SnapshotReplication/style.css?v=1757663629\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/Spreadsheet/style.css?v=1757412314\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/SynologyDrive/style.css?v=1762857891\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/WebStation/style.css?v=1758246927\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"webman/3rdparty/HyperBackup/style.css?v=1764560703\" />\n\n</head>\n<body role=\"application\">\n<div id=\"sds-wallpaper\"></div>\n<!-- Don't contain any text node to avoid IE insertBefore bug -->\n<div id=\"sds-login-vue\"></div>\n<div id=\"framework-attach\"></div>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.SessionData&version=1&method=getjs&SynoToken=&v=1763722670\"></script>\n<script type=\"text/javascript\" src=\"scripts/babel-polyfill/polyfill.js?v=1750385317\"></script>\n<script type=\"text/javascript\" src=\"scripts/synowebapi.js/synowebapi.min.js?v=1675322301\"></script>\n<script type=\"text/javascript\" src=\"scripts/synocredential.js/synocredential.min.js?v=1757408423\"></script>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.Defs&version=1&method=getjs&v=1766046783\"></script>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.JSUIString&version=1&method=getjs&lang=cht&v=1766046278\"></script>\n<script type=\"text/javascript\" src=\"webapi/entry.cgi?api=SYNO.Core.Desktop.UIString&version=1&method=getjs&lang=cht&v=1766046281\"></script>\n<script type=\"text/javascript\" src=\"webman/unsupported-browsers/dist/bundle.js?v=1763536448\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/noise-c.js?v=1750385317\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/constants.js?v=1750385317\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/index.js?v=1750385317\"></script>\n<script type=\"text/javascript\" src=\"scripts/noise/sodium.js?v=1750385317\"></script>\n<script type=\"text/javascript\" src=\"synoSDSjslib/dist/vendor.bundle.js?v=1756981479\"></script>\n<script type=\"text/javascript\" src=\"synoSDSjslib/dist/sds.bundle.js?v=1756981479\"></script>\n<script type=\"text/javascript\" src=\"scripts/vue/vue.min.js?v=1689132810\"></script>\n<script type=\"text/javascript\" src=\"scripts/vuex/vuex.min.js?v=1664290698\"></script>\n<script type=\"text/javascript\" src=\"scripts/vue-router/vue-router.min.js?v=1667901351\"></script>\n<script type=\"text/javascript\" src=\"scripts/syno-vue-components/syno-vue-components.min.js?v=1754462511\"></script>\n<script type=\"text/javascript\" src=\"webman/taskbar/dist/dsm.taskbar.bundle.js?v=1763536448\"></script>\n<script type=\"text/javascript\" src=\"webman/sds/dist/dsm.common.bundle.js?v=1763536448\"></script>\n<script type=\"text/javascript\" src=\"webman/desktop/dist/dsm.desktop.bundle.js?v=1763536448\"></script>\n<script type=\"text/javascript\" src=\"webman/sds/dist/dsm.sds.bundle.js?v=1763536448\"></script>\n<script type=\"text/javascript\" src=\"webman/login/dist/dsm.login.bundle.js?v=1763536448\"></script>\n<script type=\"text/javascript\" src=\"webman/entry/dist/dsm.entry.bundle.js?v=1763536448\"></script>\n\n<div class=\"pre-load-x-window-br\"></div>\n</body>\n<noscript>\n<div class='syno-no-script'>\n<div class='title align-center'>無法顯示此網頁</div>\n<div class='desc align-center'>請允許此網頁瀏覽器執行 JavaScript。</div>\n<div class='icon align-center'></div>\n</div>\n</noscript>\n</html>\n",
+        "server_hash": -1340961475,
+        "location": "/",
+        "securitytxt_hash": null,
+        "favicon": {
+          "data": "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAABAVJREFUaAXt\nGktoE0H0zaZZTVoqtlWsH/CgVi2CtILiwUopVkURRS8iXrSi4EUPovZf0EMVe1EEsRcRQfBD0Yta\ne5BaP4gHtZaCh0rFQmsr2iYh33XeJjPZSXbT3cRgIvtgMzPvt+83b7PJEIiBoihE7pg6CopyBECp\nBAWKGC0nRgIzAGQQCOkOtJTcJIQoaBfBD/cFT3kw6LtNja/Fdc4DIX1Op+uQt7FwTMLI55XxGF0a\naLQZbSfO9skGiERu5HzU9QyUpGNStOb1qHmAo/tVUjdsHtiqb6JSSTOQY91G31J9LLWdZiC/wXbg\nX+fPzoCdgQwjYJdQhgHMWNzOQMYhzFBBgVY+0FamXSbNJzwKDIwG4dwzD3yZDCfRHRKBU5tdsL9S\nhnULC8DpSGLhCLntB59r73vg7jT0DPk5DSc7VsnQc7CY47SylkpoQSGBPatleHd8PqwqE61D458c\nLoaLdW6oKk9tPLdEZ9JY407CtmxNxjEmSw4wIbcToHOb+MaJkd+ynBIyhPWLHLCrYg7XgtGvXiwU\nCqfhRKBoUyNw0cXSeQ64vrsI6ldEjdy0TBBVy4bJND/3QtcrHwRC6msrQ5sem2pc8Hg4WkbNOhnR\nKjKdgW+/wnDiEX2vjkGJS32dZkuoKI07dO1t+sajwioa8Z008ttXyrBhSVwvv5lmYtoBlEEnjGB4\nMsRJJze6QC4QHeREk5MmGvlUtc/UCO5pu0GqcmLC2vHeYEDdvIjrqHWrF6MHqd8fx0OAPF0DPghH\njEvr4VAA9q4RI//gcwD2rZWZOmG0lAFBMmGBhr0YCSZgo0tsp9iZsENhp8KOZQQtdP94AnGqnyb2\nLG3bRvDXHMCo1t/6Ded7vfB+LAQYdT3AToUdywi+T0fg0ksvJ2MzGPlpoIxyCSXEpdKcoBOX+73q\npVWB++E0NRpLCwEfdMinBwp9ScdsNlTPBUxUpwEfk7WUAWyl6QC206tvfFxU27E4MjbB7eELKtBE\nSwmvGb/xfkER0xlgzwF2wylfasWMD0fMAHYmBtqOxXBsVGJq73wQv04weuJo6IC2IyUK4fr1aLxt\n4no2fuRhcJ92IyNgYaE/GxqxCHhLJcQkvbTZnHkaf6gxvJmx/2tIfUob8Zq0m4sbZoBzaCazfRvV\nsArTUATg03iYPgf8cIVu0FDYOLopHhGCTrYgztYJY22My8QopejtGFWzJWHiVgKLpQwIkgmLiNXQ\nJcinu0xrD6R7s2zI2Q5kI6pWdNoZsBKtbPDaGchGVK3o/A8yoP4DbsXnHOKlttMM0L/v8xbIoIRn\nD/LXftJN8O96uX2yN2/OSbBo0/MSgdbSOglPfeDBCZqJPkbL+TF22ANt579vqJnIw+M2fwDj0E01\nU+YhtQAAAABJRU5ErkJggg==\n",
+          "hash": 163207293,
+          "location": "https://140.116.178.163:5001/webman/favicon.ico?v=40438"
+        },
+        "sitemap": null,
+        "html_hash": -1135704272
+      },
+      "port": 5001,
+      "transport": "tcp",
+      "location": {
+        "city": "Tainan",
+        "region_code": "04",
+        "area_code": null,
+        "longitude": 120.21333,
+        "latitude": 22.99083,
+        "country_code": "TW",
+        "country_name": "Taiwan"
+      },
+      "product": "nginx",
+      "hash": -1891864115,
+      "timestamp": "2026-01-12T03:44:18.625905",
+      "ssl": {
+        "chain_sha256": [
+          "fefdfb94a7b3b7dcc8a0ebf28896ef557e07b35c756eca077e70f9fce9fc43f0",
+          "aeb1fd7410e83bc96f5da3c6a7c2c1bb836d1fa5cb86e708515890e428a8770b"
+        ],
+        "jarm": "27d27d27d29d27d00042d42d00000026a95928fa9b620834c2feff40bccb8f",
+        "tlsext": [
+          {
+            "id": 43,
+            "name": "supported_versions"
+          },
+          {
+            "id": 51,
+            "name": "key_share"
+          },
+          {
+            "id": 0,
+            "name": "server_name"
+          }
+        ],
+        "chain": [
+          "-----BEGIN CERTIFICATE-----\nMIIDnjCCAySgAwIBAgISBZ2nSHTodUg4sISp1fBv/Xk6MAoGCCqGSM49BAMDMDIx\nCzAJBgNVBAYTAlVTMRYwFAYDVQQKEw1MZXQncyBFbmNyeXB0MQswCQYDVQQDEwJF\nNzAeFw0yNTExMTMxMDI2NDZaFw0yNjAyMTExMDI2NDVaMCMxITAfBgNVBAMTGGFp\nc2xhYm5hcy5lZS5uY2t1LmVkdS50dzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IA\nBEOBN/hnH5ThpEdNAcXiiVzZh7z8DUQOeGWNhin3zVAnYcrgBo0fUNNi3k0hVC8p\neLRCqmKAiAYRKTWdIceJ0HajggInMIICIzAOBgNVHQ8BAf8EBAMCB4AwHQYDVR0l\nBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1UdEwEB/wQCMAAwHQYDVR0OBBYE\nFO0VULsslWcJkcsNPNpxJ1Vo2fHaMB8GA1UdIwQYMBaAFK5IntyHHUSgb9qi5WB0\nBHjCnACAMDIGCCsGAQUFBwEBBCYwJDAiBggrBgEFBQcwAoYWaHR0cDovL2U3Lmku\nbGVuY3Iub3JnLzAjBgNVHREEHDAaghhhaXNsYWJuYXMuZWUubmNrdS5lZHUudHcw\nEwYDVR0gBAwwCjAIBgZngQwBAgEwLQYDVR0fBCYwJDAioCCgHoYcaHR0cDovL2U3\nLmMubGVuY3Iub3JnLzU5LmNybDCCAQUGCisGAQQB1nkCBAIEgfYEgfMA8QB3ABmG\n1Mcoqm/+ugNveCpNAZGqzi1yMQ+uzl1wQS0lTMfUAAABmnz2bbEAAAQDAEgwRgIh\nAIxUSAA3XEyhYnwix66N/QJ5NJDJE9JN/nMQRXf23SjNAiEApJ3Meuup0OIxcXhg\nuNlBj/AqZ1m2OQWbXou9+NqIHDwAdgCWl2S/VViXrfdDh2g3CEJ36fA61fak8zZu\nRqQ/D8qpxgAAAZp89m3yAAAEAwBHMEUCIQDdPFMFZ6E+o1yT6DnZxJ4m3Ukx3Cz5\nyKq+TxBJPftuUQIgFf3voprnXvNfC/Y02EPec1aYAWdbHHhK3rF4Pz+T7bowCgYI\nKoZIzj0EAwMDaAAwZQIxALEW4nHmPUQpsdFwWJft2HIfQxC55bqgRK/fH4oeANkB\ncoWHPf3ouwk6m+6iPxZG8gIwDz3vexvVsVaC8jUFOuqQ3yKLIciO4hWB+BOxq8Ve\nn7pQ5ZB8NiK9tNGuc1j36Qlb\n-----END CERTIFICATE-----\n",
+          "-----BEGIN CERTIFICATE-----\nMIIEVzCCAj+gAwIBAgIRAKp18eYrjwoiCWbTi7/UuqEwDQYJKoZIhvcNAQELBQAw\nTzELMAkGA1UEBhMCVVMxKTAnBgNVBAoTIEludGVybmV0IFNlY3VyaXR5IFJlc2Vh\ncmNoIEdyb3VwMRUwEwYDVQQDEwxJU1JHIFJvb3QgWDEwHhcNMjQwMzEzMDAwMDAw\nWhcNMjcwMzEyMjM1OTU5WjAyMQswCQYDVQQGEwJVUzEWMBQGA1UEChMNTGV0J3Mg\nRW5jcnlwdDELMAkGA1UEAxMCRTcwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAARB6AST\nCFh/vjcwDMCgQer+VtqEkz7JANurZxLP+U9TCeioL6sp5Z8VRvRbYk4P1INBmbef\nQHJFHCxcSjKmwtvGBWpl/9ra8HW0QDsUaJW2qOJqceJ0ZVFT3hbUHifBM/2jgfgw\ngfUwDgYDVR0PAQH/BAQDAgGGMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcD\nATASBgNVHRMBAf8ECDAGAQH/AgEAMB0GA1UdDgQWBBSuSJ7chx1EoG/aouVgdAR4\nwpwAgDAfBgNVHSMEGDAWgBR5tFnme7bl5AFzgAiIyBpY9umbbjAyBggrBgEFBQcB\nAQQmMCQwIgYIKwYBBQUHMAKGFmh0dHA6Ly94MS5pLmxlbmNyLm9yZy8wEwYDVR0g\nBAwwCjAIBgZngQwBAgEwJwYDVR0fBCAwHjAcoBqgGIYWaHR0cDovL3gxLmMubGVu\nY3Iub3JnLzANBgkqhkiG9w0BAQsFAAOCAgEAjx66fDdLk5ywFn3CzA1w1qfylHUD\naEf0QZpXcJseddJGSfbUUOvbNR9N/QQ16K1lXl4VFyhmGXDT5Kdfcr0RvIIVrNxF\nh4lqHtRRCP6RBRstqbZ2zURgqakn/Xip0iaQL0IdfHBZr396FgknniRYFckKORPG\nyM3QKnd66gtMst8I5nkRQlAg/Jb+Gc3egIvuGKWboE1G89NTsN9LTDD3PLj0dUMr\nOIuqVjLB8pEC6yk9enrlrqjXQgkLEYhXzq7dLafv5Vkig6Gl0nuuqjqfp0Q1bi1o\nyVNAlXe6aUXw92CcghC9bNsKEO1+M52YY5+ofIXlS/SEQbvVYYBLZ5yeiglV6t3S\nM6H+vTG0aP9YHzLn/KVOHzGQfXDP7qM5tkf+7diZe7o2fw6O7IvN6fsQXEQQj8TJ\nUXJxv2/uJhcuy/tSDgXwHM8Uk34WNbRT7zGTGkQRX0gsbjAea/jYAoWv0ZvQRwpq\nPe79D/i7Cep8qWnA+7AE/3B3S/3dEEYmc0lpe1366A/6GEgk3ktr9PEoQrLChs6I\ntu3wnNLB2euC8IKGLQFpGtOO/2/hiAKjyajaBP25w1jF0Wl8Bbqne3uZ2q1GyPFJ\nYRmT7/OXpmOH/FVLtwS+8ng1cAmpCujPwteJZNcDG0sF2n/sc0+SQf49fdyUK0ty\n+VUwFj9tmWxyR/M=\n-----END CERTIFICATE-----\n"
+        ],
+        "versions": [],
+        "acceptable_cas": [],
+        "alpn": [],
+        "cert": {
+          "sig_alg": "ecdsa-with-SHA384",
+          "issued": "20251113102646Z",
+          "expires": "20260211102645Z",
+          "pubkey": {
+            "bits": 256,
+            "type": "dsa"
+          },
+          "version": 2,
+          "extensions": [
+            {
+              "critical": true,
+              "data": "\\x03\\x02\\x07\\x80",
+              "name": "keyUsage"
+            },
+            {
+              "data": "0\\x14\\x06\\x08+\\x06\\x01\\x05\\x05\\x07\\x03\\x01\\x06\\x08+\\x06\\x01\\x05\\x05\\x07\\x03\\x02",
+              "name": "extendedKeyUsage"
+            },
+            {
+              "critical": true,
+              "data": "0\\x00",
+              "name": "basicConstraints"
+            },
+            {
+              "data": "\\x04\\x14\\xed\\x15P\\xbb,\\x95g\\t\\x91\\xcb\\r<\\xdaq\\'Uh\\xd9\\xf1\\xda",
+              "name": "subjectKeyIdentifier"
+            },
+            {
+              "data": "0\\x16\\x80\\x14\\xaeH\\x9e\\xdc\\x87\\x1dD\\xa0o\\xda\\xa2\\xe5`t\\x04x\\xc2\\x9c\\x00\\x80",
+              "name": "authorityKeyIdentifier"
+            },
+            {
+              "data": "0$0\"\\x06\\x08+\\x06\\x01\\x05\\x05\\x070\\x02\\x86\\x16http://e7.i.lencr.org/",
+              "name": "authorityInfoAccess"
+            },
+            {
+              "data": "0\\x1a\\x82\\x18aislabnas.ee.ncku.edu.tw",
+              "name": "subjectAltName"
+            },
+            {
+              "data": "0\\n0\\x08\\x06\\x06g\\x81\\x0c\\x01\\x02\\x01",
+              "name": "certificatePolicies"
+            },
+            {
+              "data": "0$0\"\\xa0 \\xa0\\x1e\\x86\\x1chttp://e7.c.lencr.org/59.crl",
+              "name": "crlDistributionPoints"
+            },
+            {
+              "data": "\\x04\\x81\\xf3\\x00\\xf1\\x00w\\x00\\x19\\x86\\xd4\\xc7(\\xaao\\xfe\\xba\\x03ox*M\\x01\\x91\\xaa\\xce-r1\\x0f\\xae\\xce]pA-%L\\xc7\\xd4\\x00\\x00\\x01\\x9a|\\xf6m\\xb1\\x00\\x00\\x04\\x03\\x00H0F\\x02!\\x00\\x8cTH\\x007\\\\L\\xa1b|\"\\xc7\\xae\\x8d\\xfd\\x02y4\\x90\\xc9\\x13\\xd2M\\xfes\\x10Ew\\xf6\\xdd(\\xcd\\x02!\\x00\\xa4\\x9d\\xccz\\xeb\\xa9\\xd0\\xe21qx`\\xb8\\xd9A\\x8f\\xf0*gY\\xb69\\x05\\x9b^\\x8b\\xbd\\xf8\\xda\\x88\\x1c<\\x00v\\x00\\x96\\x97d\\xbfUX\\x97\\xad\\xf7C\\x87h7\\x08Bw\\xe9\\xf0:\\xd5\\xf6\\xa4\\xf36nF\\xa4?\\x0f\\xca\\xa9\\xc6\\x00\\x00\\x01\\x9a|\\xf6m\\xf2\\x00\\x00\\x04\\x03\\x00G0E\\x02!\\x00\\xdd<S\\x05g\\xa1>\\xa3\\\\\\x93\\xe89\\xd9\\xc4\\x9e&\\xddI1\\xdc,\\xf9\\xc8\\xaa\\xbeO\\x10I=\\xfbnQ\\x02 \\x15\\xfd\\xef\\xa2\\x9a\\xe7^\\xf3_\\x0b\\xf64\\xd8C\\xdesV\\x98\\x01g[\\x1cxJ\\xde\\xb1x??\\x93\\xed\\xba",
+              "name": "ct_precert_scts"
+            }
+          ],
+          "fingerprint": {
+            "sha256": "fefdfb94a7b3b7dcc8a0ebf28896ef557e07b35c756eca077e70f9fce9fc43f0",
+            "sha1": "419ea0edbaac5c5769fdc4f9bcefaf30640b2e18"
+          },
+          "serial": 489208118557235212238653415384763896527162,
+          "issuer": {
+            "C": "US",
+            "CN": "E7",
+            "O": "Let's Encrypt"
+          },
+          "expired": false,
+          "subject": {
+            "CN": "aislabnas.ee.ncku.edu.tw"
+          }
+        },
+        "cipher": {
+          "version": "TLSv1.3",
+          "bits": 256,
+          "name": "TLS_AES_256_GCM_SHA384"
+        },
+        "trust": {
+          "revoked": false,
+          "browser": null
+        },
+        "handshake_states": [
+          "before SSL initialization",
+          "SSLv3/TLS write client hello",
+          "SSLv3/TLS read server hello",
+          "TLSv1.3 read encrypted extensions",
+          "SSLv3/TLS read server certificate",
+          "TLSv1.3 read server certificate verify",
+          "SSLv3/TLS read finished",
+          "SSLv3/TLS write change cipher spec",
+          "SSLv3/TLS write finished",
+          "SSL negotiation finished successfully"
+        ],
+        "ja3s": "574866101f64002c6421cc329e4d5458",
+        "ocsp": {}
+      },
+      "hostnames": [
+        "aislabnas.ee.ncku.edu.tw"
+      ],
+      "org": "Ministry of Education Computer Center",
+      "data": "HTTP/1.1 200 OK\r\nServer: nginx\r\nDate: Mon, 12 Jan 2026 03:44:18 GMT\r\nContent-Type: text/html; charset=\"UTF-8\"\r\nTransfer-Encoding: chunked\r\nConnection: keep-alive\r\nKeep-Alive: timeout=20\r\nCache-control: no-store\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 1; mode=block\r\nX-Frame-Options: SAMEORIGIN\r\nP3P: CP=\"IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT\"\r\nContent-Security-Policy: base-uri 'self';  connect-src data: ws: wss: http: https:; default-src 'self' 'unsafe-eval' data: blob: https://*.synology.com https://www.synology.cn/ https://help.synology.cn/; font-src 'self' data: https://*.googleapis.com https://*.gstatic.com; form-action 'self'; frame-ancestors 'self'; frame-src 'self' data: blob: https://*.synology.com https://*.synology.cn http://*.synology.com http://*.synology.cn http://global.synologydownload.com https://global.synologydownload.com; img-src 'self' data: blob: https://*.google.com https://*.googleapis.com http://*.googlecode.com https://*.gstatic.com https://global.download.synology.com; media-src 'self' data: about: https://*.synology.com https://help.synology.cn;  script-src 'self' 'unsafe-eval' data: blob: https://maps.google.com https://maps.googleapis.com https://ajax.googleapis.com https://help.synology.com https://help.synology.cn; style-src 'self' 'unsafe-inline' https://*.googleapis.com;\r\n\r\n\nSynology DiskStation Manager (DSM):\n  Version: 7.3.2-86009\n  Hostname: AISLab-NAS\n  Custom Login Title: Welcome to AISLab\n",
+      "asn": "AS1659",
+      "cpe23": [
+        "cpe:2.3:a:f5:nginx",
+        "cpe:2.3:a:synology:diskstation_manager:7.3.2-86009"
+      ],
+      "isp": "Taiwan Academic Network (TANet) Information Center",
+      "cpe": [
+        "cpe:/a:f5:nginx",
+        "cpe:/a:synology:diskstation_manager:7.3.2-86009"
+      ],
+      "synology_dsm": {
+        "hostname": "AISLab-NAS",
+        "custom_login_title": "Welcome to AISLab"
+      },
+      "domains": [
+        "ncku.edu.tw"
+      ],
+      "ip_str": "140.116.178.163",
+      "os": "Synology DiskStation Manager (DSM) 7.3.2-86009",
+      "_shodan": {
+        "region": "na",
+        "module": "https-simple-new",
+        "ptr": true,
+        "options": {},
+        "id": "094eeb3f-f58c-4750-9384-66a4c5d26812",
+        "crawler": "6d5195c331613d103027c23dc52e6d32fd2a74af"
+      }
+    }
+  ]
+}

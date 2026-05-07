@@ -1,0 +1,245 @@
+Shodan Query Log
+================================================================================
+Query Time: 2026-02-06T05:21:07.855913
+Hostname: ucs-vc2.cc.ncku.edu.tw
+Total Results: 1
+================================================================================
+
+JSON Data:
+{
+  "query_time": "2026-02-06T05:21:07.855913",
+  "hostname": "ucs-vc2.cc.ncku.edu.tw",
+  "total": 1,
+  "matches": [
+    {
+      "ip": 2356414575,
+      "http": {
+        "status": 200,
+        "robots_hash": null,
+        "redirects": [],
+        "title_hash": -125493846,
+        "securitytxt": null,
+        "title": "\" + ID_VC_Welcome + \"",
+        "sitemap_hash": null,
+        "robots": null,
+        "dom_hash": -222705494,
+        "headers_hash": 1606540888,
+        "host": "140.116.8.111",
+        "html": "<!--\n     Copyright (c) 2024-2025 Broadcom. All Rights Reserved.\n     Broadcom Confidential. The term \"Broadcom\" refers to Broadcom Inc.\n     and/or its subsidiaries.\n-->\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\">\n <head>\n  <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n\n  <script type=\"text/javascript\" src=\"./en/welcomeRes.js\"> </script>\n  <script type=\"text/javascript\" src=\"./scripts/setUserLocale.js\"> </script>\n  <script type=\"text/javascript\" src=\"./scripts/classification.js\"></script>\n  <script type=\"text/javascript\">document.write(\"<title>\" + ID_VC_Welcome + \"</title>\");</script>\n\n  <link rel=\"stylesheet\" href=\"./default.css\" type=\"text/css\" />\n  <link rel=\"stylesheet\" href=\"./print.css\" type=\"text/css\" media=\"print\" />\n  <link rel=\"stylesheet\" href=\"./classification.css\" type=\"text/css\" />\n  <meta name=\"description\" content=\"VMware vSphere is virtual infrastructure software for partitioning, consolidating and managing systems in mission-critical environments. VMware ESX Server provides a highly scalable platform with advanced resource management capabilities, which can be managed by vSphere.\"/>\n </head>\n <body>\n  <div id=\"classificationBanner\" class=\"banner none\"></div>\n  <div id=\"header\"><img src=\"./header-logo.png\" width=\"586\" height=\"42\" alt=\"VMware vSphere 6\" /></div>\n  <div class=\"gettingStarted\">\n   <h1><script type=\"text/javascript\">document.write(ID_GettingStarted);</script></h1>\n   <a class=\"btn btn-primary\" href=\"/ui/\"><script type=\"text/javascript\">document.write(ID_LogInH5Client);</script></a>\n   <h1><script type=\"text/javascript\">document.write(ID_DocDesc);</script></h1>\n   <p><a class=\"link\" id=\"vmc-documentation-link\" href=\"http://docs.vmware.com/vmc\"><script type=\"text/javascript\">document.write(ID_VMCDoc);</script></a></p>\n   <p><a class=\"link\" id=\"on-prem-documentation-link\" href=\"http://www.vmware.com/info?id=1414\"><script type=\"text/javascript\">document.write(ID_DownloadDoc);</script></a></p>\n  </div> <!--/GETTING STARTED TEXT-->\n\n  <div class=\"forAdmins\">\n   <h1><script type=\"text/javascript\">document.write(ID_ForAdmins);</script></h1>\n   <h1><script type=\"text/javascript\">document.write(ID_VIDatacenters);</script></h1>\n   <p><script type=\"text/javascript\">document.write(ID_VIDatacentersDesc);</script></p>\n   <p><script type=\"text/javascript\">document.write('<a class=\"link\" href=\"/folder\">'+ ID_BrowseVCDatacenters +'</a>');</script></p>\n   <h1><script type=\"text/javascript\">document.write(ID_ForDevs);</script></h1>\n   <h1><script type=\"text/javascript\">document.write(ID_VISDK);</script></h1>\n   <p><script type=\"text/javascript\">document.write(ID_VISDKDesc);</script></p>\n   <p><script type=\"text/javascript\">document.write('<a class=\"link\" href=\"https://developer.vmware.com/sdk/vsphere-management\">'+ ID_DownloadSDK +'</a>');</script></p>\n   <p><script type=\"text/javascript\">document.write('<a class=\"link\" href=\"https://github.com/vmware/vsphere-automation-sdk\">'+ ID_AutomationSDKs +'</a>');</script></p>\n   <p><script type=\"text/javascript\">document.write('<a class=\"link\" href=\"/mob/\">'+ ID_BrowseVC +'</a>');</script></p>\n   <p><script type=\"text/javascript\">document.write('<a class=\"link\" href=\"/ui/#?extensionId=com.vmware.vsphere.client.h5.devcenter.apiexplorer\">'+ ID_ApiExplorer +'</a>');</script></p>\n   <p><script type=\"text/javascript\">document.write('<a class=\"link\" href=\"/certs/download.zip\">'+ ID_DownloadCerts +'</a>');</script></p>\n  </div>\n  <div id=\"copyRight\">\n   <script type=\"text/javascript\">document.write(ID_CopyrightText);</script>\n  </div>\n  &nbsp;\n    <script type=\"text/javascript\">\n      if (window.location.hostname.match(/\\.vmc\\.vmware\\.com$/)) {\n        document.getElementById('on-prem-documentation-link').style.display = 'none';\n      } else {\n        document.getElementById('vmc-documentation-link').style.display = 'none';\n      }\n  </script>\n </body>\n</html>\n",
+        "server_hash": null,
+        "location": "/",
+        "components": {
+          "HSTS": {
+            "categories": [
+              "Security"
+            ]
+          },
+          "Envoy": {
+            "categories": [
+              "Reverse proxies"
+            ]
+          }
+        },
+        "securitytxt_hash": null,
+        "server": null,
+        "sitemap": null,
+        "html_hash": -1398473527
+      },
+      "port": 443,
+      "transport": "tcp",
+      "version": "8.0.3",
+      "vmware": {
+        "locale_version": "INTL",
+        "vendor": "VMware, Inc.",
+        "name": "VMware vCenter Server",
+        "product_line_id": "vpx",
+        "locale_build": "000",
+        "version": "8.0.3",
+        "build": "24853646",
+        "full_name": "VMware vCenter Server 8.0.3 build-24853646",
+        "os_type": "linux-x64",
+        "api_version": "8.0.3.0",
+        "api_type": "VirtualCenter"
+      },
+      "location": {
+        "city": "Tainan",
+        "region_code": "04",
+        "area_code": null,
+        "longitude": 120.21333,
+        "latitude": 22.99083,
+        "country_code": "TW",
+        "country_name": "Taiwan"
+      },
+      "product": "VMware vCenter Server",
+      "hash": 1852095361,
+      "timestamp": "2026-02-04T18:45:13.279957",
+      "ssl": {
+        "chain_sha256": [
+          "511282f99c0735cdb51714f134551d85bed2ef1cd163b9a29dd51325a5b9dfe1",
+          "59769007f7685d0fcd50872f9f95d5755a5b2b457d81f3692b610a98672f0e1b"
+        ],
+        "jarm": "2ad2ad0002ad2ad0002ad2ad2ad2adf89dc96d81ac2281b1c9c243428fdee7",
+        "tlsext": [
+          {
+            "id": 23,
+            "name": "extended_master_secret"
+          },
+          {
+            "id": 65281,
+            "name": "renegotiation_info"
+          },
+          {
+            "id": 11,
+            "name": "ec_point_formats"
+          },
+          {
+            "id": 35,
+            "name": "session_ticket"
+          }
+        ],
+        "chain": [
+          "-----BEGIN CERTIFICATE-----\nMIIGvjCCBaagAwIBAgIQR+oAAAAI1NEzlLxLWEa1LzANBgkqhkiG9w0BAQsFADBT\nMQswCQYDVQQGEwJUVzESMBAGA1UEChMJVEFJV0FOLUNBMTAwLgYDVQQDEydUV0NB\nIFNlY3VyZSBTU0wgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkwHhcNMjYwMTI3MDMz\nMzU4WhcNMjcwMTI3MTU1OTU5WjB5MQswCQYDVQQGEwJUVzEPMA0GA1UECBMGVGFp\nd2FuMQ8wDQYDVQQHEwZUYWluYW4xJzAlBgNVBAoTHk5hdGlvbmFsIENoZW5nIEt1\nbmcgVW5pdmVyc2l0eTEfMB0GA1UEAxMWdWNzLXZjMi5jYy5uY2t1LmVkdS50dzCC\nASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOCJTjuFVyQ02gb+YceSFsIb\nYdzhE7ktUdcE/haxhx97IU9mnQJlBQiSIv82u+aeam89qfHT3HC0j89OZGDhFrxu\nKOsSXVBS/QFdYObQkBraY8tTPvrrPE35yUOurci+yXUbaga8LMYLMy+zQ0xLJijM\nVTPhK03HQRg/nqp4MOdRzJE6O/KNL7FRN6mx0AATw5qHuQw/++oQeYzCFfXfT1IF\nTcSlt5vFBB5fP/gFdvNE+uV1DLLR1Ar0QVjTMTFBYed+iDtRgkM1e8dHsLxxLFuJ\nvw6iUkNKS3InnaY4HTGUrkJl/DJ0fdmfvowXEMwY/TB/h4FVq/8JifyTtg+uZ50C\nAwEAAaOCA2YwggNiMB8GA1UdIwQYMBaAFJLn+mIWcYzzl3FCxgan4EZhS1y2MCkG\nA1UdDgQiBCC5cr1Z+/6MMzT22DAMkK+5b55L+I+RR+lQLFxBFxaI0TBYBgNVHR8E\nUTBPME2gS6BJhkdodHRwOi8vc3Nsc2VydmVyLnR3Y2EuY29tLnR3L3NzbHNlcnZl\nci9TZWN1cmVzc2xfcmV2b2tlX3NoYTJfMjAyM0czLmNybDAhBgNVHREEGjAYghZ1\nY3MtdmMyLmNjLm5ja3UuZWR1LnR3MIGDBggrBgEFBQcBAQR3MHUwRgYIKwYBBQUH\nMAKGOmh0dHA6Ly9zc2xzZXJ2ZXIudHdjYS5jb20udHcvY2FjZXJ0L3NlY3VyZV9z\naGEyXzIwMjNHMy5jcnQwKwYIKwYBBQUHMAGGH2h0dHA6Ly90d2Nhc3Nsb2NzcC50\nd2NhLmNvbS50dy8wSgYDVR0gBEMwQTA1BgsrBgEEAYK/JQEBFTAmMCQGCCsGAQUF\nBwIBFhhodHRwczovL3d3dy50d2NhLmNvbS50dy8wCAYGZ4EMAQICMAwGA1UdEwEB\n/wQCMAAwDgYDVR0PAQH/BAQDAgWgMB0GA1UdJQQWMBQGCCsGAQUFBwMBBggrBgEF\nBQcDAjCCAYYGCisGAQQB1nkCBAIEggF2BIIBcgFwAH8AooEAGHNOF24dR+CVQPOB\nulRml81jqENQcW64CU7a8Q0AAAGb/YPqfgAIAAAFAAHJhhYEAwBIMEYCIQDhbrnl\nE+zEe7t706UNSu1ZotILku+46DM9JW7QNK8gJwIhAJatovpNvuO1k8x50AdFFSwK\nNoG0oO2QdEEEodryR06PAHUAHJ9oLOn68EVpUPgbloqH3dsyENhM5siy44JSSsTP\nWZ8AAAGb/YPriwAABAMARjBEAiAebywtQlT4sNXSF5DyJ+AukdAlHHDxJClXh11Z\nCHTvnAIgaFepR961Ee2PWO+ONsAzuatERlH1Njc+NmV8uKIzhMcAdgBMY9yY5Zwd\nq4j2Hoo93q6Pq0SjN3tfm5TD+6Gc/MG+JgAAAZv9g+klAAAEAwBHMEUCIByTWnUE\nyuuKyS02PMHPKJoI9j77UWnPM79niH8krQXbAiEA3qcrWEnUr0eU5HnSY7aY/Jpf\n/vCCCEUAihWoATMWiYowDQYJKoZIhvcNAQELBQADggEBAEt42N+ZPiWg81mf6QNb\nntlUEnwWN2X9VDzGdCVIYVxFuSoOptSP7sqKg9C/NT2B339MmdFvE8c2wgkWWvbQ\nFWhRdWbA9f8SUMnTnMU4qWD0JCD5/Os1gzc3dJXQkUzun7bfzKnyzfR23EkCPuaA\n1Nrn8+DFnSO9SwSlRMXvVy0D25I79/fKVxKNkPzYmobXckJDM6qc1oVKNVjiMfnn\nqa/WAoBIs77QF1D0ILAnW+XPXBH9oADb7M5/oyPLcGIbD5pguzSIYeTzMSOjuUHR\nwIYdKlriaulA12V4UXLlMQb1A2qe1O9R5Se1dcsML48GnpKCQbJ4mIlGwKJAE/MS\nr7E=\n-----END CERTIFICATE-----\n",
+          "-----BEGIN CERTIFICATE-----\nMIIFQTCCAymgAwIBAgICDL4wDQYJKoZIhvcNAQELBQAwUTELMAkGA1UEBhMCVFcx\nEjAQBgNVBAoTCVRBSVdBTi1DQTEQMA4GA1UECxMHUm9vdCBDQTEcMBoGA1UEAxMT\nVFdDQSBHbG9iYWwgUm9vdCBDQTAeFw0xMjA2MjcwNjI4MzNaFw0zMDEyMzExNTU5\nNTlaMFExCzAJBgNVBAYTAlRXMRIwEAYDVQQKEwlUQUlXQU4tQ0ExEDAOBgNVBAsT\nB1Jvb3QgQ0ExHDAaBgNVBAMTE1RXQ0EgR2xvYmFsIFJvb3QgQ0EwggIiMA0GCSqG\nSIb3DQEBAQUAA4ICDwAwggIKAoICAQCwBdvI64zEbooh745NnHEKH1Jw7W2CnJfF\n10xORUnLQEK1EjRsGcJ0pDFfhQKX7EMzClPSnIyOt7h52yvVavKOZsTuKwEHktSz\n0ALfUPZVr2YOy+BHYC8rMjk1Ujoog/h7FsYYuGLWRyWRzvAZEk2tY/XTP3VfKfCh\nMBwqoJimFb3u/Rk28OKRQ4/6ytYQJ0lM793B8YVwm8rqqFpD/G2Gb3PpN0Wp8DbH\nzIh1HrtsBv+baz4X7GGqcXzGHaL3SekVtTzWoWH1EfcFbx39Eb7QMAfCKbAJTibc\n46KokWofwpFFiFzlmLhxpRUZyXx1EcxwdE8tmx2RRP1WKKD+u4ZqyPpcC1jcxkt2\nyKsi2XMPpfRaAok/T54igu6idFMqPVMnaR1sjjIsZAAmY2E2TqNGtz99sy2sbZCi\nlaLOz9qC5wc0GZbpuCGqKX6mOL6OKUohZnkfs8O1CWfe1tQHRvMq2uYiN2DLgbYP\noA/pyJV/v1WRBXrPPRXAb94JlAGD1zQbzECl8LibZ9WYkTunhHiVJqRaCPgrdLQA\nBDzfuBSO6N+pjWxnkjMdwLfS7JLIvgm/LCkFbwJrnu+8vyq8W8BQj0FwcYeyTbcE\nqYSjMq+u7msXi7Kx/mzhkIyIqJdIzshNy/MGz19qCkKxHh53L46g5pIOBvwFItIm\n4TFRfTLcDwIDAQABoyMwITAOBgNVHQ8BAf8EBAMCAQYwDwYDVR0TAQH/BAUwAwEB\n/zANBgkqhkiG9w0BAQsFAAOCAgEAXzSBdu+WHdXltdkCY4QWwa6gcFGn90xHNcgL\n1yg9iXHZqjNB6hQbbCEAwGxCGX6faVsgQt+i0trEfJdLjbDorMjupWkEmQqSpqsn\nLhpNgb+E1HAerUf+/UqdM+DyucRFCCEK2mlpc3INvjT+lIutwx4116KD7+U4x6WF\nH6vPNOw/KP4M8VeGTslV9xzU2KV9Bnpv1d8Q34FOIWWxtuEXeZVFBs5fzNxGiWNo\nRI2T9GRwoD2dKAXDOXC4Ynsg/eTb6QihuJ49CcdP+yz4k3ZB3lLg4VfSnQO8d57+\nnile98FRYB/e2guyLXW3Q0iT5/Z5xoRdgFlglPx4mI88k1HtQJAH32RjJMtOcQWh\n15QaiDLxInQirqWm2BJpTGCjAu4r7NRjkgtevi92a6O2JryPA9gK8kxkRr05YuWW\n6zRjESjMlfGt7+/cgFhI6Uu46mWs6fyAtbXIRfmswZ/ZuepiiI7E8UuDEq3mi4TW\nnsLrgxifarsbJGAzcMzs9zLzXNl5fe+epP7JI8Mk7hWSsT2RTyaGvWZzJBPqpK5j\nwa19hAM8EHiGG3njxPPyBJUgriOCxLM6AGK/5jYk4Ve6xx6QddVfP5VhK8E7zeWz\naGHQRiapIVJpLesux+t3zqY6tQMzT3bR51xUAV3LePTJDL/PEo4XLSNolOer/qmy\nKwbQBM0=\n-----END CERTIFICATE-----\n"
+        ],
+        "versions": [
+          "-TLSv1",
+          "-SSLv2",
+          "-SSLv3",
+          "-TLSv1.1",
+          "TLSv1.2",
+          "-TLSv1.3"
+        ],
+        "acceptable_cas": [],
+        "alpn": [],
+        "cert": {
+          "sig_alg": "sha256WithRSAEncryption",
+          "issued": "20260127033358Z",
+          "expires": "20270127155959Z",
+          "pubkey": {
+            "bits": 2048,
+            "type": "rsa"
+          },
+          "version": 2,
+          "extensions": [
+            {
+              "data": "0\\x16\\x80\\x14\\x92\\xe7\\xfab\\x16q\\x8c\\xf3\\x97qB\\xc6\\x06\\xa7\\xe0FaK\\\\\\xb6",
+              "name": "authorityKeyIdentifier"
+            },
+            {
+              "data": "\\x04 \\xb9r\\xbdY\\xfb\\xfe\\x8c34\\xf6\\xd80\\x0c\\x90\\xaf\\xb9o\\x9eK\\xf8\\x8f\\x91G\\xe9P,\\\\A\\x17\\x16\\x88\\xd1",
+              "name": "subjectKeyIdentifier"
+            },
+            {
+              "data": "0O0M\\xa0K\\xa0I\\x86Ghttp://sslserver.twca.com.tw/sslserver/Securessl_revoke_sha2_2023G3.crl",
+              "name": "crlDistributionPoints"
+            },
+            {
+              "data": "0\\x18\\x82\\x16ucs-vc2.cc.ncku.edu.tw",
+              "name": "subjectAltName"
+            },
+            {
+              "data": "0u0F\\x06\\x08+\\x06\\x01\\x05\\x05\\x070\\x02\\x86:http://sslserver.twca.com.tw/cacert/secure_sha2_2023G3.crt0+\\x06\\x08+\\x06\\x01\\x05\\x05\\x070\\x01\\x86\\x1fhttp://twcasslocsp.twca.com.tw/",
+              "name": "authorityInfoAccess"
+            },
+            {
+              "data": "0A05\\x06\\x0b+\\x06\\x01\\x04\\x01\\x82\\xbf%\\x01\\x01\\x150&0$\\x06\\x08+\\x06\\x01\\x05\\x05\\x07\\x02\\x01\\x16\\x18https://www.twca.com.tw/0\\x08\\x06\\x06g\\x81\\x0c\\x01\\x02\\x02",
+              "name": "certificatePolicies"
+            },
+            {
+              "critical": true,
+              "data": "0\\x00",
+              "name": "basicConstraints"
+            },
+            {
+              "critical": true,
+              "data": "\\x03\\x02\\x05\\xa0",
+              "name": "keyUsage"
+            },
+            {
+              "data": "0\\x14\\x06\\x08+\\x06\\x01\\x05\\x05\\x07\\x03\\x01\\x06\\x08+\\x06\\x01\\x05\\x05\\x07\\x03\\x02",
+              "name": "extendedKeyUsage"
+            },
+            {
+              "data": "\\x04\\x82\\x01r\\x01p\\x00\\x7f\\x00\\xa2\\x81\\x00\\x18sN\\x17n\\x1dG\\xe0\\x95@\\xf3\\x81\\xbaTf\\x97\\xcdc\\xa8CPqn\\xb8\\tN\\xda\\xf1\\r\\x00\\x00\\x01\\x9b\\xfd\\x83\\xea~\\x00\\x08\\x00\\x00\\x05\\x00\\x01\\xc9\\x86\\x16\\x04\\x03\\x00H0F\\x02!\\x00\\xe1n\\xb9\\xe5\\x13\\xec\\xc4{\\xbb{\\xd3\\xa5\\rJ\\xedY\\xa2\\xd2\\x0b\\x92\\xef\\xb8\\xe83=%n\\xd04\\xaf \\'\\x02!\\x00\\x96\\xad\\xa2\\xfaM\\xbe\\xe3\\xb5\\x93\\xccy\\xd0\\x07E\\x15,\\n6\\x81\\xb4\\xa0\\xed\\x90tA\\x04\\xa1\\xda\\xf2GN\\x8f\\x00u\\x00\\x1c\\x9fh,\\xe9\\xfa\\xf0EiP\\xf8\\x1b\\x96\\x8a\\x87\\xdd\\xdb2\\x10\\xd8L\\xe6\\xc8\\xb2\\xe3\\x82RJ\\xc4\\xcfY\\x9f\\x00\\x00\\x01\\x9b\\xfd\\x83\\xeb\\x8b\\x00\\x00\\x04\\x03\\x00F0D\\x02 \\x1eo,-BT\\xf8\\xb0\\xd5\\xd2\\x17\\x90\\xf2\\'\\xe0.\\x91\\xd0%\\x1cp\\xf1$)W\\x87]Y\\x08t\\xef\\x9c\\x02 hW\\xa9G\\xde\\xb5\\x11\\xed\\x8fX\\xef\\x8e6\\xc03\\xb9\\xabDFQ\\xf567>6e|\\xb8\\xa23\\x84\\xc7\\x00v\\x00Lc\\xdc\\x98\\xe5\\x9c\\x1d\\xab\\x88\\xf6\\x1e\\x8a=\\xde\\xae\\x8f\\xabD\\xa37{_\\x9b\\x94\\xc3\\xfb\\xa1\\x9c\\xfc\\xc1\\xbe&\\x00\\x00\\x01\\x9b\\xfd\\x83\\xe9%\\x00\\x00\\x04\\x03\\x00G0E\\x02 \\x1c\\x93Zu\\x04\\xca\\xeb\\x8a\\xc9-6<\\xc1\\xcf(\\x9a\\x08\\xf6>\\xfbQi\\xcf3\\xbfg\\x88\\x7f$\\xad\\x05\\xdb\\x02!\\x00\\xde\\xa7+XI\\xd4\\xafG\\x94\\xe4y\\xd2c\\xb6\\x98\\xfc\\x9a_\\xfe\\xf0\\x82\\x08E\\x00\\x8a\\x15\\xa8\\x013\\x16\\x89\\x8a",
+              "name": "ct_precert_scts"
+            }
+          ],
+          "fingerprint": {
+            "sha256": "511282f99c0735cdb51714f134551d85bed2ef1cd163b9a29dd51325a5b9dfe1",
+            "sha1": "b471a1b9d0da46952ed246a545c33443cda83a24"
+          },
+          "serial": 95590185165636853048584036848698307887,
+          "issuer": {
+            "C": "TW",
+            "CN": "TWCA Secure SSL Certification Authority",
+            "O": "TAIWAN-CA"
+          },
+          "expired": false,
+          "subject": {
+            "C": "TW",
+            "ST": "Taiwan",
+            "CN": "ucs-vc2.cc.ncku.edu.tw",
+            "O": "National Cheng Kung University",
+            "L": "Tainan"
+          }
+        },
+        "cipher": {
+          "version": "TLSv1.2",
+          "bits": 256,
+          "name": "ECDHE-RSA-AES256-GCM-SHA384"
+        },
+        "trust": {
+          "revoked": false,
+          "browser": {
+            "mozilla": true,
+            "apple": true,
+            "microsoft": true
+          }
+        },
+        "handshake_states": [
+          "before SSL initialization",
+          "SSLv3/TLS write client hello",
+          "SSLv3/TLS read server hello",
+          "SSLv3/TLS read server certificate",
+          "SSLv3/TLS read server key exchange",
+          "SSLv3/TLS read server done",
+          "SSLv3/TLS write client key exchange",
+          "SSLv3/TLS write change cipher spec",
+          "SSLv3/TLS write finished",
+          "SSLv3/TLS read server session ticket",
+          "SSLv3/TLS read change cipher spec",
+          "SSLv3/TLS read finished",
+          "SSL negotiation finished successfully"
+        ],
+        "ja3s": "34875007753b3b7fac90b8e58137341c",
+        "ocsp": {}
+      },
+      "hostnames": [
+        "ucs-vc2.cc.ncku.edu.tw"
+      ],
+      "org": "Ministry of Education Computer Center",
+      "data": "HTTP/1.1 200 OK\r\ndate: Wed, 4 Feb 2026 18:45:13 GMT\r\ncontent-security-policy: upgrade-insecure-requests\r\ncontent-type: text/html\r\nstrict-transport-security: max-age=31536000\r\nx-content-type-options: nosniff\r\nx-frame-options: DENY\r\nx-xss-protection: 1\r\ncontent-length: 4032\r\nx-envoy-upstream-service-time: 0\r\nvary: Accept-Encoding\r\n\r\n\nVMware vCenter Server:\n  Full Name: VMware vCenter Server 8.0.3 build-24853646\n  Name: VMware vCenter Server\n  Version: 8.0.3\n  Build: 24853646\n  OS Type: linux-x64\n  Product Line Id: vpx\n  Vendor: VMware, Inc.\n  API Type: VirtualCenter\n  API Version: 8.0.3.0\n  Locale Build: 000\n  Locale Version: INTL\n",
+      "asn": "AS1659",
+      "cpe23": [
+        "cpe:2.3:a:envoyproxy:envoy"
+      ],
+      "isp": "Taiwan Academic Network (TANet) Information Center",
+      "cpe": [
+        "cpe:/a:envoyproxy:envoy"
+      ],
+      "domains": [
+        "ncku.edu.tw"
+      ],
+      "ip_str": "140.116.8.111",
+      "os": null,
+      "_shodan": {
+        "region": "na",
+        "module": "https",
+        "ptr": true,
+        "options": {},
+        "id": "6c444601-0390-434d-aa4f-87943603cc1a",
+        "crawler": "49217c0cdcbcebaf23c2979ae16d4eba64180b1f"
+      }
+    }
+  ]
+}

@@ -7,7 +7,7 @@ from sqlalchemy import select, func, distinct, text
 from sqlalchemy.exc import IntegrityError
 
 from database.session import create_session_factory, db_session
-from database.models import Base, IP, RootDomain, Domain, Area, Domain_ip, Otx_httpscan
+from database.models import Base, IP, RootDomain, Domain, Area, Domain_ip, Otx_httpscan, Shodan_http, Shodan_product, Dns_zone, Dns_zone_ns, Domain_dns_zone
 from models.website import Website
 from utils.logger import get_logger
 from config import Config
@@ -40,37 +40,35 @@ class DatabaseManagerORM:
             logger.warning(f"初始化匯入 area 失敗：{e}")
 
     # ---------- 內部工具 ----------
-    def _get_or_create_ip(self, session, ipv4: Optional[str] = None, ipv6: Optional[str] = None) -> IP:
+    def _get_or_create_ip(self, session, address: str) -> IP:
         """
-        獲取或創建 IP 記錄（支援 IPv4/IPv6）
+        獲取或創建 IP 記錄（單一 address 欄位）
         """
-        if not ipv4 and not ipv6:
-            raise ValueError("必須提供 IPv4 或 IPv6 地址")
+        if not address:
+            raise ValueError("必須提供 IP 地址")
         
         # 查找現有IP記錄
-        ip = session.execute(
-            select(IP).where(
-                (IP.ipv4 == ipv4) if ipv4 else IP.ipv4.is_(None),
-                (IP.ipv6 == ipv6) if ipv6 else IP.ipv6.is_(None)
-            )
-        ).scalar_one_or_none()
+        ip = session.execute(select(IP).where(IP.address == address)).scalar_one_or_none()
         
         if ip:
             return ip
         
         # 創建新IP記錄
-        ip = IP(ipv4=ipv4, ipv6=ipv6)
+        ip = IP(address=address)
         session.add(ip)
         session.flush()  # 取得自動編號 id
         return ip
 
-    def _get_or_create_root_domain(self, session, root_domain_name: Optional[str]) -> Optional[RootDomain]:
+    def _is_ipv6(self, address: str) -> bool:
+        return ":" in address
+
+    def _get_or_create_root_domain(self, session, root_domain_name: Optional[str], source: Optional[str] = None) -> Optional[RootDomain]:
         if not root_domain_name:
             return None
         root_domain = session.execute(select(RootDomain).where(RootDomain.name == root_domain_name)).scalar_one_or_none()
         if root_domain:
             return root_domain
-        root_domain = RootDomain(name=root_domain_name)
+        root_domain = RootDomain(name=root_domain_name, source=source)
         session.add(root_domain)
         session.flush()
         return root_domain
@@ -129,18 +127,24 @@ class DatabaseManagerORM:
                 domain.when_crawled = website.when_crawled
                 domain.when_latest_otx_checked = when_latest_otx_checked
                 
-                # 處理 IP 關聯（多對多）- 處理所有 IPv4
-                saved_ips = []
-                for ipv4 in ipv4_list:
-                    ip = self._get_or_create_ip(session, ipv4=ipv4, ipv6=None)
-                    self._create_domain_ip_relation(session, domain.id, ip.id)
-                    saved_ips.append(ipv4)
+                # 更新 DNS 紀錄旗標（A / AAAA / CNAME）
+                has_a = getattr(website, "has_a", None)
+                has_aaaa = getattr(website, "has_aaaa", None)
+                has_cname = getattr(website, "has_cname", None)
+                if has_a is not None:
+                    domain.a = has_a
+                if has_aaaa is not None:
+                    domain.aaaa = has_aaaa
+                if has_cname is not None:
+                    domain.cname = has_cname
                 
-                # 處理 IP 關聯（多對多）- 處理所有 IPv6
-                for ipv6 in ipv6_list:
-                    ip = self._get_or_create_ip(session, ipv4=None, ipv6=ipv6)
+                # 處理 IP 關聯（多對多）- 統一寫入單一 address 欄位
+                saved_ips = []
+                combined_ips = list(dict.fromkeys([*ipv4_list, *ipv6_list]))
+                for addr in combined_ips:
+                    ip = self._get_or_create_ip(session, address=addr)
                     self._create_domain_ip_relation(session, domain.id, ip.id)
-                    saved_ips.append(ipv6)
+                    saved_ips.append(addr)
                 
                 saved_ip_display = ",".join(saved_ips) if saved_ips else "(no IP)"
                 
@@ -169,6 +173,109 @@ class DatabaseManagerORM:
         if not existing_relation:
             domain_ip_relation = Domain_ip(domain_id=domain_id, ip_id=ip_id)
             session.add(domain_ip_relation)
+
+    def _upsert_dns_zone(self, session, zone_info: dict) -> Dns_zone:
+        zone_apex = (zone_info.get("zone_apex") or "").strip().lower()
+        zone = session.execute(
+            select(Dns_zone).where(Dns_zone.zone_apex == zone_apex)
+        ).scalar_one_or_none()
+
+        if not zone:
+            zone = Dns_zone(zone_apex=zone_apex)
+            session.add(zone)
+            session.flush()
+
+        zone.soa_mname = zone_info.get("soa_mname")
+        zone.soa_rname = zone_info.get("soa_rname")
+        zone.soa_serial = zone_info.get("soa_serial")
+        zone.soa_refresh = zone_info.get("soa_refresh")
+        zone.soa_retry = zone_info.get("soa_retry")
+        zone.soa_expire = zone_info.get("soa_expire")
+        zone.soa_minimum = zone_info.get("soa_minimum")
+        zone.soa_ttl = zone_info.get("soa_ttl")
+        zone.status = zone_info.get("status") or "ok"
+        zone.error_message = zone_info.get("error_message")
+        zone.checked_at = datetime.now()
+
+        # 以最新查詢結果覆蓋 NS 清單
+        session.execute(
+            text("DELETE FROM dns_zone_ns WHERE zone_id = :zone_id"),
+            {"zone_id": zone.id},
+        )
+
+        seen_ns: set[str] = set()
+        for ns in zone_info.get("ns_records", []) or []:
+            ns_host = (ns.get("ns_host") or "").strip().lower().rstrip(".")
+            if not ns_host or ns_host in seen_ns:
+                continue
+            seen_ns.add(ns_host)
+            session.add(
+                Dns_zone_ns(
+                    zone_id=zone.id,
+                    ns_host=ns_host,
+                    ns_ttl=ns.get("ns_ttl"),
+                    checked_at=datetime.now(),
+                )
+            )
+
+        return zone
+
+    def _create_domain_dns_zone_relation(self, session, domain_id: int, zone_id: int, matched_by: Optional[str]) -> None:
+        existing = session.execute(
+            select(Domain_dns_zone).where(
+                Domain_dns_zone.domain_id == domain_id,
+                Domain_dns_zone.zone_id == zone_id,
+            )
+        ).scalar_one_or_none()
+
+        if existing:
+            existing.matched_by = matched_by
+            existing.checked_at = datetime.now()
+            return
+
+        session.add(
+            Domain_dns_zone(
+                domain_id=domain_id,
+                zone_id=zone_id,
+                matched_by=matched_by,
+                checked_at=datetime.now(),
+            )
+        )
+
+    def save_dns_zone_batch(self, zone_info_by_fqdn: dict[str, dict]) -> tuple[int, int]:
+        """
+        批次儲存 DNS zone 資訊。
+
+        Returns:
+            (zones_upserted, domain_zone_links)
+        """
+        zones_upserted = 0
+        links_saved = 0
+        if not zone_info_by_fqdn:
+            return zones_upserted, links_saved
+
+        with db_session(self.SessionFactory) as session:
+            zone_obj_cache: dict[str, Dns_zone] = {}
+            for fqdn, info in zone_info_by_fqdn.items():
+                zone_apex = (info.get("zone_apex") or "").strip().lower()
+                if not zone_apex:
+                    continue
+
+                domain = self._find_domain_by_fqdn(session, fqdn)
+                if not domain:
+                    logger.debug(f"[DNS Zone] 找不到 domain：{fqdn}，略過關聯")
+                    continue
+
+                zone = zone_obj_cache.get(zone_apex)
+                if not zone:
+                    zone = self._upsert_dns_zone(session, info)
+                    zone_obj_cache[zone_apex] = zone
+                    zones_upserted += 1
+                self._create_domain_dns_zone_relation(session, domain.id, zone.id, info.get("matched_by"))
+                links_saved += 1
+
+        logger.info(f"[DNS Zone] 儲存完成：zone upsert {zones_upserted} 筆，domain-zone 關聯 {links_saved} 筆")
+        return zones_upserted, links_saved
     
     def _find_domain_by_fqdn(self, session, fqdn: str) -> Optional[Domain]:
         """
@@ -237,7 +344,7 @@ class DatabaseManagerORM:
                 select(Domain_ip).where(Domain_ip.domain_id == domain.id)
             ).scalars().all()
             
-            # 收集所有 IP
+            # 收集所有 IP（由單一 address 欄位拆分為 v4 / v6）
             ipv4_list = []
             ipv6_list = []
             
@@ -246,10 +353,10 @@ class DatabaseManagerORM:
                     select(IP).where(IP.id == relation.ip_id)
                 ).scalar_one_or_none()
                 if ip:
-                    if ip.ipv4:
-                        ipv4_list.append(ip.ipv4)
-                    if ip.ipv6:
-                        ipv6_list.append(ip.ipv6)
+                    if self._is_ipv6(ip.address):
+                        ipv6_list.append(ip.address)
+                    else:
+                        ipv4_list.append(ip.address)
             
             website = Website(
                 fqdn=fqdn_name,
@@ -316,10 +423,351 @@ class DatabaseManagerORM:
             ).scalar_one_or_none()
             return result
 
+    # ---------- 匯入 xlsx Root Domain ----------
+    def import_root_domains_from_xlsx(self, xlsx_folder: str = "institution") -> int:
+        """
+        從指定資料夾的所有 xlsx 檔案匯入 root_domain 資料
+        只匯入 .edu.tw 結尾的域名
+        
+        遵循與 Shodan 相同的 area 處理邏輯：
+        - 如果 root domain 是 area（如 ntpc.edu.tw），則提取子域名（如 ytes.ntpc.edu.tw）
+        - 如果不是 area（如 ntu.edu.tw），則直接使用 root domain
+        
+        Args:
+            xlsx_folder: xlsx 檔案所在資料夾路徑
+            
+        Returns:
+            成功匯入的筆數
+        """
+        import os
+        from urllib.parse import urlparse
+        
+        try:
+            import openpyxl
+        except ImportError:
+            logger.error("需要安裝 openpyxl 套件：pip install openpyxl")
+            return 0
+        
+        if not os.path.isdir(xlsx_folder):
+            logger.warning(f"xlsx 資料夾不存在：{xlsx_folder}")
+            return 0
+        
+        # 收集所有 xlsx 檔案
+        xlsx_files = [f for f in os.listdir(xlsx_folder) if f.endswith('.xlsx')]
+        if not xlsx_files:
+            logger.warning(f"資料夾 {xlsx_folder} 中沒有 xlsx 檔案")
+            return 0
+        
+        logger.info(f"[xlsx] 開始從 {xlsx_folder} 匯入 root_domain，共 {len(xlsx_files)} 個檔案")
+        
+        # 先載入所有 area domain 用於比對
+        area_domains = self._get_all_area_domains()
+        logger.info(f"[xlsx] 載入 {len(area_domains)} 個 area domain 用於比對")
+        
+        all_targets: set = set()  # 改名：存放最終要匯入的目標（可能是 root domain 或子域名）
+        
+        for xlsx_file in xlsx_files:
+            file_path = os.path.join(xlsx_folder, xlsx_file)
+            try:
+                wb = openpyxl.load_workbook(file_path, read_only=True, data_only=True)
+                ws = wb.active
+                
+                # 找到「網址」欄位的位置（從前5行中搜尋表頭）
+                url_col_idx = None
+                header_row = None
+                for row_idx in range(1, 6):
+                    for col_idx, cell in enumerate(ws[row_idx], 1):
+                        if cell.value and str(cell.value).strip() == "網址":
+                            url_col_idx = col_idx
+                            header_row = row_idx
+                            break
+                    if url_col_idx:
+                        break
+                
+                if not url_col_idx:
+                    logger.debug(f"[xlsx] {xlsx_file} 找不到「網址」欄位，跳過")
+                    wb.close()
+                    continue
+                
+                # 從表頭下一行開始讀取資料
+                for row in ws.iter_rows(min_row=header_row + 1, min_col=url_col_idx, max_col=url_col_idx):
+                    cell_value = row[0].value
+                    if not cell_value:
+                        continue
+                    
+                    url_str = str(cell_value).strip()
+                    if not url_str:
+                        continue
+                    
+                    # 解析 URL，根據 area 邏輯決定要匯入的目標
+                    target = self._extract_target_from_url(url_str, area_domains)
+                    if target and target.endswith('.edu.tw'):
+                        all_targets.add(target)
+                
+                wb.close()
+                
+            except Exception as e:
+                logger.warning(f"[xlsx] 讀取 {xlsx_file} 失敗：{e}")
+                continue
+        
+        logger.info(f"[xlsx] 從 xlsx 檔案中提取到 {len(all_targets)} 個不重複的 .edu.tw 目標")
+        
+        # 寫入資料庫
+        inserted = 0
+        with db_session(self.SessionFactory) as session:
+            for target_name in all_targets:
+                exists = session.execute(
+                    select(RootDomain).where(RootDomain.name == target_name)
+                ).scalar_one_or_none()
+                if exists:
+                    continue
+                root_domain = RootDomain(name=target_name, source="xlsx")
+                session.add(root_domain)
+                inserted += 1
+        
+        logger.info(f"[xlsx] Root domain 匯入完成，新增 {inserted} 筆")
+        return inserted
+    
+    def _get_all_area_domains(self) -> set:
+        """取得所有 area 的 domain 集合"""
+        with db_session(self.SessionFactory) as session:
+            result = session.execute(select(Area.domain)).scalars().all()
+            return set(result)
+    
+    def get_all_area_domains(self) -> set:
+        """取得所有 area 的 domain 集合（公開方法）"""
+        return self._get_all_area_domains()
+    
+    def _extract_target_from_url(self, url_str: str, area_domains: set) -> Optional[str]:
+        """
+        從 URL 提取目標域名，遵循 area 處理邏輯
+        
+        - 如果 root domain 是 area（如 ntpc.edu.tw），提取子域名（如 ytes.ntpc.edu.tw）
+        - 如果不是 area（如 ntu.edu.tw），直接返回 root domain
+        
+        Args:
+            url_str: URL 字串
+            area_domains: area domain 集合
+            
+        Returns:
+            要匯入的目標域名
+        """
+        from urllib.parse import urlparse
+        
+        url_str = url_str.strip()
+        
+        # 如果沒有協定，加上 http://
+        if not url_str.startswith(('http://', 'https://')):
+            url_str = 'http://' + url_str
+        
+        try:
+            parsed = urlparse(url_str)
+            hostname = parsed.netloc or parsed.path.split('/')[0]
+            hostname = hostname.lower().strip()
+            
+            if not hostname:
+                return None
+            
+            # 去掉 www. 前綴
+            if hostname.startswith('www.'):
+                hostname = hostname[4:]
+            
+            # 驗證是否為有效域名
+            if '.' not in hostname:
+                return None
+            
+            # 對於 .edu.tw 結尾的域名，提取 xxx.edu.tw 部分
+            parts = hostname.split('.')
+            if len(parts) >= 3 and parts[-2] == 'edu' and parts[-1] == 'tw':
+                # 取最後 3 段作為 root domain (如 ncku.edu.tw)
+                root_domain = '.'.join(parts[-3:])
+                
+                # 檢查是否為 area domain
+                if root_domain in area_domains:
+                    # 是 area，提取子域名（類似 Shodan 的 _extract_subdomain_from_hostname）
+                    # hostname 例如: ytes.ntpc.edu.tw 或 www.ytes.ntpc.edu.tw（已去掉 www）
+                    # root_domain 例如: ntpc.edu.tw
+                    # 要提取: ytes.ntpc.edu.tw
+                    
+                    if len(parts) > 3:
+                        # 有子域名，取最接近 root domain 的那個
+                        # parts = ['ytes', 'ntpc', 'edu', 'tw'] → 'ytes.ntpc.edu.tw'
+                        subdomain_part = parts[-4]  # 取 root domain 前面那個
+                        return f"{subdomain_part}.{root_domain}"
+                    else:
+                        # 沒有子域名（如 ntpc.edu.tw），直接返回 root domain
+                        return root_domain
+                else:
+                    # 不是 area，直接返回 root domain
+                    return root_domain
+            
+            return hostname
+            
+        except Exception:
+            return None
+    
+    def _extract_root_domain_from_url(self, url_str: str) -> Optional[str]:
+        """
+        從 URL 字串提取 root domain
+        例如: https://www.ncku.edu.tw/about/ → ncku.edu.tw
+        """
+        from urllib.parse import urlparse
+        
+        url_str = url_str.strip()
+        
+        # 如果沒有協定，加上 http://
+        if not url_str.startswith(('http://', 'https://')):
+            url_str = 'http://' + url_str
+        
+        try:
+            parsed = urlparse(url_str)
+            hostname = parsed.netloc or parsed.path.split('/')[0]
+            hostname = hostname.lower().strip()
+            
+            if not hostname:
+                return None
+            
+            # 去掉 www. 前綴
+            if hostname.startswith('www.'):
+                hostname = hostname[4:]
+            
+            # 驗證是否為有效域名
+            if '.' not in hostname:
+                return None
+            
+            # 對於 .edu.tw 結尾的域名，提取 xxx.edu.tw 部分
+            parts = hostname.split('.')
+            if len(parts) >= 3 and parts[-2] == 'edu' and parts[-1] == 'tw':
+                # 取最後 3 段作為 root domain (如 ncku.edu.tw)
+                return '.'.join(parts[-3:])
+            
+            return hostname
+            
+        except Exception:
+            return None
+    
+    def get_all_root_domains(self, source: Optional[str] = None) -> List[str]:
+        """
+        取得所有 root_domain 的名稱列表
+        
+        Args:
+            source: 過濾來源（'shodan' / 'xlsx' / None 表示全部）
+            
+        Returns:
+            root domain 名稱列表
+        """
+        with db_session(self.SessionFactory) as session:
+            query = select(RootDomain.name)
+            if source:
+                query = query.where(RootDomain.source == source)
+            result = session.execute(query).scalars().all()
+            return list(result)
+
+    def import_shodan_vt_targets(self, vt_targets: List[str]) -> int:
+        """
+        將 Shodan 查詢到的 VT 目標批量匯入 root_domain 資料表
+        
+        Args:
+            vt_targets: Shodan 查詢到的 VT 目標列表（已經過 area 處理）
+            
+        Returns:
+            成功匯入的筆數
+        """
+        if not vt_targets:
+            return 0
+        
+        logger.info(f"[Shodan] 開始匯入 {len(vt_targets)} 個 VT 目標到 root_domain")
+        
+        inserted = 0
+        with db_session(self.SessionFactory) as session:
+            for target in vt_targets:
+                if not target or not target.endswith('.edu.tw'):
+                    continue
+                
+                # 檢查是否已存在
+                exists = session.execute(
+                    select(RootDomain).where(RootDomain.name == target)
+                ).scalar_one_or_none()
+                
+                if exists:
+                    # 如果存在但 source 是 None，更新為 shodan
+                    if exists.source is None:
+                        exists.source = "shodan"
+                    continue
+                
+                # 新增記錄
+                root_domain = RootDomain(name=target, source="shodan")
+                session.add(root_domain)
+                inserted += 1
+        
+        logger.info(f"[Shodan] VT 目標匯入完成，新增 {inserted} 筆")
+        return inserted
+
     # ---------- OTX HTTP Scans ----------
+    # IoT 過濾規則列表：(欄位匹配, 關鍵字, 原因, 大小寫敏感)
+    # 欄位匹配: "title" = 只檢查 Title 欄位, "body" = 只檢查 Body 欄位, "*" = 檢查所有欄位
+    IOT_FILTER_RULES = [
+        ("title", "Embedded Web Server", "Embedded Web Server", True),
+        ("*", "Synology", "Synology NAS", True),
+        ("body", "type= password", "Login Form", False),
+        ("body", "goform", "Login Form", False),
+    ]
+    
+    # IoT 類型優先級（數字越小優先級越高）
+    IOT_PRIORITY = {
+        "Synology NAS": 1,
+        "Embedded Web Server": 2,
+        "Grafana": 3,
+        "VMware vCenter Server": 3,
+        "Login Form": 4,
+    }
+    
+    def _get_iot_priority(self, iot_type: str | None) -> int:
+        """取得 IoT 類型的優先級，數字越小優先級越高"""
+        if not iot_type:
+            return 999  # NULL 表示非 IoT，優先級最低
+        return self.IOT_PRIORITY.get(iot_type, 999)
+    
+    def _check_iot_device(self, http_scans: List[dict]) -> tuple[bool, str]:
+        """
+        檢查 http_scans 中是否有 IoT 設備特徵
+        
+        根據 IOT_FILTER_RULES 列表進行過濾判斷
+        
+        Args:
+            http_scans: OTX API 返回的 http_scans 資料列表
+        
+        Returns:
+            (True, 原因) 如果發現 IoT 設備，否則 (False, "")
+        """
+        for scan in http_scans:
+            name = scan.get("name", "").lower()
+            value = scan.get("value", "")
+            
+            # value 可能是數字，轉成字串
+            if not isinstance(value, str):
+                value = str(value)
+            
+            for field_match, keyword, reason, case_sensitive in self.IOT_FILTER_RULES:
+                # 檢查欄位是否匹配
+                if field_match != "*" and field_match not in name:
+                    continue
+                
+                # 檢查關鍵字是否存在
+                if case_sensitive:
+                    if keyword in value:
+                        return True, reason
+                else:
+                    if keyword.lower() in value.lower():
+                        return True, reason
+        
+        return False, ""
+    
     def save_http_scans(self, fqdn: str, http_scans: List[dict]) -> int:
         """
         儲存 OTX HTTP Scans 資料到 otx_httpscan 資料表
+        
+        如果 http_scans 包含 IoT 設備特徵，則標記該 domain 的 iot_type
         
         Args:
             fqdn: 完整域名
@@ -332,6 +780,9 @@ class DatabaseManagerORM:
         if not http_scans:
             return 0
         
+        # 檢查是否為 IoT 設備
+        is_iot, iot_reason = self._check_iot_device(http_scans)
+        
         with db_session(self.SessionFactory) as session:
             try:
                 # 查找域名
@@ -339,6 +790,17 @@ class DatabaseManagerORM:
                 if not domain:
                     logger.warning(f"找不到域名記錄：{fqdn}，無法儲存 http_scans")
                     return 0
+                
+                # 如果檢測到 IoT，標記 iot_type（依優先級覆蓋）
+                if is_iot:
+                    new_priority = self._get_iot_priority(iot_reason)
+                    old_priority = self._get_iot_priority(domain.type)
+                    
+                    if new_priority < old_priority:
+                        domain.type = iot_reason
+                        logger.info(f"[OTX IoT] {fqdn} 標記為 '{iot_reason}'")
+                    elif domain.type:
+                        logger.debug(f"[OTX IoT] {fqdn} 已有更高優先級標記 '{domain.type}'，保留原標記")
                 
                 inserted = 0
                 for scan in http_scans:
@@ -385,3 +847,222 @@ class DatabaseManagerORM:
         
         logger.info(f"批次儲存 http_scans 完成，共 {total_inserted} 筆")
         return total_inserted
+
+    # ---------- Shodan HTTP ----------
+    # Shodan IoT 過濾規則（檢查 http.html 內容）
+    SHODAN_IOT_RULES = [
+        ("Synology", "Synology NAS", True),
+        ("Embedded Web Server", "Embedded Web Server", True),
+        ("type= password", "Login Form", False),
+        ("type=\"password\"", "Login Form", False),
+        ("type='password'", "Login Form", False),
+    ]
+    
+    def _check_shodan_iot(self, html: str) -> tuple[bool, str]:
+        """
+        檢查 Shodan http.html 中是否有 IoT 設備特徵
+        
+        Args:
+            html: Shodan http.html 內容
+        
+        Returns:
+            (True, 原因) 如果發現 IoT 設備，否則 (False, "")
+        """
+        if not html:
+            return False, ""
+        
+        for keyword, reason, case_sensitive in self.SHODAN_IOT_RULES:
+            if case_sensitive:
+                if keyword in html:
+                    return True, reason
+            else:
+                if keyword.lower() in html.lower():
+                    return True, reason
+        
+        return False, ""
+    
+    def save_shodan_http(self, fqdn: str, html: str) -> bool:
+        """
+        儲存 Shodan http.html 資料到 shodan_http 資料表
+        並檢查是否為 IoT 設備，若是則標記 iot_type
+        
+        Args:
+            fqdn: 完整域名
+            html: Shodan http.html 內容
+        
+        Returns:
+            是否成功儲存
+        """
+        with db_session(self.SessionFactory) as session:
+            try:
+                domain = self._find_domain_by_fqdn(session, fqdn)
+                if not domain:
+                    logger.warning(f"找不到域名記錄：{fqdn}，無法儲存 shodan_http")
+                    return False
+                
+                # 儲存 html 內容
+                record = Shodan_http(
+                    domain_id=domain.id,
+                    html=html
+                )
+                session.add(record)
+                
+                # 檢查是否為 IoT 設備
+                is_iot, iot_reason = self._check_shodan_iot(html)
+                if is_iot:
+                    new_priority = self._get_iot_priority(iot_reason)
+                    old_priority = self._get_iot_priority(domain.type)
+                    
+                    if new_priority < old_priority:
+                        domain.type = iot_reason
+                        logger.info(f"[Shodan IoT] {fqdn} 標記為 '{iot_reason}'")
+                    elif domain.type:
+                        logger.debug(f"[Shodan IoT] {fqdn} 已有更高優先級標記 '{domain.type}'，保留原標記")
+                
+                logger.debug(f"儲存 {fqdn} 的 shodan_http 資料")
+                return True
+                
+            except Exception as e:
+                logger.error(f"儲存 {fqdn} shodan_http 失敗: {e}")
+                return False
+    
+    def save_shodan_http_batch(self, shodan_data: dict[str, str]) -> int:
+        """
+        批次儲存多個 FQDN 的 Shodan http.html 資料
+        
+        Args:
+            shodan_data: {fqdn: html} 的字典
+        
+        Returns:
+            成功儲存的筆數
+        """
+        saved_count = 0
+        for fqdn, html in shodan_data.items():
+            if self.save_shodan_http(fqdn, html):
+                saved_count += 1
+        
+        logger.info(f"批次儲存 shodan_http 完成，共 {saved_count} 筆")
+        return saved_count
+    
+    def mark_iot_type(self, fqdn: str, iot_type: str) -> bool:
+        """
+        手動標記 domain 的 IoT 類型（依優先級覆蓋）
+        
+        Args:
+            fqdn: 完整域名
+            iot_type: IoT 類型
+        
+        Returns:
+            是否成功標記
+        """
+        with db_session(self.SessionFactory) as session:
+            try:
+                domain = self._find_domain_by_fqdn(session, fqdn)
+                if not domain:
+                    logger.warning(f"找不到域名記錄：{fqdn}")
+                    return False
+                
+                new_priority = self._get_iot_priority(iot_type)
+                old_priority = self._get_iot_priority(domain.type)
+                
+                if new_priority < old_priority:
+                    domain.type = iot_type
+                    logger.info(f"[IoT] {fqdn} 標記為 '{iot_type}'")
+                    return True
+                else:
+                    logger.debug(f"[IoT] {fqdn} 已有更高優先級標記 '{domain.type}'")
+                    return False
+                    
+            except Exception as e:
+                logger.error(f"標記 {fqdn} 失敗: {e}")
+                return False
+
+    # ---------- Shodan Product ----------
+    # Shodan Product IoT 過濾規則（檢查 product 欄位）
+    SHODAN_PRODUCT_IOT_RULES = [
+        ("Grafana", "Grafana"),
+        ("VMware vCenter Server", "VMware vCenter Server"),
+    ]
+    
+    def _check_shodan_product_iot(self, product: str) -> tuple[bool, str]:
+        """
+        檢查 Shodan product 欄位是否為 IoT 設備
+        
+        Args:
+            product: Shodan product 欄位內容
+        
+        Returns:
+            (True, 原因) 如果是 IoT 設備，否則 (False, "")
+        """
+        if not product:
+            return False, ""
+        
+        for keyword, reason in self.SHODAN_PRODUCT_IOT_RULES:
+            if keyword in product:
+                return True, reason
+        
+        return False, ""
+    
+    def save_shodan_product(self, fqdn: str, product: str) -> bool:
+        """
+        儲存 Shodan product 資料到 shodan_product 資料表
+        並檢查是否為 IoT 設備，若是則標記 iot_type
+        
+        Args:
+            fqdn: 完整域名
+            product: Shodan product 欄位內容
+        
+        Returns:
+            是否成功儲存
+        """
+        with db_session(self.SessionFactory) as session:
+            try:
+                domain = self._find_domain_by_fqdn(session, fqdn)
+                if not domain:
+                    logger.warning(f"找不到域名記錄：{fqdn}，無法儲存 shodan_product")
+                    return False
+                
+                # 儲存 product 內容
+                record = Shodan_product(
+                    domain_id=domain.id,
+                    product=product
+                )
+                session.add(record)
+                
+                # 檢查是否為 IoT 設備
+                is_iot, iot_reason = self._check_shodan_product_iot(product)
+                if is_iot:
+                    new_priority = self._get_iot_priority(iot_reason)
+                    old_priority = self._get_iot_priority(domain.type)
+                    
+                    if new_priority < old_priority:
+                        domain.type = iot_reason
+                        logger.info(f"[Shodan Product] {fqdn} 標記為 '{iot_reason}'")
+                    elif domain.type:
+                        logger.debug(f"[Shodan Product] {fqdn} 已有更高優先級標記 '{domain.type}'，保留原標記")
+                
+                logger.debug(f"儲存 {fqdn} 的 shodan_product 資料: {product}")
+                return True
+                
+            except Exception as e:
+                logger.error(f"儲存 {fqdn} shodan_product 失敗: {e}")
+                return False
+    
+    def save_shodan_product_batch(self, product_data: dict[str, list[str]]) -> int:
+        """
+        批次儲存多個 FQDN 的 Shodan product 資料
+        
+        Args:
+            product_data: {fqdn: [product1, product2, ...]} 的字典
+        
+        Returns:
+            成功儲存的筆數
+        """
+        saved_count = 0
+        for fqdn, products in product_data.items():
+            for product in products:
+                if product and self.save_shodan_product(fqdn, product):
+                    saved_count += 1
+        
+        logger.info(f"批次儲存 shodan_product 完成，共 {saved_count} 筆")
+        return saved_count

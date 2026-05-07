@@ -15,6 +15,38 @@ from database.repository import DatabaseManagerORM
 logger = get_logger("scanners.shodan_scanner")
 
 
+def _norm_host(value: Optional[str]) -> str:
+    """Normalize hostname for exact comparisons."""
+    return (value or "").strip().lower().rstrip(".")
+
+
+def _match_belongs_to_target(match: dict, target_fqdn: str) -> bool:
+    """Return True only when a Shodan match can be attributed to target fqdn."""
+    target = _norm_host(target_fqdn)
+    if not target:
+        return False
+
+    # 1) Most reliable: crawler's original hostname target
+    shodan_opts = (match.get("_shodan") or {}).get("options") or {}
+    if _norm_host(shodan_opts.get("hostname")) == target:
+        return True
+
+    # 2) HTTP host field
+    http_host = _norm_host((match.get("http") or {}).get("host"))
+    if http_host == target:
+        return True
+
+    # 3) Hostnames/domain list exact match
+    for h in match.get("hostnames", []) or []:
+        if _norm_host(h) == target:
+            return True
+    for d in match.get("domains", []) or []:
+        if _norm_host(d) == target:
+            return True
+
+    return False
+
+
 class ShodanScanner(BaseScanner):
     """Shodan 掃描器（支援全量分頁抓取）"""
 
@@ -253,3 +285,98 @@ class ShodanScanner(BaseScanner):
             return False
         import re as _re
         return bool(_re.match(r"^[a-z0-9.-]+$", domain))
+
+
+# ==================== Shodan HTTP 查詢函式 ====================
+
+def fetch_shodan_http_batch(api_key: str, subdomains: List[str], delay: float = 1.0) -> tuple[dict[str, str], dict[str, list[str]]]:
+    """
+    對每個 subdomain 查詢 Shodan 取得 http.html 和 product 內容
+    
+    查詢: hostname:"{subdomain}"
+    從回傳的 matches[].http.html 取得 HTML 內容
+    從回傳的 matches[].product 取得 product 內容
+    
+    Args:
+        api_key: Shodan API Key
+        subdomains: subdomain 清單
+        delay: 每次查詢間的延遲秒數
+    
+    Returns:
+        (html_result, product_result) 兩個字典
+        - html_result: {fqdn: html} 字典
+        - product_result: {fqdn: [product1, product2, ...]} 字典
+    """
+    import shodan
+    import time
+    
+    api = shodan.Shodan(api_key)
+    html_result: dict[str, str] = {}
+    product_result: dict[str, list[str]] = {}
+    
+    for subdomain in subdomains:
+        subdomain = subdomain.strip().lower()
+        if not subdomain:
+            continue
+            
+        query = f'hostname:"{subdomain}"'
+        logger.debug(f"Shodan HTTP 查詢: {query}")
+        
+        try:
+            search_result = api.search(query)
+            total = search_result.get("total", 0)
+            
+            if total == 0:
+                logger.debug(f"Shodan 無結果: {subdomain}")
+                time.sleep(delay)
+                continue
+            
+            # 合併所有 matches 的 http.html 和 product
+            html_parts = []
+            products = []
+            relevant_matches = 0
+            for match in search_result.get("matches", []):
+                if not _match_belongs_to_target(match, subdomain):
+                    continue
+
+                relevant_matches += 1
+
+                # 取得 http.html
+                http_data = match.get("http", {})
+                if http_data:
+                    html = http_data.get("html", "")
+                    if html:
+                        html_parts.append(html)
+                
+                # 取得 product
+                product = match.get("product", "")
+                if product and product not in products:
+                    products.append(product)
+
+            if total and relevant_matches == 0:
+                logger.warning(
+                    f"[Shodan] {subdomain} 查到 {total} 筆，但無任何 match 能精確歸屬此 fqdn，已全部略過"
+                )
+            
+            if html_parts:
+                # 合併所有 html（用換行分隔）
+                combined_html = "\n<!-- SHODAN_MATCH_SEPARATOR -->\n".join(html_parts)
+                html_result[subdomain] = combined_html
+                logger.info(f"[Shodan HTTP] {subdomain} 取得 {len(html_parts)} 筆 html")
+            
+            if products:
+                product_result[subdomain] = products
+                logger.info(f"[Shodan Product] {subdomain} 取得 {len(products)} 個 product: {products}")
+            
+            if not html_parts and not products:
+                logger.debug(f"[Shodan] {subdomain} 無 html 或 product 資料")
+            
+            time.sleep(delay)
+            
+        except shodan.APIError as e:
+            logger.error(f"Shodan API 錯誤 ({subdomain}): {e}")
+        except Exception as e:
+            logger.error(f"查詢失敗 ({subdomain}): {e}")
+    
+    logger.info(f"[Shodan] 共取得 {len(html_result)} 個 html, {len(product_result)} 個 product")
+    return html_result, product_result

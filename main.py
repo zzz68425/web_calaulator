@@ -7,14 +7,17 @@ import argparse
 import sys
 from pathlib import Path
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from config import Config
 import dns.resolver
 import dns.exception
 from database.repository import DatabaseManagerORM as DatabaseManager
-from scanners.shodan_scanner import ShodanScanner
+from scanners.shodan_scanner import ShodanScanner, fetch_shodan_http_batch
 from scanners.shodan_fqdn import ShodanFqdnScanner
 from scanners.virustotal_scanner import VirusTotalScanner
+from scanners.crtsh_scanner import CrtshScanner
+from scanners.dns_zone_scanner import DnsZoneScanner
 from validators.otx_validator import OtxValidator
 from validators.certificate_validator import CertificateValidator
 from models.website import Website
@@ -32,15 +35,27 @@ class WebsiteFinder:
         self.db_manager = DatabaseManager(config.DATABASE_PATH)
         self.shodan_scanner = ShodanScanner(config.SHODAN_API_KEY, self.db_manager)
         self.shodan_fqdn_scanner = ShodanFqdnScanner(config.SHODAN_API_KEY)
+        self.crtsh_scanner = CrtshScanner()
+        self.dns_zone_scanner = DnsZoneScanner(config)
         # VirusTotal 支援多組 key：直接傳整個列表（或單一）
         self.vt_scanner = VirusTotalScanner(config.VIRUSTOTAL_API_KEYS)
         self.validator = OtxValidator(config)
         self.certificate_validator = CertificateValidator()
     
-    def run(self, cert_pattern: str, quick_mode: bool = False) -> List[Website]:
-        """執行完整的搜尋流程"""
+    def run(self, cert_pattern: str, quick_mode: bool = False, skip_xlsx: bool = False) -> List[Website]:
+        """執行完整的搜尋流程
+        
+        Args:
+            cert_pattern: 憑證搜尋模式
+            quick_mode: 快速模式，限制查詢範圍
+            skip_xlsx: 跳過 xlsx 匯入，只使用 Shodan 結果
+        """
         logger.info("="*60)
         logger.info(f"開始搜尋憑證: {cert_pattern}")
+        if skip_xlsx:
+            logger.info("模式: 只查詢 Shodan 結果（跳過 xlsx）")
+        else:
+            logger.info("模式: Shodan + xlsx 合併查詢")
         logger.info("="*60)
         
         # 步驟 1: Shodan 搜尋
@@ -52,17 +67,42 @@ class WebsiteFinder:
         )
         
         if not shodan_result.domains:
-            logger.warning("沒有找到相關域名")
-            return []
+            logger.warning("Shodan 沒有找到相關域名")
+        else:
+            logger.info(f"Shodan 找到 {len(shodan_result.domains)} 個域名")
         
-        logger.info(f"找到 {len(shodan_result.domains)} 個域名")
+        # 取得 Shodan 的 VT 目標
+        shodan_vt_targets = shodan_result.vt_query_targets if shodan_result.vt_query_targets else shodan_result.domains
+        shodan_vt_set = set(shodan_vt_targets) if shodan_vt_targets else set()
+        
+        # 步驟 1.5: 匯入 xlsx 的 root_domain 並合併（可跳過）
+        if skip_xlsx:
+            logger.info("步驟 1.5: 跳過 xlsx 匯入（模式 2）")
+            vt_targets = list(shodan_vt_targets or [])
+            logger.info(f"VT 查詢目標：只有 Shodan {len(vt_targets)} 個")
+        else:
+            logger.info("步驟 1.5: 匯入 xlsx root_domain 並合併 Shodan 結果")
+            xlsx_imported = self.db_manager.import_root_domains_from_xlsx("institution")
+            logger.info(f"xlsx 匯入了 {xlsx_imported} 個新的 root_domain")
+            
+            # 取得 xlsx 的 root_domain（source='xlsx'）
+            xlsx_root_domains = self.db_manager.get_all_root_domains(source="xlsx")
+            
+            # 合併：Shodan 優先，xlsx 補充（去除已存在於 Shodan 結果的）
+            xlsx_only = [rd for rd in xlsx_root_domains if rd not in shodan_vt_set]
+            vt_targets = list(shodan_vt_targets or []) + xlsx_only
+            
+            logger.info(f"合併後 VT 查詢目標：Shodan {len(shodan_vt_set)} 個 + xlsx 補充 {len(xlsx_only)} 個 = 共 {len(vt_targets)} 個")
+        
+        if not vt_targets:
+            logger.warning("沒有任何 VT 查詢目標（Shodan + xlsx 皆為空）")
+            return []
         
         # 步驟 2 + 3 改為「逐個 VT 目標域名即時處理」：
         #   1) 取該 root domain 的 subdomains
         #   2) 預先寫入（DNS 預解析）
         #   3) 立即執行 OTX 驗證並更新該批
         logger.info("步驟 2: VirusTotal 獲得subdomains並即時 OTX 驗證")
-        vt_targets = shodan_result.vt_query_targets if shodan_result.vt_query_targets else shodan_result.domains
         
         # 快速模式：限制查詢目標
         if quick_mode:
@@ -72,12 +112,20 @@ class WebsiteFinder:
         logger.info(f"共有 {len(vt_targets)} 個 VT 查詢目標 (VT Keys: {len(self.config.VIRUSTOTAL_API_KEYS)})，將逐一處理")
 
         processed_subdomains: set[str] = set()  # 避免跨 root 重複處理
-        aggregated_validated: List[Website] = [] 
+        aggregated_validated: List[Website] = []
+        
+        # 取得 area domains 用於 Shodan FQDN 判斷
+        area_domains = self.db_manager.get_all_area_domains()
+        searched_area_domains: set[str] = set()  # 記錄已查過 Shodan FQDN 的 area domain
+        logger.info(f"載入 {len(area_domains)} 個 area domain 用於 Shodan FQDN 判斷") 
 
-        def _resolve_ips(domain: str) -> tuple[List[str], List[str]]:
-            """解析 A 與 AAAA，分別回傳 (ipv4_list, ipv6_list)。解析失敗則為空列表。"""
+        def _resolve_ips(domain: str) -> tuple[List[str], List[str], int | None, int | None, int | None]:
+            """解析 A / AAAA / CNAME，回傳 (ipv4_list, ipv6_list, has_a, has_aaaa, has_cname)。"""
             ipv4_list: List[str] = []
             ipv6_list: List[str] = []
+            has_a: int | None = None
+            has_aaaa: int | None = None
+            has_cname: int | None = None
             # 建立專用 Resolver 並設定 nameservers
             try:
                 resolver = dns.resolver.Resolver()
@@ -92,6 +140,7 @@ class WebsiteFinder:
                 ans4 = resolver.resolve(domain, 'A', lifetime=3.0)
                 if ans4:
                     ipv4_list = [rr.to_text() for rr in ans4]
+                    has_a = 1
             except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN, dns.exception.Timeout) as e:
                 logger.debug(f"DNS A 預解析失敗 {domain}: {e}")
             except Exception as e:
@@ -100,34 +149,83 @@ class WebsiteFinder:
                 ans6 = resolver.resolve(domain, 'AAAA', lifetime=3.0)
                 if ans6:
                     ipv6_list = [rr.to_text() for rr in ans6]
+                    has_aaaa = 1
             except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN, dns.exception.Timeout) as e:
                 logger.debug(f"DNS AAAA 預解析失敗 {domain}: {e}")
             except Exception as e:
                 logger.debug(f"DNS AAAA 預解析未預期錯誤 {domain}: {e}")
-            return ipv4_list, ipv6_list
+            try:
+                ans_cname = resolver.resolve(domain, 'CNAME', lifetime=3.0)
+                if ans_cname:
+                    has_cname = 1
+            except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN, dns.exception.Timeout) as e:
+                logger.debug(f"DNS CNAME 預解析失敗 {domain}: {e}")
+            except Exception as e:
+                logger.debug(f"DNS CNAME 預解析未預期錯誤 {domain}: {e}")
+            return ipv4_list, ipv6_list, has_a, has_aaaa, has_cname
 
         from models.website import Website as _W
+
+        def _extract_root_domain(domain: str) -> str:
+            """從域名提取 root domain（最後兩段或三段 .edu.tw）"""
+            parts = domain.lower().split('.')
+            if len(parts) >= 3 and parts[-2] == 'edu' and parts[-1] == 'tw':
+                # xxx.edu.tw 格式
+                return '.'.join(parts[-3:])
+            elif len(parts) >= 2:
+                return '.'.join(parts[-2:])
+            return domain
 
         for idx, target in enumerate(vt_targets, start=1):
             logger.info("-" * 50)
             logger.info(f"[VT+Shodan DNS] ({idx}/{len(vt_targets)}) 處理 root domain: {target}")
             
-            # 1. 先用 Shodan DNS API 取得 A/AAAA/CNAME record 子網域（分頁查詢）
-            shodan_results = self.shodan_fqdn_scanner.get_subdomains_with_a_record(target)
-            shodan_subdomains = [result["fqdn"] for result in shodan_results]
-            logger.info(f"[Shodan DNS] {target} 取得 {len(shodan_subdomains)} 個 A/AAAA/CNAME record 子網域")
+            # 1. Shodan DNS API 查詢邏輯：
+            #    - 如果 target 的 root domain 是 area → 只查一次該 area domain
+            #    - 如果不是 area → 正常查 target
+            shodan_results = []
+            shodan_subdomains = []
+            root_of_target = _extract_root_domain(target)
+            
+            if root_of_target in area_domains:
+                # target 屬於 area（例如 ytes.ntpc.edu.tw，root = ntpc.edu.tw）
+                if root_of_target not in searched_area_domains:
+                    # 這個 area 還沒查過 → 查 area domain
+                    logger.info(f"[Shodan DNS] {target} 屬於 area {root_of_target}，查詢 area domain")
+                    shodan_results = self.shodan_fqdn_scanner.get_subdomains_with_a_record(root_of_target)
+                    shodan_subdomains = [result["fqdn"] for result in shodan_results]
+                    searched_area_domains.add(root_of_target)
+                    logger.info(f"[Shodan DNS] area {root_of_target} 取得 {len(shodan_subdomains)} 個子網域（已記錄，後續同 area 不再查）")
+                else:
+                    # 這個 area 已經查過 → 跳過 Shodan FQDN
+                    logger.info(f"[Shodan DNS] {target} 屬於已查過的 area {root_of_target}，跳過 Shodan FQDN")
+            else:
+                # 不是 area → 正常查詢
+                shodan_results = self.shodan_fqdn_scanner.get_subdomains_with_a_record(target)
+                shodan_subdomains = [result["fqdn"] for result in shodan_results]
+                logger.info(f"[Shodan DNS] {target} 取得 {len(shodan_subdomains)} 個 A/AAAA/CNAME record 子網域")
             
             # 2. 再用 VT 取得子網域
             vt_subdomains = self._get_subdomains_with_delay(target)
             logger.info(f"[VT] {target} 取得 {len(vt_subdomains)} 個子網域")
+
+            # 3. 再用 crt.sh 取得子網域（name_value）
+            crt_subdomains = self.crtsh_scanner.get_subdomains(target)
+            logger.info(f"[crt.sh] {target} 取得 {len(crt_subdomains)} 個子網域")
             
-            # 3. 合併去重：VT + Shodan，相同的只保留一個
+            # 4. 合併去重：VT + Shodan + crt.sh，相同的只保留一個
             all_subs_set = set(vt_subdomains)  # 先放 VT 的
             all_subs_set.update(shodan_subdomains)  # 再加 Shodan 的（自動去重）
+            all_subs_set.update(crt_subdomains)  # 再加 crt.sh（自動去重）
             all_subdomains = list(all_subs_set)
             
-            overlap = len(set(shodan_subdomains) & set(vt_subdomains))
-            logger.info(f"[合併] {target} 合併後共 {len(all_subdomains)} 個子網域（VT+Shodan 重疊 {overlap} 個）")
+            overlap_vt_shodan = len(set(shodan_subdomains) & set(vt_subdomains))
+            overlap_vt_crt = len(set(vt_subdomains) & set(crt_subdomains))
+            overlap_shodan_crt = len(set(shodan_subdomains) & set(crt_subdomains))
+            logger.info(
+                f"[合併] {target} 合併後共 {len(all_subdomains)} 個子網域 "
+                f"（VT+Shodan 重疊 {overlap_vt_shodan}、VT+crt.sh 重疊 {overlap_vt_crt}、Shodan+crt.sh 重疊 {overlap_shodan_crt}）"
+            )
             
             if not all_subdomains:
                 logger.warning(f"[合併] {target} 無子域名，跳過")
@@ -143,10 +241,26 @@ class WebsiteFinder:
 
             # 預先寫入（未驗證 when_latest_otx_checked=None）
             # 現在所有 IP 都由 DNS 預解析取得（Shodan 只提供 FQDN 清單）
+            # 使用多執行緒並行 DNS 解析
+            dns_results: dict[str, tuple[List[str], List[str], int | None, int | None, int | None]] = {}
+            dns_workers = min(20, len(new_subs))  # 最多 20 個執行緒
+            
+            logger.info(f"[DNS] 開始並行解析 {len(new_subs)} 個子網域（執行緒數: {dns_workers}）")
+            with ThreadPoolExecutor(max_workers=dns_workers) as executor:
+                future_to_sub = {executor.submit(_resolve_ips, sub): sub for sub in new_subs}
+                for future in as_completed(future_to_sub):
+                    sub = future_to_sub[future]
+                    try:
+                        ipv4_list, ipv6_list, has_a, has_aaaa, has_cname = future.result()
+                        dns_results[sub] = (ipv4_list, ipv6_list, has_a, has_aaaa, has_cname)
+                    except Exception as e:
+                        logger.debug(f"[DNS] 解析 {sub} 失敗: {e}")
+                        dns_results[sub] = ([], [], None, None, None)
+            
             prelist: List[_W] = []
             unresolved = 0
             for sub in new_subs:
-                ipv4_list, ipv6_list = _resolve_ips(sub)
+                ipv4_list, ipv6_list, has_a, has_aaaa, has_cname = dns_results.get(sub, ([], [], None, None, None))
                 if not (ipv4_list or ipv6_list):
                     unresolved += 1
                 # Website 不再需要傳入 ip 參數，改用 ipv4_list/ipv6_list 屬性
@@ -154,6 +268,10 @@ class WebsiteFinder:
                 # 將雙協定結果附加為屬性（列表形式）
                 setattr(w, "ipv4_list", ipv4_list)
                 setattr(w, "ipv6_list", ipv6_list)
+                # DNS 紀錄存在旗標
+                setattr(w, "has_a", has_a)
+                setattr(w, "has_aaaa", has_aaaa)
+                setattr(w, "has_cname", has_cname)
                 prelist.append(w)
 
             # 步驟 2.5: 域名階層分解（在 OTX 驗證前）
@@ -172,6 +290,15 @@ class WebsiteFinder:
 
             pre_saved = self.db_manager.save_websites_batch(prelist, root_domain_name=target, when_latest_otx_checked=None)
             logger.info(f"[DB] {target} 預先寫入 {pre_saved} 筆 (未驗證 when_latest_otx_checked=None)，DNS 未解析 {unresolved} 筆")
+
+            # 步驟 2.6: DNS Zone (SOA/NS) 掃描並入庫
+            logger.info(f"[DNS Zone] 掃描 {target} 的 {len(new_subs)} 個子網域 SOA/NS")
+            try:
+                zone_info = self.dns_zone_scanner.get_zone_info_batch(new_subs)
+                zones_saved, links_saved = self.db_manager.save_dns_zone_batch(zone_info)
+                logger.info(f"[DNS Zone] {target} 儲存 zone {zones_saved} 筆、domain-zone 關聯 {links_saved} 筆")
+            except Exception as e:
+                logger.error(f"[DNS Zone] {target} 掃描或儲存失敗: {e}")
 
             # 立即 OTX 驗證這批新子域名
             logger.info(f"[OTX] 驗證 {target} 的 {len(new_subs)} 個子域名")
@@ -211,6 +338,28 @@ class WebsiteFinder:
                     logger.info(f"[OTX HTTP Scans] {target} 無 http_scans 資料")
             except Exception as e:
                 logger.error(f"[OTX HTTP Scans] 取得或儲存 {target} 的 http_scans 失敗: {e}")
+
+            # 步驟 3.6: Shodan HTTP 查詢與 IoT 標記
+            logger.info(f"[Shodan HTTP] 查詢 {target} 的 {len(validated_fqdns)} 個 subdomain")
+            try:
+                html_data, product_data = fetch_shodan_http_batch(
+                    api_key=self.config.SHODAN_API_KEY,
+                    subdomains=validated_fqdns,
+                    delay=1.0
+                )
+                if html_data:
+                    saved = self.db_manager.save_shodan_http_batch(html_data)
+                    logger.info(f"[Shodan HTTP] {target} 儲存 {saved} 筆 http.html 資料")
+                else:
+                    logger.info(f"[Shodan HTTP] {target} 無 http.html 資料")
+                
+                if product_data:
+                    saved_products = self.db_manager.save_shodan_product_batch(product_data)
+                    logger.info(f"[Shodan Product] {target} 儲存 {saved_products} 筆 product 資料")
+                else:
+                    logger.info(f"[Shodan Product] {target} 無 product 資料")
+            except Exception as e:
+                logger.error(f"[Shodan HTTP] {target} 查詢失敗: {e}")
 
             aggregated_validated.extend(validated)
             processed_subdomains.update(new_subs)
@@ -321,12 +470,19 @@ def main():
     else:
         cert_pattern = args.cert_pattern
     
+    # 選擇查詢模式
+    print("\n請選擇查詢模式:")
+    print("  1. Shodan + xlsx 合併查詢（完整模式）")
+    print("  2. 只查詢 Shodan 結果（跳過 xlsx）")
+    mode_input = input("請輸入模式 (1 或 2，預設 1): ").strip()
+    skip_xlsx = (mode_input == "2")
+    
     # 執行搜尋
     try:
         finder = WebsiteFinder(config)
         if args.quick:
             logger.info("快速模式啟用：將限制查詢範圍進行測試")
-        results = finder.run(cert_pattern, quick_mode=args.quick)
+        results = finder.run(cert_pattern, quick_mode=args.quick, skip_xlsx=skip_xlsx)
         
         if results:
             logger.info(f"\n搜尋完成！找到 {len(results)} 個網站")

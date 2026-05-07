@@ -61,7 +61,7 @@ class Config:
     HTTP_POOL_SIZE: int = 64                 # 連線池大小（每執行緒）
     HTTP_RETRIES: int = 2                    # 臨時錯誤重試次數
     # OTX 相關重試設定
-    OTX_MAX_RETRIES: int = int(os.getenv('OTX_MAX_RETRIES', '3'))   # 單一目標失敗後最多再試幾次
+    OTX_MAX_RETRIES: int = int(os.getenv('OTX_MAX_RETRIES', '5'))   # 單一目標失敗後最多再試幾次
     
     # User Agent
     USER_AGENT: str = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
