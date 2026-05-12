@@ -98,6 +98,9 @@ class Domain(Base):
     # DNS Zone 關聯
     dns_zone_links: Mapped[list["Domain_dns_zone"]] = relationship("Domain_dns_zone", back_populates="domain", cascade="all, delete-orphan")
 
+    # CNAME 關聯
+    cname_records: Mapped[list["Domain_cname"]] = relationship("Domain_cname", back_populates="domain", cascade="all, delete-orphan")
+
     # otx_httpscan 關聯（一對多）
     otx_httpscans: Mapped[list["Otx_httpscan"]] = relationship("Otx_httpscan", back_populates="domain", cascade="all, delete-orphan")
     
@@ -158,15 +161,11 @@ class Dns_zone(Base):
 
     soa_mname: Mapped[str | None] = mapped_column(String, nullable=True)
     soa_rname: Mapped[str | None] = mapped_column(String, nullable=True)
-    soa_serial: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    soa_refresh: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    soa_retry: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    soa_expire: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    soa_minimum: Mapped[int | None] = mapped_column(Integer, nullable=True)
-    soa_ttl: Mapped[int | None] = mapped_column(Integer, nullable=True)
-
     status: Mapped[str] = mapped_column(String, nullable=False, default="ok")
     error_message: Mapped[str | None] = mapped_column(String, nullable=True)
+    zone_scope_kind: Mapped[str | None] = mapped_column(String, nullable=True)
+    zone_hosting_kind: Mapped[str | None] = mapped_column(String, nullable=True)
+    is_delegated: Mapped[int | None] = mapped_column(Integer, nullable=True)
     checked_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=func.current_timestamp())
     created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=func.current_timestamp())
     updated_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=func.current_timestamp(), onupdate=func.current_timestamp())
@@ -189,6 +188,9 @@ class Dns_zone_ns(Base):
     zone_id: Mapped[int] = mapped_column(ForeignKey("dns_zone.id", ondelete="CASCADE"), nullable=False)
     ns_host: Mapped[str] = mapped_column(String, nullable=False)
     ns_ttl: Mapped[int | None] = mapped_column(Integer, nullable=True)
+    provider_kind: Mapped[str | None] = mapped_column(String, nullable=True)
+    provider_name: Mapped[str | None] = mapped_column(String, nullable=True)
+    is_external: Mapped[int | None] = mapped_column(Integer, nullable=True)
     checked_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=func.current_timestamp())
 
     zone: Mapped["Dns_zone"] = relationship("Dns_zone", back_populates="ns_records")
@@ -216,6 +218,25 @@ class Domain_dns_zone(Base):
 
     def __repr__(self) -> str:
         return f"<Domain_dns_zone id={self.id} domain_id={self.domain_id} zone_id={self.zone_id}>"
+
+
+class Domain_cname(Base):
+    __tablename__ = "domain_cname"
+    __table_args__ = (
+        UniqueConstraint("domain_id", "target", name="uq_domain_cname"),
+        Index("idx_domain_cname_domain_id", "domain_id"),
+        Index("idx_domain_cname_target", "target"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    domain_id: Mapped[int] = mapped_column(ForeignKey("domain.id", ondelete="CASCADE"), nullable=False)
+    target: Mapped[str] = mapped_column(String, nullable=False)
+    checked_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=func.current_timestamp())
+
+    domain: Mapped["Domain"] = relationship("Domain", back_populates="cname_records")
+
+    def __repr__(self) -> str:
+        return f"<Domain_cname id={self.id} domain_id={self.domain_id} target={self.target}>"
 
 class Otx_httpscan(Base):
     __tablename__ = "otx_httpscan"

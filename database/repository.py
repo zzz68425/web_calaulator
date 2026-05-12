@@ -7,7 +7,7 @@ from sqlalchemy import select, func, distinct, text
 from sqlalchemy.exc import IntegrityError
 
 from database.session import create_session_factory, db_session
-from database.models import Base, IP, RootDomain, Domain, Area, Domain_ip, Otx_httpscan, Shodan_http, Shodan_product, Dns_zone, Dns_zone_ns, Domain_dns_zone
+from database.models import Base, IP, RootDomain, Domain, Area, Domain_ip, Otx_httpscan, Shodan_http, Shodan_product, Dns_zone, Dns_zone_ns, Domain_dns_zone, Domain_cname
 from models.website import Website
 from utils.logger import get_logger
 from config import Config
@@ -24,6 +24,7 @@ class DatabaseManagerORM:
 
     def _init_database(self) -> None:
         Base.metadata.create_all(self.engine)
+        self._migrate_dns_zone_schema()
         
         logger.info(f"已建立/確認資料表（ORM）：{self.db_path}")
         # 自動匯入 area 資料（若存在檔案且表為空）
@@ -38,6 +39,168 @@ class DatabaseManagerORM:
                     logger.info(f"area 初始化匯入：{inserted} 筆（來源: {csv_path}）")
         except Exception as e:
             logger.warning(f"初始化匯入 area 失敗：{e}")
+
+    def _migrate_dns_zone_schema(self) -> None:
+        with self.engine.begin() as conn:
+            table_names = {
+                row[0]
+                for row in conn.execute(
+                    text("SELECT name FROM sqlite_master WHERE type='table'")
+                ).fetchall()
+            }
+            if "dns_zone" not in table_names:
+                return
+
+            zone_cols = {
+                row[1] for row in conn.execute(text("PRAGMA table_info(dns_zone)")).fetchall()
+            }
+            expected_zone_cols = {
+                "id",
+                "zone_apex",
+                "soa_mname",
+                "soa_rname",
+                "status",
+                "error_message",
+                "zone_scope_kind",
+                "zone_hosting_kind",
+                "is_delegated",
+                "checked_at",
+                "created_at",
+                "updated_at",
+            }
+
+            if zone_cols != expected_zone_cols:
+                conn.execute(text("PRAGMA foreign_keys=OFF"))
+                conn.execute(text("ALTER TABLE dns_zone RENAME TO dns_zone_old"))
+                conn.execute(
+                    text(
+                        """
+                        CREATE TABLE dns_zone (
+                            id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                            zone_apex VARCHAR NOT NULL,
+                            soa_mname VARCHAR,
+                            soa_rname VARCHAR,
+                            status VARCHAR NOT NULL DEFAULT 'ok',
+                            error_message VARCHAR,
+                            zone_scope_kind VARCHAR,
+                            zone_hosting_kind VARCHAR,
+                            is_delegated INTEGER,
+                            checked_at DATETIME NOT NULL,
+                            created_at DATETIME NOT NULL,
+                            updated_at DATETIME NOT NULL,
+                            CONSTRAINT uq_dns_zone_apex UNIQUE (zone_apex)
+                        )
+                        """
+                    )
+                )
+                conn.execute(
+                    text(
+                        """
+                        INSERT INTO dns_zone (
+                            id, zone_apex, soa_mname, soa_rname, status, error_message,
+                            zone_scope_kind, zone_hosting_kind, is_delegated,
+                            checked_at, created_at, updated_at
+                        )
+                        SELECT
+                            id,
+                            zone_apex,
+                            soa_mname,
+                            soa_rname,
+                            status,
+                            error_message,
+                            NULL,
+                            NULL,
+                            NULL,
+                            checked_at,
+                            created_at,
+                            updated_at
+                        FROM dns_zone_old
+                        """
+                    )
+                )
+                conn.execute(text("DROP TABLE dns_zone_old"))
+                conn.execute(text("CREATE INDEX idx_dns_zone_apex ON dns_zone (zone_apex)"))
+                conn.execute(text("PRAGMA foreign_keys=ON"))
+
+            ns_cols = {
+                row[1] for row in conn.execute(text("PRAGMA table_info(dns_zone_ns)")).fetchall()
+            }
+            if "provider_kind" not in ns_cols:
+                conn.execute(text("ALTER TABLE dns_zone_ns ADD COLUMN provider_kind VARCHAR"))
+            if "provider_name" not in ns_cols:
+                conn.execute(text("ALTER TABLE dns_zone_ns ADD COLUMN provider_name VARCHAR"))
+            if "is_external" not in ns_cols:
+                conn.execute(text("ALTER TABLE dns_zone_ns ADD COLUMN is_external INTEGER"))
+
+        with db_session(self.SessionFactory) as session:
+            self._refresh_all_dns_zone_classifications(session)
+
+    def _extract_root_domain(self, hostname: str) -> str:
+        parts = [p for p in (hostname or "").strip().lower().split(".") if p]
+        if len(parts) >= 3 and parts[-2] == "edu" and parts[-1] == "tw":
+            return ".".join(parts[-3:])
+        if len(parts) >= 2:
+            return ".".join(parts[-2:])
+        return hostname.strip().lower()
+
+    def _classify_ns_host(self, ns_host: str) -> tuple[str, str, int]:
+        host = (ns_host or "").strip().lower()
+        if not host:
+            return "unknown", "unknown", 0
+        if host.endswith(".ncku.edu.tw"):
+            return "school_managed", "ncku", 0
+
+        provider_rules = [
+            ("cloudflare", "external_dns_provider", "cloudflare"),
+            ("awsdns", "external_dns_provider", "aws_route53"),
+            ("azure-dns", "external_dns_provider", "azure_dns"),
+            ("dnspod", "external_dns_provider", "dnspod"),
+            ("digitalocean", "external_dns_provider", "digitalocean"),
+            ("gandi", "external_dns_provider", "gandi"),
+            ("hinet", "telco_or_infra", "hinet"),
+            ("seed.net", "telco_or_infra", "seednet"),
+            ("cht.com.tw", "telco_or_infra", "cht"),
+        ]
+        for needle, kind, name in provider_rules:
+            if needle in host:
+                return kind, name, 1
+        return "unknown", "unknown", 1
+
+    def _refresh_dns_zone_classification(self, session, zone: Dns_zone) -> None:
+        ns_records = session.execute(
+            select(Dns_zone_ns).where(Dns_zone_ns.zone_id == zone.id)
+        ).scalars().all()
+
+        provider_kinds: set[str] = set()
+        has_external = False
+        for ns in ns_records:
+            provider_kind, provider_name, is_external = self._classify_ns_host(ns.ns_host)
+            ns.provider_kind = provider_kind
+            ns.provider_name = provider_name
+            ns.is_external = is_external
+            provider_kinds.add(provider_kind)
+            has_external = has_external or bool(is_external)
+
+        root_domain = self._extract_root_domain(zone.zone_apex)
+        is_delegated = 1 if zone.zone_apex != root_domain else 0
+        zone.is_delegated = is_delegated
+        zone.zone_scope_kind = "delegated_subzone" if is_delegated else "root_zone"
+
+        if not ns_records:
+            zone.zone_hosting_kind = "unknown"
+        elif provider_kinds == {"school_managed"}:
+            zone.zone_hosting_kind = "school_managed"
+        elif provider_kinds and provider_kinds.issubset({"external_dns_provider", "telco_or_infra", "unknown"}):
+            zone.zone_hosting_kind = "external_managed" if has_external else "unknown"
+        elif "school_managed" in provider_kinds and has_external:
+            zone.zone_hosting_kind = "mixed"
+        else:
+            zone.zone_hosting_kind = "unknown"
+
+    def _refresh_all_dns_zone_classifications(self, session) -> None:
+        zones = session.execute(select(Dns_zone)).scalars().all()
+        for zone in zones:
+            self._refresh_dns_zone_classification(session, zone)
 
     # ---------- 內部工具 ----------
     def _get_or_create_ip(self, session, address: str) -> IP:
@@ -137,6 +300,10 @@ class DatabaseManagerORM:
                     domain.aaaa = has_aaaa
                 if has_cname is not None:
                     domain.cname = has_cname
+
+                cname_targets = getattr(website, "cname_targets", []) or []
+                for target in cname_targets:
+                    self._upsert_domain_cname(session, domain.id, target)
                 
                 # 處理 IP 關聯（多對多）- 統一寫入單一 address 欄位
                 saved_ips = []
@@ -174,6 +341,30 @@ class DatabaseManagerORM:
             domain_ip_relation = Domain_ip(domain_id=domain_id, ip_id=ip_id)
             session.add(domain_ip_relation)
 
+    def _upsert_domain_cname(self, session, domain_id: int, target: str) -> None:
+        target_norm = (target or "").strip().lower().rstrip(".")
+        if not target_norm:
+            return
+
+        existing = session.execute(
+            select(Domain_cname).where(
+                Domain_cname.domain_id == domain_id,
+                Domain_cname.target == target_norm,
+            )
+        ).scalar_one_or_none()
+
+        if existing:
+            existing.checked_at = datetime.now()
+            return
+
+        session.add(
+            Domain_cname(
+                domain_id=domain_id,
+                target=target_norm,
+                checked_at=datetime.now(),
+            )
+        )
+
     def _upsert_dns_zone(self, session, zone_info: dict) -> Dns_zone:
         zone_apex = (zone_info.get("zone_apex") or "").strip().lower()
         zone = session.execute(
@@ -187,12 +378,6 @@ class DatabaseManagerORM:
 
         zone.soa_mname = zone_info.get("soa_mname")
         zone.soa_rname = zone_info.get("soa_rname")
-        zone.soa_serial = zone_info.get("soa_serial")
-        zone.soa_refresh = zone_info.get("soa_refresh")
-        zone.soa_retry = zone_info.get("soa_retry")
-        zone.soa_expire = zone_info.get("soa_expire")
-        zone.soa_minimum = zone_info.get("soa_minimum")
-        zone.soa_ttl = zone_info.get("soa_ttl")
         zone.status = zone_info.get("status") or "ok"
         zone.error_message = zone_info.get("error_message")
         zone.checked_at = datetime.now()
@@ -214,9 +399,14 @@ class DatabaseManagerORM:
                     zone_id=zone.id,
                     ns_host=ns_host,
                     ns_ttl=ns.get("ns_ttl"),
+                    provider_kind=None,
+                    provider_name=None,
+                    is_external=None,
                     checked_at=datetime.now(),
                 )
             )
+
+        self._refresh_dns_zone_classification(session, zone)
 
         return zone
 

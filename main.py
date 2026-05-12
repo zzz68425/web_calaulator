@@ -119,13 +119,14 @@ class WebsiteFinder:
         searched_area_domains: set[str] = set()  # 記錄已查過 Shodan FQDN 的 area domain
         logger.info(f"載入 {len(area_domains)} 個 area domain 用於 Shodan FQDN 判斷") 
 
-        def _resolve_ips(domain: str) -> tuple[List[str], List[str], int | None, int | None, int | None]:
-            """解析 A / AAAA / CNAME，回傳 (ipv4_list, ipv6_list, has_a, has_aaaa, has_cname)。"""
+        def _resolve_ips(domain: str) -> tuple[List[str], List[str], int | None, int | None, int | None, List[str]]:
+            """解析 A / AAAA / CNAME，回傳 IP 與第一跳 CNAME target。"""
             ipv4_list: List[str] = []
             ipv6_list: List[str] = []
             has_a: int | None = None
             has_aaaa: int | None = None
             has_cname: int | None = None
+            cname_targets: List[str] = []
             # 建立專用 Resolver 並設定 nameservers
             try:
                 resolver = dns.resolver.Resolver()
@@ -158,11 +159,12 @@ class WebsiteFinder:
                 ans_cname = resolver.resolve(domain, 'CNAME', lifetime=3.0)
                 if ans_cname:
                     has_cname = 1
+                    cname_targets = [str(rr.target).rstrip(".").lower() for rr in ans_cname if getattr(rr, "target", None)]
             except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN, dns.exception.Timeout) as e:
                 logger.debug(f"DNS CNAME 預解析失敗 {domain}: {e}")
             except Exception as e:
                 logger.debug(f"DNS CNAME 預解析未預期錯誤 {domain}: {e}")
-            return ipv4_list, ipv6_list, has_a, has_aaaa, has_cname
+            return ipv4_list, ipv6_list, has_a, has_aaaa, has_cname, cname_targets
 
         from models.website import Website as _W
 
@@ -242,7 +244,7 @@ class WebsiteFinder:
             # 預先寫入（未驗證 when_latest_otx_checked=None）
             # 現在所有 IP 都由 DNS 預解析取得（Shodan 只提供 FQDN 清單）
             # 使用多執行緒並行 DNS 解析
-            dns_results: dict[str, tuple[List[str], List[str], int | None, int | None, int | None]] = {}
+            dns_results: dict[str, tuple[List[str], List[str], int | None, int | None, int | None, List[str]]] = {}
             dns_workers = min(20, len(new_subs))  # 最多 20 個執行緒
             
             logger.info(f"[DNS] 開始並行解析 {len(new_subs)} 個子網域（執行緒數: {dns_workers}）")
@@ -251,16 +253,16 @@ class WebsiteFinder:
                 for future in as_completed(future_to_sub):
                     sub = future_to_sub[future]
                     try:
-                        ipv4_list, ipv6_list, has_a, has_aaaa, has_cname = future.result()
-                        dns_results[sub] = (ipv4_list, ipv6_list, has_a, has_aaaa, has_cname)
+                        ipv4_list, ipv6_list, has_a, has_aaaa, has_cname, cname_targets = future.result()
+                        dns_results[sub] = (ipv4_list, ipv6_list, has_a, has_aaaa, has_cname, cname_targets)
                     except Exception as e:
                         logger.debug(f"[DNS] 解析 {sub} 失敗: {e}")
-                        dns_results[sub] = ([], [], None, None, None)
+                        dns_results[sub] = ([], [], None, None, None, [])
             
             prelist: List[_W] = []
             unresolved = 0
             for sub in new_subs:
-                ipv4_list, ipv6_list, has_a, has_aaaa, has_cname = dns_results.get(sub, ([], [], None, None, None))
+                ipv4_list, ipv6_list, has_a, has_aaaa, has_cname, cname_targets = dns_results.get(sub, ([], [], None, None, None, []))
                 if not (ipv4_list or ipv6_list):
                     unresolved += 1
                 # Website 不再需要傳入 ip 參數，改用 ipv4_list/ipv6_list 屬性
@@ -272,6 +274,7 @@ class WebsiteFinder:
                 setattr(w, "has_a", has_a)
                 setattr(w, "has_aaaa", has_aaaa)
                 setattr(w, "has_cname", has_cname)
+                setattr(w, "cname_targets", cname_targets)
                 prelist.append(w)
 
             # 步驟 2.5: 域名階層分解（在 OTX 驗證前）
@@ -342,10 +345,30 @@ class WebsiteFinder:
             # 步驟 3.6: Shodan HTTP 查詢與 IoT 標記
             logger.info(f"[Shodan HTTP] 查詢 {target} 的 {len(validated_fqdns)} 個 subdomain")
             try:
+                known_ips_by_subdomain: dict[str, set[str]] = {}
+                for fqdn in validated_fqdns:
+                    try:
+                        website = self.db_manager.get_website_by_fqdn(fqdn)
+                    except Exception:
+                        website = None
+                    if not website:
+                        continue
+
+                    known_ips: set[str] = set()
+                    known_ips.update(getattr(website, "ipv4_list", []) or [])
+                    known_ips.update(getattr(website, "ipv6_list", []) or [])
+                    if getattr(website, "ipv4", None):
+                        known_ips.add(website.ipv4)
+                    if getattr(website, "ipv6", None):
+                        known_ips.add(website.ipv6)
+                    if known_ips:
+                        known_ips_by_subdomain[fqdn] = known_ips
+
                 html_data, product_data = fetch_shodan_http_batch(
                     api_key=self.config.SHODAN_API_KEY,
                     subdomains=validated_fqdns,
-                    delay=1.0
+                    delay=1.0,
+                    known_ips_by_subdomain=known_ips_by_subdomain,
                 )
                 if html_data:
                     saved = self.db_manager.save_shodan_http_batch(html_data)

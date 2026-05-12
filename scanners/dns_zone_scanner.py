@@ -102,12 +102,6 @@ class DnsZoneScanner:
                     soa_data = {
                         "soa_mname": str(soa.mname).rstrip("."),
                         "soa_rname": str(soa.rname).rstrip("."),
-                        "soa_serial": int(soa.serial),
-                        "soa_refresh": int(soa.refresh),
-                        "soa_retry": int(soa.retry),
-                        "soa_expire": int(soa.expire),
-                        "soa_minimum": int(soa.minimum),
-                        "soa_ttl": int(getattr(soa_answers.rrset, "ttl", 0) or 0),
                     }
                     break
             except (dns.resolver.NoAnswer, dns.resolver.NXDOMAIN):
@@ -185,12 +179,6 @@ class DnsZoneScanner:
                     "ns_records": info.get("ns_records", []),
                     "soa_mname": info.get("soa_mname"),
                     "soa_rname": info.get("soa_rname"),
-                    "soa_serial": info.get("soa_serial"),
-                    "soa_refresh": info.get("soa_refresh"),
-                    "soa_retry": info.get("soa_retry"),
-                    "soa_expire": info.get("soa_expire"),
-                    "soa_minimum": info.get("soa_minimum"),
-                    "soa_ttl": info.get("soa_ttl"),
                 }
 
         return result

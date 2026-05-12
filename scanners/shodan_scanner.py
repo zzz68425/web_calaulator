@@ -20,7 +20,7 @@ def _norm_host(value: Optional[str]) -> str:
     return (value or "").strip().lower().rstrip(".")
 
 
-def _match_belongs_to_target(match: dict, target_fqdn: str) -> bool:
+def _match_belongs_to_target(match: dict, target_fqdn: str, known_ips: Optional[Set[str]] = None) -> bool:
     """Return True only when a Shodan match can be attributed to target fqdn."""
     target = _norm_host(target_fqdn)
     if not target:
@@ -42,6 +42,15 @@ def _match_belongs_to_target(match: dict, target_fqdn: str) -> bool:
             return True
     for d in match.get("domains", []) or []:
         if _norm_host(d) == target:
+            return True
+
+    # 4) Fallback: some Shodan HTTP matches only expose the resolved IP in http.host.
+    # In that case, allow the match if it resolves to an IP we already know belongs to target fqdn.
+    normalized_known_ips = {_norm_host(ip) for ip in (known_ips or set()) if _norm_host(ip)}
+    if normalized_known_ips:
+        if http_host and http_host in normalized_known_ips:
+            return True
+        if _norm_host(match.get("ip_str")) in normalized_known_ips:
             return True
 
     return False
@@ -289,7 +298,12 @@ class ShodanScanner(BaseScanner):
 
 # ==================== Shodan HTTP 查詢函式 ====================
 
-def fetch_shodan_http_batch(api_key: str, subdomains: List[str], delay: float = 1.0) -> tuple[dict[str, str], dict[str, list[str]]]:
+def fetch_shodan_http_batch(
+    api_key: str,
+    subdomains: List[str],
+    delay: float = 1.0,
+    known_ips_by_subdomain: Optional[dict[str, Set[str]]] = None,
+) -> tuple[dict[str, str], dict[str, list[str]]]:
     """
     對每個 subdomain 查詢 Shodan 取得 http.html 和 product 內容
     
@@ -318,6 +332,7 @@ def fetch_shodan_http_batch(api_key: str, subdomains: List[str], delay: float = 
         subdomain = subdomain.strip().lower()
         if not subdomain:
             continue
+        known_ips = (known_ips_by_subdomain or {}).get(subdomain, set())
             
         query = f'hostname:"{subdomain}"'
         logger.debug(f"Shodan HTTP 查詢: {query}")
@@ -336,7 +351,7 @@ def fetch_shodan_http_batch(api_key: str, subdomains: List[str], delay: float = 
             products = []
             relevant_matches = 0
             for match in search_result.get("matches", []):
-                if not _match_belongs_to_target(match, subdomain):
+                if not _match_belongs_to_target(match, subdomain, known_ips=known_ips):
                     continue
 
                 relevant_matches += 1
