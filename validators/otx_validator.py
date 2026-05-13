@@ -64,7 +64,6 @@ class OtxValidator:
 
         max_retries = getattr(self.config, 'OTX_MAX_RETRIES', 3)
         attempt = 0
-        retry_delay = _backoff_delay(attempt)  # 使用指數退避 + full jitter
 
         while attempt <= max_retries:
             try:
@@ -91,13 +90,14 @@ class OtxValidator:
                 return site
 
             except requests.exceptions.HTTPError as e:
-                if e.response is not None and e.response.status_code == 404:
-                    logger.debug(f"OTX API 回應 404，找不到主機: {fqdn}")
-                    return None
                 attempt += 1
                 if attempt > max_retries:
+                    if e.response is not None and e.response.status_code == 404:
+                        logger.info(f"OTX API 回應 404（最終） {fqdn}，判定無資料")
+                        return None
                     logger.error(f"OTX API 請求失敗（最終） {fqdn}: {e}")
                     return None
+                retry_delay = _backoff_delay(attempt)
                 logger.warning(f"OTX API 請求失敗 {fqdn} (attempt {attempt}/{max_retries})：{e}，{retry_delay}s 後重試")
                 time.sleep(retry_delay)
                 continue
@@ -106,6 +106,7 @@ class OtxValidator:
                 if attempt > max_retries:
                     logger.error(f"OTX API 網路錯誤（最終） {fqdn}: {e}")
                     return None
+                retry_delay = _backoff_delay(attempt)
                 logger.warning(f"OTX API 網路錯誤 {fqdn} (attempt {attempt}/{max_retries})：{e}，{retry_delay}s 後重試")
                 time.sleep(retry_delay)
                 continue
@@ -169,7 +170,6 @@ class OtxValidator:
 
         max_retries = getattr(self.config, 'OTX_MAX_RETRIES', 3)
         attempt = 0
-        retry_delay = _backoff_delay(attempt)
 
         while attempt <= max_retries:
             try:
@@ -188,13 +188,14 @@ class OtxValidator:
                 return http_scans
 
             except requests.exceptions.HTTPError as e:
-                if e.response is not None and e.response.status_code == 404:
-                    logger.debug(f"OTX http_scans API 回應 404，找不到主機: {fqdn}")
-                    return []
                 attempt += 1
                 if attempt > max_retries:
+                    if e.response is not None and e.response.status_code == 404:
+                        logger.info(f"OTX http_scans API 回應 404（最終） {fqdn}，判定無資料")
+                        return []
                     logger.error(f"OTX http_scans API 請求失敗（最終） {fqdn}: {e}")
                     return []
+                retry_delay = _backoff_delay(attempt)
                 logger.warning(f"OTX http_scans API 請求失敗 {fqdn} (attempt {attempt}/{max_retries})：{e}，{retry_delay}s 後重試")
                 time.sleep(retry_delay)
                 continue
@@ -203,6 +204,7 @@ class OtxValidator:
                 if attempt > max_retries:
                     logger.error(f"OTX http_scans API 網路錯誤（最終） {fqdn}: {e}")
                     return []
+                retry_delay = _backoff_delay(attempt)
                 logger.warning(f"OTX http_scans API 網路錯誤 {fqdn} (attempt {attempt}/{max_retries})：{e}，{retry_delay}s 後重試")
                 time.sleep(retry_delay)
                 continue

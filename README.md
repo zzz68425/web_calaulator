@@ -1,0 +1,35 @@
+id: A12-2025-006
+authors:
+  - 張弘頎
+contributors:
+  - 黃頎洲
+collaborators:
+tags:
+  - otx
+  - python
+  - shodan
+created_date: 2026-01-19
+updated_date: 2026-01-21
+---
+
+# Educational Domain Inventory Tool (EDIT)
+
+本專案旨在透過第三方被動式偵察服務，全自動化盤點特定根網域於廣域網路的公開子網域，協助教育部建立公開網域資產清冊。
+
+透過整合 [LevelBlue Open Threat Exchange](https://otx.alienvault.com/) 和 [Shodan Search Engine](https://www.shodan.io/) 等外部偵察資料，得評估網站弱點掃描服務之覆蓋率，以落實攻擊面管理，並提升網域資產的可視性。
+
+## 專案目標
+
+網站弱點掃描服務的挑戰在於**未知網域資產**，故本專案預期提供以下管理價值：
+
+1. 界定掃描範圍：依據根網域自動搜尋公開子網域。
+2. 評估績效指標：協助計算網站弱點掃描比例，量化掃描覆蓋績效。
+3. 追蹤動態資產：定期同步外部情資，及時更新網域資產資料庫。
+
+## 實作原理
+
+本專案高度依賴第三方被動式偵察服務，確保以不干擾學術網路運作為前提，收錄網域資產：
+
+1. 驗證存活服務 (Shodan)：利用 Shodan 搜尋引擎驗證該網域當前是否具有開放之 Web 服務（HTTP/HTTPS），過濾掉失效的紀錄。
+2. 歷史解析溯源 (OTX)：調閱 AlienVault OTX 累積之 DNS 歷史紀錄，找出所有曾指向教育體系 IP 的子網域。
+3. 彙整資產清單：系統將自動比對現有掃描排程，標註出「尚未納入弱點掃描」之資產。

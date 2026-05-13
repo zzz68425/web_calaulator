@@ -6,6 +6,9 @@ Shodan 掃描器模組（全量分頁抓取）
 """
 import time
 import shodan
+import ipaddress
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List, Set, Optional, Dict, Any
 from scanners.base import BaseScanner
 from models.website import ShodanResult
@@ -18,6 +21,13 @@ logger = get_logger("scanners.shodan_scanner")
 def _norm_host(value: Optional[str]) -> str:
     """Normalize hostname for exact comparisons."""
     return (value or "").strip().lower().rstrip(".")
+
+def _is_ip_literal(value: str) -> bool:
+    try:
+        ipaddress.ip_address(value)
+        return True
+    except Exception:
+        return False
 
 
 def _match_belongs_to_target(match: dict, target_fqdn: str, known_ips: Optional[Set[str]] = None) -> bool:
@@ -40,18 +50,12 @@ def _match_belongs_to_target(match: dict, target_fqdn: str, known_ips: Optional[
     for h in match.get("hostnames", []) or []:
         if _norm_host(h) == target:
             return True
-    for d in match.get("domains", []) or []:
-        if _norm_host(d) == target:
-            return True
 
-    # 4) Fallback: some Shodan HTTP matches only expose the resolved IP in http.host.
-    # In that case, allow the match if it resolves to an IP we already know belongs to target fqdn.
+    # 4) Strict IP fallback:
+    # only when http.host is an IP literal, and that IP is known for this fqdn.
     normalized_known_ips = {_norm_host(ip) for ip in (known_ips or set()) if _norm_host(ip)}
-    if normalized_known_ips:
-        if http_host and http_host in normalized_known_ips:
-            return True
-        if _norm_host(match.get("ip_str")) in normalized_known_ips:
-            return True
+    if http_host and _is_ip_literal(http_host) and http_host in normalized_known_ips:
+        return True
 
     return False
 
@@ -303,6 +307,7 @@ def fetch_shodan_http_batch(
     subdomains: List[str],
     delay: float = 1.0,
     known_ips_by_subdomain: Optional[dict[str, Set[str]]] = None,
+    max_workers: int = 6,
 ) -> tuple[dict[str, str], dict[str, list[str]]]:
     """
     對每個 subdomain 查詢 Shodan 取得 http.html 和 product 內容
@@ -323,32 +328,70 @@ def fetch_shodan_http_batch(
     """
     import shodan
     import time
-    
-    api = shodan.Shodan(api_key)
+
     html_result: dict[str, str] = {}
     product_result: dict[str, list[str]] = {}
-    
-    for subdomain in subdomains:
+
+    clean_subdomains = list(dict.fromkeys((s or "").strip().lower() for s in subdomains if (s or "").strip()))
+    if not clean_subdomains:
+        return html_result, product_result
+
+    workers = max(1, min(int(max_workers), len(clean_subdomains)))
+    rate_lock = threading.Lock()
+    last_request_ts = 0.0
+    max_retries = 3
+
+    def _fetch_single(subdomain: str) -> tuple[str, Optional[str], list[str]]:
+        nonlocal last_request_ts
+        api = shodan.Shodan(api_key)
         subdomain = subdomain.strip().lower()
-        if not subdomain:
-            continue
         known_ips = (known_ips_by_subdomain or {}).get(subdomain, set())
-            
+
         query = f'hostname:"{subdomain}"'
         logger.debug(f"Shodan HTTP 查詢: {query}")
-        
+
+        attempt = 0
+        while attempt <= max_retries:
+            try:
+                # Global throttle across all workers: max 1 request/sec
+                with rate_lock:
+                    now = time.monotonic()
+                    wait_for = 1.0 - (now - last_request_ts)
+                    if wait_for > 0:
+                        time.sleep(wait_for)
+                    last_request_ts = time.monotonic()
+
+                search_result = api.search(query)
+                break
+            except shodan.APIError as e:
+                msg = str(e).lower()
+                is_rate_limit = "rate limit" in msg or "throttle" in msg
+                attempt += 1
+                if is_rate_limit and attempt <= max_retries:
+                    backoff = min(2 ** attempt, 8)
+                    logger.warning(
+                        f"Shodan rate limit ({subdomain})，{backoff}s 後重試 ({attempt}/{max_retries})"
+                    )
+                    time.sleep(backoff)
+                    continue
+                logger.error(f"Shodan API 錯誤 ({subdomain}): {e}")
+                return subdomain, None, []
+            except Exception as e:
+                logger.error(f"查詢失敗 ({subdomain}): {e}")
+                return subdomain, None, []
+
         try:
-            search_result = api.search(query)
             total = search_result.get("total", 0)
-            
+
             if total == 0:
                 logger.debug(f"Shodan 無結果: {subdomain}")
-                time.sleep(delay)
-                continue
-            
+                if delay > 0:
+                    time.sleep(delay)
+                return subdomain, None, []
+
             # 合併所有 matches 的 http.html 和 product
-            html_parts = []
-            products = []
+            html_parts: list[str] = []
+            products: list[str] = []
             relevant_matches = 0
             for match in search_result.get("matches", []):
                 if not _match_belongs_to_target(match, subdomain, known_ips=known_ips):
@@ -372,26 +415,35 @@ def fetch_shodan_http_batch(
                 logger.warning(
                     f"[Shodan] {subdomain} 查到 {total} 筆，但無任何 match 能精確歸屬此 fqdn，已全部略過"
                 )
-            
+
+            combined_html: Optional[str] = None
             if html_parts:
                 # 合併所有 html（用換行分隔）
                 combined_html = "\n<!-- SHODAN_MATCH_SEPARATOR -->\n".join(html_parts)
-                html_result[subdomain] = combined_html
                 logger.info(f"[Shodan HTTP] {subdomain} 取得 {len(html_parts)} 筆 html")
-            
+
             if products:
-                product_result[subdomain] = products
                 logger.info(f"[Shodan Product] {subdomain} 取得 {len(products)} 個 product: {products}")
-            
+
             if not html_parts and not products:
                 logger.debug(f"[Shodan] {subdomain} 無 html 或 product 資料")
-            
-            time.sleep(delay)
-            
-        except shodan.APIError as e:
-            logger.error(f"Shodan API 錯誤 ({subdomain}): {e}")
+
+            if delay > 0:
+                time.sleep(delay)
+            return subdomain, combined_html, products
+
         except Exception as e:
             logger.error(f"查詢失敗 ({subdomain}): {e}")
-    
+            return subdomain, None, []
+
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        futures = [executor.submit(_fetch_single, subdomain) for subdomain in clean_subdomains]
+        for future in as_completed(futures):
+            subdomain, combined_html, products = future.result()
+            if combined_html:
+                html_result[subdomain] = combined_html
+            if products:
+                product_result[subdomain] = products
+
     logger.info(f"[Shodan] 共取得 {len(html_result)} 個 html, {len(product_result)} 個 product")
     return html_result, product_result

@@ -25,7 +25,7 @@ def _parse_vt_multi(raw: str) -> List[str]:
     return ordered
 
 # 指數backoff + full jitter
-def _backoff_delay(attempt: int, base: float = 0.5, cap: float = 5.0) -> float:
+def _backoff_delay(attempt: int, base: float = 0.5, cap: float = 3.0) -> float:
 
     upper = min(cap, base * (2 ** attempt))
     return random.uniform(0.0, upper)

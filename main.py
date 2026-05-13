@@ -343,10 +343,12 @@ class WebsiteFinder:
                 logger.error(f"[OTX HTTP Scans] 取得或儲存 {target} 的 http_scans 失敗: {e}")
 
             # 步驟 3.6: Shodan HTTP 查詢與 IoT 標記
-            logger.info(f"[Shodan HTTP] 查詢 {target} 的 {len(validated_fqdns)} 個 subdomain")
+            # 改為對本批 new_subs 全量查詢，不再受 OTX 驗證結果限制
+            shodan_targets = list(dict.fromkeys(new_subs))
+            logger.info(f"[Shodan HTTP] 查詢 {target} 的 {len(shodan_targets)} 個 subdomain（全量）")
             try:
                 known_ips_by_subdomain: dict[str, set[str]] = {}
-                for fqdn in validated_fqdns:
+                for fqdn in shodan_targets:
                     try:
                         website = self.db_manager.get_website_by_fqdn(fqdn)
                     except Exception:
@@ -366,9 +368,10 @@ class WebsiteFinder:
 
                 html_data, product_data = fetch_shodan_http_batch(
                     api_key=self.config.SHODAN_API_KEY,
-                    subdomains=validated_fqdns,
+                    subdomains=shodan_targets,
                     delay=1.0,
                     known_ips_by_subdomain=known_ips_by_subdomain,
+                    max_workers=6,
                 )
                 if html_data:
                     saved = self.db_manager.save_shodan_http_batch(html_data)
