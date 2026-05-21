@@ -178,6 +178,37 @@ class WebsiteFinder:
                 return '.'.join(parts[-2:])
             return domain
 
+        def _infer_storage_root(domain: str) -> str:
+            """
+            Determine the root_domain row used for hierarchy/storage.
+            For area domains (for example tp.edu.tw), keep the area itself as
+            a root and treat its direct child (taivs.tp.edu.tw) as the school's root.
+            """
+            domain = domain.strip().lower().rstrip(".")
+            root = _extract_root_domain(domain)
+            if root in area_domains:
+                parts = domain.split(".")
+                root_parts = root.split(".")
+                if len(parts) > len(root_parts):
+                    return ".".join(parts[-(len(root_parts) + 1):])
+                return root
+            return root
+
+        def _save_websites_by_storage_root(
+            websites: List[_W],
+            when_latest_otx_checked: Optional[datetime] = None,
+        ) -> int:
+            saved = 0
+            for website in websites:
+                storage_root = _infer_storage_root(website.fqdn)
+                if self.db_manager.save_website(
+                    website,
+                    root_domain_name=storage_root,
+                    when_latest_otx_checked=when_latest_otx_checked,
+                ):
+                    saved += 1
+            return saved
+
         for idx, target in enumerate(vt_targets, start=1):
             logger.info("-" * 50)
             logger.info(f"[VT+Shodan DNS] ({idx}/{len(vt_targets)}) 處理 root domain: {target}")
@@ -280,18 +311,18 @@ class WebsiteFinder:
             # 步驟 2.5: 域名階層分解（在 OTX 驗證前）
             logger.info(f"[域名階層] 開始分解 {target} 的域名階層")
             try:
-                # 使用此目標作為根域名，對所有子域名進行階層分解
+                hierarchy_roots = sorted({_infer_storage_root(fqdn) for fqdn in [target, *all_subdomains]})
                 domain_id_map = build_domain_hierarchy(
                     db_manager=self.db_manager,
                     all_fqdns=all_subdomains,  # 所有找到的子域名
-                    root_domains=[target]  # 根域名清單
+                    root_domains=hierarchy_roots
                 )
-                logger.info(f"[域名階層] {target} 建立了 {len(domain_id_map)} 個域名階層關係")
+                logger.info(f"[域名階層] {target} 使用 {len(hierarchy_roots)} 個 root，建立了 {len(domain_id_map)} 個域名階層關係")
             except Exception as e:
                 logger.error(f"[域名階層] {target} 域名階層分解失敗： {e}")
                 # 繼續後續步驟，但可能會有問題
 
-            pre_saved = self.db_manager.save_websites_batch(prelist, root_domain_name=target, when_latest_otx_checked=None)
+            pre_saved = _save_websites_by_storage_root(prelist, when_latest_otx_checked=None)
             logger.info(f"[DB] {target} 預先寫入 {pre_saved} 筆 (未驗證 when_latest_otx_checked=None)，DNS 未解析 {unresolved} 筆")
 
             # 步驟 2.6: DNS Zone (SOA/NS) 掃描並入庫
@@ -325,7 +356,8 @@ class WebsiteFinder:
                     setattr(site, "ipv4", getattr(existing, "ipv4", None))
                 if not hasattr(site, "ipv6") and existing and hasattr(existing, "ipv6"):
                     setattr(site, "ipv6", getattr(existing, "ipv6", None))
-                if self.db_manager.save_website(site, root_domain_name=target, when_latest_otx_checked=current_time):
+                storage_root = _infer_storage_root(site.fqdn)
+                if self.db_manager.save_website(site, root_domain_name=storage_root, when_latest_otx_checked=current_time):
                     updated += 1
             logger.info(f"[DB] {target} 更新驗證成功 {updated} 筆 (when_latest_otx_checked={current_time.strftime('%Y-%m-%d %H:%M:%S')})")
 

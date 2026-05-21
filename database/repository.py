@@ -655,12 +655,16 @@ class DatabaseManagerORM:
         logger.info(f"[xlsx] 載入 {len(area_domains)} 個 area domain 用於比對")
         
         all_targets: set = set()  # 改名：存放最終要匯入的目標（可能是 root domain 或子域名）
+        loaded_files = 0
+        skipped_files = 0
         
         for xlsx_file in xlsx_files:
             file_path = os.path.join(xlsx_folder, xlsx_file)
+            wb = None
             try:
                 wb = openpyxl.load_workbook(file_path, read_only=True, data_only=True)
                 ws = wb.active
+                file_targets: set = set()
                 
                 # 找到「網址」欄位的位置（從前5行中搜尋表頭）
                 url_col_idx = None
@@ -675,8 +679,8 @@ class DatabaseManagerORM:
                         break
                 
                 if not url_col_idx:
-                    logger.debug(f"[xlsx] {xlsx_file} 找不到「網址」欄位，跳過")
-                    wb.close()
+                    logger.warning(f"[xlsx] {xlsx_file} 找不到「網址」欄位，跳過")
+                    skipped_files += 1
                     continue
                 
                 # 從表頭下一行開始讀取資料
@@ -693,14 +697,23 @@ class DatabaseManagerORM:
                     target = self._extract_target_from_url(url_str, area_domains)
                     if target and target.endswith('.edu.tw'):
                         all_targets.add(target)
+                        file_targets.add(target)
                 
-                wb.close()
+                loaded_files += 1
+                logger.info(f"[xlsx] {xlsx_file} 提取到 {len(file_targets)} 個不重複的 .edu.tw 目標")
                 
             except Exception as e:
+                skipped_files += 1
                 logger.warning(f"[xlsx] 讀取 {xlsx_file} 失敗：{e}")
                 continue
+            finally:
+                if wb is not None:
+                    wb.close()
         
-        logger.info(f"[xlsx] 從 xlsx 檔案中提取到 {len(all_targets)} 個不重複的 .edu.tw 目標")
+        logger.info(
+            f"[xlsx] xlsx 檔案讀取完成：成功 {loaded_files}/{len(xlsx_files)}，"
+            f"跳過 {skipped_files}，提取到 {len(all_targets)} 個不重複的 .edu.tw 目標"
+        )
         
         # 寫入資料庫
         inserted = 0
