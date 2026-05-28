@@ -1,19 +1,16 @@
 ---
-
 id: A12-2025-006
 authors:
-
-- 張弘頎
-  contributors:
-- 黃頎洲
-  collaborators:
-  tags:
-- otx
-- python
-- shodan
-  created_date: 2026-01-19
-  updated_date: 2026-05-28
-
+  - 張弘頎
+contributors:
+  - 黃頎洲
+collaborators:
+tags:
+  - otx
+  - python
+  - shodan
+created_date: 2026-01-19
+updated_date: 2026-01-21
 ---
 
 # Educational Domain Inventory Tool (EDIT)
