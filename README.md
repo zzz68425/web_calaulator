@@ -12,7 +12,6 @@ tags:
 created_date: 2026-01-19
 updated_date: 2026-01-21
 ---
-
 # Educational Domain Inventory Tool (EDIT)
 
 本專案旨在透過第三方被動式偵察服務，全自動化盤點特定根網域於廣域網路的公開子網域，協助教育部建立公開網域資產清冊。
@@ -40,15 +39,23 @@ updated_date: 2026-01-21
 1. 安裝 Git 版本控制軟體
 2. 安裝 uv 套件管理軟體
 3. 複製 GitLab 儲存庫
-4. 在terminal輸入
-```bash
-uv sync
-```
-5. 複製 .env.example 為 .env
-6. 取得各網站的 API Key 並貼到 .env，並將 DNS_SERVERS 設為 8.8.8.8
+4. 下載最新年度的教育部統計處的學校名錄: https://depart.moe.edu.tw/ed4500/News_Content.aspx?n=63F5AB3D02A8BBAC&sms=1FF9979D10DBF9F3&s=8935E78426062F44，並將檔案新增至institution資料夾
+5. 在terminal輸入
+   ```bash
+   uv sync
+   ```
+6. 複製 .env.example 為 .env 並編輯以下環境變數
+   ```diff
+   + SHODAN_API_KEY=
+   + VIRUSTOTAL_API_KEYS=
+   + OTX_API_KEY=
+   + VIRUSTOTAL_API_KEY=
+   - DNS_SERVERS= 
+   + DNS_SERVERS=8.8.8.8
+   ```
 7. 在terminal輸入
-```bash
-uv run main.py
-```
+   ```bash
+   uv run main.py
+   ```
 8. 在憑證模式輸入欲查詢的根網域，例如*.ncku.edu.tw，若要進行全部.edu的查詢則輸入*.edu.tw。
 9. 選擇查詢模式，若要匯入教育部整理出的現有教育單位請選擇1(若要進行全部.edu的查詢推薦輸入1)，若只是要搜尋某根網域下的所有子網域請選擇2
