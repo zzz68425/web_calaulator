@@ -39,7 +39,7 @@ updated_date: 2026-01-21
 1. 安裝 Git 版本控制軟體
 2. 安裝 uv 套件管理軟體
 3. 複製 GitLab 儲存庫
-4. 下載最新年度的教育部統計處的學校名錄: https://depart.moe.edu.tw/ed4500/News_Content.aspx?n=63F5AB3D02A8BBAC&sms=1FF9979D10DBF9F3&s=8935E78426062F44，並將檔案新增至institution資料夾
+4. 下載最新年度的教育部統計處的學校名錄: https://depart.moe.edu.tw/ed4500/News_Content.aspx?n=63F5AB3D02A8BBAC&sms=1FF9979D10DBF9F3&s=8935E78426062F44 ，並將檔案新增至institution資料夾
 5. 在terminal輸入
    ```bash
    uv sync
