@@ -66,6 +66,55 @@ class RootDomain(Base):
     def __repr__(self) -> str:
         return f"<RootDomain id={self.id} {self.name} source={self.source}>"
 
+
+class ScanRun(Base):
+    __tablename__ = "scan_run"
+    __table_args__ = (
+        Index("idx_scan_run_status", "status"),
+        Index("idx_scan_run_cert_pattern", "cert_pattern"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    cert_pattern: Mapped[str] = mapped_column(String, nullable=False)
+    mode: Mapped[str] = mapped_column(String, nullable=False)
+    status: Mapped[str] = mapped_column(String, nullable=False, default="running")
+    created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=func.current_timestamp())
+    updated_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=func.current_timestamp(), onupdate=func.current_timestamp())
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+
+    targets: Mapped[list["ScanTarget"]] = relationship("ScanTarget", back_populates="run", cascade="all, delete-orphan")
+
+    def __repr__(self) -> str:
+        return f"<ScanRun id={self.id} pattern={self.cert_pattern} status={self.status}>"
+
+
+class ScanTarget(Base):
+    __tablename__ = "scan_target"
+    __table_args__ = (
+        UniqueConstraint("run_id", "target", name="uq_scan_target_run_target"),
+        Index("idx_scan_target_run_status", "run_id", "status"),
+        Index("idx_scan_target_target", "target"),
+    )
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    run_id: Mapped[int] = mapped_column(ForeignKey("scan_run.id", ondelete="CASCADE"), nullable=False)
+    root_domain_id: Mapped[int | None] = mapped_column(ForeignKey("root_domain.id", ondelete="SET NULL"), nullable=True)
+    target: Mapped[str] = mapped_column(String, nullable=False)
+    target_index: Mapped[int] = mapped_column(Integer, nullable=False)
+    source: Mapped[str | None] = mapped_column(String, nullable=True)
+    status: Mapped[str] = mapped_column(String, nullable=False, default="pending")
+    error_message: Mapped[str | None] = mapped_column(String, nullable=True)
+    started_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    finished_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=func.current_timestamp())
+    updated_at: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=func.current_timestamp(), onupdate=func.current_timestamp())
+
+    run: Mapped["ScanRun"] = relationship("ScanRun", back_populates="targets")
+    root_domain: Mapped["RootDomain"] = relationship("RootDomain")
+
+    def __repr__(self) -> str:
+        return f"<ScanTarget id={self.id} run_id={self.run_id} target={self.target} status={self.status}>"
+
 class Domain(Base):
     __tablename__ = "domain"
     __table_args__ = (

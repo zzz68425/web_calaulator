@@ -7,7 +7,7 @@ from sqlalchemy import select, func, distinct, text
 from sqlalchemy.exc import IntegrityError
 
 from database.session import create_session_factory, db_session
-from database.models import Base, IP, RootDomain, Domain, Area, Domain_ip, Otx_httpscan, Shodan_http, Shodan_product, Dns_zone, Dns_zone_ns, Domain_dns_zone, Domain_cname
+from database.models import Base, IP, RootDomain, ScanRun, ScanTarget, Domain, Area, Domain_ip, Otx_httpscan, Shodan_http, Shodan_product, Dns_zone, Dns_zone_ns, Domain_dns_zone, Domain_cname
 from models.website import Website
 from utils.logger import get_logger
 from config import Config
@@ -865,6 +865,175 @@ class DatabaseManagerORM:
                 query = query.where(RootDomain.source == source)
             result = session.execute(query).scalars().all()
             return list(result)
+
+    # ---------- Scan resume state ----------
+    def create_scan_run(self, cert_pattern: str, mode: str) -> int:
+        """建立一次掃描任務，回傳 scan_run.id。"""
+        with db_session(self.SessionFactory) as session:
+            scan_run = ScanRun(
+                cert_pattern=cert_pattern,
+                mode=mode,
+                status="running",
+                created_at=datetime.now(),
+                updated_at=datetime.now(),
+            )
+            session.add(scan_run)
+            session.flush()
+            logger.info(f"[續跑] 建立 scan_run id={scan_run.id}, mode={mode}, cert_pattern={cert_pattern}")
+            return scan_run.id
+
+    def get_latest_resumable_scan_run(self, cert_pattern: str) -> Optional[tuple[int, str, str]]:
+        """取得指定 cert_pattern 最近一筆未完成的掃描任務。"""
+        with db_session(self.SessionFactory) as session:
+            scan_run = session.execute(
+                select(ScanRun)
+                .where(
+                    ScanRun.cert_pattern == cert_pattern,
+                    ScanRun.status.in_(["running", "interrupted", "failed"]),
+                )
+                .order_by(ScanRun.created_at.desc())
+                .limit(1)
+            ).scalar_one_or_none()
+            if not scan_run:
+                return None
+            return scan_run.id, scan_run.mode, scan_run.status
+
+    def prepare_scan_run_for_resume(self, run_id: int) -> int:
+        """
+        將上次中斷時仍為 running 的 target 改回 pending，讓本次可重跑該 target。
+        回傳被重置的 target 數量。
+        """
+        reset_count = 0
+        with db_session(self.SessionFactory) as session:
+            scan_run = session.get(ScanRun, run_id)
+            if scan_run:
+                scan_run.status = "running"
+                scan_run.updated_at = datetime.now()
+
+            running_targets = session.execute(
+                select(ScanTarget).where(
+                    ScanTarget.run_id == run_id,
+                    ScanTarget.status == "running",
+                )
+            ).scalars().all()
+            for target in running_targets:
+                target.status = "pending"
+                target.error_message = None
+                target.updated_at = datetime.now()
+                reset_count += 1
+        return reset_count
+
+    def create_scan_targets(
+        self,
+        run_id: int,
+        targets: List[tuple[str, str | None]],
+    ) -> int:
+        """
+        建立本次掃描的 target 清單。
+
+        Args:
+            run_id: scan_run.id
+            targets: [(target, source)]，source 例如 shodan / xlsx
+        """
+        inserted = 0
+        seen: set[str] = set()
+        with db_session(self.SessionFactory) as session:
+            for idx, (target, source) in enumerate(targets, start=1):
+                target_name = (target or "").strip().lower().rstrip(".")
+                if not target_name or target_name in seen:
+                    continue
+                seen.add(target_name)
+
+                root_domain = self._get_or_create_root_domain(session, target_name, source=source)
+                exists = session.execute(
+                    select(ScanTarget).where(
+                        ScanTarget.run_id == run_id,
+                        ScanTarget.target == target_name,
+                    )
+                ).scalar_one_or_none()
+                if exists:
+                    continue
+
+                session.add(
+                    ScanTarget(
+                        run_id=run_id,
+                        root_domain_id=root_domain.id if root_domain else None,
+                        target=target_name,
+                        target_index=idx,
+                        source=source,
+                        status="pending",
+                        created_at=datetime.now(),
+                        updated_at=datetime.now(),
+                    )
+                )
+                inserted += 1
+
+        logger.info(f"[續跑] scan_run id={run_id} 建立 {inserted} 個 scan_target")
+        return inserted
+
+    def get_scan_targets(
+        self,
+        run_id: int,
+        include_done: bool = False,
+    ) -> List[tuple[int, int, str, str, Optional[str]]]:
+        """
+        取得 scan_run 的 target 清單。
+
+        Returns:
+            [(scan_target_id, target_index, target, status, source)]
+        """
+        with db_session(self.SessionFactory) as session:
+            query = select(ScanTarget).where(ScanTarget.run_id == run_id)
+            if not include_done:
+                query = query.where(ScanTarget.status != "done")
+            targets = session.execute(
+                query.order_by(ScanTarget.target_index.asc())
+            ).scalars().all()
+            return [
+                (target.id, target.target_index, target.target, target.status, target.source)
+                for target in targets
+            ]
+
+    def mark_scan_target_running(self, scan_target_id: int) -> None:
+        with db_session(self.SessionFactory) as session:
+            target = session.get(ScanTarget, scan_target_id)
+            if target:
+                target.status = "running"
+                target.started_at = target.started_at or datetime.now()
+                target.error_message = None
+                target.updated_at = datetime.now()
+
+    def mark_scan_target_done(self, scan_target_id: int) -> None:
+        with db_session(self.SessionFactory) as session:
+            target = session.get(ScanTarget, scan_target_id)
+            if target:
+                target.status = "done"
+                target.finished_at = datetime.now()
+                target.updated_at = datetime.now()
+
+    def mark_scan_target_failed(self, scan_target_id: int, error_message: str) -> None:
+        with db_session(self.SessionFactory) as session:
+            target = session.get(ScanTarget, scan_target_id)
+            if target:
+                target.status = "failed"
+                target.error_message = (error_message or "")[:1000]
+                target.finished_at = datetime.now()
+                target.updated_at = datetime.now()
+
+    def mark_scan_run_completed(self, run_id: int) -> None:
+        with db_session(self.SessionFactory) as session:
+            scan_run = session.get(ScanRun, run_id)
+            if scan_run:
+                scan_run.status = "completed"
+                scan_run.finished_at = datetime.now()
+                scan_run.updated_at = datetime.now()
+
+    def mark_scan_run_failed(self, run_id: int, status: str = "failed") -> None:
+        with db_session(self.SessionFactory) as session:
+            scan_run = session.get(ScanRun, run_id)
+            if scan_run:
+                scan_run.status = status
+                scan_run.updated_at = datetime.now()
 
     def import_shodan_vt_targets(self, vt_targets: List[str]) -> int:
         """

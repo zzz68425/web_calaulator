@@ -42,60 +42,98 @@ class WebsiteFinder:
         self.validator = OtxValidator(config)
         self.certificate_validator = CertificateValidator()
     
-    def run(self, cert_pattern: str, quick_mode: bool = False, skip_xlsx: bool = False) -> List[Website]:
+    def run(self, cert_pattern: str, quick_mode: bool = False, skip_xlsx: bool = False, resume: bool = False) -> List[Website]:
         """執行完整的搜尋流程
         
         Args:
             cert_pattern: 憑證搜尋模式
             quick_mode: 快速模式，限制查詢範圍
             skip_xlsx: 跳過 xlsx 匯入，只使用 Shodan 結果
+            resume: 從上一個未完成的 scan_run 繼續
         """
         logger.info("="*60)
         logger.info(f"開始搜尋憑證: {cert_pattern}")
-        if skip_xlsx:
+        if resume:
+            logger.info("模式: 從上次中斷處繼續")
+        elif skip_xlsx:
             logger.info("模式: 只查詢 Shodan 結果（跳過 xlsx）")
         else:
             logger.info("模式: Shodan + xlsx 合併查詢")
         logger.info("="*60)
-        
-        # 步驟 1: Shodan 搜尋
-        logger.info("步驟 1: Shodan 搜尋")
-        shodan_result = self.shodan_scanner.scan(
-            cert_pattern,
-            country=self.config.DEFAULT_COUNTRY,
-            port=self.config.DEFAULT_PORT
-        )
-        
-        if not shodan_result.domains:
-            logger.warning("Shodan 沒有找到相關域名")
+
+        if resume:
+            run_info = self.db_manager.get_latest_resumable_scan_run(cert_pattern)
+            if not run_info:
+                logger.warning(f"[續跑] 找不到 cert_pattern={cert_pattern} 的未完成任務")
+                return []
+
+            run_id, saved_mode, saved_status = run_info
+            reset_count = self.db_manager.prepare_scan_run_for_resume(run_id)
+            scan_targets = self.db_manager.get_scan_targets(run_id, include_done=False)
+            logger.info(
+                f"[續跑] 使用 scan_run id={run_id}，原模式={saved_mode}，"
+                f"原狀態={saved_status}，重置 running target {reset_count} 筆，待處理 {len(scan_targets)} 筆"
+            )
         else:
-            logger.info(f"Shodan 找到 {len(shodan_result.domains)} 個域名")
-        
-        # 取得 Shodan 的 VT 目標
-        shodan_vt_targets = shodan_result.vt_query_targets if shodan_result.vt_query_targets else shodan_result.domains
-        shodan_vt_set = set(shodan_vt_targets) if shodan_vt_targets else set()
-        
-        # 步驟 1.5: 匯入 xlsx 的 root_domain 並合併（可跳過）
-        if skip_xlsx:
-            logger.info("步驟 1.5: 跳過 xlsx 匯入（模式 2）")
-            vt_targets = list(shodan_vt_targets or [])
-            logger.info(f"VT 查詢目標：只有 Shodan {len(vt_targets)} 個")
-        else:
-            logger.info("步驟 1.5: 匯入 xlsx root_domain 並合併 Shodan 結果")
-            xlsx_imported = self.db_manager.import_root_domains_from_xlsx("institution")
-            logger.info(f"xlsx 匯入了 {xlsx_imported} 個新的 root_domain")
+            # 步驟 1: Shodan 搜尋
+            logger.info("步驟 1: Shodan 搜尋")
+            shodan_result = self.shodan_scanner.scan(
+                cert_pattern,
+                country=self.config.DEFAULT_COUNTRY,
+                port=self.config.DEFAULT_PORT
+            )
             
-            # 取得 xlsx 的 root_domain（source='xlsx'）
-            xlsx_root_domains = self.db_manager.get_all_root_domains(source="xlsx")
+            if not shodan_result.domains:
+                logger.warning("Shodan 沒有找到相關域名")
+            else:
+                logger.info(f"Shodan 找到 {len(shodan_result.domains)} 個域名")
             
-            # 合併：Shodan 優先，xlsx 補充（去除已存在於 Shodan 結果的）
-            xlsx_only = [rd for rd in xlsx_root_domains if rd not in shodan_vt_set]
-            vt_targets = list(shodan_vt_targets or []) + xlsx_only
+            # 取得 Shodan 的 VT 目標
+            shodan_vt_targets = shodan_result.vt_query_targets if shodan_result.vt_query_targets else shodan_result.domains
+            shodan_vt_set = set(shodan_vt_targets) if shodan_vt_targets else set()
+            shodan_imported = self.db_manager.import_shodan_vt_targets(list(shodan_vt_targets or []))
+            logger.info(f"Shodan VT 目標匯入 root_domain 新增 {shodan_imported} 筆")
             
-            logger.info(f"合併後 VT 查詢目標：Shodan {len(shodan_vt_set)} 個 + xlsx 補充 {len(xlsx_only)} 個 = 共 {len(vt_targets)} 個")
-        
-        if not vt_targets:
+            # 步驟 1.5: 匯入 xlsx 的 root_domain 並合併（可跳過）
+            if skip_xlsx:
+                logger.info("步驟 1.5: 跳過 xlsx 匯入（模式 2）")
+                target_sources = [(target, "shodan") for target in list(shodan_vt_targets or [])]
+                logger.info(f"VT 查詢目標：只有 Shodan {len(target_sources)} 個")
+            else:
+                logger.info("步驟 1.5: 匯入 xlsx root_domain 並合併 Shodan 結果")
+                xlsx_imported = self.db_manager.import_root_domains_from_xlsx("institution")
+                logger.info(f"xlsx 匯入了 {xlsx_imported} 個新的 root_domain")
+                
+                # 取得 xlsx 的 root_domain（source='xlsx'）
+                xlsx_root_domains = self.db_manager.get_all_root_domains(source="xlsx")
+                
+                # 合併：Shodan 優先，xlsx 補充（去除已存在於 Shodan 結果的）
+                xlsx_only = [rd for rd in xlsx_root_domains if rd not in shodan_vt_set]
+                target_sources = (
+                    [(target, "shodan") for target in list(shodan_vt_targets or [])]
+                    + [(target, "xlsx") for target in xlsx_only]
+                )
+                
+                logger.info(f"合併後 VT 查詢目標：Shodan {len(shodan_vt_set)} 個 + xlsx 補充 {len(xlsx_only)} 個 = 共 {len(target_sources)} 個")
+            
+            if not target_sources:
+                logger.warning("沒有任何 VT 查詢目標（Shodan + xlsx 皆為空）")
+                return []
+
+            # 快速模式：限制查詢目標
+            if quick_mode:
+                target_sources = target_sources[:1]  # 只處理第一個域名
+                logger.info(f"🚀 快速模式：限制為 {len(target_sources)} 個目標")
+
+            mode = "shodan_only" if skip_xlsx else "full"
+            run_id = self.db_manager.create_scan_run(cert_pattern=cert_pattern, mode=mode)
+            self.db_manager.create_scan_targets(run_id, target_sources)
+            scan_targets = self.db_manager.get_scan_targets(run_id, include_done=False)
+
+        if not scan_targets:
             logger.warning("沒有任何 VT 查詢目標（Shodan + xlsx 皆為空）")
+            if resume:
+                self.db_manager.mark_scan_run_completed(run_id)
             return []
         
         # 步驟 2 + 3 改為「逐個 VT 目標域名即時處理」：
@@ -104,12 +142,11 @@ class WebsiteFinder:
         #   3) 立即執行 OTX 驗證並更新該批
         logger.info("步驟 2: VirusTotal 獲得subdomains並即時 OTX 驗證")
         
-        # 快速模式：限制查詢目標
-        if quick_mode:
-            vt_targets = vt_targets[:1]  # 只處理第一個域名
-            logger.info(f"🚀 快速模式：限制為 {len(vt_targets)} 個目標")
-        
-        logger.info(f"共有 {len(vt_targets)} 個 VT 查詢目標 (VT Keys: {len(self.config.VIRUSTOTAL_API_KEYS)})，將逐一處理")
+        if resume and quick_mode:
+            scan_targets = scan_targets[:1]
+            logger.info(f"🚀 快速模式：本次續跑限制為 {len(scan_targets)} 個待處理目標")
+
+        logger.info(f"共有 {len(scan_targets)} 個待處理 VT 查詢目標 (VT Keys: {len(self.config.VIRUSTOTAL_API_KEYS)})，將逐一處理")
 
         processed_subdomains: set[str] = set()  # 避免跨 root 重複處理
         aggregated_validated: List[Website] = []
@@ -209,9 +246,13 @@ class WebsiteFinder:
                     saved += 1
             return saved
 
-        for idx, target in enumerate(vt_targets, start=1):
+        for idx, (scan_target_id, target_index, target, target_status, target_source) in enumerate(scan_targets, start=1):
             logger.info("-" * 50)
-            logger.info(f"[VT+Shodan DNS] ({idx}/{len(vt_targets)}) 處理 root domain: {target}")
+            logger.info(
+                f"[VT+Shodan DNS] ({idx}/{len(scan_targets)}) 處理 root domain: {target} "
+                f"(scan_target_id={scan_target_id}, 原序={target_index}, source={target_source}, status={target_status})"
+            )
+            self.db_manager.mark_scan_target_running(scan_target_id)
             
             # 1. Shodan DNS API 查詢邏輯：
             #    - 如果 target 的 root domain 是 area → 只查一次該 area domain
@@ -262,6 +303,7 @@ class WebsiteFinder:
             
             if not all_subdomains:
                 logger.warning(f"[合併] {target} 無子域名，跳過")
+                self.db_manager.mark_scan_target_done(scan_target_id)
                 continue
 
             # 去掉已處理過的重複子域名
@@ -270,6 +312,7 @@ class WebsiteFinder:
             if skipped:
                 logger.info(f"[合併] {target} 略過 {skipped} 個已處理過的重複子域名")
             if not new_subs:
+                self.db_manager.mark_scan_target_done(scan_target_id)
                 continue
 
             # 預先寫入（未驗證 when_latest_otx_checked=None）
@@ -340,6 +383,7 @@ class WebsiteFinder:
             if not validated:
                 logger.warning(f"[OTX] {target} 無成功驗證子域名")
                 processed_subdomains.update(new_subs)
+                self.db_manager.mark_scan_target_done(scan_target_id)
                 continue
 
             # 寫回驗證成功 (覆寫 IP 差異 + when_latest_otx_checked=當前時間)
@@ -421,6 +465,14 @@ class WebsiteFinder:
 
             aggregated_validated.extend(validated)
             processed_subdomains.update(new_subs)
+            self.db_manager.mark_scan_target_done(scan_target_id)
+
+        remaining_targets = self.db_manager.get_scan_targets(run_id, include_done=False)
+        if remaining_targets:
+            logger.info(f"[續跑] scan_run id={run_id} 仍有 {len(remaining_targets)} 個 target 尚未完成")
+        else:
+            self.db_manager.mark_scan_run_completed(run_id)
+            logger.info(f"[續跑] scan_run id={run_id} 已全部完成")
 
         if not aggregated_validated:
             logger.warning("整體流程結束：沒有任何子域名通過 OTX 驗證")
@@ -532,15 +584,17 @@ def main():
     print("\n請選擇查詢模式:")
     print("  1. Shodan + xlsx 合併查詢（完整模式）")
     print("  2. 只查詢 Shodan 結果（跳過 xlsx）")
-    mode_input = input("請輸入模式 (1 或 2，預設 1): ").strip()
+    print("  3. 從上次中斷處繼續")
+    mode_input = input("請輸入模式 (1、2 或 3，預設 1): ").strip()
     skip_xlsx = (mode_input == "2")
+    resume = (mode_input == "3")
     
     # 執行搜尋
     try:
         finder = WebsiteFinder(config)
         if args.quick:
             logger.info("快速模式啟用：將限制查詢範圍進行測試")
-        results = finder.run(cert_pattern, quick_mode=args.quick, skip_xlsx=skip_xlsx)
+        results = finder.run(cert_pattern, quick_mode=args.quick, skip_xlsx=skip_xlsx, resume=resume)
         
         if results:
             logger.info(f"\n搜尋完成！找到 {len(results)} 個網站")
